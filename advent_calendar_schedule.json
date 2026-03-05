@@ -1,0 +1,122 @@
+[
+    {
+        "day": 1,
+        "product": "Beginner Gift Jar",
+        "discount_percent": 20
+    },
+    {
+        "day": 2,
+        "product": "Queen of the South",
+        "discount_percent": 20
+    },
+    {
+        "day": 3,
+        "product": "Lucky Packet 10g Greendoor",
+        "discount_percent": 20
+    },
+    {
+        "day": 4,
+        "product": "Super Joint - Indica",
+        "discount_percent": 20
+    },
+    {
+        "day": 5,
+        "product": "Ultimate Canni Resin Vape Pen - Grand Daddy",
+        "discount_percent": 20
+    },
+    {
+        "day": 6,
+        "product": "Cannibisters One Hit Wonder Capsules (30mg)",
+        "discount_percent": 20
+    },
+    {
+        "day": 7,
+        "product": "Sirius Black Outdoor Rosin",
+        "discount_percent": 20
+    },
+    {
+        "day": 8,
+        "product": "Grease Monkey - Rosin Moonstick",
+        "discount_percent": 15
+    },
+    {
+        "day": 9,
+        "product": "Banger Glue - Rosin Moonstick",
+        "discount_percent": 15
+    },
+    {
+        "day": 10,
+        "product": "Light Bringer Hash Rosin",
+        "discount_percent": 15
+    },
+    {
+        "day": 11,
+        "product": "Lucky Packet 5g Indoor",
+        "discount_percent": 15
+    },
+    {
+        "day": 12,
+        "product": "Ultimate Canni Resin Vape Pen - Green Crack",
+        "discount_percent": 15
+    },
+    {
+        "day": 13,
+        "product": "Small THC Chocolate",
+        "discount_percent": 15
+    },
+    {
+        "day": 14,
+        "product": "Gift Jar Advanced",
+        "discount_percent": 20
+    },
+    {
+        "day": 15,
+        "product": "Bubble Velvet",
+        "discount_percent": 20
+    },
+    {
+        "day": 16,
+        "product": "Gummy Bears - THC",
+        "discount_percent": 20
+    },
+    {
+        "day": 17,
+        "product": "Super Joint - Sativa",
+        "discount_percent": 20
+    },
+    {
+        "day": 18,
+        "product": "Blue Dream",
+        "discount_percent": 20
+    },
+    {
+        "day": 19,
+        "product": "Greendoor Super Cheese",
+        "discount_percent": 20
+    },
+    {
+        "day": 20,
+        "product": "2 x THC Vape Cartridge + 510 Battery",
+        "discount_percent": 20
+    },
+    {
+        "day": 21,
+        "product": "Brainstorm Joint",
+        "discount_percent": 20
+    },
+    {
+        "day": 22,
+        "product": "Lemon Frost",
+        "discount_percent": 20
+    },
+    {
+        "day": 23,
+        "product": "Elvis",
+        "discount_percent": 20
+    },
+    {
+        "day": 24,
+        "product": "Gift Jar Master",
+        "discount_percent": 20
+    }
+]

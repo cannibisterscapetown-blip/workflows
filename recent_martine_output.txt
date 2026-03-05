@@ -1,0 +1,106 @@
+/Users/norton/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+🔍 Fetching recent drafts...
+
+Scanning 50 drafts for 'Joint' or 'Moonstick'...
+
+ID: 8829780754644
+Title: Afghan Kush Moonstick
+Created: 2025-05-12T10:17:04+02:00
+Tags: joints
+Body: 
+
+ID: 8944913187028
+Title: Animal Tsunami - Rosin Moonstick
+Created: 2025-09-26T16:14:32+02:00
+Tags: Anxiety, creative, Euphoric, Functional, Happy, Indica, Relax
+Body: <p>70/30 Indica </p>
+<p>Animal Tsunami is an indica-dominant hybrid strain, developed by crossing the tasty Animal Cookies and Caramel Tsunami strains.</p>
+
+ID: 9072664772820
+Title: Animal Tsunami Joint
+Created: 2026-02-12T11:14:33+02:00
+Tags: joints, New Strains
+Body: 
+
+ID: 8822549676244
+Title: Astro Grape - Rosin Moonstick
+Created: 2025-05-03T18:11:33+02:00
+Tags: 
+Body: <p><meta charset="UTF-8"><strong data-end="942" data-start="897">60/40 Indica </strong><br data-end="945" data-start="942"><span>Juicy grape flavour and calming effects combine in this dreamy Indica Dominant Moonstick, crafted for smooth evening vibes. </span><strong data-end="1127" data-start="1060">For true cannabis connoisseurs seeking flavour and floaty feels.</strong></p>
+
+ID: 8932284694740
+Title: Avatar Joint
+Created: 2025-09-16T11:03:45+02:00
+Tags: Euphoric, Happy, Joint, Pain, Relax, Sativa, Sleep
+Body: <p><meta charset="utf-8">Avatar is a berry-rich sativa with earthy gas undertones and a dreamy, euphoric high. Perfect for mellow evenings, creative sparks, or winding down with friends.</p>
+
+ID: 9023386681556
+Title: Black Cat Joint
+Created: 2025-12-22T12:10:58+02:00
+Tags: Diesel, Euphoric, Gas, Indica, Joint, Relaxed, Sedative, Sour Fruit
+Body: <p><strong>Black Cat Joint</strong> is a premium pre-roll featuring the potent indica-dominant hybrid born from Black Rose and Cheetah Piss. It delivers a heavy, sedative high that melts away tension and induces deep relaxation. Expect a bold profile of sour fruit and diesel with skunky undertones—perfect for a peaceful evening and restorative sleep.</p><ul>
+<li>
+<strong>Lineage:</strong> Black Rose x Cheetah Piss</li>
+<li>
+<strong>Effects:</strong> Relaxed, Sedative, Euphoric</li>
+</ul>
+
+ID: 8886746054868
+Title: Blockberry Joint
+Created: 2025-07-25T11:18:36+02:00
+Tags: Hybrid
+Body: <p><meta charset="utf-8">Blockberry is a berry-heavy indica hybrid with deep fruity flavour and a dreamy, euphoric high. Perfect for zoning in or winding down — smooth, flavourful, and just the right amount of stoney.</p>
+
+ID: 9002487840980
+Title: Blue Dream Joint
+Created: 2025-11-28T11:16:37+02:00
+Tags: creative, Happy, joints, Sativa, Social, Uplifted, Uplifting
+Body: <p>60/40 Sativa</p>
+<p>1gram</p>
+<p><meta charset="utf-8">Blue Dream is a classic sativa-leaning hybrid combining sweet blueberry flavour with smooth, uplifting haze. Expect a clear, creative high perfect for daytime sessions and social moments.</p>
+
+ID: 8932284924116
+Title: Blueberry Gary Joint
+Created: 2025-09-16T11:05:25+02:00
+Tags: creative, Euphoric, Happy, Hybrid, Joint, Relax, Uplifted, Uplifting
+Body: <p><meta charset="utf-8">Blueberry Gary is a fruity hybrid that mixes sweet blueberry with creamy gas. The result is a smooth, euphoric high that’s perfect for social sessions or flavour-first smokers.</p>
+
+ID: 8820976681172
+Title: Brainstorm Joint
+Created: 2025-05-01T07:39:12+02:00
+Tags: 
+Body: <p><meta charset="UTF-8"><strong data-end="39" data-start="0">70/30 Sativa <br></strong><br data-end="42" data-start="39"><span>Spark creativity with Brainstorm — a sativa-dominant hybrid known for its clear-headed high and uplifting effects. Ideal for daytime use, this smooth joint enhances focus and mental clarity, making it perfect for brainstorming sessions, creative projects, or social vibes.</span></p>
+
+ID: 9029349179604
+Title: Bruce Banner Preroll Joint - Living Soil
+Created: 2025-12-31T10:38:33+02:00
+Tags: joints, Living Soil
+Body: <p><meta charset="utf-8">80/20 Sativa, Living Soil, preroll in pop-up tube</p><br><strong>Bruce Banner Joint - Living Soil</strong><br>Expect a powerful, monster-strength experience that balances cerebral euphoria with a gentle body relaxation, perfect for sparking inspiration.
+
+ID: 9071245623508
+Title: Canni Ltd Collection Joints Special x3
+Created: 2026-02-11T12:42:45+02:00
+Tags: Bundle, Joints, Limited Collection, New Strains, Special
+Body: 
+<p><strong>Canni Ltd Collection Joints Special x3</strong></p>
+<p>Experience the finest from our exclusive Limited Collection with this special bundle offer! Choose any 3 of our premium Canni Ltd Collection joints.</p>
+<p>Select from our current Limited Collection strains, including:</p>
+<ul>
+    <li>Astro Grape</li>
+    <li>Chocolope</li>
+    <li>Grandpa's Endgame</li>
+    <li>Mad Ghost</li>
+    <li>Purple Panda</li>
+    <li>Sour Diesel D</li>
+    <li>Supercheese</li>
+</ul>
+<p>Each joint is expertly rolled with our top-tier, indoor-grown flower, providing a luxurious smoking experience unique to our Limited Collection.</p>
+<p><em>Note: Strain availability may vary. Please specify your choices in the order notes.</em></p>
+
+
+ID: 9039335981268
+Title: Canni Ltd Edition Joint -  Papa Smurf
+Created: 2026-01-12T11:04:04+02:00
+Tags: Berry, Hybrid, Joint, Papa Smurf, Pre-roll, Sativa Dominant, Uplifting
+Body: <strong>Sativa-Dominant Hybrid</strong><br><br>Papa Smurf is an uplifting hybrid crossing Blue Dream and Cotton Candy. Expect a burst of sweet blueberry and pine flavours with a giggly, happy high that settles into distinct relaxation.

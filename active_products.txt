@@ -1,0 +1,258 @@
+📦 Fetching products (status: active, limit: 250)...
+
+✅ Found 250 product(s):
+
+ID              Title                                              Status     Type                
+-----------------------------------------------------------------------------------------------
+7807324389588   2 x THC Vape Cartridge + 510 Battery               active     Special Bundle      
+8411059781844   3g Greendoor Bundle                                active     Flowers             
+8829780754644   Afghan Kush Moonstick                              active     Joint               
+8848951115988   Almond Milk                                        active     Coffee              
+7978587914452   Americano                                          active     Coffee              
+9026935095508   Astro Grape - Cannibisters Limited Collection      active                         
+8924298838228   Avatar                                             active     Flower              
+8391764574420   Backwood Natural Cigar leaf, single leaf           active     Rolling Paper       
+8950699000020   Bacon extra                                        active                         
+8949517680852   Bacon, Avo & Feta 30cm                             active                         
+8822549545172   Banger Glue - Rosin Moonstick                      active     Flower              
+8950702768340   Basil extra                                        active                         
+8950707814612   Basil pesto                                        active                         
+8949276573908   BBQ chicken (slice)                                active                         
+8949280145620   BBQ chicken 30cm                                   active                         
+8949516501204   BBQ chicken 50cm                                   active                         
+8950699720916   BBQ Chicken extra                                  active                         
+8950704439508   BBQ sauce                                          active                         
+8272048849108   Berry Ice Tea                                      active     Tea                 
+7881525067988   Big Bongs                                          active     Bongs               
+8532548124884   Big Doritos                                        active     sweets              
+8913244979412   Big Green Buddha Dab Hit                           active     Dab                 
+9019110293716   Black Cat                                          active     Flower              
+9023386681556   Black Cat Joint                                    active     Joint               
+8907328389332   Black Panther                                      active     Flower              
+9008376185044   Black Patronus                                     active     Flower              
+8954304397524   Blockberry                                         active     Flowers             
+8941565411540   Blockberry - Rosin Moonstick                       active     Joint               
+8996763730132   Blockberry Hash                                    active     Hash                
+8009126772948   Blow Torch Typhoon                                 active     Equipment           
+9026937192660   Blue Cheese - Cannibisters Limited Collection      active                         
+7611810676948   Blue Dream                                         active     Flower              
+8949572305108   Blue Sherbet Outdoor Rosin                         active     Rosin               
+8882793316564   Blue Statue                                        active     Flower              
+7845234999508   Blueberry Gary                                     active     Flower              
+9009298538708   Blueberry Pie Joint                                active     Joint               
+7973895733460   Blunicorn                                          active     Flower              
+8782044070100   Brainstorm                                         active     Flower              
+8820976681172   Brainstorm Joint                                   active     Flower              
+8949277851860   Bronx (slice)                                      active                         
+8949788344532   Bronx + Yum Yum                                    active                         
+8949279162580   Bronx 30cm                                         active                         
+8949517189332   Bronx 50cm                                         active                         
+8949277294804   Brooklyn (slice)                                   active                         
+8949779398868   Brooklyn + Pineapple Express                       active                         
+8949279523028   Brooklyn 30cm                                      active                         
+8949516828884   Brooklyn 50cm                                      active                         
+8923536359636   Bubble Velvet                                      active     Flower              
+8949276410068   Buffalo Chicken                                    active                         
+8949791195348   Buffalo Chicken + Citrus Blast                     active                         
+8949280506068   Buffalo Chicken 30cm                               active                         
+8949516435668   Buffalo Chicken 50cm                               active                         
+8950699786452   Buffalo chicken extra                              active                         
+7978587586772   Canni FYU Coffee 40mg                              active     Coffee              
+7978587685076   Canni FYU Coffee 80mg                              active     Coffee              
+8815539847380   Canni StashBox - Premium Wooden Storage for You... active     accessories         
+7978589159636   Cannibis Ice Tea                                   active     Tea                 
+8049308991700   Cannibisters - The Herbal Apothecary - 12 month... active                         
+8049305419988   Cannibisters - The Herbal Apothecary - 3 month ... active                         
+7771586199764   Cannibisters - The Herbal Apothecary - 30 day m... active                         
+8049308729556   Cannibisters - The Herbal Apothecary - 6 month ... active                         
+8714004299988   Cannibisters - The Herbal Apothecary - One day ... active                         
+8511890653396   Cannibisters Chemical Bride Rosin                  active     rosin               
+7765025816788   Cannibisters Gift Card                             active     Gift Cards          
+8602830930132   Cannibisters Happy Birthday / Greeting Cards       active     Gift Cards          
+7811464331476   Cannibisters Hoodies                               active     Hoodie              
+8653368131796   Cannibisters Lighter                               active     Lighter             
+8687681372372   Cannibisters One Hit Wonder Capsules (20mg)        active     Rosin               
+8037963235540   Cannibisters One Hit Wonder Capsules (30mg)        active     Rosin               
+8418861875412   Cannibisters Pure Michigan Rosin                   active     Rosin               
+9004322717908   Cannibisters Raffle                                active     Gift Cards          
+7731113853140   Cannibisters Rosin Hash                            active     Rosin               
+8418622013652   Cannibisters Sirius Rosin                          active     Rosin               
+8275238125780   Cannibisters T-Shirt Ladies                        active     T-Shirt             
+7811462791380   Cannibisters T-Shirt Mens                          active     T-Shirt             
+8995166879956   Cannibisters THC Breath Mint                       active     rosin               
+7998491656404   Cannibisters XXX FYU Rosin                         active     Rosin               
+8418988032212   Cannibisters Zurple Punch Rosin                    active     rosin               
+8808137261268   Cannibisters Zurple Purple Rosin                   active     rosin               
+7978588209364   Cappuccino                                         active                         
+8849002954964   Caramel Coffee Syrup                               active     Coffee              
+8950701031636   Caramelized Onions extra                           active                         
+7978587717844   CBD Coffee                                         active                         
+8449883439316   CBD Drops for Hot Drinks                           active                         
+7611810840788   CBD Tincture Oil - 650 mg                          active     Oil                 
+7978588668116   Chai Latte                                         active                         
+8949572206804   Champagne Rose Outdoor Rosin                       active     Rosin               
+8374576021716   Cherry Pie Joint                                   active     Joint               
+8950704341204   Cherry tomatoes extra                              active                         
+8886739075284   Chimera Joint                                      active     Flower              
+7981711261908   Chinese Medicine Consultation                      active                         
+7998505222356   Chocolope Hash                                     active     Rosin               
+9025631912148   Chocolope Joint                                    active     Joint               
+8950694674644   Chorizo extra                                      active                         
+9026929983700   Christmas Cracker - Cannibisters Limited Collec... active                         
+8271783330004   Cloudy Apple Juice                                 active     Juice               
+8271931277524   Coca-Cola Soft Drink                               active     cooldrink           
+8607611486420   Cocktail Joint                                     active     Joint               
+8606040981716   Coke Zero Soft Drinks                              active     cooldrink           
+7978374791380   Cone - king size                                   active     Other               
+8810152984788   Cone Jar                                           active     Rolling Paper       
+7978588340436   Cortado                                            active                         
+8271757607124   Cranberry Juice                                    active     Juice               
+8282215612628   Cream Soda Soft Drink                              active                         
+8003139764436   Dab Bangers                                        active     Equipment           
+8003140124884   Dab Metal Stick                                    active     Equipment           
+8003139338452   Dab Rigs                                           active     Equipment           
+8793346408660   Death Drops  Double-strength Tincture Oil 10ml ... active     Oil                 
+8793348473044   Death Drops Double-strength Tincture Oil 5ml - ... active     Oil                 
+8907356963028   Decaf Coffee                                       active                         
+8938136633556   Diesel                                             active     Flower              
+8954396803284   Diesel Joint                                       active     Flower              
+8813015859412   Dirty Chai Tea                                     active                         
+8838622380244   Dope Coffee - single serving                       active                         
+8844453773524   Double Expresso                                    active     Coffee              
+8885013315796   Duct Tape Joint                                    active     Joint               
+7958175416532   Elvis                                              active     Flower              
+9026927984852   ELVIS - Cannibisters Limited Collection            active                         
+8126229315796   Energy Drink - RedBull or Monster                  active                         
+7978588012756   Espresso                                           active                         
+8950673342676   extra avo                                          active                         
+8842529964244   Extra Honey Sachets                                active     Coffee              
+8299264147668   Face On Fire                                       active     Flower              
+8271947170004   Fanta Soft Drink                                   active     cooldrink           
+8950699524308   Feta extra                                         active                         
+7978588274900   Flat White                                         active                         
+8923538620628   Forbidden Fruit                                    active     Flower              
+8404486979796   Free Boy Joint Grinder                             active     grinder             
+8899422945492   Frosted Peaks                                      active     Flower              
+7811472326868   Full Strength Tincture Oil 10ml - 1200mg           active     Oil                 
+8822525034708   Gastronomical Rosin Drops                          active     Rosin               
+9008376086740   Gelato Drops                                       active     Flower              
+8598292037844   Gelato Jealousy                                    active     Flowers             
+8234725245140   Gift Jar Advanced                                  active     Flower              
+8234721706196   Gift Jar Beginner                                  active     Flower              
+8234728128724   Gift Jar Master                                    active     Flower              
+8005798068436   Ginger Tea                                         active     Other               
+9026931261652   Girl Scout Cookies - Cannibisters Limited Colle... active                         
+8060954542292   Glass jar - Cannibisters                           active     accessories         
+8086886154452   Glass pipe - One Hitter                            active     Glass Pipe          
+8901471142100   Granddaddy - Rosin Moonstick                       active     Joint               
+9026926739668   Grandpa's Endgame - Cannibisters Limited Collec... active                         
+7958175908052   Grape Diamonds                                     active     Flower              
+8782047051988   Grapefruit                                         active     Flower              
+7731060932820   Green Crack                                        active     Flower              
+8950700900564   Green Peppers extra                                active                         
+8941553483988   Greendoor Black Domina                             active     Flowers             
+8537439305940   Greendoor Joints Bundle                            active                         
+8858285736148   Greendoor Super Cheese                             active     Flower              
+8861318611156   Greendoor Super Cheese Joint                       active     Joint               
+8856426578132   Grinder Steel XL                                   active     grinder             
+8679441826004   Grinder, plastic - Good and cheap!                 active                         
+8474627768532   Gummies 100mg                                      active     Edibles             
+8474631766228   Gummies 200mg                                      active     Edibles             
+7611811496148   Gummy Bears - CBD                                  active     Edibles             
+7611811463380   Gummy Bears - THC                                  active     Edibles             
+8950699131092   Ham extra                                          active                         
+9026290188500   Hash Rosin Dab hit                                 active                         
+8849002430676   Hazelnut Coffee Syrup                              active     Coffee              
+9016555995348   Highlighter                                        active     Flower              
+8168513437908   Hot & Cold Power Spair Short                       active     Coffee              
+8168510521556   Hot & Cold Red Power Short                         active     Coffee              
+7978588930260   Hot Chocolate                                      active     Coffee              
+8950706176212   Hot honey                                          active                         
+8704496435412   Ice Chocolate                                      active     Coffee              
+7978589782228   Iced Chai Latte                                    active                         
+7978589683924   Iced Coffee                                        active                         
+8712845525204   Indoor Lucky Packet 10g                            active     Flower              
+8712821604564   Indoor Lucky Packet 5g                             active     Flower              
+8723701694676   Indoor Rosin Dab Hit                               active     Dab                 
+8003168239828   Indoor Special Mid-range                           active                         
+8914669043924   Infused Drink Special                              active     Coffee              
+8139499307220   Jack Harer                                         active     Flower              
+8403134972116   Jessica Rabbit                                     active     Flower              
+7811462004948   Joint Holder                                       active     accessories         
+8749621149908   Joint holder - Pop-up                              active     accessories         
+7911964967124   Joint Special - 3x Indoor Joints Online Exclusive  active     Flower              
+8894582587604   JUICE | Blueberry- 91% THC                         active     Vape Pen            
+8894585929940   JUICE | Pink Guava - 91% THC                       active     Vape Pen            
+7978588242132   Latte                                              active     Coffee              
+8005809275092   Lemon and Ginger Water                             active     water               
+8998919307476   Lemon Chai                                         active     Flower              
+8924302508244   Lemon Frost                                        active     Flower              
+8272071196884   Lemon Ice Tea                                      active     Tea                 
+8271898804436   Lemonade Juice                                     active     Juice               
+8949572042964   Light Bringer Hash Rosin                           active     Rosin               
+7978369777876   Lighter - large                                    active     Lighter             
+7978369614036   Lighter - small                                    active     accessories         
+9016556454100   Lit Pineapple                                      active                         
+9026932211924   Mad Ghost - Cannibisters Limited Collection        active                         
+8964282745044   Madam Cookies                                      active     Flower              
+8365671219412   Malibu Marker Joint                                active     Flower              
+8271801614548   Mango Juice                                        active     Juice               
+8949277556948   Manhattan (slice)                                  active                         
+8949786476756   Manhattan + Green Crack                            active                         
+8949279457492   Manhattan 30cm                                     active                         
+8949517156564   Manhattan 50cm                                     active                         
+8010766516436   Manna Chips - Strentgh: Strong                     active     Edibles             
+8021768831188   Manna Choc Chip Cookies                            active     Edibles             
+8010767335636   Manna Chocolate Brownies - Strong                  active     Edibles             
+8179451330772   Manna Gummies THC                                  active     Edibles             
+8157170204884   Manna Peanut Butter Cookies                        active     Edibles             
+8157166633172   Manna Red Velvet Cookies                           active     Edibles             
+8949572698324   Mazar Kush Outdoor Rosin                           active     Rosin               
+7981712015572   Medicinal Cannabis Consultation                    active                         
+8090589036756   Mini Gas Tank                                      active                         
+8192563085524   Mocha                                              active     Coffee              
+8950692053204   Mozzarella extra                                   active                         
+8950700212436   Mushrooms extra                                    active                         
+8808150434004   Near Death Drops Full Strength Tincture Oil 10m... active     Oil                 
+8793345294548   Near Death Drops Full Strength Tincture Oil 5ml... active     Oil                 
+8949276311764   Nolita (slice)                                     active                         
+8949280768212   Nolita 30cm                                        active                         
+8949516337364   Nolita 50cm                                        active                         
+7978588405972   Oat Milk                                           active                         
+8950700703956   Olives extra                                       active                         
+8048512139476   One Hit Wonder - BHANG Bar (In-Store Only)         active                         
+8271824421076   Orange Juice                                       active     Juice               
+8766834966740   Orange Marmalade                                   active     Flower              
+9008378970324   Orange Sherbert                                    active     Flower              
+8904482226388   Outdoor Rosin Dab hit                              active     Dab                 
+8912210591956   Pancake McFlurry                                   active     Flower              
+8272027713748   Peach Ice Tea                                      active     Tea                 
+9008376774868   Peach Jam                                          active     Flower              
+8950700245204   Peppadews extra                                    active                         
+8949276868820   Pepperoni Classic (slice)                          active                         
+8949279817940   Pepperoni Classic 30cm                             active                         
+8949516566740   Pepperoni Classic 50cm                             active                         
+8950698836180   Pepperoni Classic extra                            active                         
+8950699655380   Pepperoni NYC extra                                active                         
+8949277130964   Pepperoni NYC style (slice)                        active                         
+8949279719636   Pepperoni NYC style 30cm                           active                         
+8949516599508   Pepperoni NYC style 50cm                           active                         
+8403114131668   Permanent Marker                                   active     Flower              
+7723218698452   Pineapple Express                                  active     Flower              
+8950700802260   Pineapple extra                                    active                         
+8844453642452   Pink Lemonade Juice                                active     Juice               
+8679641612500   Plastic Grinder and Tray                           active     grinder             
+8949571911892   Platinum Chimera Breathe Hash Rosin                active     Rosin               
+9002527391956   Platinum Dosi                                      active     Flower              
+8949571715284   Platinum Kushbreathe Remix Hash Rosin              active     Rosin               
+8802266480852   Poison Dragon                                      active     Flower              
+8060346073300   Premium Membership - Diamond Tier                  active                         
+8060347416788   Premium membership - Platinum Tier                 active                         
+8760011456724   Puffco Peak Pro                                    active     accessories         
+9026925658324   Purple Panda - Cannibisters Limited Collection     active                         
+8836390027476   Queen Of The South                                 active     Flower              
+8949278048468   Queens (slice)                                     active                         
+8949279031508   Queens 30cm                                        active                         
+8949517222100   Queens 50cm                                        active                         
+
+📊 Total: 250 products

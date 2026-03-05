@@ -1,0 +1,464 @@
+"Discount name","Discount method","Discount type","Discount class","Applied discounts","Discounted orders","Gross sales","Returns","Net sales","Shipping charges","Taxes","Total sales"
+"15% Wheel of fortune","manual","percentage",,-50685,200,296066.49,-3019.72,248363.73,0,35755.27,284119
+"Cash deal + friends and family ","manual","percentage",,-64253,268,281086.06,-2827.13,221964.28,0,31796.52,253760.8
+"Friends and family ","manual","percentage",,-10676,97,97473.02,0,87644.91,0,8758.29,96403.2
+"Family discount","manual","percentage",,-25339.8,116,74513.35,0,52159.62,0,6966.58,59126.2
+"30% Customer Discount ","manual","percentage",,-11469,41,33560.63,-477.83,23014.94,0,3196.56,26211.5
+"OWNERS DISCOUNT - PIERRE/ANDRE/DAVID ONLY","manual","percentage",,-17874.5,28,31086.04,-578.26,14964.76,0,2244.74,17209.5
+"AQ8XYAZJ","discount_code","fixed_amount","order",-100,1,5481.7,0,5394.78,0,809.22,6204
+"Containers","manual","fixed_amount",,-2140,17,7754.25,0,5340.86,0,759.14,6100
+"Strain of the Week 20%","automatic","percentage","product",-1444,13,6278.19,0,4903.65,0,735.55,5639.2
+"KLYRX9L1","discount_code","percentage","order",-620,1,5391.26,0,4852.17,0,727.83,5580
+"Happy Hour Discount-2026-01-15T22:00:00Z","automatic","percentage","order",-886.5,4,5139.01,0,4368.26,0,655.24,5023.5
+"MOPWQDV6","discount_code","fixed_amount","order",-100,1,3782.58,0,3695.65,0,554.35,4250
+"Happy hour Free coffee","automatic","percentage","product",-494,11,4394.34,0,3691.16,0,508.65,4199.81
+"Happy Hour Discount-2026-01-23T22:00:00Z","automatic","percentage","order",-714,2,4139.06,0,3518.27,0,527.73,4046
+"HighFlyers20","discount_code","percentage","order",-973,1,4230.42,0,3384.35,0,507.65,3892
+"Happy Hour Discount-2026-01-08T22:00:00Z","automatic","percentage","order",-681.75,4,4095.61,0,3481.31,0,381.94,3863.25
+"QGRG2DBS","discount_code","fixed_amount","order",-100,1,3276.51,0,3189.57,0,478.43,3668
+"OJH8FKBL","discount_code","percentage","order",-392,1,3408.67,0,3067.83,0,460.17,3528
+"FHZKSP2U","discount_code","percentage","order",-368,1,3200,0,2880,0,432,3312
+"W7UOD1IK","discount_code","fixed_amount","order",-1,1,2556.49,0,2555.65,0,383.35,2939
+"MLJDJ6SU","discount_code","percentage","order",-317,1,2756.5,0,2480.87,0,372.13,2853
+"UW6HWA8L","discount_code","percentage","order",-317,1,2756.5,0,2480.87,0,372.13,2853
+"Happy Hour Discount-2026-02-04T22:00:00Z","automatic","percentage","order",-485.25,2,2813.01,0,2391.09,0,358.66,2749.75
+"Happy Hour Discount-2026-01-20T22:00:00Z","automatic","percentage","order",-483.75,3,2804.32,0,2383.7,0,357.55,2741.25
+"WELCOMEBACK10","discount_code","percentage","order",-297.5,2,2686.94,0,2328.27,0,349.23,2677.5
+"NDS5ST5P","discount_code","fixed_amount","order",-200,1,2430.4,0,2256.52,0,338.48,2595
+"JFJNMKZE","discount_code","fixed_amount","order",-922,1,3043.44,0,2241.74,0,336.26,2578
+"UYVSDEJP","discount_code","percentage","order",-306.5,1,2665.07,0,2132.17,0,319.83,2452
+"0ZPZND7G","discount_code","percentage","order",-306.5,1,2665.07,0,2132.17,0,319.83,2452
+"WKTXWAO9","discount_code","fixed_amount","order",-1000,1,2986.94,0,2117.39,0,317.61,2435
+"K7ZPTTDJ","discount_code","percentage","order",-254,1,2540,0,2286,0,0,2286
+"OBKMT1FS","discount_code","fixed_amount","order",-1000,1,2778.24,0,1908.7,0,286.3,2195
+"Happy Hour Discount-2026-01-26T22:00:00Z","automatic","percentage","order",-375,3,2173.88,0,1847.83,0,277.17,2125
+"BGK3QPZQ","discount_code","fixed_amount","order",-100,1,1847.81,0,1760.87,0,264.13,2025
+"FBNYYKRU","discount_code","fixed_amount","order",-4000,1,5234.76,0,1756.52,0,263.48,2020
+"8TGKXQVG","discount_code","fixed_amount","order",-1,1,1747.82,0,1746.96,0,262.04,2009
+"Happy Hour Discount-2026-01-11T22:00:00Z","automatic","percentage","order",-337.5,2,1956.5,0,1663.04,0,249.46,1912.5
+"QSWD9LAT","discount_code","percentage","order",-210,1,1826.08,0,1643.48,0,246.52,1890
+"VDFEAZBT","discount_code","fixed_amount","order",-200,1,2090,0,1890,0,0,1890
+"Happy Hour WKD","discount_code","percentage","product",-460,8,2100.41,0,1680.35,0,159.65,1840
+"PCN0FWLO","discount_code","fixed_amount","order",-100,1,1591.29,0,1504.35,0,225.65,1730
+"6J5WJHCR","discount_code","percentage","order",-186,1,1617.38,0,1455.65,0,218.35,1674
+"ADJ03EHV","discount_code","percentage","order",-186,1,1617.38,0,1455.65,0,218.35,1674
+"DMK8MNRG","discount_code","fixed_amount","order",-900,1,2173.9,0,1391.3,0,208.7,1600
+"CQ1P5KZ9","discount_code","percentage","order",-336.5,1,2925.93,-396.52,1359.13,0,203.87,1563
+"Y0MK1VH1","discount_code","percentage","order",-336.5,1,2925.93,-396.52,1359.13,0,203.87,1563
+"5RMEG04E","discount_code","percentage","order",-336.5,1,2925.93,-396.52,1359.13,0,203.87,1563
+"WJGQVFDS","discount_code","percentage","order",-336.5,1,2925.93,-396.52,1359.13,0,203.87,1563
+"HR0OXWV3","discount_code","fixed_amount","order",-500,1,2059,0,1559,0,0,1559
+"Happy hour weekend special 01/02/2026 by bruce","manual","percentage",,-380,1,1652.17,0,1321.74,0,198.26,1520
+"NZ76YZTC","discount_code","percentage","order",-165.5,1,1439.11,0,1295.22,0,194.28,1489.5
+"Happy Hour Discount-2026-01-22T22:00:00Z","automatic","percentage","order",-261.6,1,1744,0,1482.4,0,0,1482.4
+"UAGFT0NR","discount_code","fixed_amount","order",-500,1,1721.72,0,1286.96,0,193.04,1480
+"AHKAQLC3","discount_code","fixed_amount","order",-500,1,1716.49,0,1281.74,0,192.26,1474
+"DUGJA6PO","discount_code","fixed_amount","order",-1,1,1282.6,0,1281.74,0,192.26,1474
+"Q2JV4JCB","discount_code","percentage","order",-163,1,1417.38,0,1275.65,0,191.35,1467
+"DX3GRN9N","discount_code","fixed_amount","order",-2,1,1269.55,0,1267.83,0,190.17,1458
+"10% wheel of fortune","manual","percentage",,-161.2,2,1401.74,0,1261.57,0,189.23,1450.8
+"OCISOJY3","discount_code","fixed_amount","order",-107,1,1313.03,0,1220,0,183,1403
+"9VZOSCZ1","discount_code","percentage","order",-200,1,1739.09,0,1217.39,0,182.61,1400
+"XDFFCY5W","discount_code","percentage","order",-200,1,1739.09,0,1217.39,0,182.61,1400
+"FDIP6X0E","discount_code","percentage","order",-200,1,1739.09,0,1217.39,0,182.61,1400
+"Happy Hour Discount-2026-01-14T22:00:00Z","automatic","percentage","order",-241.5,2,1399.98,0,1190,0,178.5,1368.5
+"Happy Hour","discount_code","percentage","product",-342,4,1511.72,0,1209.39,0,158.61,1368
+"Containers recycle","manual","fixed_amount",,-422,6,1584.13,0,1186.95,0,178.05,1365
+"IWMXNBPK","discount_code","fixed_amount","order",-500,1,1600,0,1165.22,0,174.78,1340
+"Happy Hour Discount-2026-01-29T22:00:00Z","automatic","percentage","order",-235.5,2,1365.16,0,1160.43,0,174.07,1334.5
+"ZHA5AV5Z","discount_code","fixed_amount","order",-1,1,1152.16,0,1151.3,0,172.7,1324
+"MFYVTLS2","discount_code","fixed_amount","order",-200,1,1317.37,0,1143.48,0,171.52,1315
+"F766ZMP0","discount_code","fixed_amount","order",-59,1,1186.93,0,1135.65,0,170.35,1306
+"QCXEI2FC","discount_code","fixed_amount","order",-1,1,1121.73,0,1120.87,0,168.13,1289
+"SNKIMKYI","discount_code","fixed_amount","order",-1,1,1121.73,0,1120.87,0,168.13,1289
+"7CJC0L1Z","discount_code","fixed_amount","order",-137,1,1239.11,0,1120,0,168,1288
+"Happy Hour Discount-2026-01-24T22:00:00Z","automatic","percentage","order",-225,1,1304.34,0,1108.7,0,166.3,1275
+"KMJPPGZD","discount_code","fixed_amount","order",-90,1,1172.99,0,1094.78,0,164.22,1259
+"XKT53T7A","discount_code","fixed_amount","order",-500,1,1519.11,0,1084.35,0,162.65,1247
+"IIENX5SL","discount_code","fixed_amount","order",-100,1,1156.52,0,1069.57,0,160.43,1230
+"AWU1ZSUN","discount_code","fixed_amount","order",-204,1,1199.99,0,1022.61,0,153.39,1176
+"QX7OTU7Y","discount_code","fixed_amount","order",-200,1,1195.64,0,1021.74,0,153.26,1175
+"HRW2ZAYJ","discount_code","fixed_amount","order",-1000,1,1879.11,0,1009.57,0,151.43,1161
+"ISBWNWSJ","discount_code","percentage","order",-129,1,1121.73,0,1009.57,0,151.43,1161
+"For containers","manual","fixed_amount",,-180,2,1156.52,0,1000,0,150,1150
+"NY37UOU4","discount_code","fixed_amount","order",-1,1,991.3,0,990.44,0,148.56,1139
+"VOTWJWCX","discount_code","fixed_amount","order",-200,1,1156.51,0,982.61,0,147.39,1130
+"UD48NZDM","discount_code","fixed_amount","order",-200,1,1152.16,0,978.26,0,146.74,1125
+"XZQAFYDN","discount_code","fixed_amount","order",-50,1,1021.73,0,978.26,0,146.74,1125
+"Y71ZUFBB","discount_code","fixed_amount","order",-500,1,1399.99,0,965.22,0,144.78,1110
+"Happy Hour Discount-2026-01-30T22:00:00Z","automatic","percentage","order",-194.25,1,1126.06,0,957.17,0,143.58,1100.75
+"PBDARQR4","discount_code","fixed_amount","order",-100,1,1043.46,0,956.52,0,143.48,1100
+"LIKQSU8Y","discount_code","fixed_amount","order",-1000,1,1826.07,0,956.52,0,143.48,1100
+"K6NXBHA0","discount_code","fixed_amount","order",-1,1,956.5,0,955.65,0,143.35,1099
+"UBXWOCLX","discount_code","fixed_amount","order",-423,1,1321.73,0,953.91,0,143.09,1097
+"EN3YW1YB","discount_code","fixed_amount","order",-1000,1,1872.15,0,978.96,0,117.04,1096
+"EMCD7YHX","discount_code","fixed_amount","order",-50,1,986.93,0,943.48,0,141.52,1085
+"LMVEWZJ4","discount_code","fixed_amount","order",-40,1,973.89,0,939.13,0,140.87,1080
+"GL4IHKEK","discount_code","fixed_amount","order",-1,1,939.1,0,938.26,0,140.74,1079
+"JLKDCQIQ","discount_code","fixed_amount","order",-500,1,1368.67,0,933.91,0,140.09,1074
+"IWV5KHID","discount_code","fixed_amount","order",-1,1,930.43,0,929.57,0,139.43,1069
+"Happy Hour Discount-2026-01-07T22:00:00Z","automatic","percentage","order",-186,1,1103.02,0,937.59,0,116.41,1054
+"ULFCIPVC","discount_code","percentage","order",-116,1,1008.7,0,907.83,0,136.17,1044
+"XSDJVLHR","discount_code","percentage","order",-116,1,1008.7,0,907.83,0,136.17,1044
+"E4LK1N6M","discount_code","fixed_amount","order",-100,1,991.29,0,904.35,0,135.65,1040
+"YR5JCN0G","discount_code","fixed_amount","order",-200,1,1098.02,0,899.13,0,134.87,1034
+"4NN8ATJS","discount_code","fixed_amount","order",-500,1,1326.07,0,891.3,0,133.7,1025
+"Q6FGWZFT","discount_code","fixed_amount","order",-500,1,1321.73,0,886.96,0,133.04,1020
+"XEEVCVWD","discount_code","fixed_amount","order",-200,1,1220,0,1020,0,0,1020
+"YNSR3DCX","discount_code","fixed_amount","order",-200,1,1023.47,0,849.57,0,127.43,977
+"HZN0NM3U","discount_code","fixed_amount","order",-232,1,1043.46,0,841.74,0,126.26,968
+"UFZYJMJ1","discount_code","fixed_amount","order",-100,1,926.07,0,839.13,0,125.87,965
+"VPZPRUZT","discount_code","percentage","order",-106.4,1,925.21,0,832.7,0,124.9,957.6
+"0HK0GKBH","discount_code","fixed_amount","order",-150,1,956.52,0,826.09,0,123.91,950
+"NERMXXGE","discount_code","fixed_amount","order",-1,1,826.08,0,825.22,0,123.78,949
+"AESLSVGN","discount_code","fixed_amount","order",-30,1,843.46,0,817.39,0,122.61,940
+"QKYX0HAP","discount_code","fixed_amount","order",-100,1,897.36,0,810.43,0,121.57,932
+"M83JYWLG","discount_code","fixed_amount","order",-1000,1,1754.34,0,846.3,0,85.7,932
+"45NJ6LIC","discount_code","fixed_amount","order",-200,1,982.59,0,808.7,0,121.3,930
+"ZZX6UDFB","discount_code","fixed_amount","order",-44,1,843.47,0,805.22,0,120.78,926
+"KPYZ4ZFO","discount_code","fixed_amount","order",-31,1,826.08,0,799.13,0,119.87,919
+"QWCABI45","discount_code","percentage","order",-111.8,1,972.12,0,777.74,0,116.66,894.4
+"MTIKQMHS","discount_code","percentage","order",-111.8,1,972.12,0,777.74,0,116.66,894.4
+"CSN0IWLH","discount_code","fixed_amount","order",-200,1,947.81,0,773.91,0,116.09,890
+"YTKJBP99","discount_code","fixed_amount","order",-168,1,917.38,0,771.3,0,115.7,887
+"PFXTMJWL","discount_code","fixed_amount","order",-400,1,1114.75,0,766.96,0,115.04,882
+"UZWFRDLR","discount_code","fixed_amount","order",-282,1,1008.68,0,763.48,0,114.52,878
+"OGGVARQN","discount_code","percentage","order",-97,1,843.46,0,759.13,0,113.87,873
+"Happy Hour Discount-2026-01-25T22:00:00Z","automatic","percentage","order",-151.5,1,878.24,0,746.52,0,111.98,858.5
+"RVVZ0TLJ","discount_code","fixed_amount","order",-100,1,826.08,0,739.13,0,110.87,850
+"NNVBNLUT","discount_code","fixed_amount","order",-200,1,1050,0,850,0,0,850
+"TSIWGUMV","discount_code","fixed_amount","order",-100,1,826.08,0,739.13,0,110.87,850
+"PRF7MGQG","discount_code","fixed_amount","order",-620,1,1269.54,0,730.43,0,109.57,840
+"XEHFZADT","discount_code","fixed_amount","order",-200,1,891.29,0,717.39,0,107.61,825
+"XPGQKNHX","discount_code","fixed_amount","order",-400,1,1060.85,0,713.04,0,106.96,820
+"Happy Hour Discount-2026-01-12T22:00:00Z","automatic","percentage","order",-142.5,1,826.08,0,702.17,0,105.33,807.5
+"IIA7Q3RN","discount_code","fixed_amount","order",-200,1,858.26,0,684.35,0,102.65,787
+"UNATHFB9","discount_code","fixed_amount","order",-1,1,678.25,0,677.39,0,101.61,779
+"Happy Hour Discount-2026-01-31T22:00:00Z","automatic","percentage","order",-134.25,1,778.24,0,661.52,0,99.23,760.75
+"4WB430ZG","discount_code","fixed_amount","order",-1,1,660.86,0,660,0,99,759
+"D1SJXHJG","discount_code","fixed_amount","order",-670,1,1238.22,0,655.65,0,98.35,754
+"5OA4SCTJ","discount_code","fixed_amount","order",-200,1,826.07,0,652.17,0,97.83,750
+"L6SUZEIQ","discount_code","fixed_amount","order",-200,1,826.08,0,652.17,0,97.83,750
+"O9WAZWJF","discount_code","fixed_amount","order",-270,1,886.96,0,652.18,0,97.82,750
+"UZCJNTOT","discount_code","fixed_amount","order",-200,1,826.08,0,652.17,0,97.83,750
+"4FYDB67M","discount_code","fixed_amount","order",-160,1,791.29,0,652.17,0,97.83,750
+"EEXWYLKS","discount_code","fixed_amount","order",-31,1,703.02,0,675.1,0,73.9,749
+"2CUGSIOR","discount_code","fixed_amount","order",-400,1,1019.54,0,663.08,0,80.92,744
+"RB8YIFRY","discount_code","percentage","order",-82,1,713.04,0,641.74,0,96.26,738
+"ZE2VHNAT","discount_code","fixed_amount","order",-100,1,712.16,0,625.22,0,93.78,719
+"BGMVWJSV","discount_code","fixed_amount","order",-200,1,798.24,0,624.35,0,93.65,718
+"GJ2ZYXNC","discount_code","fixed_amount","order",-100,1,708.67,0,621.74,0,93.26,715
+"4ICKZQDX","discount_code","fixed_amount","order",-48,1,660.86,0,619.13,0,92.87,712
+"GV2QAVN1","discount_code","fixed_amount","order",-200,1,778.25,0,604.35,0,90.65,695
+"V8HQZCC0","discount_code","percentage","order",-77,1,669.55,0,602.61,0,90.39,693
+"UBMTGS6K","discount_code","fixed_amount","order",-65,1,656.5,0,600,0,90,690
+"Z7A7HMUB","discount_code","fixed_amount","order",-18,1,607.82,0,592.18,0,88.82,681
+"T0WLX91A","discount_code","fixed_amount","order",-100,1,673.9,0,586.96,0,88.04,675
+"D7Q2FDCI","discount_code","fixed_amount","order",-100,1,673.9,0,586.96,0,88.04,675
+"WU3UV2JB","discount_code","percentage","order",-74.5,1,647.81,0,583.04,0,87.46,670.5
+"L0DLJE9R","discount_code","percentage","order",-74,1,740,0,666,0,0,666
+"NGCNCPNG","discount_code","fixed_amount","order",-200,1,747.81,0,573.91,0,86.09,660
+"GU6NWB44","discount_code","fixed_amount","order",-310,1,843.46,0,573.91,0,86.09,660
+"JRPCFC1X","discount_code","fixed_amount","order",-100,1,660.83,0,573.91,0,86.09,660
+"BLT2P9SF","discount_code","fixed_amount","order",-100,1,659.97,0,573.04,0,85.96,659
+"ZL2NPJKC","discount_code","fixed_amount","order",-295,1,826.09,0,569.57,0,85.43,655
+"Z5GKYLAX","discount_code","fixed_amount","order",-100,1,652.17,0,565.22,0,84.78,650
+"QFNZZY3B","discount_code","fixed_amount","order",-100,1,652.17,0,565.22,0,84.78,650
+"2Q8NSADG","discount_code","fixed_amount","order",-100,1,652.17,0,565.22,0,84.78,650
+"NTAMM4XF","discount_code","fixed_amount","order",-220,1,756.52,0,565.22,0,84.78,650
+"FTENPPOO","discount_code","fixed_amount","order",-500,1,991.3,0,556.52,0,83.48,640
+"D1KVTWTE","discount_code","fixed_amount","order",-200,1,726.07,0,552.17,0,82.83,635
+"RXDMCQ8R","discount_code","fixed_amount","order",-100,1,630.43,0,543.48,0,81.52,625
+"BEPJRHJC","discount_code","fixed_amount","order",-1,1,620,0,619,0,0,619
+"ZFPWABGO","discount_code","fixed_amount","order",-144,1,660.86,0,535.65,0,80.35,616
+"HTRJZXQB","discount_code","fixed_amount","order",-200,1,815,0,615,0,0,615
+"Promotion on joint wanted out yet and we told member about the special already","manual","fixed_amount",,-50,1,565.2,0,521.74,0,78.26,600
+"OULJYLT1","discount_code","fixed_amount","order",-1,1,521.73,0,520.87,0,78.13,599
+"Z3BOAITK","discount_code","fixed_amount","order",-100,1,599.11,0,512.17,0,76.83,589
+"1VNZPC51","discount_code","fixed_amount","order",-64,1,565.21,0,509.57,0,76.43,586
+"R1XYI4RL","discount_code","percentage","order",-65,1,565.22,0,508.7,0,76.3,585
+"M7MBFK0Q","discount_code","fixed_amount","order",-100,1,595.65,0,508.7,0,76.3,585
+"FRLXII7B","discount_code","fixed_amount","order",-500,1,930.42,0,495.65,0,74.35,570
+"XQ1GWVAN","discount_code","fixed_amount","order",-217,1,678.26,0,489.57,0,73.43,563
+"ID9Y8XDC","discount_code","fixed_amount","order",-200,1,660.86,0,486.96,0,73.04,560
+"SO8O64OT","discount_code","fixed_amount","order",-36,1,537.82,0,505.01,0,48.99,554
+"GGFHOT0J","discount_code","fixed_amount","order",-200,1,647.81,0,473.91,0,71.09,545
+"LWVM9O51","discount_code","fixed_amount","order",-100,1,560.86,0,473.91,0,71.09,545
+"TQGWN7QK","discount_code","fixed_amount","order",-100,1,560.86,0,473.91,0,71.09,545
+"Happy Hour Discount-2026-02-02T22:00:00Z","automatic","percentage","order",-108.75,3,556.51,0,473.04,0,58.21,531.25
+"Happy Hour Discount-2026-01-21T22:00:00Z","automatic","percentage","order",-90,1,521.74,0,443.48,0,66.52,510
+"Happy Hour Discount-2026-01-10T22:00:00Z","automatic","percentage","order",-90,1,521.74,0,443.48,0,66.52,510
+"WEBVVAU7","discount_code","fixed_amount","order",-100,1,527.82,0,440.87,0,66.13,507
+"DWU8MDNQ","discount_code","fixed_amount","order",-200,1,613.02,0,439.13,0,65.87,505
+"WCUP22LV","discount_code","fixed_amount","order",-100,1,521.72,0,434.78,0,65.22,500
+"FEICZUCI","discount_code","fixed_amount","order",-100,1,514.76,0,427.83,0,64.17,492
+"2SNM1BHO","discount_code","fixed_amount","order",-80,1,495.65,0,426.09,0,63.91,490
+"GPMDY21N","discount_code","fixed_amount","order",-93,1,495.64,0,414.78,0,62.22,477
+"ORQGZKEA","discount_code","fixed_amount","order",-100,1,495.65,0,408.7,0,61.3,470
+"PQNTTR4D","discount_code","percentage","order",-52,1,452.17,0,406.96,0,61.04,468
+"EGDXFISN","discount_code","fixed_amount","order",-136,1,521.74,0,403.48,0,60.52,464
+"V6VM4CE3","discount_code","fixed_amount","order",-300,1,660.86,0,400,0,60,460
+"Z0STMQMT","discount_code","fixed_amount","order",-148,1,521.73,0,393.04,0,58.96,452
+"KALOGQHS","discount_code","fixed_amount","order",-40,1,426.07,0,391.3,0,58.7,450
+"EU1YQNWS","discount_code","fixed_amount","order",-500,1,826.07,0,391.3,0,58.7,450
+"Happy Hour Discount-2026-02-01T22:00:00Z","automatic","percentage","order",-78.75,1,456.51,0,388.04,0,58.21,446.25
+"B7WJ3UMJ","discount_code","fixed_amount","order",-19,1,400,0,383.48,0,57.52,441
+"FUDIZGYA","discount_code","fixed_amount","order",-312,1,652.16,0,380.87,0,57.13,438
+"DLO5PLGJ","discount_code","fixed_amount","order",-90,1,456.52,0,378.26,0,56.74,435
+"JWCDE066","discount_code","fixed_amount","order",-135,1,495.65,0,378.26,0,56.74,435
+"ANGDM0GZ","discount_code","fixed_amount","order",-100,1,456.51,0,369.57,0,55.43,425
+"JWOKV7O2","discount_code","fixed_amount","order",-500,1,800,0,365.22,0,54.78,420
+"J7EDQ67E","discount_code","percentage","order",-46,1,400,0,360,0,54,414
+"HFM6TICX","discount_code","fixed_amount","order",-157,1,495.65,0,359.13,0,53.87,413
+"Welcome back","manual","percentage",,-45,1,391.3,0,352.17,0,52.83,405
+"LFW4S7C7","discount_code","fixed_amount","order",-48,1,391.3,0,349.57,0,52.43,402
+"OW6KQLTH","discount_code","fixed_amount","order",-100,1,434.77,0,347.83,0,52.17,400
+"0RCU6R8J","discount_code","fixed_amount","order",-100,1,434.78,0,347.83,0,52.17,400
+"WEJSFV4K","discount_code","fixed_amount","order",-100,1,434.78,0,347.83,0,52.17,400
+"PICVGGS0","discount_code","fixed_amount","order",-192,1,495.65,0,328.7,0,49.3,378
+"XUAKCQRE","discount_code","fixed_amount","order",-200,1,495.64,0,321.74,0,48.26,370
+"3HHZWLAZ","discount_code","fixed_amount","order",-200,1,495.65,0,321.74,0,48.26,370
+"IGH7OSPG","discount_code","fixed_amount","order",-200,1,570,0,370,0,0,370
+"Containers recycled","manual","fixed_amount",,-10,1,330.43,0,321.74,0,48.26,370
+"BAKSAX2H","discount_code","fixed_amount","order",-67,1,373.9,0,315.65,0,47.35,363
+"GS8QPQ53","discount_code","fixed_amount","order",-20,1,330.43,0,313.04,0,46.96,360
+"KYWCMUVA","discount_code","fixed_amount","order",-500,1,747.81,0,313.04,0,46.96,360
+"LYKBRICU","discount_code","fixed_amount","order",-23,1,330.44,0,310.44,0,46.56,357
+"LS1BGPI8","discount_code","fixed_amount","order",-100,1,395.65,0,308.7,0,46.3,355
+"1U8LWHBW","discount_code","fixed_amount","order",-100,1,395.65,0,308.7,0,46.3,355
+"2MAZF4YI","discount_code","fixed_amount","order",-100,1,391.3,0,304.35,0,45.65,350
+"L6OKACOM","discount_code","fixed_amount","order",-40,1,330.43,0,295.65,0,44.35,340
+"Happy Hour Discount-2026-01-27T22:00:00Z","automatic","percentage","order",-60,1,347.81,0,295.65,0,44.35,340
+"E3AUER5Y","discount_code","fixed_amount","order",-41,1,330.43,0,294.78,0,44.22,339
+"QVO7FAIT","discount_code","fixed_amount","order",-200,1,465.2,0,291.3,0,43.7,335
+"A4AHBHOV","discount_code","fixed_amount","order",-50,1,330.42,0,286.96,0,43.04,330
+"WNKFMWXF","discount_code","fixed_amount","order",-100,1,369.55,0,282.61,0,42.39,325
+"Happy Hour Discount-2026-01-17T22:00:00Z","automatic","percentage","order",-57,1,330.43,0,280.87,0,42.13,323
+"T64X41IT","discount_code","fixed_amount","order",-260,1,495.66,0,269.57,0,40.43,310
+"9PUIAEET","discount_code","fixed_amount","order",-100,1,347.82,0,260.87,0,39.13,300
+"70DFLSZK","discount_code","fixed_amount","order",-100,1,347.82,0,260.87,0,39.13,300
+"JWVSI1VB","discount_code","fixed_amount","order",-100,1,347.82,0,260.87,0,39.13,300
+"3MUDGMYO","discount_code","fixed_amount","order",-100,1,347.82,0,260.87,0,39.13,300
+"H8QUQRNB","discount_code","fixed_amount","order",-100,1,343.47,0,256.52,0,38.48,295
+"D7QO5SM1","discount_code","fixed_amount","order",-377,1,582.6,0,254.78,0,38.22,293
+"NEY67TU5","discount_code","fixed_amount","order",-200,1,465.21,0,247.61,0,37.14,284.75
+"5ZZGL6NR","discount_code","fixed_amount","order",-100,1,330.43,0,243.48,0,36.52,280
+"BPAD2V1A","discount_code","fixed_amount","order",-100,1,330.43,0,243.48,0,36.52,280
+"XHFJQUGL","discount_code","fixed_amount","order",-100,1,330.43,0,243.48,0,36.52,280
+"WTFU4GVX","discount_code","fixed_amount","order",-100,1,330.43,0,243.48,0,36.52,280
+"2GPOYTMB","discount_code","fixed_amount","order",-100,1,330.43,0,243.48,0,36.52,280
+"For 4 containers","manual","fixed_amount",,-20,1,300,0,280,0,0,280
+"CM12KNH6","discount_code","fixed_amount","order",-100,1,330.43,0,243.48,0,36.52,280
+"VXRFV3JQ","discount_code","fixed_amount","order",-100,1,380,0,280,0,0,280
+"CLVAUSWG","discount_code","fixed_amount","order",-100,1,330.42,0,243.48,0,36.52,280
+"OU6VLDXH","discount_code","fixed_amount","order",-100,1,330.43,0,243.48,0,36.52,280
+"QXHD48NC","discount_code","fixed_amount","order",-100,1,330.43,0,243.48,0,36.52,280
+"MMOZWYCM","discount_code","fixed_amount","order",-100,1,330.43,0,243.48,0,36.52,280
+"5UYCVM6C","discount_code","fixed_amount","order",-200,1,413.03,0,239.13,0,35.87,275
+"TCDJNWGU","discount_code","fixed_amount","order",-1000,1,1104.32,0,234.78,0,35.22,270
+"UUXCIW7U","discount_code","fixed_amount","order",-132,1,347.81,0,233.04,0,34.96,268
+"H37SNN0T","discount_code","fixed_amount","order",-100,1,365,0,265,0,0,265
+"NMB6G7UM","discount_code","fixed_amount","order",-116,1,330.42,0,229.57,0,34.43,264
+"YXZA8I7J","discount_code","fixed_amount","order",-500,1,660.87,0,226.09,0,33.91,260
+"GAB6VS5W","discount_code","fixed_amount","order",-200,1,460,0,260,0,0,260
+"AZTYGFCI","discount_code","fixed_amount","order",-500,1,660.87,0,226.09,0,33.91,260
+"Member used a promo code online . Member ordered brainstorm and it was sold out . Member was called to change product to Superberry crush and lost his promo of R504. The code was CNTJLP5F.","manual","fixed_amount",,-504,1,660.87,0,222.61,0,33.39,256
+"C3IFF4HI","discount_code","fixed_amount","order",-200,1,395.65,0,221.74,0,33.26,255
+"MURYH6JV","discount_code","fixed_amount","order",-831,1,930.44,0,207.83,0,31.17,239
+"D0FYGQQ2","discount_code","percentage","order",-25,1,217.38,0,195.65,0,29.35,225
+"DSUTQUJV","discount_code","fixed_amount","order",-100,1,269.56,0,182.61,0,27.39,210
+"UPL3G4X9","discount_code","fixed_amount","order",-100,1,260.86,0,173.91,0,26.09,200
+"WD7MS3MH","discount_code","fixed_amount","order",-100,1,300,0,200,0,0,200
+"JCAKM07A","discount_code","fixed_amount","order",-200,1,330.43,0,156.52,0,23.48,180
+"B9GCJQ0J","discount_code","fixed_amount","order",-200,1,330.43,0,156.52,0,23.48,180
+"4F7JBIOJ","discount_code","fixed_amount","order",-200,1,330.43,0,156.52,0,23.48,180
+"U11SESDF","discount_code","fixed_amount","order",-1000,1,1023.44,0,153.91,0,23.09,177
+"4WMPAIJS","discount_code","fixed_amount","order",-200,1,326.07,0,152.17,0,22.83,175
+"HPV4XRX8","discount_code","fixed_amount","order",-500,1,670,0,170,0,0,170
+"OPE4FJRN","discount_code","fixed_amount","order",-230,1,347.82,0,147.83,0,22.17,170
+"3ZM71UIJ","discount_code","fixed_amount","order",-100,1,230.42,0,143.48,0,21.52,165
+"Happy hour","manual","percentage",,-38,1,165.21,0,132.17,0,19.83,152
+"CJEZJMM4","discount_code","fixed_amount","order",-100,1,217.38,0,130.43,0,19.57,150
+"ZBG4BZQS","discount_code","fixed_amount","order",-200,1,304.33,0,130.43,0,19.57,150
+"PPGHHEU6","discount_code","fixed_amount","order",-20,1,147.81,0,130.43,0,19.57,150
+"LNILRD6H","discount_code","fixed_amount","order",-100,1,217.38,0,130.43,0,19.57,150
+"OQBTXGAP","discount_code","fixed_amount","order",-100,1,208.69,0,121.74,0,18.26,140
+"HN6TUGXD","discount_code","fixed_amount","order",-65,1,165.22,0,108.7,0,16.3,125
+"VVCUKXT6","discount_code","fixed_amount","order",-500,1,539.13,0,104.35,0,15.65,120
+"KIXEQKW3","discount_code","fixed_amount","order",-200,1,320,0,120,0,0,120
+"VAIUX5YM","discount_code","fixed_amount","order",-100,1,215,0,115,0,0,115
+"VHRTE9YK","discount_code","fixed_amount","order",-200,1,269.55,0,95.65,0,14.35,110
+"XR8YBKM4","discount_code","fixed_amount","order",-100,1,182.59,0,95.65,0,14.35,110
+"8SHY6QJP","discount_code","fixed_amount","order",-200,1,269.55,0,95.65,0,14.35,110
+"WOS8K13H","discount_code","fixed_amount","order",-500,1,521.76,0,86.96,0,13.04,100
+"LBTEXJWP","discount_code","fixed_amount","order",-200,1,260.88,0,86.96,0,13.04,100
+"BNKGQYX1","discount_code","fixed_amount","order",-100,1,173.92,0,86.96,0,13.04,100
+"OJLBN5OT","discount_code","fixed_amount","order",-100,1,173.92,0,86.96,0,13.04,100
+"M3BXKF3H","discount_code","fixed_amount","order",-100,1,173.92,0,86.96,0,13.04,100
+"GVDXEUQQ","discount_code","fixed_amount","order",-24,1,104.35,0,83.48,0,12.52,96
+"GPAX6JOS","discount_code","fixed_amount","order",-100,1,169.56,0,82.61,0,12.39,95
+"EXKIJRAI","discount_code","fixed_amount","order",-100,1,165.21,0,78.26,0,11.74,90
+"R265 Containers plus R100 point","manual","fixed_amount",,-365,1,395.64,0,78.26,0,11.74,90
+"Q9SL2GKZ","discount_code","fixed_amount","order",-100,1,165.21,0,78.26,0,11.74,90
+"USHMW9CK","discount_code","fixed_amount","order",-100,1,165.21,0,78.26,0,11.74,90
+"QZYQJMIP","discount_code","fixed_amount","order",-100,1,165.21,0,78.26,0,11.74,90
+"KGQJRLVG","discount_code","fixed_amount","order",-100,1,165.21,0,78.26,0,11.74,90
+"MBDB73BU","discount_code","fixed_amount","order",-100,1,165.21,0,78.26,0,11.74,90
+"OVXTVWGJ","discount_code","fixed_amount","order",-100,1,165.21,0,78.26,0,11.74,90
+"PAXUV1TH","discount_code","fixed_amount","order",-100,1,165.21,0,78.26,0,11.74,90
+"YGYA3R95","discount_code","fixed_amount","order",-100,1,165.21,0,78.26,0,11.74,90
+"VYCUHLK5","discount_code","fixed_amount","order",-100,1,165.21,0,78.26,0,11.74,90
+"60WZZCGX","discount_code","fixed_amount","order",-100,1,165.21,0,78.26,0,11.74,90
+"NTDYESAG","discount_code","fixed_amount","order",-100,1,165.21,0,78.26,0,11.74,90
+"OCVEZYGM","discount_code","fixed_amount","order",-100,1,165.21,0,78.26,0,11.74,90
+"DDOZAFUE","discount_code","fixed_amount","order",-100,1,165.21,0,78.26,0,11.74,90
+"J4RM2XTV","discount_code","fixed_amount","order",-3824,1,3399.85,0,74.78,0,11.22,86
+"RGAQS8ON","discount_code","fixed_amount","order",-106,1,165.2,0,73.04,0,10.96,84
+"CNZAMMGW","discount_code","fixed_amount","order",-100,1,152.18,0,65.22,0,9.78,75
+"PU37FQJB","discount_code","fixed_amount","order",-100,1,165.21,0,60.87,0,9.13,70
+"TBRK9BCL","discount_code","fixed_amount","order",-500,1,495.65,0,60.87,0,9.13,70
+"Was supposed to be added with first sales, with jpoints","manual","fixed_amount",,-20,1,165.21,0,60.87,0,9.13,70
+"7SWTFREM","discount_code","fixed_amount","order",-200,1,234.78,0,60.87,0,9.13,70
+"RU1WILFL","discount_code","fixed_amount","order",-100,1,146.95,0,60,0,9,69
+"WYV1YJMC","discount_code","fixed_amount","order",-356,1,365.19,0,55.65,0,8.35,64
+"Serenity Premium Only","manual","percentage",,-5402.43,20,4743,0,47.43,0,7.14,54.57
+"CG6YTIQ9","discount_code","fixed_amount","order",-100,1,130.44,0,43.48,0,6.52,50
+"LEHHUKVJ","discount_code","fixed_amount","order",-100,1,130.44,0,43.48,0,6.52,50
+"8XETXFAK","discount_code","fixed_amount","order",-100,1,121.72,0,34.78,0,5.22,40
+"LJU6VZZU","discount_code","fixed_amount","order",-500,1,460.91,0,26.09,0,3.91,30
+"ORCVQOLH","discount_code","fixed_amount","order",-100,1,113.05,0,26.09,0,3.91,30
+"OW5BXZ9Y","discount_code","fixed_amount","order",-100,1,109.56,0,22.61,0,3.39,26
+"WP2UFSQJ","discount_code","fixed_amount","order",-49,1,65.22,0,22.61,0,3.39,26
+"FZ8NBMSQ","discount_code","fixed_amount","order",-100,1,108.7,0,21.74,0,3.26,25
+"81VFPODB","discount_code","fixed_amount","order",-200,1,195.66,0,21.74,0,3.26,25
+"EI4CFAJ4","discount_code","fixed_amount","order",-1000,1,891.32,0,21.74,0,3.26,25
+"U3KQSDAZ","discount_code","fixed_amount","order",-100,1,104.34,0,17.39,0,2.61,20
+"CVIMFUGW","discount_code","fixed_amount","order",-100,1,104.34,0,17.39,0,2.61,20
+"EHXKBBKR","discount_code","fixed_amount","order",-100,1,104.34,0,17.39,0,2.61,20
+"EMWD2JNV","discount_code","fixed_amount","order",-180,1,173.9,0,17.39,0,2.61,20
+"HSSGJWAB","discount_code","fixed_amount","order",-100,1,104.34,0,17.39,0,2.61,20
+"SCOFKFTV","discount_code","fixed_amount","order",-26,1,513.03,-473.82,16.61,0,2.5,19.11
+"WLKXICM5","discount_code","fixed_amount","order",-1,1,17.38,0,16.52,0,2.48,19
+"JNEUMTAQ","discount_code","fixed_amount","order",-100,1,101.72,0,14.78,0,2.22,17
+"HRTLST6H","discount_code","fixed_amount","order",-100,1,101.72,0,14.78,0,2.22,17
+"PCF9W4LJ","discount_code","fixed_amount","order",-100,1,101.71,0,14.78,0,2.22,17
+"SOM7QN9L","discount_code","fixed_amount","order",-100,1,99.97,0,13.04,0,1.96,15
+"RT7KBKNE","discount_code","fixed_amount","order",-1,1,17.38,0,11.57,0,1.73,13.3
+"FULJ4NT1","discount_code","fixed_amount","order",-100,1,95.68,0,8.7,0,1.3,10
+"F2XTGF1I","discount_code","fixed_amount","order",-200,1,181.82,0,7.83,0,1.17,9
+"SDTGBLVM","discount_code","fixed_amount","order",-100,1,91.34,0,4.35,0,0.65,5
+"ATLEQAHF","discount_code","fixed_amount","order",-200,1,175.72,0,1.74,0,0.26,2
+"V4XTUG2A","discount_code","fixed_amount","order",-100,1,88.74,0,1.74,0,0.26,2
+"Free membership","manual","percentage",,-99,1,87,0,0.87,0,0.13,1
+"OJJX80VL","discount_code","fixed_amount","order",-200,1,174.87,0,0.87,0,0.13,1
+"YGXLCLKU","discount_code","percentage","shipping",-99,1,0,0,0,0,0,0
+"BO96KVEG","discount_code","fixed_amount","order",-95,1,95,0,0,0,0,0
+"9UZ4LHEO","discount_code","fixed_amount","order",-100,1,100,0,0,0,0,0
+"HRRMYUJQ","discount_code","fixed_amount","order",-990,1,990,0,0,0,0,0
+"ZIJ1XBGG","discount_code","fixed_amount","order",-129,1,129,0,0,0,0,0
+"MBMEGR7L","discount_code","fixed_amount","order",-25,1,25,0,0,0,0,0
+"EHUSQYP7","discount_code","fixed_amount","order",-37,1,37,0,0,0,0,0
+"19XZ7BTI","discount_code","fixed_amount","order",-150,1,150,0,0,0,0,0
+"RFW3OTGL","discount_code","fixed_amount","order",-100,1,100,0,0,0,0,0
+"Discount code CNTJLP5F . Brainstorm was sold out and member used his discount code for the product .when changing the product the code was gone .","manual","fixed_amount",,-760,1,760,0,0,0,0,0
+"4IB9J2BH","discount_code","fixed_amount","order",-100,1,100,0,0,0,0,0
+"R4H3P2TK","discount_code","fixed_amount","product",-100,1,100,0,0,0,0,0
+"KRGGGHUG","discount_code","fixed_amount","order",-200,1,200,0,0,0,0,0
+"GEK4VOWL","discount_code","fixed_amount","order",-570,1,570,0,0,0,0,0
+"NJGIGBUX","discount_code","fixed_amount","order",-167,1,167,0,0,0,0,0
+"SOVONVSY","discount_code","fixed_amount","order",-100,1,100,0,0,0,0,0
+"K4PZLPZJ","discount_code","fixed_amount","order",-82,1,82,0,0,0,0,0
+"DODD7DYN","discount_code","fixed_amount","order",-100,1,100,0,0,0,0,0
+"CQDHMHRL","discount_code","fixed_amount","order",-87,1,87,0,0,0,0,0
+"SGUQGWGH","discount_code","fixed_amount","order",-190,1,190,0,0,0,0,0
+"VQTC5AWG","discount_code","fixed_amount","order",-480,1,480,0,0,0,0,0
+"VCZYCEVW","discount_code","fixed_amount","order",-100,1,100,0,0,0,0,0
+"NJSIYV3P","discount_code","fixed_amount","order",-190,1,190,0,0,0,0,0
+"Z60JWDLB","discount_code","fixed_amount","order",-800,1,800,0,0,0,0,0
+"RZBN52RX","discount_code","fixed_amount","product",-100,1,100,0,0,0,0,0
+"TLK4ZHPW","discount_code","fixed_amount","order",-175,1,175,0,0,0,0,0
+"8GRMBKB8","discount_code","fixed_amount","product",-100,1,100,0,0,0,0,0
+"OY8QUQ3G","discount_code","fixed_amount","order",-87,1,87,0,0,0,0,0
+"OVHQAL5X","discount_code","fixed_amount","order",-90,1,90,0,0,0,0,0
+"1MV2SQJ8","discount_code","fixed_amount","order",-75,1,75,0,0,0,0,0
+"P2TJD7CB","discount_code","fixed_amount","order",-95,1,95,0,0,0,0,0
+"FDPS2HNS","discount_code","percentage","shipping",0,1,0,0,0,0,0,0
+"B5W3YTEI","discount_code","fixed_amount","order",-100,1,100,0,0,0,0,0
+"0PIUKC0M","discount_code","fixed_amount","order",-190,1,190,0,0,0,0,0
+"EOKKJ2DR","discount_code","fixed_amount","order",-375,1,375,0,0,0,0,0
+"PLHM8KJS","discount_code","fixed_amount","product",-100,1,100,0,0,0,0,0
+"77XMFL8L","discount_code","fixed_amount","product",-100,1,100,0,0,0,0,0
+"IT1YI0QQ","discount_code","fixed_amount","order",-169,1,169,0,0,0,0,0
+"RIACWTY8","discount_code","fixed_amount","order",-190,1,190,0,0,0,0,0
+"PQ90FSFJ","discount_code","fixed_amount","order",-95,1,95,0,0,0,0,0
+"8N2GMRMP","discount_code","fixed_amount","order",-84,1,84,0,0,0,0,0
+"T2MJQI92","discount_code","fixed_amount","order",-500,1,570,0,0,0,0,0
+"J2IHP690","discount_code","fixed_amount","order",-250,1,250,0,0,0,0,0
+"0NJNBNSG","discount_code","fixed_amount","order",-95,1,95,0,0,0,0,0
+"KA97XKJR","discount_code","fixed_amount","order",-950,1,950,0,0,0,0,0
+"B9WBPZTB","discount_code","fixed_amount","product",-100,1,100,0,0,0,0,0
+"D2PIE5WF","discount_code","fixed_amount","order",-85,1,85,0,0,0,0,0
+"DBNZGHYM","discount_code","fixed_amount","order",-200,1,200,0,0,0,0,0
+"OUR4HZUY","discount_code","fixed_amount","order",-200,1,200,0,0,0,0,0
+"9GSSMOHL","discount_code","fixed_amount","order",-90,1,90,0,0,0,0,0
+"S5LBUBWY","discount_code","fixed_amount","order",-190,1,190,0,0,0,0,0
+"VUSQN1IX","discount_code","fixed_amount","order",-200,1,200,0,0,0,0,0
+"DL9Y3TM6","discount_code","fixed_amount","order",-997,1,997,0,0,0,0,0
+"VLWAPA2K","discount_code","fixed_amount","order",-65,1,65,0,0,0,0,0
+"B5TUDBJS","discount_code","fixed_amount","order",-95,1,95,0,0,0,0,0
+"JEIYKNR9","discount_code","fixed_amount","order",-95,1,95,0,0,0,0,0
+"Received an email that said 10% off and a free 30d membership","manual","percentage",,-100,1,100,0,0,0,0,0
+"CNTJLP5F","discount_code","fixed_amount","order",-504,1,660.87,-222.61,0,0,0,0
+"CGMGQBON","discount_code","fixed_amount","order",-497,1,497,0,0,0,0,0
+"H8U2SYTA","discount_code","fixed_amount","order",-200,1,200,0,0,0,0,0
+"YZ6FUVGS","discount_code","fixed_amount","order",-100,1,100,0,0,0,0,0
+"LIQEUAKR","discount_code","fixed_amount","order",-200,1,200,0,0,0,0,0
+"DRLQFR97","discount_code","fixed_amount","order",-75,1,75,0,0,0,0,0
+"F6YZMIDW","discount_code","fixed_amount","order",-100,1,100,0,0,0,0,0
+"0DY4KVKM","discount_code","fixed_amount","order",-460,1,460,0,0,0,0,0
+"BIBUG5IQ","discount_code","fixed_amount","order",-75,1,75,0,0,0,0,0
+"BA9YZCQL","discount_code","fixed_amount","order",-37,1,37,0,0,0,0,0
+"CYFQZBBC","discount_code","fixed_amount","order",-150,1,150,0,0,0,0,0
+"ABQ6ZMWA","discount_code","fixed_amount","order",-500,1,500,0,0,0,0,0
+"4G6LL1EW","discount_code","fixed_amount","order",-100,1,100,0,0,0,0,0
+"GO0H1CIR","discount_code","fixed_amount","order",-250,1,250,0,0,0,0,0
+"A1VAKZMO","discount_code","fixed_amount","order",-190,1,190,0,0,0,0,0
+"BPHHI2QA","discount_code","fixed_amount","order",-190,1,190,0,0,0,0,0
+"WLC6AY6X","discount_code","fixed_amount","order",-90,1,90,0,0,0,0,0
+"SYEWYUWZ","discount_code","fixed_amount","order",-197,1,197,0,0,0,0,0
+"TNZRFE3O","discount_code","fixed_amount","order",-62,1,62,0,0,0,0,0
+"FZK1VUBK","discount_code","fixed_amount","order",-150,1,150,0,0,0,0,0
+"QZJF4QZT","discount_code","fixed_amount","order",-500,1,500,0,0,0,0,0
+"YBESZ43C","discount_code","fixed_amount","order",-100,1,100,0,0,0,0,0
+"NY9OBTIT","discount_code","fixed_amount","order",-190,1,190,0,0,0,0,0
+"K82LVIND","discount_code","fixed_amount","order",-100,1,100,0,0,0,0,0
+"DJIMBA2M","discount_code","fixed_amount","order",-197,1,197,0,0,0,0,0
+"DGAYK5MR","discount_code","fixed_amount","order",-95,1,95,0,0,0,0,0
+"FLIJU6RP","discount_code","fixed_amount","order",-75,1,75,0,0,0,0,0
+"JS3Y9LVD","discount_code","fixed_amount","order",-190,1,190,0,0,0,0,0
+"1PF0LM5W","discount_code","fixed_amount","order",-35,1,35,0,0,0,0,0
+"YZ67NPD2","discount_code","fixed_amount","order",-25,1,25,0,0,0,0,0
+"3J4KOABW","discount_code","fixed_amount","order",-190,1,190,0,0,0,0,0
+"MMRXMJ3E","discount_code","fixed_amount","order",-95,1,95,0,0,0,0,0
+"CHF2S4YJ","discount_code","fixed_amount","order",-1140,1,1140,0,0,0,0,0
+"X7RIMHJX","discount_code","fixed_amount","order",-200,1,200,0,0,0,0,0
+"K8PISXBN","discount_code","fixed_amount","order",-37,1,37,0,0,0,0,0
+"RRUONHIB","discount_code","fixed_amount","order",-380,1,380,0,0,0,0,0
+"VATKBHGA","discount_code","fixed_amount","order",-85,1,85,0,0,0,0,0
+"GJDDCG1A","discount_code","fixed_amount","order",-100,1,100,0,0,0,0,0
+"40PKJYXW","discount_code","percentage","shipping",-99,1,0,0,0,0,0,0
+"HJPU5YFC","discount_code","fixed_amount","order",-195,1,195,0,0,0,0,0
+"XICKRLZV","discount_code","fixed_amount","order",-85,1,85,0,0,0,0,0
+"LXI5SNSB","discount_code","fixed_amount","order",-85,1,85,0,0,0,0,0
+"DOOIMMVY","discount_code","fixed_amount","order",-190,1,190,0,0,0,0,0
+"Discount","manual","percentage",,-2300,5,2300,0,0,0,0,0
+"OKIPZJEG","discount_code","fixed_amount","order",-94,1,94,0,0,0,0,0
+"MILXXOMA","discount_code","fixed_amount","order",-100,1,100,0,0,0,0,0
+"ZBCTIWFD","discount_code","fixed_amount","order",-490,1,490,0,0,0,0,0
+"CMXZD8MY","discount_code","fixed_amount","order",-118,1,118,0,0,0,0,0
+"WPJF6HLA","discount_code","fixed_amount","order",-100,1,100,0,0,0,0,0
+"F7X6WJLN","discount_code","fixed_amount","order",-200,1,1378.22,-1204.35,0,0,0,0
+"2EIL2C2H","discount_code","fixed_amount","order",-100,1,100,0,0,0,0,0
+"TZN2N1GK","discount_code","fixed_amount","order",-100,1,100,0,0,0,0,0
+"EARG7EAR","discount_code","fixed_amount","order",-53,1,0,0,0,0,0,0
+"4BYBDBZT","discount_code","fixed_amount","order",-37,1,0,0,0,0,0,0

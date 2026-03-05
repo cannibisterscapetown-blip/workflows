@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.cannibisters.adventcalendar</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>/Users/norton/Desktop/Cannibisters Agent/.venv/bin/python</string>
+        <string>/Users/norton/Desktop/Cannibisters Agent/advent_calendar_manager.py</string>
+    </array>
+    <key>WorkingDirectory</key>
+    <string>/Users/norton/Desktop/Cannibisters Agent</string>
+    <key>StartCalendarInterval</key>
+    <dict>
+        <key>Hour</key>
+        <integer>8</integer>
+        <key>Minute</key>
+        <integer>57</integer>
+    </dict>
+    <key>StandardOutPath</key>
+    <string>/tmp/cannibisters_advent_calendar.log</string>
+    <key>StandardErrorPath</key>
+    <string>/tmp/cannibisters_advent_calendar.error.log</string>
+    <key>RunAtLoad</key>
+    <false/>
+</dict>
+</plist>

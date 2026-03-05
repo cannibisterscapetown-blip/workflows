@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>December 2025 Performance Report - Cannibisters</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 210mm;
+            /* A4 width */
+            margin: 0 auto;
+            padding: 40px;
+            background-color: #fff;
+        }
+
+        h1 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #1a1a1a;
+            border-bottom: 2px solid #4CAF50;
+            /* Cannibisters Green-ish */
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-top: 40px;
+            margin-bottom: 15px;
+            background-color: #f8f9fa;
+            padding: 10px;
+            border-left: 5px solid #4CAF50;
+        }
+
+        p {
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        ul {
+            margin-bottom: 20px;
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        strong {
+            color: #000;
+            font-weight: 600;
+        }
+
+        .metric-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .metric-card {
+            border: 1px solid #eee;
+            padding: 15px;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .metric-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            color: #888;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .metric-value {
+            font-size: 18px;
+            font-weight: 700;
+            color: #333;
+        }
+
+        /* Semantic classes for trend colors */
+        .trend-good {
+            color: #27ae60;
+            /* Green */
+            font-size: 14px;
+            margin-left: 5px;
+        }
+
+        .trend-bad {
+            color: #c0392b;
+            /* Red */
+            font-size: 14px;
+            margin-left: 5px;
+        }
+
+        .key-takeaway {
+            background-color: #e8f5e9;
+            border: 1px solid #c8e6c9;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+
+        .key-takeaway strong {
+            color: #2e7d32;
+        }
+
+        @media print {
+            body {
+                padding: 0;
+                max-width: 100%;
+            }
+
+            .no-print {
+                display: none;
+            }
+
+            h2 {
+                break-after: avoid;
+            }
+
+            .metric-card {
+                break-inside: avoid;
+            }
+        }
+
+
+        .chart-container {
+            position: relative;
+            height: 300px;
+            width: 100%;
+            margin-bottom: 40px;
+            page-break-inside: avoid;
+        }
+
+        @media print {
+            .chart-container {
+                break-inside: avoid;
+            }
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <div style="text-align: center; margin-bottom: 30px;">
+        <img src="BASE.png" alt="Cannibisters Logo" style="max-width: 300px; height: auto;">
+    </div>
+
+    <h1>Digital Marketing Performance Report – December 2025</h1>
+
+    <h2>Executive Summary / Key Insights</h2>
+    <p>December's performance was defined by <strong>efficiency and intent</strong>. Despite technical challenges that
+        restricted our Meta Ads presence, we generated significantly more leads. Our email strategy shifted to quality
+        over quantity, driving more revenue with fewer sends. Local interest spiked with the summer season, driving
+        record calls to the store.</p>
+    <ul>
+        <li><strong>Meta Efficiency Win:</strong> Despite a 35% drop in spend due to a 2-week account lockout, we
+            generated <strong>41% MORE leads</strong>. This proves the underlying strategy is incredibly robust.</li>
+        <li><strong>Email Quality Over Quantity:</strong> We sent 57% fewer emails but achieved a <strong>58% higher
+                open rate</strong> and <strong>11% more revenue</strong>. The list is healthier and more responsive.
+        </li>
+        <li><strong>Local Summer Surge:</strong> Google My Business saw a <strong>49% increase in phone calls</strong>
+            and <strong>17% more direction requests</strong>, signaling strong physical demand during the festive
+            season.</li>
+        <li><strong>Google Ads Traffic:</strong> Clicks increased by nearly 60%, driving traffic to the new site. (Note:
+            Conversion tracking is currently disabled on the temporary landing page).</li>
+    </ul>
+
+
+
+    <h2><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+            style="vertical-align: middle; margin-right: 10px;">
+            <path fill="#34A853" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" />
+            <path fill="#EA4335" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"
+                style="clip-path: polygon(0 0, 50% 50%, 0 100%);" />
+            <path fill="#FBBC04" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"
+                style="clip-path: polygon(100% 0, 50% 50%, 100% 100%);" />
+            <path fill="#4285F4" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"
+                style="clip-path: polygon(100% 0, 0 0, 50% 50%);" />
+            <circle cx="12" cy="9" r="2.5" fill="#fff" />
+        </svg>Google My Business Insights</h2>
+    <div class="metric-grid">
+        <div class="metric-card"><span class="metric-label">Total Interactions</span><span class="metric-value">1,708
+                <span class="trend-good">↑ 16.5%</span></span></div>
+        <div class="metric-card"><span class="metric-label">Views</span><span class="metric-value">9,514 <span
+                    class="trend-bad">↓ 2.5%</span></span></div>
+        <div class="metric-card"><span class="metric-label">Direction Requests</span><span class="metric-value">921
+                <span class="trend-good">↑ 17.2%</span></span></div>
+        <div class="metric-card"><span class="metric-label">Phone Calls</span><span class="metric-value">134 <span
+                    class="trend-good">↑ 48.9%</span></span></div>
+        <div class="metric-card"><span class="metric-label">Website Visits</span><span class="metric-value">653 <span
+                    class="trend-good">↑ 6.9%</span></span></div>
+        <div class="metric-card"><span class="metric-label">New Reviews</span><span class="metric-value">7 <span
+                    class="trend-good">↑ 75.0%</span></span></div>
+    </div>
+    <div class="key-takeaway">
+        <strong>Key Takeaway:</strong> The festive season brought high intent. While views were stable, the actions that
+        matter—calls and directions—surged. A nearly 50% jump in phone calls indicates customers wanted immediate
+        answers/reservations, validating the importance of our accurate local listing.
+    </div>
+
+    <h2><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 192 192"
+            style="vertical-align: middle; margin-right: 10px;">
+            <path fill="#FBBC04"
+                d="M38.8 141.2l47-81.5c4.6-8 14.9-10.8 22.9-6.2 8 4.6 10.8 14.9 6.2 22.9l-47 81.5c-4.6 8-14.9 10.8-22.9 6.2-8-4.6-10.8-14.9-6.2-22.9z" />
+            <path fill="#4285F4"
+                d="M146.4 153.2L91.2 57.5c-6.8-11.7-21.9-15.7-33.6-8.9-2.5 1.4-4.8 3.2-6.7 5.3l-20.3-25c7.9-6.6 18-9.8 28.1-9 16.5 1.3 31.7 10.7 39.7 24.6l55.2 95.7-7.2 13z" />
+            <path fill="#34A853"
+                d="M60.4 128.8c.1 0 .2.1.4.1 11.7 6.8 15.7 21.9 8.9 33.6l-5.7 9.8c-6.8 11.7-21.9 15.7-33.6 8.9-11.7-6.8-15.7-21.9-8.9-33.6l5.7-9.8c5.4-9.3 15.5-13.6 25.4-11.6 2.7.5 5.2 1.5 7.8 2.6z" />
+        </svg>Google Ads Performance Overview</h2>
+    <div class="metric-grid">
+        <!-- Cost DOWN is GOOD (Green) -->
+        <div class="metric-card"><span class="metric-label">Cost</span><span class="metric-value">ZAR 12,554.27 <span
+                    class="trend-good">↓ 25.6%</span></span></div>
+        <div class="metric-card"><span class="metric-label">Impressions</span><span class="metric-value">382,410 <span
+                    class="trend-good">↑ 160.2%</span></span></div>
+        <div class="metric-card"><span class="metric-label">Clicks</span><span class="metric-value">4,982 <span
+                    class="trend-good">↑ 59.8%</span></span></div>
+        <!-- CTR DOWN is RED -->
+        <div class="metric-card"><span class="metric-label">CTR</span><span class="metric-value">1.3% <span
+                    class="trend-bad">↓ 26.4%</span></span></div>
+        <!-- CPC DOWN is GOOD (Green) -->
+        <div class="metric-card"><span class="metric-label">CPC</span><span class="metric-value">ZAR 2.52 <span
+                    class="trend-good">↓ 55.5%</span></span></div>
+        <div class="metric-card"><span class="metric-label">Video played to 100%</span><span class="metric-value">54.26%
+                <span class="trend-good">↑ 1.9%</span></span></div>
+        <!-- CPV DOWN is GOOD (Green) -->
+        <div class="metric-card"><span class="metric-label">Avg. CPV</span><span class="metric-value">ZAR 0.04 <span
+                    class="trend-good">↓ 25.4%</span></span></div>
+        <div class="metric-card"><span class="metric-label">View Rate</span><span class="metric-value">57.5% <span
+                    class="trend-good">↑ 25.7%</span></span></div>
+    </div>
+    <div class="key-takeaway">
+        <strong>Key Takeaway:</strong> Traffic volume exploded (+60%) while costs decreased (-25%), lowering our average
+        CPC significantly. <em>Please Note: Conversion metrics (CPA, Conversion Rate) are excluded this month as
+            campaigns are directing to www.cannibisters.co.za, where tracking is currently pending setup.</em>
+    </div>
+
+    <h2><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#E1306C"
+            style="vertical-align: middle; margin-right: 10px;">
+            <path
+                d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z" />
+        </svg>Content / Social Overview (Instagram)</h2>
+    <div class="metric-grid">
+        <div class="metric-card"><span class="metric-label">Followers</span><span class="metric-value">36,238</span>
+        </div>
+        <div class="metric-card"><span class="metric-label">Account Views</span><span
+                class="metric-value">238,600</span></div>
+        <div class="metric-card"><span class="metric-label">Link Clicks</span><span class="metric-value">2,436 <span
+                    class="trend-good">↑ 50.4%</span></span></div>
+        <div class="metric-card"><span class="metric-label">Post Engagement</span><span class="metric-value">3,645 <span
+                    class="trend-bad">↓ 79.0%</span></span></div>
+        <div class="metric-card"><span class="metric-label">Video Play Time</span><span class="metric-value">2h 3m <span
+                    class="trend-bad">↓ 96.4%</span></span></div>
+    </div>
+    <div class="key-takeaway">
+        <strong>Key Takeaway:</strong> While engagement metrics dipped significantly compared to November's viral highs,
+        the account successfully drove traffic, with link clicks up over 50%. This suggests users were moving from
+        "browsing" content to "acting" (clicking through) during the busy December period.
+    </div>
+
+    <h2><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#0668E1"
+            style="vertical-align: middle; margin-right: 10px;">
+            <path
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-1.07 3.97-2.9 5.4z" />
+        </svg>Meta Ads Performance Overview</h2>
+    <div class="metric-grid">
+        <!-- Spent DOWN (less budget used, typically neutral but context is lockout) -->
+        <div class="metric-card"><span class="metric-label">Amount Spent</span><span class="metric-value">ZAR 18,617.98
+                <span class="trend-good">↓ 35.3%</span></span></div>
+        <div class="metric-card"><span class="metric-label">Impressions</span><span class="metric-value">719,720 <span
+                    class="trend-bad">↓ 36.2%</span></span></div>
+        <div class="metric-card"><span class="metric-label">Reach</span><span class="metric-value">384,170 <span
+                    class="trend-bad">↓ 38.0%</span></span></div>
+        <div class="metric-card"><span class="metric-label">Link Clicks</span><span class="metric-value">8,088 <span
+                    class="trend-good">↑ 87.3%</span></span></div>
+        <!-- Leads UP is GOOD (Green) -->
+        <div class="metric-card"><span class="metric-label">On-Facebook Leads</span><span class="metric-value">1,886
+                <span class="trend-good">↑ 41.0%</span></span></div>
+        <div class="metric-card"><span class="metric-label">CTR</span><span class="metric-value">2.84% <span
+                    class="trend-good">↑ 33.0%</span></span></div>
+        <!-- CPC UP is RED -->
+        <div class="metric-card"><span class="metric-label">CPC</span><span class="metric-value">ZAR 0.91 <span
+                    class="trend-bad">↑ 5.6%</span></span></div>
+        <!-- Cost per Engagement UP is RED -->
+        <div class="metric-card"><span class="metric-label">Cost per Post Engagement</span><span
+                class="metric-value">ZAR 0.19 <span class="trend-bad">↑ 55.9%</span></span></div>
+    </div>
+    <div class="key-takeaway">
+        <strong>Key Takeaway:</strong> <strong>An outstanding result under pressure.</strong> We were locked out of the
+        ad account for 2 weeks due to ID verification issues, causing the 35% drop in spend. However, the active days
+        were highly productive, delivering <strong>41% more leads</strong> than November. Efficiency improved
+        drastically.
+    </div>
+
+    <h2><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#0077B5"
+            style="vertical-align: middle; margin-right: 10px;">
+            <path
+                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+        </svg>LinkedIn Performance</h2>
+    <div class="metric-grid">
+        <div class="metric-card"><span class="metric-label">New Followers</span><span class="metric-value">7 <span
+                    class="trend-good">(Organic)</span></span></div>
+        <div class="metric-card"><span class="metric-label">Engagement Rate</span><span
+                class="metric-value">7.62%</span></div>
+        <div class="metric-card"><span class="metric-label">Engagements</span><span class="metric-value">188 <span
+                    class="trend-bad">↓ 7.8%</span></span></div>
+        <div class="metric-card"><span class="metric-label">Spend</span><span class="metric-value">ZAR 1,883.14 <span
+                    class="trend-good">↓ 19.1%</span></span></div>
+    </div>
+    <div class="key-takeaway">
+        <strong>Key Takeaway:</strong> A quieter month on LinkedIn with reduced spend and activity. Organic engagement
+        remains respectable at ~7.6%, but growth slowed compared to November's push.
+    </div>
+
+    <h2><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+            style="vertical-align: middle; margin-right: 10px;">
+            <path fill="#231F20"
+                d="M6.8 0v24h3.6v-8.4l2.2 2.1 4.6 6.3h4.6l-6.7-9.1 6.3-6.1h-4.4l-4 3.9V0H6.8zM0 24h3.8V0H0v24z" />
+        </svg>Email & Klaviyo Performance</h2>
+    <div class="metric-grid">
+        <!-- Emails Received DOWN means less volume (neutral/strategic) -->
+        <div class="metric-card"><span class="metric-label">Emails Received</span><span class="metric-value">26,302
+                <span class="trend-bad">↓ 57.6%</span></span></div>
+        <div class="metric-card"><span class="metric-label">Open Rate</span><span class="metric-value">20.16% <span
+                    class="trend-good">↑ 58.2%</span></span></div>
+        <div class="metric-card"><span class="metric-label">Links Clicked</span><span class="metric-value">221 <span
+                    class="trend-bad">↓ 45.8%</span></span></div>
+        <div class="metric-card"><span class="metric-label">Orders Placed</span><span class="metric-value">183 <span
+                    class="trend-good">↑ 15.1%</span></span></div>
+        <div class="metric-card"><span class="metric-label">Placed Order Value</span><span class="metric-value">ZAR
+                238,840 <span class="trend-good">↑ 11.0%</span></span></div>
+        <div class="metric-card"><span class="metric-label">Average Order Value</span><span class="metric-value">ZAR
+                1,305.12 <span class="trend-bad">↓ 3.6%</span></span></div>
+    </div>
+    <div class="key-takeaway">
+        <strong>Key Takeaway:</strong> Strategic refinement aimed at quality payed off. By cutting send volume in half
+        (-57%), we improved open rates to over 20% and actually <strong>increased total revenue by 11%</strong>. This
+        targeted approach prevents list fatigue while maximizing returns.
+    </div>
+
+    <h2>Budget Overview</h2>
+    <div class="metric-grid">
+        <div class="metric-card"><span class="metric-label">Meta Ads</span><span class="metric-value">ZAR
+                18,617.98</span></div>
+        <div class="metric-card"><span class="metric-label">Google Ads</span><span class="metric-value">ZAR
+                12,554.27</span></div>
+        <div class="metric-card"><span class="metric-label">LinkedIn Ads</span><span class="metric-value">ZAR
+                1,883.14</span></div>
+        <div class="metric-card"><span class="metric-label">Total Ad Spend</span><span class="metric-value">ZAR
+                33,055.39</span></div>
+    </div>
+
+    <div class="chart-container" style="max-width: 500px; margin: 0 auto 40px auto;">
+        <canvas id="budgetChart"></canvas>
+    </div>
+
+    <h2>What Worked / What Didn’t</h2>
+    <div class="metric-grid" style="grid-template-columns: 1fr 1fr;">
+        <div class="metric-card" style="border-top: 3px solid #27ae60;">
+            <span class="metric-label" style="color: #27ae60;">What Worked</span>
+            <ul>
+                <li><strong>Meta Lead Gen:</strong> Massive efficiency gain. More leads for 35% less cost is a huge win.
+                </li>
+                <li><strong>Email Segmentation:</strong> Sending fewer, better emails proved that we don't need to spam
+                    to sell.</li>
+                <li><strong>Local Intent:</strong> The GMB listing captured the summer tourist/local rush effectively.
+                </li>
+            </ul>
+        </div>
+        <div class="metric-card" style="border-top: 3px solid #c0392b;">
+            <span class="metric-label" style="color: #c0392b;">What Didn’t</span>
+            <ul>
+                <li><strong>Ad Account Access:</strong> The 2-week lockout was a critical operational failure. I have
+                    added my personal Facebook account (Norton's) as an admin of the Ad account to prevent this from
+                    happening
+                    again.</li>
+                <li><strong>Instagram Engagement:</strong> A steep drop-off from November's video viral success; need to
+                    reignite consistent content.</li>
+            </ul>
+        </div>
+    </div>
+
+    <h2>Opportunities & Recommendations</h2>
+    <ol>
+        <li><strong>Fix Tracking ASAP:</strong> Implement conversion tracking on the <code>co.za</code> domain to
+            properly measure the value of the 60% increase in Google Ads traffic.</li>
+        <li><strong>Scale Meta Back Up:</strong> Now that access is restored and we know the CPA is excellent, we should
+            aggressively return to full budget to capitalize on the high lead conversion rate.</li>
+        <li><strong>Maintain Email Quality:</strong> Continue the targeted, lower-volume email strategy as it is driving
+            higher revenue per email sent.</li>
+        <li><strong>Focus on Webapp Growth:</strong> We are shifting the focus of all Google & Meta ads to drive traffic
+            directly to the webapp (<code>www.cannibisters.co.za</code>). This strategic move is designed to capture new
+            and existing users and drive signups for the app.</li>
+    </ol>
+
+    <script>
+        // Chart.js Configuration
+        Chart.defaults.font.family = "'Inter', sans-serif";
+        Chart.defaults.color = '#555';
+
+
+
+        // 2. Budget Allocation Chart (Doughnut)
+        const ctxBudget = document.getElementById('budgetChart').getContext('2d');
+        new Chart(ctxBudget, {
+            type: 'doughnut',
+            data: {
+                labels: ['Meta Ads', 'Google Ads', 'LinkedIn Ads'],
+                datasets: [{
+                    data: [18617.98, 12554.27, 1883.14],
+                    backgroundColor: [
+                        '#E1306C', // Meta
+                        '#4285F4', // Google
+                        '#0077B5'  // LinkedIn
+                    ],
+                    hoverOffset: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: { padding: 20 }
+                    },
+                    title: {
+                        display: true,
+                        text: 'Ad Budget Allocation (ZAR)',
+                        font: { size: 16, weight: '600' }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

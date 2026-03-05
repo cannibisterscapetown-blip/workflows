@@ -1,0 +1,258 @@
+📦 Fetching products (status: draft, limit: 250)...
+
+✅ Found 250 product(s):
+
+ID              Title                                              Status     Type                
+-----------------------------------------------------------------------------------------------
+8950674522324   (Bronx) extra toppings                             draft                          
+7859423576276   Acapulco Gold                                      draft      Flower              
+8222697357524   Al Capone                                          draft      Flower              
+8924293497044   Alaska                                             draft      Flower              
+8707349250260   Alien Mints                                        draft      Flower              
+8944913187028   Animal Tsunami - Rosin Moonstick                   draft      Joint               
+7882871734484   Apple Rings Live Resin Vape Pen                    draft      Vape Pen            
+8822549676244   Astro Grape - Rosin Moonstick                      draft      Flower              
+8999728644308   Atomic Jelly                                       draft      Flower              
+8932284694740   Avatar Joint                                       draft      Joints              
+8858947256532   Baked Cheesecake                                   draft      Flower              
+8033455734996   BHANG Bar - Banana OG (Liquid Diamond Live Resi... draft      Vape Pen            
+8033453146324   BHANG Bar - Black Cherry Gelato (Liquid Diamond... draft      Vape Pen            
+8033455145172   BHANG Bar - Frosted Apple Fritter (Liquid Diamo... draft      Vape Pen            
+8222423580884   BHANG Bar - Grape Ape (Liquid Diamond Live Resi... draft      Vape Pen            
+8222377836756   BHANG Bar - London Pound Cake (Liquid Diamond L... draft      Vape Pen            
+8046059192532   BHANG Bar - Skunk Slushie (Liquid Diamond Live ... draft      Vape Pen            
+8033453768916   BHANG Bar - Strawberry Cough Sundae (Liquid Dia... draft      Vape Pen            
+8222456578260   BHANG Bar - Tropical Runtz (Liquid Diamond Live... draft      Vape Pen            
+8102440337620   Big Green Buddha - Grape Gas                       draft      Rosin               
+8102439747796   Big Green Buddha - Rainbow Markers                 draft      Rosin               
+8102441025748   Big Green Buddha - Tropicana Cherry Cookies        draft      Rosin               
+8708486332628   Black Tuna                                         draft      Flower              
+8818364514516   Black Velvet                                       draft      Flowers             
+8999728447700   Blackberry Moonshine                               draft      Flower              
+8809339388116   Blade Runner                                       draft      Flowers             
+7978370629844   Blazy Susan                                        draft      Rolling Paper       
+8822549938388   Blissful blue - Rosin Moonstick                    draft      Joint               
+8886746054868   Blockberry Joint                                   draft      Flowers             
+8403070910676   Blood Bath                                         draft      Flower              
+9002487840980   Blue Dream Joint                                   draft      Joint               
+8836401823956   Blue Zushi                                         draft      Flower              
+8932284924116   Blueberry Gary Joint                               draft      Joint               
+8858948763860   Bonkers                                            draft      Flower              
+7973891309780   Bruce Banner                                       draft      Flower              
+7978368073940   Bubble Hash - Blunicorn                            draft      Hash                
+7731102875860   Bubble Hash - Bruce Banner                         draft      Hash                
+8598291022036   Butter Milk Biscuit                                draft      Flower              
+8743299252436   Candy Land                                         draft      Flower              
+8999728054484   Candy Punch                                        draft      flower              
+8002305982676   Cannibisters Black Sirius Rosin                    draft      Rosin               
+8418600157396   Cannibisters Blue Dream Rosin                      draft      Rosin               
+7811467346132   Cannibisters Cap                                   draft      Cap                 
+7998490771668   Cannibisters Champagne Rose Rosin                  draft      Rosin               
+7998498701524   Cannibisters Dark Phoenix Rosin                    draft      Rosin               
+8250082820308   Cannibisters Decadent Fudge 50mg                   draft      Edibles             
+8037922341076   Cannibisters Full Gas Rosin                        draft      Rosin               
+8060124954836   Cannibisters Glass Jar                             draft      Flower              
+7998497947860   Cannibisters Head Eadi Rosin                       draft      Rosin               
+8038978224340   Cannibisters House Special Joint                   draft      Flower              
+7998496211156   Cannibisters Mandarin Cookies Rosin                draft      Rosin               
+8511871942868   Cannibisters Monkey Business Rosin                 draft      Rosin               
+7990701031636   Cannibisters OG - White Strawberry                 draft      Flowers             
+8617682370772   Cannibisters One Hit Wonder Capsules (60mg)        draft                          
+8511884001492   Cannibisters Peanut Butter Rosin                   draft      rosin               
+8418709766356   Cannibisters Skywalker Rosin                       draft      Rosin               
+7998492803284   Cannibisters Slurricane Rosin                      draft      Rosin               
+8643950641364   Cape Cobra Indoor Rosin                            draft      Rosin               
+8625795268820   Cape Cobrah  - Rosin Moonstick                     draft      Flower              
+8882032541908   Caribbean Punch                                    draft      Flower              
+8840753610964   Cat Nip                                            draft      Flower              
+8873180889300   Champagne Rose                                     draft      Flower              
+8875427561684   Champagne Rose Joint                               draft      Flower              
+8941562101972   Cheese Candy - Rosin Moonstick                     draft      Joint               
+8788985413844   Chemex                                             draft      Flower              
+8372400881876   Chemical Fruit                                     draft      Flower              
+8876246728916   Chocolope                                          draft      Flower              
+8889190187220   Citrus Blast                                       draft      Flower              
+8577840971988   Cocktail Juice - Large 500ml                       draft      Juice               
+8447178735828   Colitas Gold - Full Extract Cannabis Oil           draft      Oil                 
+8824191942868   Colorado Night Shifter                             draft      Flower              
+8824612683988   Colt 45                                            draft      Flower              
+8577840939220   Cranberry Juice - Large 500ml                      draft      Juice               
+8065978040532   Cream Candy                                        draft      Flower              
+7923280314580   Crescendo                                          draft      Flower              
+8625387045076   Dante Inferno                                      draft      Flower              
+8746132046036   Double Up                                          draft      Flower              
+8033452884180   Durban Poison Berry Liquid Diamond Live Resin V... draft      Vape Pen            
+7845322424532   East Coast Sour Diesel                             draft      Flower              
+8653188989140   Electric Grinder                                   draft      grinder             
+7845228773588   Exodus Cheese 3G special                           draft      Flower              
+8766846763220   Facetz                                             draft      Flower              
+8972256444628   Fig OG                                             draft      Flower              
+7925347221716   Fire Crotch                                        draft      Flower              
+7845231460564   Forbidos                                           draft      Flower              
+8643943366868   Forbidos Indoor Rosin                              draft      Rosin               
+8964780851412   Friends of mine 1 & 2 - Tusevo Landu               draft      Other               
+7923283067092   Frosted Apricot                                    draft      Flower              
+8643939860692   Frosted Apricot Indoor Rosin                       draft      Rosin               
+8638647992532   Fruit Kings                                        draft      Flower              
+8805338022100   Full Gas Joint                                     draft      Flower              
+8816634036436   Galactic Warheads                                  draft      Flower              
+8049294868692   Gary Payton                                        draft      Flower              
+8809358852308   Gary Poppins                                       draft      Flower              
+8652545851604   Ghost Train Haze                                   draft      Flower              
+7620806082772   Gift card                                          draft      Gift Cards          
+8038581567700   Gizeh Black - King Size Slim Extra Fine            draft      Rolling Paper       
+8140443877588   Gizeh Pink - King Size Slim                        draft      Rolling Paper       
+7611807989972   Gorilla Glue                                       draft      Flower              
+7882877403348   Grape Gushers Live Resin Vape Pen                  draft      Vape Pen            
+8685845545172   Grape Pie                                          draft      Flower              
+8625795760340   Grease Monkey - Rosin Moonstick                    draft      Flower              
+8913141334228   Greendoor - Grand Daddy                            draft      Flower              
+8891571405012   Greendoor Banger Glue                              draft      Flower              
+8858280820948   Greendoor Cherry Lime Reserve                      draft      Flower              
+8858284130516   Greendoor Dedoverde Haze                           draft      Flower              
+8858281246932   Greendoor Ghost Of Leroy                           draft      Flower              
+8858284490964   Greendoor Jack Blue Dream                          draft      Flower              
+8866436186324   Greendoor Joints                                   draft      Flower              
+8858286391508   Greendoor Rooibaard                                draft      Flower              
+8114387484884   GreenHouse Special - Platinum Purple               draft      Flower              
+7739608498388   Grinder                                            draft      Equipment           
+8128755859668   Grinder                                            draft      Flowers             
+8797698523348   Grinder 4 Piece Black                              draft      grinder             
+8737116618964   Grinder, mini, 4-piece                             draft                          
+8577841004756   Guava Juice - Large 500ml                          draft      Juices              
+8122945929428   Gushers Joint                                      draft      Flower              
+8132984406228   Handy Grindy Grinder                               draft      grinder             
+8707352166612   Hawaiian Punch                                     draft      Flower              
+8172812796116   Hulkberry                                          draft      Flower              
+8848910647508   Hybrid Kief                                        draft      Flower              
+8883919782100   Ice Cream Cake                                     draft      Flower              
+8885014397140   Ice Cream Cake Joint                               draft      Joint               
+8848911630548   Indica Kief                                        draft      Flower              
+8822549774548   Insane in the membrane - Rosin Moonstick           draft      Joint               
+8840753414356   Jello                                              draft      Flowers             
+8295378845908   Jelly Beans                                        draft      Flower              
+8049790877908   Joint + joint holder                               draft      Joint               
+8894582325460   JUICE | Pineapple Express - 91% THC                draft      Vape Pen            
+8658724651220   Karamel Cut Throat                                 draft      Flower              
+8750491992276   Katrina                                            draft      Flower              
+8197776244948   Kief - Banana OG Indica                            draft      Flower              
+8197765791956   Kief - OG Kush                                     draft      Flower              
+8836217471188   Kitchen Sink                                       draft      Flowers             
+8934150340820   Kitchen Sink Joint                                 draft      Joint               
+7886974615764   Kosher Kush Joint                                  draft      Flower              
+8643937206484   Krazy Runtz Indoor Rosin                           draft      Rosin               
+7882816782548   Kush Breath                                        draft      Flower              
+8964778590420   Lady - Tusevo Landu                                draft      Other               
+8575090065620   Lemon Creme                                        draft      Flower              
+8577840873684   Lemon Juice - Large 500ml                          draft      Juices              
+8882034114772   Lily Koi                                           draft      Flower              
+7720528773332   Lion's Bread                                       draft      Flower              
+8990248730836   London Lobster                                     draft      Flower              
+8798467358932   London Poundcake                                   draft      Flower              
+8964779180244   Long kiss goodbye - Tusevo Landu                   draft      Other               
+8669284466900   Lucky Packet Greendoor 10g                         draft      flower              
+8669237936340   Lucky Packet Greendoor 5g                          draft      flower              
+8154006716628   MAC 1 Joints                                       draft      Flower              
+8964779573460   Madam Yo-Yo - Tusevo Landu                         draft      Other               
+8964779868372   Madam Yo-Yo 2 - Tusevo Landu                       draft      Other               
+8964780130516   Madam Yo-Yo 3 - Tusevo Landu                       draft      Other               
+8964780392660   Madam Yo-Yo 4 - Tusevo Landu                       draft      Other               
+8836223926484   Malibu Marker                                      draft      Flower              
+8643958014164   Mandarin Cookies Indoor Rosin                      draft      Rosin               
+8374577725652   Mandarin Orange Joint                              draft      Joint               
+8932284137684   Mandarins Cookies Joint                            draft      Joint               
+8577836908756   Mango juice - Large 500ml                          draft                          
+8010763665620   Manna Fudge - Medium Strength                      draft      Edibles             
+8899426418900   Mexican Candy                                      draft      Flower              
+8996772446420   Miami Blue Hash                                    draft      Hash                
+8908713492692   Milk Bottles                                       draft      Flower              
+8687893315796   Mints Smash                                        draft      Flower              
+8685841678548   Money Bags                                         draft      Flower              
+7845238571220   Monkey Business                                    draft      Flower              
+8152398463188   Moonstick x2                                       draft      Flower              
+8984766447828   Nag Champ                                          draft      Flower              
+8840753807572   Neville's Haze                                     draft      Flower              
+8923537703124   Northern Grape Fruit                               draft      Flower              
+8190832181460   Northern Lights Hash                               draft      Hash                
+8816636494036   Novelty Tin Boxes                                  draft      accessories         
+7978540957908   OCB filter, single piece                           draft      Rolling Paper       
+8038498795732   OCB Organic Hemp Papers                            draft                          
+7727508848852   OCB Slim Premium Papers + Filters                  draft      Equipment           
+7998823432404   One Love Rolling Papers                            draft      Rolling Paper       
+8894591172820   Orange Cake                                        draft      flower              
+8530472763604   Orange Cake Joint                                  draft      Flower              
+7973894029524   Papaya Cake                                        draft      Flower              
+8899421667540   Peachy Pie                                         draft      Flower              
+8071165313236   Peanut Butter Cake                                 draft      Flower              
+8996769071316   Permanent Marker Hash                              draft      Hash                
+8002266857684   Persian Pie                                        draft      Flower              
+8809344958676   Philadelphia Cream                                 draft      Flower              
+8822549807316   Pineapple Cream Cookies - Rosin Moonstick          draft      Joint               
+8136298823892   Pineapple Express Joint                            draft      Joint               
+8577840840916   Pineapple Juice - Large 500ml                      draft      Juice               
+8854612574420   Platinum Dosi Punch                                draft      Flower              
+8115909558484   Platinum Purple Joint                              draft      Joint               
+7978374758612   Purize Activated Carbon Filter                     draft                          
+8854611067092   Purple Lemonade                                    draft      Flower              
+7723357765844   Purple Punch                                       draft      Flower              
+8639046811860   Q                                                  draft                          
+8292564566228   Queen Sugar                                        draft      Flower              
+8972255461588   Rose Gold Rocks                                    draft      Flower              
+8598286794964   RS11                                               draft      Flower              
+7845206851796   Sangria Slushy                                     draft      Flower              
+8964780589268   Self portrait  - Tusevo Landu                      draft      Other               
+8065983578324   Sherbert Joint                                     draft      Flower              
+8577841070292   Sir Fruit Ginger Juice - Large 500ml               draft      Juice               
+8686114963668   Skywalker - Rosin Moonstick                        draft      flower              
+8964778098900   Slow Burn - Tusevo Landu                           draft      Other               
+7723250680020   Slurricane                                         draft      Flower              
+7978375151828   Small THC Chocolate                                draft      Edibles             
+7889555095764   Sour Cookies                                       draft      Flower              
+8836227137748   Sour Dough                                         draft      Flowers             
+8575087640788   Space Alien                                        draft      Flower              
+8877395771604   Strawberry Fields                                  draft      Flowers             
+8577841103060   Strawberry Juice - Large 500ml                     draft      Juices              
+7882882384084   Strawberry Shortcake Live Resin Vape Pen           draft      Vape Pen            
+8972256936148   Studio 51                                          draft      Flower              
+8972269977812   Sugar Pops Joint                                   draft      Flower              
+8349469671636   Sugarcane                                          draft      Flower              
+8899427958996   Sugared Doughnuts                                  draft      Flower              
+8365673939156   Sugared Doughnuts Joint                            draft      Flower              
+7958183248084   Sunset Sherbert GreenHouse                         draft      Flower              
+7990703423700   Super Glue                                         draft      Flower              
+8908728795348   Sweets                                             draft      Flower              
+8629011022036   Test Product for Q                                 draft                          
+8964780163284   Tha DoggFather - Tusevo Landu                      draft      Other               
+8836195156180   The Bling                                          draft      Flowers             
+8810271473876   The High Club:  Lucky Charms/ Honeydew Rizz Liv... draft      Vape Pen            
+8810269671636   The High Club:  Thin Mints/ GSC Live Resin Pen     draft      Vape Pen            
+8850284183764   The High Club: Euphoria / Amnesia Haze Live Res... draft      Vape Pen            
+8850286674132   The High Club: Grim Reefer Jam / Love Potion Li... draft      Vape Pen            
+8850289918164   The High Club: Jolly Ranchers/ Orange Crush Liv... draft      Vape Pen            
+8912752902356   The High Club: Passion Drip / Snapple              draft      Vape Pen            
+8850284576980   The High Club: Pineapple Paradise / Citrus Lift... draft      Vape Pen            
+8810266099924   The High Club: Purple Drank / Midnight Muffin L... draft      Vape Pen            
+8810263773396   The High Club: Purple Push Pop / Forbidden Live... draft      Vape Pen            
+8850292146388   The High Club: Watermelon Slaps/ Bussin Live Re... draft      Vape Pen            
+8977396302036   Tia Maria                                          draft      Flower              
+8766801969364   Tigers Eye                                         draft      flower              
+8964777902292   Time flies - Tusevo Landu                          draft      Other               
+8964778819796   Time goes by - Tusevo Landu                        draft      Other               
+8290516992212   Truffle Cookies Joint                              draft                          
+8767511036116   Ultimate Canni Resin Vape Pen - Mawi Wowie         draft      Vape Pen            
+7827667812564   Vape Cartridge - Gorilla Cookies                   draft      Vape Cartridge      
+7827672498388   Vape Cartridge - Gorilla Glue                      draft      Vape Cartridge      
+7611810250964   Vape Cartridge - Pineapple Express                 draft      Vape Cartridge      
+7811495559380   Vape Cartridge - Wedding Cake                      draft      Vape Cartridge      
+7811414130900   Vape Cartridges - Gelato                           draft      Vape Cartridge      
+8807398932692   Velvet Moon                                        draft      Flower              
+8140443222228   VIBES - Organic Hemp Papers                        draft      Rolling Paper       
+8403086835924   Violet Cake                                        draft      Flower              
+7882885431508   Watermelon Runtz Live Resin Vape Pen               draft      Vape Pen            
+8222403330260   Watermelon Zkittles Liquid Diamond Live Resin V... draft      Vape Pen            
+7720723316948   Wedding Cake                                       draft      Flower              
+8913212375252   White Fire                                         draft      Flower              
+8741544132820   White Lion                                         draft      Flower              
+8840064270548   White Nightmare                                    draft      Flowers             
+
+📊 Total: 250 products

@@ -1,0 +1,6 @@
+/Users/norton/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+TITLE: Frosted Apricot Joint
+DESC: <strong>70/30 Indica-Dominant Hybrid</strong><br><br>Frosted Apricot is a stunning cross of Irene OG and Apricot Helix. This strain delivers a unique profile of ripe apricot and sweet stone fruit layered over heavy diesel gas. It provides a blissful, euphoric lift followed by a deep physical relaxation—ideal for unwinding in the evening while maintaining a happy, creative headspace.
+TAGS: 70/30, Apricot, Apricot Helix, Diesel, Euphoric, Fruit, Happy, Indica, Indica-Dominant, Irene OG, Joint, New Strains, Pre-roll, Relaxed
+IMAGES: 1

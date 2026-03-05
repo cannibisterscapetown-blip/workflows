@@ -1,0 +1,28 @@
+/Users/norton/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+Script start
+Listing Active products...
+Active Products found: 10
+ACTIVE: 2 x THC Vape Cartridge + 510 Battery (7807324389588)
+ACTIVE: 3g Greendoor Bundle (8411059781844)
+ACTIVE: Alaska (8924293497044)
+ACTIVE: Almond Milk (8848951115988)
+ACTIVE: Americano (7978587914452)
+ACTIVE: Amnesia Haze (8152167186644)
+ACTIVE: Apple & Banana Gelato (7889558110420)
+ACTIVE: Astro Grape - Cannibisters Limited Collection (9026935095508)
+ACTIVE: Avatar (8924298838228)
+ACTIVE: Backwood Natural Cigar leaf, single leaf - Sweet Aromatic (8391764574420)
+Listing Draft products...
+Draft Products found: 10
+DRAFT: (Bronx) extra toppings (8950674522324)
+DRAFT: Acapulco Gold (7859423576276)
+DRAFT: Afghan Kush Moonstick (8829780754644)
+DRAFT: Al Capone (8222697357524)
+DRAFT: Alien Mints (8707349250260)
+DRAFT: Animal Tsunami - Rosin Moonstick (8944913187028)
+DRAFT: Animal Tsunami Joint (9072664772820)
+DRAFT: Apex (9047076569300)
+DRAFT: Apple Rings Live Resin Vape Pen (7882871734484)
+DRAFT: Astro Grape - Rosin Moonstick (8822549676244)
+Script end

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cannibisters Wheel of Fortune</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="app-container">
+        <!-- Header / Logo Area -->
+        <header>
+            <img src="logo.png" alt="Cannibisters Logo" class="logo-img">
+            <!-- <h1 class="logo-text">CANNIBISTERS</h1> -->
+            <p class="subtitle">Wheel of Fortune</p>
+        </header>
+
+        <!-- Tier Selection Screen -->
+        <div id="tier-selection" class="screen active">
+            <h2>Select Your Spend Tier</h2>
+            <div class="tier-buttons">
+                <button class="tier-btn" onclick="selectTier('silver')">
+                    <span class="tier-name">Silver</span>
+                    <span class="tier-amount">R1500+</span>
+                </button>
+                <button class="tier-btn" onclick="selectTier('gold')">
+                    <span class="tier-name">Gold</span>
+                    <span class="tier-amount">R2500+</span>
+                </button>
+                <button class="tier-btn" onclick="selectTier('platinum')">
+                    <span class="tier-name">Platinum</span>
+                    <span class="tier-amount">R3500+</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Wheel Screen -->
+        <div id="wheel-screen" class="screen hidden">
+            <button class="back-btn" onclick="resetToTiers()">← Back</button>
+            <div class="wheel-container">
+                <div class="pointer"></div>
+                <div class="wheel" id="wheel">
+                    <!-- Segments will be injected by JS -->
+                </div>
+                <!-- Spin button is now the central hub -->
+                <button id="spin-btn" class="spin-btn-center" onclick="spinWheel()">SPIN</button>
+            </div>
+        </div>
+
+        <!-- Result Modal -->
+        <div id="result-modal" class="modal hidden">
+            <div class="modal-content">
+                <h2>Congratulations!</h2>
+                <p>You won:</p>
+                <div id="result-prize" class="prize-text"></div>
+                <div class="modal-buttons">
+                    <button class="claim-btn secondary" onclick="spinAgain()">Spin Again</button>
+                    <button class="claim-btn" onclick="resetToTiers()">Claim Prize</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
