@@ -33,7 +33,7 @@ HEADERS = {
 }
 
 TEMPLATE_NAME = "General Canni Template"
-LIST_NAME = "Newsletter"  # Change to your target list name if different
+LIST_NAME = "Email List"  # Main Cannibisters email list (Wk5g7N)
 
 # ---------------------------------------------------------------------------
 # Email content
@@ -270,14 +270,21 @@ def create_campaign(list_id: str, template_id: str) -> dict:
                 "send_options": {
                     "use_smart_sending": True,
                 },
-                "tracking_options": {
-                    "utm_params": [
-                        {"name": "utm_source", "value": "klaviyo"},
-                        {"name": "utm_medium", "value": "email"},
-                        {"name": "utm_campaign", "value": "loyalty-kiosk-launch"},
-                    ]
+                "campaign-messages": {
+                    "data": [{
+                        "type": "campaign-message",
+                        "attributes": {
+                            "channel": "email",
+                            "label": "Loyalty Kiosk Email",
+                            "content": {
+                                "subject": SUBJECT_LINE,
+                                "preview_text": PREVIEW_TEXT,
+                                "from_email": "hello@cannibisters.co.za",
+                                "from_label": "Cannibisters",
+                            },
+                        },
+                    }]
                 },
-                "channel": "email",
             },
         }
     }
@@ -286,58 +293,30 @@ def create_campaign(list_id: str, template_id: str) -> dict:
     return resp.json()["data"]
 
 
-def update_campaign_message(campaign_id: str, template_id: str) -> dict:
+def assign_template_to_message(message_id: str, template_id: str) -> dict:
     """
-    Retrieve the default campaign message and update it with our subject,
-    preview text, and template assignment.
+    Assign a template to a campaign message via the dedicated Klaviyo endpoint:
+    POST /api/campaign-message-assign-template/
     """
-    # Get the auto-created message for this campaign
-    resp = requests.get(
-        f"{BASE_URL}/campaign-messages/",
-        headers=HEADERS,
-        params={"filter": f"equals(campaign.id,\"{campaign_id}\")"},
-        timeout=15,
-    )
-    resp.raise_for_status()
-    messages = resp.json().get("data", [])
-    if not messages:
-        raise RuntimeError(f"No campaign messages found for campaign {campaign_id}")
-
-    message_id = messages[0]["id"]
-
-    patch_payload = {
+    payload = {
         "data": {
             "type": "campaign-message",
             "id": message_id,
-            "attributes": {
-                "label": "Loyalty Kiosk Launch",
-                "channel": "email",
-                "content": {
-                    "subject": SUBJECT_LINE,
-                    "preview_text": PREVIEW_TEXT,
-                    "from_email": "hello@cannibisters.co.za",
-                    "from_label": "Cannibisters",
-                    "reply_to_email": "hello@cannibisters.co.za",
-                },
-            },
             "relationships": {
                 "template": {
-                    "data": {
-                        "type": "template",
-                        "id": template_id,
-                    }
+                    "data": {"type": "template", "id": template_id}
                 }
             },
         }
     }
-    resp2 = requests.patch(
-        f"{BASE_URL}/campaign-messages/{message_id}/",
+    resp = requests.post(
+        f"{BASE_URL}/campaign-message-assign-template/",
         headers=HEADERS,
-        json=patch_payload,
+        json=payload,
         timeout=15,
     )
-    resp2.raise_for_status()
-    return resp2.json()["data"]
+    resp.raise_for_status()
+    return resp.json()["data"]
 
 
 # ---------------------------------------------------------------------------
@@ -371,9 +350,10 @@ def main():
     print(f"  Campaign ID: {campaign_id}")
     print(f"  Name: {campaign['attributes']['name']}")
 
-    # 4. Assign template + subject to the campaign message
-    print("\nUpdating campaign message (subject, preview, template) ...")
-    message = update_campaign_message(campaign_id, template_id)
+    # 4. Assign template to the campaign message
+    message_id = campaign["relationships"]["campaign-messages"]["data"][0]["id"]
+    print(f"\nAssigning template to message {message_id} ...")
+    message = assign_template_to_message(message_id, template_id)
     print(f"  Message ID: {message['id']}")
 
     print("\n✓ Campaign created as a DRAFT.")
