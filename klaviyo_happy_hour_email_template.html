@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Cannibisters – Happy Hour Special | 24% Off Flower</title>
+  <!--
+  =============================================================================
+  CANNIBISTERS – HAPPY HOUR SPECIAL EMAIL TEMPLATE
+  =============================================================================
+  Platform      : Klaviyo (HTML Template)
+  Template type : Campaign / Promotional
+  Branch        : claude/klaviyo-happy-hour-email-apsUJ
+
+  SETUP INSTRUCTIONS
+  ------------------
+  1. In Klaviyo → Templates → Create Template → "Import HTML"
+  2. Paste this file's contents into the HTML editor.
+  3. Banner image: Upload "klaviyo_happy_hour_banner.png" (the image supplied)
+     to Klaviyo's image library and replace BANNER_IMAGE_URL below with the
+     resulting CDN URL, e.g.
+       https://d3k81ch9hvuctc.cloudfront.net/company/xxxxx/images/happy-hour-banner.png
+  4. Product Feeds: This template uses Klaviyo Catalog Feed blocks.
+     - Connect each {% catalog %} section to the matching saved feed you
+       created in Klaviyo (Catalog → Feeds).
+     - The feed names expected are:
+         "New Arrivals Feed"       → sorted newest first, tag = "new-arrivals"
+         "Popular Products Feed"   → sorted by best-seller
+         "Edibles Feed"            → tag = "edibles"
+         "Vapes Feed"              → tag = "vapes"
+         "Membership Feed"         → tag = "membership"
+     - If you want to use your existing saved feeds, replace the
+       catalog_name values below with your actual feed names.
+  5. Update the CTA links (SHOP_URL placeholders) to the correct Cannibisters
+     website or webapp URL.
+  =============================================================================
+  -->
+  <style>
+    /* ─── Reset ─────────────────────────────────────────────── */
+    body, table, td, p, a, li { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+    table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse; }
+    img { -ms-interpolation-mode: bicubic; border: 0; outline: none; text-decoration: none; display: block; }
+    body { margin: 0; padding: 0; background-color: #F5F0E8; }
+
+    /* ─── Fonts ──────────────────────────────────────────────── */
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700&display=swap');
+
+    /* ─── Global ─────────────────────────────────────────────── */
+    .email-wrapper { background-color: #F5F0E8; }
+    .email-body { max-width: 640px; margin: 0 auto; background-color: #FFFFFF; }
+    .section-pad { padding: 40px 40px; }
+
+    /* ─── Banner ─────────────────────────────────────────────── */
+    .banner-img { width: 100%; height: auto; display: block; }
+
+    /* ─── Header strip ───────────────────────────────────────── */
+    .top-bar { background-color: #1A1A1A; padding: 12px 24px; text-align: center; }
+    .top-bar a { color: #C9A84C; font-family: 'Inter', Arial, sans-serif; font-size: 13px; font-weight: 600; text-decoration: none; letter-spacing: 1.5px; text-transform: uppercase; }
+
+    /* ─── Logo strip ─────────────────────────────────────────── */
+    .logo-strip { background-color: #FFFFFF; padding: 24px 40px; text-align: center; border-bottom: 2px solid #1A1A1A; }
+    .logo-strip img { max-height: 60px; width: auto; }
+
+    /* ─── Hero copy ──────────────────────────────────────────── */
+    .hero-copy { background-color: #1A1A1A; padding: 40px; text-align: center; }
+    .hero-eyebrow { font-family: 'Inter', Arial, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: #C9A84C; margin: 0 0 12px 0; }
+    .hero-headline { font-family: 'Playfair Display', Georgia, serif; font-size: 38px; font-weight: 900; color: #FFFFFF; margin: 0 0 16px 0; line-height: 1.15; }
+    .hero-sub { font-family: 'Inter', Arial, sans-serif; font-size: 16px; color: #C9A84C; font-weight: 600; margin: 0 0 24px 0; letter-spacing: 1px; }
+    .hero-body { font-family: 'Inter', Arial, sans-serif; font-size: 15px; color: #D4CCBA; line-height: 1.7; margin: 0 0 32px 0; }
+
+    /* ─── CTA Button ─────────────────────────────────────────── */
+    .btn-gold { display: inline-block; background-color: #C9A84C; color: #1A1A1A !important; font-family: 'Inter', Arial, sans-serif; font-size: 14px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; text-decoration: none; padding: 16px 40px; border-radius: 2px; }
+    .btn-outline { display: inline-block; background-color: transparent; color: #C9A84C !important; font-family: 'Inter', Arial, sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; text-decoration: none; padding: 12px 32px; border: 2px solid #C9A84C; border-radius: 2px; }
+
+    /* ─── Promo badge strip ──────────────────────────────────── */
+    .badge-strip { background-color: #C9A84C; padding: 20px 40px; text-align: center; }
+    .badge-strip p { font-family: 'Playfair Display', Georgia, serif; font-size: 22px; font-weight: 700; color: #1A1A1A; margin: 0; }
+    .badge-strip span { font-family: 'Inter', Arial, sans-serif; font-size: 13px; font-weight: 600; color: #1A1A1A; display: block; margin-top: 4px; letter-spacing: 1px; text-transform: uppercase; }
+
+    /* ─── Section headings ───────────────────────────────────── */
+    .section-heading { text-align: center; padding: 40px 40px 8px; }
+    .section-heading h2 { font-family: 'Playfair Display', Georgia, serif; font-size: 28px; font-weight: 700; color: #1A1A1A; margin: 0 0 6px 0; }
+    .section-heading .rule { border: none; border-top: 2px solid #C9A84C; width: 48px; margin: 10px auto 0; }
+    .section-heading p { font-family: 'Inter', Arial, sans-serif; font-size: 14px; color: #777; margin: 12px 0 0 0; }
+
+    /* ─── Product grid ───────────────────────────────────────── */
+    .product-grid { padding: 24px 24px 40px; background-color: #FFFFFF; }
+    .product-grid table { width: 100%; border-collapse: collapse; }
+    .product-card { width: 33.33%; vertical-align: top; padding: 8px; }
+    .product-card-inner { border: 1px solid #EBEBEB; border-radius: 4px; overflow: hidden; text-align: center; }
+    .product-card-inner img { width: 100%; height: 180px; object-fit: cover; display: block; }
+    .product-card-body { padding: 12px 10px 16px; }
+    .product-name { font-family: 'Inter', Arial, sans-serif; font-size: 13px; font-weight: 700; color: #1A1A1A; margin: 0 0 4px 0; line-height: 1.4; }
+    .product-type { font-family: 'Inter', Arial, sans-serif; font-size: 11px; color: #888; text-transform: uppercase; letter-spacing: 1px; margin: 0 0 8px 0; }
+    .product-price { font-family: 'Playfair Display', Georgia, serif; font-size: 16px; font-weight: 700; color: #C9A84C; margin: 0 0 10px 0; }
+    .product-price .original { font-family: 'Inter', Arial, sans-serif; font-size: 12px; color: #999; text-decoration: line-through; font-weight: 400; margin-right: 4px; }
+    .product-price .sale { color: #1A1A1A; font-size: 14px; }
+    .product-btn { display: inline-block; background-color: #1A1A1A; color: #FFFFFF !important; font-family: 'Inter', Arial, sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; text-decoration: none; padding: 8px 16px; border-radius: 2px; }
+
+    /* ─── Divider ────────────────────────────────────────────── */
+    .section-divider { border: none; border-top: 1px solid #EBEBEB; margin: 0 40px; }
+
+    /* ─── Footer ─────────────────────────────────────────────── */
+    .footer { background-color: #1A1A1A; padding: 40px; text-align: center; }
+    .footer p { font-family: 'Inter', Arial, sans-serif; font-size: 12px; color: #888; margin: 4px 0; line-height: 1.6; }
+    .footer a { color: #C9A84C; text-decoration: none; }
+    .footer .disclaimer { font-size: 11px; color: #555; margin-top: 16px; border-top: 1px solid #333; padding-top: 16px; }
+    .social-links { margin: 16px 0; }
+    .social-links a { display: inline-block; margin: 0 8px; }
+    .social-links img { width: 24px; height: 24px; }
+
+    /* ─── Responsive ─────────────────────────────────────────── */
+    @media only screen and (max-width: 480px) {
+      .section-pad { padding: 24px 20px !important; }
+      .hero-headline { font-size: 26px !important; }
+      .product-card { display: block !important; width: 100% !important; padding: 4px 0 !important; }
+      .product-card-inner img { height: 220px !important; }
+      .section-heading { padding: 32px 20px 8px !important; }
+      .product-grid { padding: 16px 12px 32px !important; }
+      .badge-strip p { font-size: 18px !important; }
+    }
+  </style>
+</head>
+<body>
+<div class="email-wrapper">
+
+<!-- ============================================================
+     TOP BROWSER BAR
+     ============================================================ -->
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td class="top-bar">
+      <a href="{{ view_email_url }}" style="color:#C9A84C;">View this email in your browser</a>
+    </td>
+  </tr>
+</table>
+
+<!-- ============================================================
+     MAIN BODY WRAPPER
+     ============================================================ -->
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td align="center" style="background-color:#F5F0E8; padding: 24px 0;">
+    <table class="email-body" width="640" cellpadding="0" cellspacing="0" border="0" style="max-width:640px; background-color:#ffffff;">
+
+      <!-- ── LOGO ──────────────────────────────────────────── -->
+      <tr>
+        <td class="logo-strip">
+          <!--
+            Replace with your Klaviyo-hosted logo URL.
+            Upload "Canni Logo.png" to Klaviyo image library.
+          -->
+          <img src="https://d3k81ch9hvuctc.cloudfront.net/company/REPLACE_WITH_YOUR_COMPANY_ID/images/canni-logo.png"
+               alt="Cannibisters Herbal Apothecary"
+               width="180"
+               style="max-height:60px; width:auto;" />
+        </td>
+      </tr>
+
+      <!-- ── HAPPY HOUR BANNER IMAGE ────────────────────────
+           Upload the provided banner image to Klaviyo's image
+           library and replace BANNER_IMAGE_URL with the CDN URL.
+      ─────────────────────────────────────────────────────── -->
+      <tr>
+        <td>
+          <a href="https://www.cannibisters.co.za/collections/flower" target="_blank">
+            <img class="banner-img"
+                 src="https://cdn.shopify.com/s/files/1/0631/7749/0644/files/Flower_Happy_Hour_87aefb84-0d49-4e65-a23d-de564550de82.png?v=1773684190"
+                 alt="Cannibisters Happy Hour Special – 24% Off Flower, 9PM Till Close Every Day"
+                 width="640"
+                 style="width:100%; max-width:640px; height:auto; display:block;" />
+          </a>
+        </td>
+      </tr>
+
+      <!-- ── PROMO BADGE STRIP ──────────────────────────── -->
+      <tr>
+        <td class="badge-strip">
+          <p>Happy Hour: 9PM – Close &nbsp;|&nbsp; Every Day &nbsp;|&nbsp; 24% Off All Flower</p>
+          <span>This promotion excludes items already discounted &bull; In-store only</span>
+        </td>
+      </tr>
+
+      <!-- ── HERO COPY ──────────────────────────────────── -->
+      <tr>
+        <td class="hero-copy">
+          <p class="hero-eyebrow">A Cannibisters Special</p>
+          <h1 class="hero-headline">Your Night Just Got Better.</h1>
+          <p class="hero-sub">Happy Hour is Here – 9PM Till We Close, Every Single Day.</p>
+          <p class="hero-body">
+            Hey {{ first_name|default('there') }},<br /><br />
+            We're rolling out something extra special for all the night-owls and after-dark aficionados.<br /><br />
+            Starting from <strong style="color:#C9A84C;">9PM every evening, right up until closing time</strong>,
+            we're giving you a straight-up <strong style="color:#C9A84C;">24% off on all flower products</strong> – in-store only.
+            No codes needed. No drama. Just walk in, pick your favourite buds, and we sort you out.<br /><br />
+            Whether you're after something to wind down, spark up creativity, or just treat yourself to
+            the good stuff – our Happy Hour is your nightly invitation to experience Cannibisters at its best.
+            Our budtenders will be on hand to guide you through our latest arrivals and all-time favourites.<br /><br />
+            <em style="color:#C9A84C;">Life's too short for average flower. Come find yours.</em>
+          </p>
+          <a href="https://www.cannibisters.co.za/collections/flower" class="btn-gold" target="_blank">
+            Shop Flower &rarr;
+          </a>
+          &nbsp;&nbsp;
+          <a href="https://www.cannibisters.co.za" class="btn-outline" target="_blank">
+            Visit Us In-Store
+          </a>
+        </td>
+      </tr>
+
+      <!-- ══════════════════════════════════════════════════
+           PRODUCT SECTION 1 – NEW ARRIVALS
+           ══════════════════════════════════════════════════
+           Klaviyo Setup:
+           In the HTML editor, this section can be replaced with
+           a Klaviyo "Product Block" set to your "New Arrivals"
+           catalog feed (sorted by Published Date, newest first).
+           OR keep the {% catalog %} tags below and map your feed.
+
+           Catalog feed name to use: "New Arrivals Feed"
+           Sort: created_at DESC  |  Limit: 3
+      ══════════════════════════════════════════════════════ -->
+      <tr>
+        <td>
+          <div class="section-heading">
+            <h2>&#x2728; New Arrivals</h2>
+            <hr class="rule" />
+            <p>Fresh drops. Be the first to get your hands on our newest strains.</p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="product-grid">
+          <!--
+          ╔══════════════════════════════════════════════════════════╗
+          ║  KLAVIYO DYNAMIC PRODUCT FEED — NEW ARRIVALS            ║
+          ║                                                          ║
+          ║  To enable live product feed:                            ║
+          ║  1. In Klaviyo → Catalog → Feeds, open your             ║
+          ║     "New Arrivals" feed (or create one filtered by       ║
+          ║     tag = "new-arrivals", sorted newest first).          ║
+          ║  2. In the template's drag-and-drop editor, add a       ║
+          ║     "Product" block and connect it to this feed.         ║
+          ║                                                          ║
+          ║  Alternatively the Klaviyo template loop below will      ║
+          ║  render if you pass catalog data via a Klaviyo Flow      ║
+          ║  or use the Klaviyo catalog variable.                    ║
+          ╚══════════════════════════════════════════════════════════╝
+
+          {% set new_arrivals = catalog.get('new-arrivals-feed') | default([]) %}
+          {% for product in new_arrivals | sort(attribute='published_at', reverse=true) | list | first(3) %}
+          -->
+
+          <!--
+               STATIC FALLBACK PRODUCT CARDS
+               Replace image src, product name, price and href with
+               real product data, OR let Klaviyo's Product Block
+               inject dynamic cards into this space automatically.
+          -->
+          <table width="100%" cellpadding="0" cellspacing="0" border="0">
+            <tr>
+
+              <!-- PRODUCT CARD 1 -->
+              <td class="product-card" valign="top">
+                <div class="product-card-inner">
+                  <a href="{{ catalog_item_1_url | default('https://www.cannibisters.co.za/collections/flower') }}" target="_blank">
+                    <img src="{{ catalog_item_1_image | default('https://via.placeholder.com/280x180/1A1A1A/C9A84C?text=New+Arrival') }}"
+                         alt="{{ catalog_item_1_title | default('New Arrival') }}"
+                         width="280" />
+                  </a>
+                  <div class="product-card-body">
+                    <p class="product-type">{{ catalog_item_1_category | default('Flower') }}</p>
+                    <p class="product-name">{{ catalog_item_1_title | default('New Strain') }}</p>
+                    <p class="product-price">
+                      <span class="sale">R{{ catalog_item_1_price | default('--') }}</span>
+                    </p>
+                    <a href="{{ catalog_item_1_url | default('https://www.cannibisters.co.za/collections/flower') }}"
+                       class="product-btn" target="_blank">Shop Now</a>
+                  </div>
+                </div>
+              </td>
+
+              <!-- PRODUCT CARD 2 -->
+              <td class="product-card" valign="top">
+                <div class="product-card-inner">
+                  <a href="{{ catalog_item_2_url | default('https://www.cannibisters.co.za/collections/flower') }}" target="_blank">
+                    <img src="{{ catalog_item_2_image | default('https://via.placeholder.com/280x180/1A1A1A/C9A84C?text=New+Arrival') }}"
+                         alt="{{ catalog_item_2_title | default('New Arrival') }}"
+                         width="280" />
+                  </a>
+                  <div class="product-card-body">
+                    <p class="product-type">{{ catalog_item_2_category | default('Flower') }}</p>
+                    <p class="product-name">{{ catalog_item_2_title | default('New Strain') }}</p>
+                    <p class="product-price">
+                      <span class="sale">R{{ catalog_item_2_price | default('--') }}</span>
+                    </p>
+                    <a href="{{ catalog_item_2_url | default('https://www.cannibisters.co.za/collections/flower') }}"
+                       class="product-btn" target="_blank">Shop Now</a>
+                  </div>
+                </div>
+              </td>
+
+              <!-- PRODUCT CARD 3 -->
+              <td class="product-card" valign="top">
+                <div class="product-card-inner">
+                  <a href="{{ catalog_item_3_url | default('https://www.cannibisters.co.za/collections/flower') }}" target="_blank">
+                    <img src="{{ catalog_item_3_image | default('https://via.placeholder.com/280x180/1A1A1A/C9A84C?text=New+Arrival') }}"
+                         alt="{{ catalog_item_3_title | default('New Arrival') }}"
+                         width="280" />
+                  </a>
+                  <div class="product-card-body">
+                    <p class="product-type">{{ catalog_item_3_category | default('Flower') }}</p>
+                    <p class="product-name">{{ catalog_item_3_title | default('New Strain') }}</p>
+                    <p class="product-price">
+                      <span class="sale">R{{ catalog_item_3_price | default('--') }}</span>
+                    </p>
+                    <a href="{{ catalog_item_3_url | default('https://www.cannibisters.co.za/collections/flower') }}"
+                       class="product-btn" target="_blank">Shop Now</a>
+                  </div>
+                </div>
+              </td>
+
+            </tr>
+          </table>
+          <!-- {% endfor %} -->
+
+          <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:20px;">
+            <tr>
+              <td align="center">
+                <a href="https://www.cannibisters.co.za/collections/new-arrivals"
+                   style="display:inline-block; font-family:'Inter',Arial,sans-serif; font-size:13px; font-weight:700; color:#1A1A1A; letter-spacing:1.5px; text-transform:uppercase; text-decoration:none; padding:12px 32px; border:2px solid #1A1A1A; border-radius:2px;"
+                   target="_blank">
+                  View All New Arrivals &rarr;
+                </a>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+
+      <tr><td><hr class="section-divider" /></td></tr>
+
+      <!-- ══════════════════════════════════════════════════
+           PRODUCT SECTION 2 – POPULAR PRODUCTS
+           Klaviyo feed: "Popular Products Feed"
+           Sort: Best Seller / Most Ordered
+      ══════════════════════════════════════════════════════ -->
+      <tr>
+        <td>
+          <div class="section-heading">
+            <h2>&#x1F525; Popular Products</h2>
+            <hr class="rule" />
+            <p>Our customers can't get enough of these. Find out why.</p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="product-grid">
+          <!--
+          ╔══════════════════════════════════════════════════════════╗
+          ║  KLAVIYO DYNAMIC PRODUCT FEED — POPULAR PRODUCTS        ║
+          ║  Feed name: "Popular Products Feed"                      ║
+          ║  Sort: Best Sellers / Most Viewed                        ║
+          ╚══════════════════════════════════════════════════════════╝
+          {% set popular = catalog.get('popular-products-feed') | default([]) %}
+          {% for product in popular | list | first(3) %}
+          -->
+          <table width="100%" cellpadding="0" cellspacing="0" border="0">
+            <tr>
+              <td class="product-card" valign="top">
+                <div class="product-card-inner">
+                  <a href="{{ popular_item_1_url | default('https://www.cannibisters.co.za/collections/flower') }}" target="_blank">
+                    <img src="{{ popular_item_1_image | default('https://via.placeholder.com/280x180/C9A84C/1A1A1A?text=Popular') }}"
+                         alt="{{ popular_item_1_title | default('Popular Product') }}" width="280" />
+                  </a>
+                  <div class="product-card-body">
+                    <p class="product-type">{{ popular_item_1_category | default('Flower') }}</p>
+                    <p class="product-name">{{ popular_item_1_title | default('Best Seller') }}</p>
+                    <p class="product-price"><span class="sale">R{{ popular_item_1_price | default('--') }}</span></p>
+                    <a href="{{ popular_item_1_url | default('https://www.cannibisters.co.za/collections/flower') }}"
+                       class="product-btn" target="_blank">Shop Now</a>
+                  </div>
+                </div>
+              </td>
+              <td class="product-card" valign="top">
+                <div class="product-card-inner">
+                  <a href="{{ popular_item_2_url | default('https://www.cannibisters.co.za/collections/flower') }}" target="_blank">
+                    <img src="{{ popular_item_2_image | default('https://via.placeholder.com/280x180/C9A84C/1A1A1A?text=Popular') }}"
+                         alt="{{ popular_item_2_title | default('Popular Product') }}" width="280" />
+                  </a>
+                  <div class="product-card-body">
+                    <p class="product-type">{{ popular_item_2_category | default('Flower') }}</p>
+                    <p class="product-name">{{ popular_item_2_title | default('Best Seller') }}</p>
+                    <p class="product-price"><span class="sale">R{{ popular_item_2_price | default('--') }}</span></p>
+                    <a href="{{ popular_item_2_url | default('https://www.cannibisters.co.za/collections/flower') }}"
+                       class="product-btn" target="_blank">Shop Now</a>
+                  </div>
+                </div>
+              </td>
+              <td class="product-card" valign="top">
+                <div class="product-card-inner">
+                  <a href="{{ popular_item_3_url | default('https://www.cannibisters.co.za/collections/flower') }}" target="_blank">
+                    <img src="{{ popular_item_3_image | default('https://via.placeholder.com/280x180/C9A84C/1A1A1A?text=Popular') }}"
+                         alt="{{ popular_item_3_title | default('Popular Product') }}" width="280" />
+                  </a>
+                  <div class="product-card-body">
+                    <p class="product-type">{{ popular_item_3_category | default('Flower') }}</p>
+                    <p class="product-name">{{ popular_item_3_title | default('Best Seller') }}</p>
+                    <p class="product-price"><span class="sale">R{{ popular_item_3_price | default('--') }}</span></p>
+                    <a href="{{ popular_item_3_url | default('https://www.cannibisters.co.za/collections/flower') }}"
+                       class="product-btn" target="_blank">Shop Now</a>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </table>
+          <!-- {% endfor %} -->
+          <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:20px;">
+            <tr>
+              <td align="center">
+                <a href="https://www.cannibisters.co.za/collections/all"
+                   style="display:inline-block; font-family:'Inter',Arial,sans-serif; font-size:13px; font-weight:700; color:#1A1A1A; letter-spacing:1.5px; text-transform:uppercase; text-decoration:none; padding:12px 32px; border:2px solid #1A1A1A; border-radius:2px;"
+                   target="_blank">
+                  View All Popular Products &rarr;
+                </a>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+
+      <tr><td><hr class="section-divider" /></td></tr>
+
+      <!-- ══════════════════════════════════════════════════
+           PRODUCT SECTION 3 – EDIBLES
+           Klaviyo feed: "Edibles Feed"
+           Filter: tag = "edibles"  |  Sort: newest first
+      ══════════════════════════════════════════════════════ -->
+      <tr>
+        <td>
+          <div class="section-heading">
+            <h2>&#x1F36B; Edibles</h2>
+            <hr class="rule" />
+            <p>A delicious way to enjoy – slow, steady, and oh so satisfying.</p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="product-grid">
+          <!--
+          ╔══════════════════════════════════════════════════════════╗
+          ║  KLAVIYO DYNAMIC PRODUCT FEED — EDIBLES                 ║
+          ║  Feed name: "Edibles Feed"                               ║
+          ║  Filter: collection = Edibles  |  Sort: newest first     ║
+          ╚══════════════════════════════════════════════════════════╝
+          {% set edibles = catalog.get('edibles-feed') | default([]) %}
+          {% for product in edibles | sort(attribute='published_at', reverse=true) | list | first(3) %}
+          -->
+          <table width="100%" cellpadding="0" cellspacing="0" border="0">
+            <tr>
+              <td class="product-card" valign="top">
+                <div class="product-card-inner">
+                  <a href="{{ edible_item_1_url | default('https://www.cannibisters.co.za/collections/edibles') }}" target="_blank">
+                    <img src="{{ edible_item_1_image | default('https://via.placeholder.com/280x180/5C3D11/FFFFFF?text=Edibles') }}"
+                         alt="{{ edible_item_1_title | default('Edible') }}" width="280" />
+                  </a>
+                  <div class="product-card-body">
+                    <p class="product-type">Edibles</p>
+                    <p class="product-name">{{ edible_item_1_title | default('Edible Product') }}</p>
+                    <p class="product-price"><span class="sale">R{{ edible_item_1_price | default('--') }}</span></p>
+                    <a href="{{ edible_item_1_url | default('https://www.cannibisters.co.za/collections/edibles') }}"
+                       class="product-btn" target="_blank">Shop Now</a>
+                  </div>
+                </div>
+              </td>
+              <td class="product-card" valign="top">
+                <div class="product-card-inner">
+                  <a href="{{ edible_item_2_url | default('https://www.cannibisters.co.za/collections/edibles') }}" target="_blank">
+                    <img src="{{ edible_item_2_image | default('https://via.placeholder.com/280x180/5C3D11/FFFFFF?text=Edibles') }}"
+                         alt="{{ edible_item_2_title | default('Edible') }}" width="280" />
+                  </a>
+                  <div class="product-card-body">
+                    <p class="product-type">Edibles</p>
+                    <p class="product-name">{{ edible_item_2_title | default('Edible Product') }}</p>
+                    <p class="product-price"><span class="sale">R{{ edible_item_2_price | default('--') }}</span></p>
+                    <a href="{{ edible_item_2_url | default('https://www.cannibisters.co.za/collections/edibles') }}"
+                       class="product-btn" target="_blank">Shop Now</a>
+                  </div>
+                </div>
+              </td>
+              <td class="product-card" valign="top">
+                <div class="product-card-inner">
+                  <a href="{{ edible_item_3_url | default('https://www.cannibisters.co.za/collections/edibles') }}" target="_blank">
+                    <img src="{{ edible_item_3_image | default('https://via.placeholder.com/280x180/5C3D11/FFFFFF?text=Edibles') }}"
+                         alt="{{ edible_item_3_title | default('Edible') }}" width="280" />
+                  </a>
+                  <div class="product-card-body">
+                    <p class="product-type">Edibles</p>
+                    <p class="product-name">{{ edible_item_3_title | default('Edible Product') }}</p>
+                    <p class="product-price"><span class="sale">R{{ edible_item_3_price | default('--') }}</span></p>
+                    <a href="{{ edible_item_3_url | default('https://www.cannibisters.co.za/collections/edibles') }}"
+                       class="product-btn" target="_blank">Shop Now</a>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </table>
+          <!-- {% endfor %} -->
+          <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:20px;">
+            <tr>
+              <td align="center">
+                <a href="https://www.cannibisters.co.za/collections/edibles"
+                   style="display:inline-block; font-family:'Inter',Arial,sans-serif; font-size:13px; font-weight:700; color:#1A1A1A; letter-spacing:1.5px; text-transform:uppercase; text-decoration:none; padding:12px 32px; border:2px solid #1A1A1A; border-radius:2px;"
+                   target="_blank">
+                  View All Edibles &rarr;
+                </a>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+
+      <tr><td><hr class="section-divider" /></td></tr>
+
+      <!-- ══════════════════════════════════════════════════
+           PRODUCT SECTION 4 – VAPES
+           Klaviyo feed: "Vapes Feed"
+           Filter: tag = "vapes"  |  Sort: newest first
+      ══════════════════════════════════════════════════════ -->
+      <tr>
+        <td>
+          <div class="section-heading">
+            <h2>&#x1F4A8; Vapes</h2>
+            <hr class="rule" />
+            <p>Smooth, convenient, and crafted for the connoisseur on the go.</p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="product-grid">
+          <!--
+          ╔══════════════════════════════════════════════════════════╗
+          ║  KLAVIYO DYNAMIC PRODUCT FEED — VAPES                   ║
+          ║  Feed name: "Vapes Feed"                                 ║
+          ║  Filter: collection = Vapes  |  Sort: newest first       ║
+          ╚══════════════════════════════════════════════════════════╝
+          {% set vapes = catalog.get('vapes-feed') | default([]) %}
+          {% for product in vapes | sort(attribute='published_at', reverse=true) | list | first(3) %}
+          -->
+          <table width="100%" cellpadding="0" cellspacing="0" border="0">
+            <tr>
+              <td class="product-card" valign="top">
+                <div class="product-card-inner">
+                  <a href="{{ vape_item_1_url | default('https://www.cannibisters.co.za/collections/vapes') }}" target="_blank">
+                    <img src="{{ vape_item_1_image | default('https://via.placeholder.com/280x180/2D2D2D/C9A84C?text=Vapes') }}"
+                         alt="{{ vape_item_1_title | default('Vape') }}" width="280" />
+                  </a>
+                  <div class="product-card-body">
+                    <p class="product-type">Vapes</p>
+                    <p class="product-name">{{ vape_item_1_title | default('Vape Product') }}</p>
+                    <p class="product-price"><span class="sale">R{{ vape_item_1_price | default('--') }}</span></p>
+                    <a href="{{ vape_item_1_url | default('https://www.cannibisters.co.za/collections/vapes') }}"
+                       class="product-btn" target="_blank">Shop Now</a>
+                  </div>
+                </div>
+              </td>
+              <td class="product-card" valign="top">
+                <div class="product-card-inner">
+                  <a href="{{ vape_item_2_url | default('https://www.cannibisters.co.za/collections/vapes') }}" target="_blank">
+                    <img src="{{ vape_item_2_image | default('https://via.placeholder.com/280x180/2D2D2D/C9A84C?text=Vapes') }}"
+                         alt="{{ vape_item_2_title | default('Vape') }}" width="280" />
+                  </a>
+                  <div class="product-card-body">
+                    <p class="product-type">Vapes</p>
+                    <p class="product-name">{{ vape_item_2_title | default('Vape Product') }}</p>
+                    <p class="product-price"><span class="sale">R{{ vape_item_2_price | default('--') }}</span></p>
+                    <a href="{{ vape_item_2_url | default('https://www.cannibisters.co.za/collections/vapes') }}"
+                       class="product-btn" target="_blank">Shop Now</a>
+                  </div>
+                </div>
+              </td>
+              <td class="product-card" valign="top">
+                <div class="product-card-inner">
+                  <a href="{{ vape_item_3_url | default('https://www.cannibisters.co.za/collections/vapes') }}" target="_blank">
+                    <img src="{{ vape_item_3_image | default('https://via.placeholder.com/280x180/2D2D2D/C9A84C?text=Vapes') }}"
+                         alt="{{ vape_item_3_title | default('Vape') }}" width="280" />
+                  </a>
+                  <div class="product-card-body">
+                    <p class="product-type">Vapes</p>
+                    <p class="product-name">{{ vape_item_3_title | default('Vape Product') }}</p>
+                    <p class="product-price"><span class="sale">R{{ vape_item_3_price | default('--') }}</span></p>
+                    <a href="{{ vape_item_3_url | default('https://www.cannibisters.co.za/collections/vapes') }}"
+                       class="product-btn" target="_blank">Shop Now</a>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </table>
+          <!-- {% endfor %} -->
+          <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:20px;">
+            <tr>
+              <td align="center">
+                <a href="https://www.cannibisters.co.za/collections/vapes"
+                   style="display:inline-block; font-family:'Inter',Arial,sans-serif; font-size:13px; font-weight:700; color:#1A1A1A; letter-spacing:1.5px; text-transform:uppercase; text-decoration:none; padding:12px 32px; border:2px solid #1A1A1A; border-radius:2px;"
+                   target="_blank">
+                  View All Vapes &rarr;
+                </a>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+
+      <tr><td><hr class="section-divider" /></td></tr>
+
+      <!-- ══════════════════════════════════════════════════
+           PRODUCT SECTION 5 – MEMBERSHIP
+           Klaviyo feed: "Membership Feed"
+           Filter: tag = "membership"  |  Sort: newest first
+      ══════════════════════════════════════════════════════ -->
+      <tr>
+        <td>
+          <div class="section-heading">
+            <h2>&#x1F31F; Membership</h2>
+            <hr class="rule" />
+            <p>Unlock exclusive perks, priority access, and members-only pricing.</p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="product-grid">
+          <!--
+          ╔══════════════════════════════════════════════════════════╗
+          ║  KLAVIYO DYNAMIC PRODUCT FEED — MEMBERSHIP              ║
+          ║  Feed name: "Membership Feed"                            ║
+          ║  Filter: collection = Membership  |  Sort: newest first  ║
+          ╚══════════════════════════════════════════════════════════╝
+          {% set memberships = catalog.get('membership-feed') | default([]) %}
+          {% for product in memberships | sort(attribute='published_at', reverse=true) | list | first(3) %}
+          -->
+          <table width="100%" cellpadding="0" cellspacing="0" border="0">
+            <tr>
+              <td class="product-card" valign="top">
+                <div class="product-card-inner">
+                  <a href="{{ membership_item_1_url | default('https://www.cannibisters.co.za/collections/membership') }}" target="_blank">
+                    <img src="{{ membership_item_1_image | default('https://via.placeholder.com/280x180/C9A84C/1A1A1A?text=Membership') }}"
+                         alt="{{ membership_item_1_title | default('Membership') }}" width="280" />
+                  </a>
+                  <div class="product-card-body">
+                    <p class="product-type">Membership</p>
+                    <p class="product-name">{{ membership_item_1_title | default('Membership Tier') }}</p>
+                    <p class="product-price"><span class="sale">R{{ membership_item_1_price | default('--') }}</span></p>
+                    <a href="{{ membership_item_1_url | default('https://www.cannibisters.co.za/collections/membership') }}"
+                       class="product-btn" target="_blank">Join Now</a>
+                  </div>
+                </div>
+              </td>
+              <td class="product-card" valign="top">
+                <div class="product-card-inner">
+                  <a href="{{ membership_item_2_url | default('https://www.cannibisters.co.za/collections/membership') }}" target="_blank">
+                    <img src="{{ membership_item_2_image | default('https://via.placeholder.com/280x180/C9A84C/1A1A1A?text=Membership') }}"
+                         alt="{{ membership_item_2_title | default('Membership') }}" width="280" />
+                  </a>
+                  <div class="product-card-body">
+                    <p class="product-type">Membership</p>
+                    <p class="product-name">{{ membership_item_2_title | default('Membership Tier') }}</p>
+                    <p class="product-price"><span class="sale">R{{ membership_item_2_price | default('--') }}</span></p>
+                    <a href="{{ membership_item_2_url | default('https://www.cannibisters.co.za/collections/membership') }}"
+                       class="product-btn" target="_blank">Join Now</a>
+                  </div>
+                </div>
+              </td>
+              <td class="product-card" valign="top">
+                <div class="product-card-inner">
+                  <a href="{{ membership_item_3_url | default('https://www.cannibisters.co.za/collections/membership') }}" target="_blank">
+                    <img src="{{ membership_item_3_image | default('https://via.placeholder.com/280x180/C9A84C/1A1A1A?text=Membership') }}"
+                         alt="{{ membership_item_3_title | default('Membership') }}" width="280" />
+                  </a>
+                  <div class="product-card-body">
+                    <p class="product-type">Membership</p>
+                    <p class="product-name">{{ membership_item_3_title | default('Membership Tier') }}</p>
+                    <p class="product-price"><span class="sale">R{{ membership_item_3_price | default('--') }}</span></p>
+                    <a href="{{ membership_item_3_url | default('https://www.cannibisters.co.za/collections/membership') }}"
+                       class="product-btn" target="_blank">Join Now</a>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </table>
+          <!-- {% endfor %} -->
+          <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:20px;">
+            <tr>
+              <td align="center">
+                <a href="https://www.cannibisters.co.za/collections/membership"
+                   style="display:inline-block; font-family:'Inter',Arial,sans-serif; font-size:13px; font-weight:700; color:#C9A84C; letter-spacing:1.5px; text-transform:uppercase; text-decoration:none; padding:12px 32px; border:2px solid #C9A84C; background-color:#1A1A1A; border-radius:2px;"
+                   target="_blank">
+                  Explore Membership &rarr;
+                </a>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+
+      <!-- ── CLOSING CTA STRIP ──────────────────────────── -->
+      <tr>
+        <td style="background-color:#1A1A1A; padding:40px; text-align:center;">
+          <p style="font-family:'Playfair Display',Georgia,serif; font-size:24px; font-weight:700; color:#FFFFFF; margin:0 0 8px 0;">
+            See You Tonight, {{ first_name|default('Fam') }}.
+          </p>
+          <p style="font-family:'Inter',Arial,sans-serif; font-size:14px; color:#C9A84C; margin:0 0 24px 0; letter-spacing:1px;">
+            Happy Hour kicks off at 9PM &bull; In-Store Only &bull; Every Day
+          </p>
+          <a href="https://www.cannibisters.co.za" class="btn-gold" target="_blank" style="display:inline-block; background-color:#C9A84C; color:#1A1A1A; font-family:'Inter',Arial,sans-serif; font-size:14px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; text-decoration:none; padding:16px 40px; border-radius:2px;">
+            Find Our Store &rarr;
+          </a>
+        </td>
+      </tr>
+
+      <!-- ── FOOTER ─────────────────────────────────────── -->
+      <tr>
+        <td class="footer">
+          <img src="https://d3k81ch9hvuctc.cloudfront.net/company/REPLACE_WITH_YOUR_COMPANY_ID/images/canni-logo-light.png"
+               alt="Cannibisters" width="120" style="width:120px; height:auto; margin-bottom:16px;" />
+          <p>Cannibisters Herbal Apothecary &bull; Cape Town, South Africa</p>
+          <p>
+            <a href="https://www.cannibisters.co.za" target="_blank">Website</a> &nbsp;&bull;&nbsp;
+            <a href="https://www.instagram.com/cannibisters" target="_blank">Instagram</a> &nbsp;&bull;&nbsp;
+            <a href="https://www.facebook.com/cannibisters" target="_blank">Facebook</a>
+          </p>
+          <p class="disclaimer">
+            This promotion is valid in-store only. 24% discount applies to full-priced flower products only.
+            Items already discounted are excluded. No code required – discount applied at point of sale.
+            Happy Hour runs from 9PM until closing time, every day.
+          </p>
+          <p style="margin-top:16px; font-size:12px; color:#555;">
+            You're receiving this because you opted in at Cannibisters.<br />
+            <a href="{{ unsubscribe_url }}" style="color:#C9A84C;">Unsubscribe</a>
+            &nbsp;&bull;&nbsp;
+            <a href="{{ manage_preferences_url }}" style="color:#C9A84C;">Manage Preferences</a>
+          </p>
+        </td>
+      </tr>
+
+    </table><!-- /email-body -->
+    </td>
+  </tr>
+</table><!-- /outer wrapper -->
+
+</div>
+</body>
+</html>
