@@ -11,7 +11,7 @@
 
 set -euo pipefail
 
-export POLYMARKET_PRIVATE_KEY=0x596f0fd605045fb9cbab9e8af35320ed2ffc3a26e9c4773709f336be8b3c837d
+export POLYMARKET_PRIVATE_KEY="${POLYMARKET_PRIVATE_KEY:?Set POLYMARKET_PRIVATE_KEY env var before running}"
 export POLYMARKET_SIGNATURE_TYPE=proxy
 
 echo "Wallet: $(polymarket wallet show | grep Address)"
