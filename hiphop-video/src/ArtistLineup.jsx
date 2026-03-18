@@ -18,31 +18,17 @@ const WHITE = '#FFFFFF';
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 const clamp = (v, lo = 0, hi = 1) => Math.min(hi, Math.max(lo, v));
 
-// ─── Glitch displacement — quick random jitter ────────────────────────────────
+// ─── Glitch jitter ───────────────────────────────────────────────────────────
 function useGlitch(intensity = 1) {
   const frame = useCurrentFrame();
-  // fires on specific frames to simulate a glitch beat
-  const triggers = [0, 1, 2, 30, 31, 60, 61, 90, 91, 120, 121, 150, 151, 180, 181, 210, 211, 270, 271];
-  const active = triggers.includes(frame % 300);
+  const triggers = [0, 1, 2, 15, 16, 30, 31];
+  const active = triggers.includes(frame % 60);
   const dx = active ? (((frame * 7919) % 11) - 5) * intensity : 0;
-  const dy = active ? (((frame * 6271) % 7) - 3) * intensity : 0;
+  const dy = active ? (((frame * 6271) % 7)  - 3) * intensity : 0;
   return { dx, dy, active };
 }
 
-// ─── RGB-split overlay (glitch aesthetic) ────────────────────────────────────
-function RgbSplit({ src, style }) {
-  const { active, dx } = useGlitch(2);
-  if (!active) return <Img src={src} style={style} />;
-  return (
-    <div style={{ position: 'relative', width: style.width, height: style.height, overflow: 'hidden' }}>
-      <Img src={src} style={{ ...style, position: 'absolute', mixBlendMode: 'screen', filter: 'url(#red)', opacity: 0.85, transform: `translateX(${dx * 1.5}px)` }} />
-      <Img src={src} style={{ ...style, position: 'absolute', mixBlendMode: 'screen', filter: 'url(#blue)', opacity: 0.85, transform: `translateX(${-dx}px)` }} />
-      <Img src={src} style={{ ...style, position: 'absolute', mixBlendMode: 'normal', opacity: 0.6 }} />
-    </div>
-  );
-}
-
-// ─── VHS scanlines ────────────────────────────────────────────────────────────
+// ─── VHS scanlines overlay ────────────────────────────────────────────────────
 function Scanlines() {
   return (
     <AbsoluteFill style={{ pointerEvents: 'none', zIndex: 10 }}>
@@ -56,11 +42,10 @@ function Scanlines() {
   );
 }
 
-// ─── Neon border flash ────────────────────────────────────────────────────────
-function NeonBorder({ color = GREEN, startFrame, durationFrames = 40 }) {
+// ─── Neon border flash — frame is already local (0-based) inside Sequence ────
+function NeonBorder({ color = GREEN, durationFrames = 40 }) {
   const frame = useCurrentFrame();
-  const local = frame - startFrame;
-  const op = interpolate(local, [0, 5, durationFrames - 8, durationFrames], [0, 1, 1, 0], {
+  const op = interpolate(frame, [0, 5, durationFrames - 8, durationFrames], [0, 1, 1, 0], {
     extrapolateLeft: 'clamp', extrapolateRight: 'clamp',
   });
   return (
@@ -74,6 +59,7 @@ function NeonBorder({ color = GREEN, startFrame, durationFrames = 40 }) {
 }
 
 // ─── "CANNIBISTERS PRESENTS" intro ────────────────────────────────────────────
+// Rendered inside <Sequence from={0}> — frame is 0-based here
 function Intro() {
   const frame = useCurrentFrame();
 
@@ -95,7 +81,6 @@ function Intro() {
       gap: 16,
       transform: `translate(${dx}px, ${dy}px)`,
     }}>
-      {/* Logo */}
       <Img
         src={staticFile('canni-logo.png')}
         style={{ width: 120, filter: 'brightness(0) invert(1)', opacity: presentsOp }}
@@ -124,7 +109,6 @@ function Intro() {
       }}>
         The Lineup
       </p>
-      {/* Neon underline */}
       <div style={{
         width: interpolate(frame, [30, 50], [0, 220], { extrapolateRight: 'clamp' }),
         height: 2,
@@ -137,33 +121,40 @@ function Intro() {
 }
 
 // ─── Single artist reveal slide ───────────────────────────────────────────────
-function ArtistSlide({ src, number, enterFrame }) {
+// Rendered inside a Sequence — frame is 0-based, no offset needed
+function ArtistSlide({ src, number, accentColor = GREEN }) {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
-  const local = frame - enterFrame;
 
   // Punch zoom on entry
-  const zoomSpring = spring({ frame: local, fps, config: { damping: 12, stiffness: 200 } });
+  const zoomSpring = spring({ frame, fps, config: { damping: 12, stiffness: 200 } });
   const scale = interpolate(zoomSpring, [0, 1], [1.18, 1.0]);
 
   // Fade
-  const opacity = interpolate(local, [0, 8], [0, 1], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
+  const opacity = interpolate(frame, [0, 8], [0, 1], {
+    extrapolateLeft: 'clamp', extrapolateRight: 'clamp',
+  });
 
-  // Number counter reveal
-  const numOp = interpolate(local, [4, 18], [0, 1], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
-  const numY  = interpolate(local, [4, 18], [30, 0], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
+  // Ghost number
+  const numOp = interpolate(frame, [4, 18], [0, 1], {
+    extrapolateLeft: 'clamp', extrapolateRight: 'clamp',
+  });
+  const numY = interpolate(frame, [4, 18], [30, 0], {
+    extrapolateLeft: 'clamp', extrapolateRight: 'clamp',
+  });
 
-  // "ARTIST" label
-  const labelOp = interpolate(local, [12, 26], [0, 1], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
-
-  // Horizontal slash line
-  const slashW = interpolate(local, [8, 28], [0, 100], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
+  // "ARTIST" label + line
+  const labelOp = interpolate(frame, [12, 26], [0, 1], {
+    extrapolateLeft: 'clamp', extrapolateRight: 'clamp',
+  });
+  const slashW = interpolate(frame, [8, 28], [0, 100], {
+    extrapolateLeft: 'clamp', extrapolateRight: 'clamp',
+  });
 
   const { dx, dy } = useGlitch(1.5);
 
   return (
     <AbsoluteFill style={{ opacity, transform: `translate(${dx}px,${dy}px)` }}>
-      {/* Full-bleed photo */}
       <Img
         src={staticFile(src)}
         style={{
@@ -175,7 +166,7 @@ function ArtistSlide({ src, number, enterFrame }) {
         }}
       />
 
-      {/* Heavy gradient bottom */}
+      {/* Gradient */}
       <AbsoluteFill style={{
         background: 'linear-gradient(180deg, rgba(8,8,8,0.1) 0%, rgba(8,8,8,0.05) 30%, rgba(8,8,8,0.6) 60%, rgba(8,8,8,0.97) 100%)',
       }} />
@@ -187,12 +178,12 @@ function ArtistSlide({ src, number, enterFrame }) {
         bottom: 180,
         top: '20%',
         width: 3,
-        background: `linear-gradient(180deg, transparent, ${GREEN} 40%, ${GOLD})`,
-        boxShadow: `0 0 12px ${GREEN}`,
+        background: `linear-gradient(180deg, transparent, ${accentColor} 40%, ${GOLD})`,
+        boxShadow: `0 0 12px ${accentColor}`,
         opacity: labelOp,
       }} />
 
-      {/* Large artist number */}
+      {/* Ghost number */}
       <div style={{
         position: 'absolute',
         right: 36,
@@ -209,19 +200,14 @@ function ArtistSlide({ src, number, enterFrame }) {
         {number}
       </div>
 
-      {/* Artist label + slash line */}
-      <div style={{
-        position: 'absolute',
-        bottom: 160,
-        left: 56,
-        opacity: labelOp,
-      }}>
+      {/* Label + text */}
+      <div style={{ position: 'absolute', bottom: 160, left: 56, opacity: labelOp }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 10 }}>
           <div style={{
             width: `${slashW}%`,
             height: 2,
-            background: GREEN,
-            boxShadow: `0 0 8px ${GREEN}`,
+            background: accentColor,
+            boxShadow: `0 0 8px ${accentColor}`,
           }} />
         </div>
         <p style={{
@@ -244,43 +230,37 @@ function ArtistSlide({ src, number, enterFrame }) {
           letterSpacing: -2,
           margin: 0,
         }}>
-          Performing
-          <br />
-          <span style={{ color: GREEN }}>Live</span>
+          Performing<br />
+          <span style={{ color: accentColor }}>Live</span>
         </p>
       </div>
 
-      <NeonBorder color={number % 2 === 0 ? GOLD : GREEN} startFrame={enterFrame} durationFrames={45} />
+      <NeonBorder color={accentColor} durationFrames={45} />
     </AbsoluteFill>
   );
 }
 
 // ─── Final 2×2 grid reveal ────────────────────────────────────────────────────
-function GridFinale({ startFrame }) {
+// Rendered inside a Sequence — frame is 0-based
+function GridFinale() {
   const frame = useCurrentFrame();
-  const local = frame - startFrame;
   const { fps } = useVideoConfig();
 
   const artists = ['artist1.jpg', 'artist2.jpg', 'artist3.jpg', 'artist4.jpg'];
-
-  const gridOp = interpolate(local, [0, 15], [0, 1], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
-
-  // Each quadrant slides in from its corner
   const corners = [
     { dx: -1, dy: -1 }, { dx: 1, dy: -1 },
     { dx: -1, dy:  1 }, { dx: 1, dy:  1 },
   ];
 
-  const logoSpring = spring({ frame: local - 20, fps, config: { damping: 14, stiffness: 80 } });
+  const gridOp   = interpolate(frame, [0, 15], [0, 1], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
+  const logoSpring = spring({ frame: frame - 20, fps, config: { damping: 14, stiffness: 80 } });
   const logoScale  = interpolate(logoSpring, [0, 1], [0.5, 1.0]);
-  const logoOp     = interpolate(local, [20, 38], [0, 1], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
-
-  // Pulsing glow on logo
-  const pulse = Math.sin((local / 8) * Math.PI) * 0.5 + 0.5;
+  const logoOp     = interpolate(frame, [20, 38], [0, 1], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
+  const pulse      = Math.sin((frame / 8) * Math.PI) * 0.5 + 0.5;
 
   return (
     <AbsoluteFill style={{ opacity: gridOp, background: BLACK }}>
-      {/* 2×2 photo grid */}
+      {/* 2×2 grid */}
       <div style={{
         display: 'grid',
         gridTemplateColumns: '1fr 1fr',
@@ -290,7 +270,7 @@ function GridFinale({ startFrame }) {
         gap: 3,
       }}>
         {artists.map((src, i) => {
-          const sp = spring({ frame: local - i * 6, fps, config: { damping: 18, stiffness: 120 } });
+          const sp = spring({ frame: frame - i * 6, fps, config: { damping: 18, stiffness: 120 } });
           const tx = interpolate(sp, [0, 1], [corners[i].dx * 60, 0]);
           const ty = interpolate(sp, [0, 1], [corners[i].dy * 60, 0]);
           return (
@@ -316,7 +296,7 @@ function GridFinale({ startFrame }) {
         background: 'radial-gradient(ellipse at center, rgba(8,8,8,0.65) 0%, rgba(8,8,8,0.9) 100%)',
       }} />
 
-      {/* Centre logo + text */}
+      {/* Logo lock-up */}
       <AbsoluteFill style={{
         display: 'flex',
         flexDirection: 'column',
@@ -376,14 +356,13 @@ function GridFinale({ startFrame }) {
   );
 }
 
-// ─── Timeline ─────────────────────────────────────────────────────────────────
-//  0 –  65  : Intro ("Cannibisters Presents / The Lineup")
-// 65 – 120  : Artist 1
-//120 – 175  : Artist 2
-//175 – 230  : Artist 3
-//230 – 285  : Artist 4
-//285 – 390  : Grid finale + logo lock-up
-const TOTAL = 390; // 13 seconds @ 30fps
+// ─── Timeline (390 frames = 13s @ 30fps) ──────────────────────────────────────
+//   0 –  65 : Intro
+//  60 – 129 : Artist 1  (5-frame overlap = glitch cut)
+// 115 – 184 : Artist 2
+// 170 – 239 : Artist 3
+// 225 – 294 : Artist 4
+// 285 – 389 : Grid finale
 
 export const ArtistLineup = () => {
   const frame = useCurrentFrame();
@@ -391,34 +370,34 @@ export const ArtistLineup = () => {
   return (
     <AbsoluteFill style={{ background: BLACK, overflow: 'hidden' }}>
 
-      {/* Intro */}
       <Sequence from={0} durationInFrames={70}>
         <Intro />
       </Sequence>
 
-      {/* Artist slides — each gets 55 frames with a 5-frame overlap for the glitch cut */}
       <Sequence from={60} durationInFrames={70}>
-        <ArtistSlide src="artist1.jpg" number={1} enterFrame={60} />
-      </Sequence>
-      <Sequence from={115} durationInFrames={70}>
-        <ArtistSlide src="artist2.jpg" number={2} enterFrame={115} />
-      </Sequence>
-      <Sequence from={170} durationInFrames={70}>
-        <ArtistSlide src="artist3.jpg" number={3} enterFrame={170} />
-      </Sequence>
-      <Sequence from={225} durationInFrames={70}>
-        <ArtistSlide src="artist4.jpg" number={4} enterFrame={225} />
+        <ArtistSlide src="artist1.jpg" number={1} accentColor={GREEN} />
       </Sequence>
 
-      {/* Grid finale */}
-      <Sequence from={285} durationInFrames={TOTAL - 285}>
-        <GridFinale startFrame={285} />
+      <Sequence from={115} durationInFrames={70}>
+        <ArtistSlide src="artist2.jpg" number={2} accentColor={GOLD} />
+      </Sequence>
+
+      <Sequence from={170} durationInFrames={70}>
+        <ArtistSlide src="artist3.jpg" number={3} accentColor={GREEN} />
+      </Sequence>
+
+      <Sequence from={225} durationInFrames={70}>
+        <ArtistSlide src="artist4.jpg" number={4} accentColor={GOLD} />
+      </Sequence>
+
+      <Sequence from={285} durationInFrames={105}>
+        <GridFinale />
       </Sequence>
 
       {/* Global scanlines */}
       <Scanlines />
 
-      {/* Floating gold/green particles */}
+      {/* Floating particles */}
       <AbsoluteFill style={{ pointerEvents: 'none' }}>
         {Array.from({ length: 14 }, (_, i) => {
           const seed  = i * 137.5;
