@@ -1,0 +1,18 @@
+{
+  "name": "hiphop-video",
+  "version": "1.0.0",
+  "description": "Cannibisters Hip Hop Night animated ad",
+  "scripts": {
+    "start": "npx remotion studio",
+    "render": "npx remotion render HipHopNight out/hiphop-night-square.mp4",
+    "render:stories": "npx remotion render HipHopNightStories out/hiphop-night-stories.mp4"
+  },
+  "dependencies": {
+    "@remotion/bundler": "*",
+    "@remotion/cli": "*",
+    "@remotion/renderer": "*",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "remotion": "*"
+  }
+}
