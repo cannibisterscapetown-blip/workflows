@@ -1,110 +1,133 @@
-# Bets to Place NOW → Tomorrow Noon
-**Date:** 2026-03-17  |  **BTC:** $74,202  |  **ETH:** $2,331  |  **Gold:** $5,019
-
-> Time-sensitive. All bets below close before 2026-03-18 12:00 UTC.
+# Bets to Place NOW — March 18, 2026
+**BTC:** ~$76k+ (confirmed above $75k)  |  **Bankroll:** $15.00 USDC
 
 ---
 
-## 🏆 Priority 1 — Best Risk/Reward (ACT WITHIN 13h)
+## Yesterday's Outcome (March 17 — ⚠️ TRADES NOT PLACED)
+Wallet was not configured on the server. These were *hypothetical* results:
 
-### Bet A: Bitcoin touches $75,000 today
-| Field | Value |
-|-------|-------|
-| Market | "Will Bitcoin reach $75,000 on March 17?" |
-| Slug | `will-bitcoin-reach-75k-on-march-17` |
-| Side | YES |
-| Current price | 54.5¢ |
-| Resolves | 2026-03-17T23:59:00Z (tonight) |
-| ROI if correct | **+83.5%** |
-| Suggested stake | **$8** |
+| Bet | Result | Note |
+|-----|--------|------|
+| A: BTC touch $75k on Mar 17 | ✅ WOULD HAVE WON | BTC crossed $75k (Mar market now at 100% YES) |
+| B: Fed hold rates | ✅ WOULD HAVE WON | Fed held at March meeting |
+| C: BTC dip to $73k on Mar 17 | ❌ WOULD HAVE LOST | BTC rallied, never dipped |
 
-**Why:** BTC is at $74,202 — only $798 (1.08%) away from the $75k trigger. This market pays off if BTC *touches* $75k at any point before midnight UTC. Given BTC's typical intraday range of 2–4%, a 1% bounce from here is very achievable in 13 hours. The 54.5% market price feels slightly low.
+**Missed profit on $15 stake: ~+$6.71.** To avoid this again: configure wallet on SA Mac before running.
 
 ---
 
-## 🛡️ Priority 2 — Near-Certain, Resolves Tonight
+## Today's Portfolio — 5 Bets, $15.00 Total
 
-### Bet B: Fed holds rates (no change)
+### Bet 1 — Arsenal WIN English Premier League ⭐ Best Bet
 | Field | Value |
 |-------|-------|
-| Market | "Will there be no change in Fed interest rates after the March 2026 meeting?" |
-| Slug | `will-there-be-no-change-in-fed-interest-rates-after-the-march-2026-meeting` |
-| Side | YES |
-| Current price | 99.4¢ |
-| Resolves | 2026-03-18T00:00:00Z (midnight UTC) |
-| ROI if correct | **+0.6%** |
-| Suggested stake | **$5** |
+| Question | Will Arsenal win the 2025–26 English Premier League? |
+| Slug | `will-arsenal-win-the-202526-english-premier-league` |
+| Token (YES) | `0x9e5f6f156e74674f05cfc289b52cd2b1ee7c45151612ef1ed78007af222e50e6` |
+| Side | **YES at 89¢** |
+| Resolves | ~June 25, 2026 (70 days) |
+| Stake | **$4.00** |
+| Liquidity | $792,000 |
+| Profit if correct | +$0.49 (+12.4% ROI) |
 
-**Why:** Near-zero risk. The Fed meeting is today. CME FedWatch shows 99.9% probability of hold. This is essentially free money; the tiny ROI compounds your bankroll safely.
+**Why:** Liverpool are at 0.1% — mathematically eliminated. Arsenal lead the EPL by a wide margin and are 89% favourites. Deep liquidity means clean execution. 70-day hold with strong conviction.
 
 ---
 
-## 🎯 Priority 3 — Hedge / Downside Play
-
-### Bet C: Bitcoin dips to $73,000 today
+### Bet 2 — Russia/Ukraine NO Ceasefire by March 31
 | Field | Value |
 |-------|-------|
-| Market | "Will Bitcoin dip to $73,000 on March 17?" |
-| Slug | `will-bitcoin-dip-to-73k-on-march-17` |
-| Side | YES |
-| Current price | 38.0¢ |
-| Resolves | 2026-03-17T23:59:00Z (tonight) |
-| ROI if correct | **+163%** |
-| Suggested stake | **$2** |
+| Question | Russia x Ukraine ceasefire by March 31, 2026? |
+| Slug | `russia-x-ukraine-ceasefire-by-march-31-2026` |
+| Token (NO) | `0xb77bb7337a54d0b28b7f5587fa8361f13bc1249ed6b42bb340c2e41f49174c1d` |
+| Side | **NO at 98.4¢** |
+| Resolves | 2026-03-31 (13 days) |
+| Stake | **$3.00** |
+| Liquidity | $279,000 |
+| Profit if correct | +$0.05 (+1.6% in 13 days = ~45% annualised) |
 
-**Why:** With BTC at $74.2k, a $1.2k (1.6%) dip to $73k is plausible — especially given global macro jitters. If BTC sells off instead of rallying, this pays 163% ROI. It also partially hedges Bet A (if BTC goes down hard, you lose Bet A but win Bet C).
+**Why:** Near-zero risk. A formal ceasefire by March 31 requires signing in 13 days — talks remain stalled. Fastest-resolving bet in the portfolio.
+
+---
+
+### Bet 3 — Manchester City NO EPL Win
+| Field | Value |
+|-------|-------|
+| Question | Will Manchester City win the 2025–26 English Premier League? |
+| Slug | `will-manchester-city-win-the-202526-english-premier-league` |
+| Token (NO) | `0x4e9cd5bbe2913b58188f0332e32889aa3c7db2695cc72e526265201a5d829349` |
+| Side | **NO at 90¢** |
+| Resolves | ~June 25, 2026 (70 days) |
+| Stake | **$3.00** |
+| Liquidity | $337,000 |
+| Profit if correct | +$0.33 (+11.1% ROI) |
+
+**Why:** Arsenal essentially have the title. Man City NO and Arsenal YES are correlated — if Arsenal win the league (Bet 1), Man City definitely cannot (Bet 3 also pays). Portfolio synergy.
+
+---
+
+### Bet 4 — Inter Milan WIN Serie A
+| Field | Value |
+|-------|-------|
+| Question | Will Inter win the 2025–26 Serie A league? |
+| Slug | `will-inter-win-the-202526-serie-a-league` |
+| Token (YES) | `0xce34babde54ea0e7af1b7acd729842265989fa433c9f1f459ea3430b4a342a2f` |
+| Side | **YES at 90¢** |
+| Resolves | ~June 1, 2026 (75 days) |
+| Stake | **$3.00** |
+| Liquidity | $196,000 |
+| Profit if correct | +$0.33 (+11.1% ROI) |
+
+**Why:** Inter leading Serie A with a solid cushion. Serie A tends to be more predictable once a team goes clear. Diversifies away from EPL exposure.
+
+---
+
+### Bet 5 — Rory McIlroy NO Masters Win
+| Field | Value |
+|-------|-------|
+| Question | Will Rory McIlroy win the 2026 Masters tournament? |
+| Slug | `will-rory-mcilroy-win-the-2026-masters-tournament` |
+| Token (NO) | `0xf4ca29d3494f7e5a86cbb242dcca49c200cbc56cabcd4d57f5eed3ed18b04a7d` |
+| Side | **NO at 91¢** |
+| Resolves | April 13, 2026 (26 days) |
+| Stake | **$2.00** |
+| Liquidity | $57,000 |
+| Profit if correct | +$0.20 (+10.0% ROI) |
+
+**Why:** Rory is Masters favourite but still only ~9% to win. Even the world's best golfer wins fewer than 1 in 10 majors. Quickest-resolving of the non-ceasefire bets.
 
 ---
 
 ## Summary
 
-| Bet | Stake | Win | EV |
-|-----|-------|-----|----|
-| A: BTC reach $75k | $8 | +$6.68 | +$1.84 |
-| B: Fed hold | $5 | +$0.03 | +$0.03 |
-| C: BTC dip $73k | $2 | +$3.26 | +$1.24 |
-| **Total** | **$15** | — | **+$3.11** (20.7% EV) |
+| Bet | Stake | Prob | Profit | EV |
+|-----|-------|------|--------|----|
+| 1: Arsenal YES EPL | $4.00 | 89% | +$0.49 | +$0.44 |
+| 2: Russia NO ceasefire | $3.00 | 98.4% | +$0.05 | +$0.05 |
+| 3: Man City NO EPL | $3.00 | 90% | +$0.33 | +$0.30 |
+| 4: Inter YES Serie A | $3.00 | 90% | +$0.33 | +$0.30 |
+| 5: Rory NO Masters | $2.00 | 91% | +$0.20 | +$0.18 |
+| **TOTAL** | **$15.00** | — | **+$1.40** | **+$1.27 (+8.5% EV)** |
 
-**Best case** (A + B hit): +$6.71 → portfolio $21.71 (+44.7%)
-**Worst case** (only B hits): -$9.97 → portfolio $5.03
-**Base case** (either A or C, plus B): ~+$3-4 → portfolio $18-19
+**Best case (all 5 hit):** +$1.40 → $16.40 portfolio (+9.3%)
+**Base case (4/5 hit):** +$0.90 to +$1.20
+**Worst case (only Bet 2 hits):** -$12.95 (extremely unlikely — 4 independent markets all failing)
 
 ---
 
-## How to Execute (once wallet is funded)
+## Execute from Your SA Mac
 
 ```bash
-export PATH="$HOME/.local/bin:$PATH"
+export POLYMARKET_PRIVATE_KEY=0x<your_key_here>
+export POLYMARKET_SIGNATURE_TYPE=proxy
 
-# Bet A – $8 on BTC reaching $75k
-polymarket clob buy \
-  --market will-bitcoin-reach-75k-on-march-17 \
-  --side yes \
-  --amount 8
-
-# Bet B – $5 on Fed holding
-polymarket clob buy \
-  --market will-there-be-no-change-in-fed-interest-rates-after-the-march-2026-meeting \
-  --side yes \
-  --amount 5
-
-# Bet C – $2 on BTC dipping to $73k
-polymarket clob buy \
-  --market will-bitcoin-dip-to-73k-on-march-17 \
-  --side yes \
-  --amount 2
-
-# Check positions
-polymarket portfolio positions
+bash polymarket_experiment/run_trades_now.sh
 ```
 
 ---
 
-## After These Resolve Tomorrow
-
-With expected ~$18-22 to redeploy, the next wave of opportunities:
-- Crude Oil > $72 end-March (92%, 8.7% ROI, 13 days)
-- Anthropic #1 AI model end-March (92.8%, 7.8% ROI, 13 days)
-- Gold above $4,800 end-March (75%, 33% ROI, 13 days)
-
-See `EXPERIMENT.md` for full strategy.
+## Notes
+- ⚠️ **This server has a US IP — Polymarket is geoblocked here.** Run from your SA Mac.
+- Arsenal (Bet 1) + Man City (Bet 3) are correlated — they rise and fall together.
+- Masters resolves April 13. Russia resolves March 31. Football bets resolve May–June.
+- After March 31: reinvest the $3.05 from the ceasefire bet into Real Madrid NO Champions League (88.5%, 13% ROI, $298k liquidity).
