@@ -5,7 +5,8 @@
   "scripts": {
     "start": "npx remotion studio",
     "render": "npx remotion render HipHopNight out/hiphop-night-square.mp4",
-    "render:stories": "npx remotion render HipHopNightStories out/hiphop-night-stories.mp4"
+    "render:stories": "npx remotion render HipHopNightStories out/hiphop-night-stories.mp4",
+    "render:lineup": "npx remotion render ArtistLineup out/artist-lineup.mp4 --browser-executable=/root/.cache/ms-playwright/chromium_headless_shell-1194/chrome-linux/headless_shell"
   },
   "dependencies": {
     "@remotion/bundler": "*",
