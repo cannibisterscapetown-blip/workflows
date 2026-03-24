@@ -120,6 +120,26 @@ REPORT_CATEGORIES = {
         "Rolling Tray Sticker",
         "Cone Jar Sticker",
     ],
+    "PRE ROLL": [
+        "Pre Roll Label - Sativa",
+        "Pre Roll Label - Indica",
+        "Pre Roll Label - Hybrid",
+    ],
+    "LTD EDITION": [
+        "LTD Label - Sativa",
+        "LTD Label - Indica",
+        "LTD Label - Hybrid",
+    ],
+    "MOONSTICK": [
+        "Moonstick Label - Sativa",
+        "Moonstick Label - Indica",
+        "Moonstick Label - Hybrid",
+    ],
+    "LIVING SOIL": [
+        "Living Soil Label - Sativa",
+        "Living Soil Label - Indica",
+        "Living Soil Label - Hybrid",
+    ],
     "SUPER JOINTS": [
         "Super Joints Label - Sativa",
         "Super Joints Label - Indica",
@@ -174,6 +194,77 @@ def save_stock(stock):
 
 # ─── Core logic ───────────────────────────────────────────────────────────────
 
+def classify_joint_type(tags_str, title):
+    """Classify a joint product as Sativa, Indica, or Hybrid based on tags and title."""
+    tags_lower = tags_str.lower()
+    title_lower = title.lower()
+
+    # Check tags first (more reliable when present)
+    if "sativa-dominant" in tags_lower or ("sativa" in tags_lower and "dominant" in tags_lower):
+        return "Sativa"
+    if "indica-dominant" in tags_lower or ("indica" in tags_lower and "dominant" in tags_lower):
+        return "Indica"
+    if "hybrid" in tags_lower:
+        return "Hybrid"
+    if "sativa" in tags_lower:
+        return "Sativa"
+    if "indica" in tags_lower:
+        return "Indica"
+
+    # Fall back to title keywords
+    if "hybrid" in title_lower:
+        return "Hybrid"
+    if "sativa" in title_lower:
+        return "Sativa"
+    if "indica" in title_lower:
+        return "Indica"
+
+    return None
+
+
+def classify_joint_brand(title):
+    """Classify a joint product by brand: Pre Roll, LTD, Moonstick, Living Soil, or Super Joints."""
+    title_lower = title.lower()
+    if "canni ltd" in title_lower or "ltd edition" in title_lower:
+        return "LTD"
+    if "moonstick" in title_lower:
+        return "Moonstick"
+    if "living soil" in title_lower:
+        return "Living Soil"
+    if "super joint" in title_lower:
+        return "Super Joints"
+    return "Pre Roll"
+
+
+def get_joint_product_mapping():
+    """Fetch all joint products and return {product_id: sticker_name} mapping."""
+    joint_mapping = {}
+    url = f"https://{SHOPIFY_STORE}/admin/api/2024-01/products.json?limit=250"
+
+    while url:
+        req = urllib.request.Request(url, headers={"X-Shopify-Access-Token": SHOPIFY_TOKEN})
+        with urllib.request.urlopen(req) as resp:
+            data = json.loads(resp.read())
+            for product in data["products"]:
+                ptype = product.get("product_type", "").lower()
+                # Match joints by product type
+                if ptype in ("joint", "joints") or ("flower" in ptype and "joint" in product.get("title", "").lower()):
+                    pid = product["id"]
+                    title = product.get("title", "")
+                    tags = product.get("tags", "")
+                    brand = classify_joint_brand(title)
+                    jtype = classify_joint_type(tags, title)
+                    if jtype:
+                        joint_mapping[pid] = f"{brand} Label - {jtype}"
+            # Pagination
+            link = resp.headers.get("Link", "")
+            url = None
+            for part in link.split(","):
+                if 'rel="next"' in part:
+                    url = part.strip().split(";")[0].strip("<> ")
+    return joint_mapping
+
+
 def get_flower_product_ids():
     """Return a set of Shopify product IDs whose type is Flower/Flowers/flower."""
     ids = set()
@@ -222,15 +313,18 @@ def get_orders(start: datetime, end: datetime):
     return orders
 
 
-def calculate_usage(orders, flower_product_ids):
+def calculate_usage(orders, flower_product_ids, joint_mapping=None):
     """
     Returns a dict of {sticker_name: count} for the given orders.
 
     Rules:
     - THC Oils / Edibles / Accessories: 1 sticker per unit sold (qty × 1)
+    - Joint Labels: 1 sticker per unit sold (qty × 1) via dynamic classification
     - Container Sticker: 1 per unique flower strain per order (qty ignored)
     - Package Seal Sticker + Flyers: 1 per online order
     """
+    if joint_mapping is None:
+        joint_mapping = {}
     usage = {}
 
     def add(sticker, n=1):
@@ -255,8 +349,13 @@ def calculate_usage(orders, flower_product_ids):
             if product_id in flower_product_ids:
                 flower_titles_in_order.add(title)
 
-            # Product-specific stickers
+            # Product-specific stickers (oils, edibles, accessories, hardcoded joints)
             sticker = PRODUCT_TO_STICKER.get(title)
+            if sticker:
+                add(sticker, qty)
+
+            # Dynamic joint label stickers (pre-roll, LTD, moonstick, living soil)
+            sticker = joint_mapping.get(product_id)
             if sticker:
                 add(sticker, qty)
 
@@ -344,13 +443,17 @@ def main():
     flower_ids = get_flower_product_ids()
     print(f"  Found {len(flower_ids)} flower products")
 
+    print("  Fetching joint product mappings...")
+    joint_mapping = get_joint_product_mapping()
+    print(f"  Classified {len(joint_mapping)} joint products")
+
     print("  Fetching orders...")
     orders = get_orders(start, end)
     online = sum(1 for o in orders if o.get("source_name") != "pos")
     print(f"  Found {len(orders)} orders ({online} online, {len(orders) - online} in-store)")
 
     print("  Calculating usage...")
-    usage = calculate_usage(orders, flower_ids)
+    usage = calculate_usage(orders, flower_ids, joint_mapping)
 
     stock = load_stock()
 
