@@ -22,5 +22,20 @@
   "Lighter Sticker": 0,
   "Joint Holder Sticker": 0,
   "Rolling Tray Sticker": 0,
-  "Cone Jar Sticker": 0
+  "Cone Jar Sticker": 0,
+
+  "Pre Roll Label - Sativa": 2400,
+  "Pre Roll Label - Indica": 1500,
+  "Pre Roll Label - Hybrid": 1500,
+  "Living Soil Label - Sativa": 2400,
+  "Living Soil Label - Indica": 1500,
+  "Living Soil Label - Hybrid": 1500,
+  "LTD Label - Sativa": 2400,
+  "LTD Label - Indica": 1500,
+  "LTD Label - Hybrid": 1500,
+  "Super Joints Label - Sativa": 200,
+  "Super Joints Label - Indica": 100,
+  "Moonstick Label - Sativa": 600,
+  "Moonstick Label - Indica": 600,
+  "Moonstick Label - Hybrid": 600
 }
