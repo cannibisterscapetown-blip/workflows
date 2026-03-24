@@ -66,6 +66,11 @@ PRODUCT_TO_STICKER = {
     "Joint holder - Pop-up":  "Joint Holder Sticker",
     "Rolling Tray - Black":   "Rolling Tray Sticker",
     "Cone Jar":               "Cone Jar Sticker",
+
+    # Super Joints — 1 label per unit sold, classified by Sativa / Indica / Hybrid
+    "Super Joint - Sativa":              "Super Joints Label - Sativa",
+    "Super Joint Sativa Moroccan Rosin": "Super Joints Label - Sativa",
+    "Super Joint - Indica":              "Super Joints Label - Indica",
 }
 
 # Product types that use a Container Sticker (1 per unique strain line item per order)
@@ -114,6 +119,11 @@ REPORT_CATEGORIES = {
         "Joint Holder Sticker",
         "Rolling Tray Sticker",
         "Cone Jar Sticker",
+    ],
+    "SUPER JOINTS": [
+        "Super Joints Label - Sativa",
+        "Super Joints Label - Indica",
+        "Super Joints Label - Hybrid",
     ],
 }
 
