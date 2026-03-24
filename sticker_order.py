@@ -269,12 +269,13 @@ def month_range(year: int, month: int):
 
 def build_report(month_label: str, usage: dict, stock: dict) -> str:
     col_w = 36
+    sold_header = f"Sold ({month_label})"
     lines = [
         f":package: *Sticker Order Report — {month_label}*",
-        "_Based on last month's sales vs current stock on hand_\n",
+        f"_'Sold' = units sold in {month_label} · 'Stock' = current on-hand count · 'Order' = qty to purchase_\n",
         "```",
-        f"{'Sticker':<{col_w}} {'Used':>5}  {'Stock':>5}  {'Order':>5}",
-        f"{'─' * col_w} {'─'*5}  {'─'*5}  {'─'*5}",
+        f"{'Sticker':<{col_w}} {sold_header:>16}  {'Stock':>5}  {'Order':>5}",
+        f"{'─' * col_w} {'─'*16}  {'─'*5}  {'─'*5}",
     ]
 
     grand_total_order = 0
@@ -290,7 +291,7 @@ def build_report(month_label: str, usage: dict, stock: dict) -> str:
             if used > 0 or in_stock > 0:
                 flag = "  <-- LOW" if in_stock > 0 and in_stock < used * 0.25 else ""
                 cat_lines.append(
-                    f"  {s:<{col_w - 2}} {used:>5}  {in_stock:>5}  {to_order:>5}{flag}"
+                    f"  {s:<{col_w - 2}} {used:>16}  {in_stock:>5}  {to_order:>5}{flag}"
                 )
 
         if cat_lines:
@@ -298,8 +299,8 @@ def build_report(month_label: str, usage: dict, stock: dict) -> str:
             lines.extend(cat_lines)
 
     lines += [
-        f"\n{'─' * (col_w + 22)}",
-        f"  {'TOTAL TO ORDER':<{col_w - 2}} {'':>5}  {'':>5}  {grand_total_order:>5}",
+        f"\n{'─' * (col_w + 32)}",
+        f"  {'TOTAL TO ORDER':<{col_w - 2}} {'':>16}  {'':>5}  {grand_total_order:>5}",
         "```",
         "\n_To update stock counts after your physical count, post the counts in #cannibot-chat and ask me to update them._",
     ]
