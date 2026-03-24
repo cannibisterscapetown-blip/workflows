@@ -1,0 +1,21 @@
+{
+  "_instructions": "Map each sticker/packaging type to the Shopify product title keywords that use it. A product is matched to the FIRST type whose keywords all appear in the product title (case-insensitive). Products that don't match any type are placed in '_unmapped' in the report.",
+  "packaging_types": {
+    "Flower Bag": {
+      "keywords": ["flower", "bud"]
+    },
+    "Pre-Roll Tube": {
+      "keywords": ["joint"]
+    },
+    "Vape Cartridge Box": {
+      "keywords": ["vape"]
+    },
+    "Edibles Pouch": {
+      "keywords": ["gummy", "edible", "sweet", "chocolate", "choc"]
+    },
+    "Concentrate Jar": {
+      "keywords": ["rosin", "hash", "wax", "concentrate", "extract"]
+    }
+  },
+  "_note": "Edit the packaging_types above to match YOUR actual sticker types and the keywords found in your Shopify product titles. You can add or remove types as needed."
+}

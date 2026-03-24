@@ -1,0 +1,12 @@
+{
+  "_instructions": "This file tracks leftover stickers after each monthly order. Update 'leftovers' manually if your actual leftover count differs from the projected amount. The workflow will read this at the start of each month and update 'projected_leftovers' after each run.",
+  "last_updated": null,
+  "leftovers": {
+    "_note": "Replace this with your actual sticker types and current leftover counts. Example below.",
+    "Flower Bag": 0,
+    "Pre-Roll Tube": 0,
+    "Vape Cartridge Box": 0,
+    "Edibles Pouch": 0,
+    "Concentrate Jar": 0
+  }
+}
