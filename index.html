@@ -794,62 +794,41 @@
     </div>
   </div>
 
-  <!-- TABLE MOUNTAIN: Devil's Peak (L), flat top (C), Lion's Head (R) -->
+  <!-- TABLE MOUNTAIN: Devil's Peak (L) · Flat Top (C) · Lion's Head (R) -->
   <div class="mountain-bg" id="mountain-bg">
     <svg viewBox="0 0 1440 400" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
       <defs>
         <linearGradient id="mtFill" x1="0%" y1="0%" x2="0%" y2="100%">
-          <stop offset="0%" stop-color="rgba(28,25,18,0.9)"/>
+          <stop offset="0%" stop-color="rgba(30,27,20,0.9)"/>
           <stop offset="100%" stop-color="rgba(26,23,18,1)"/>
         </linearGradient>
       </defs>
 
-      <!--
-        Bezier curves for natural silhouette.
-        Devil's Peak: left, nearly as tall as Table Mtn.
-        Table Mountain: wide flat top y=100, x=430 to x=980.
-        Lion's Head: right, compact cone, clearly shorter (y=155).
+      <!-- Polygon: cleaner than paths. Points go clockwise from bottom-left.
+           Devil's Peak peak  ≈ x266, y92
+           Table Mtn flat top : x468→x965, y=92
+           Lion's Head peak   ≈ x1089, y128  (shorter)
       -->
-      <path d="
-        M 0,400
-        L 0,370
-        C 40,358 80,342 118,322
-        C 152,302 180,278 204,252
-        C 224,228 240,202 252,176
-        C 262,152 268,130 270,114
-        C 272,100 272,94  271,92
-        C 270,96  270,104 272,116
-        C 276,136 284,164 298,192
-        C 312,218 330,240 350,254
-        C 368,266 386,270 402,264
-        C 416,256 426,240 432,218
-        C 438,196 440,170 440,142
-        C 440,122 440,110 440,104
-        L 440,100
-        L 980,100
-        L 980,106
-        C 980,118 982,136 986,158
-        C 990,178 994,196 998,208
-        C 1002,196 1007,180 1013,162
-        C 1019,142 1024,122 1027,106
-        C 1030,94  1031,88  1031,86
-        C 1031,90  1032,98  1034,110
-        C 1038,130 1044,155 1050,180
-        C 1060,212 1076,244 1100,272
-        C 1130,304 1170,332 1222,356
-        C 1290,382 1380,396 1440,400
-        L 1440,400 Z
-      " fill="url(#mtFill)"/>
+      <polygon fill="url(#mtFill)" points="
+        0,400
+        0,332
+        101,306  144,280  188,252  220,224  240,198
+        250,172  257,150  262,132  265,116  266,104  267,92
+        268,104  272,122  278,142  288,164  302,190  320,212
+        342,230  368,240  394,240  418,234  440,220
+        453,198  461,170  465,140  467,112  468,100  468,92
+        965,92
+        965,100  967,114  972,134  980,158  990,182  998,198
+        1010,212  1022,222  1034,226  1048,216  1060,198
+        1070,178  1078,158  1083,140  1087,128
+        1091,140  1098,158  1108,178  1122,200  1142,226
+        1174,258  1220,288  1282,316  1370,348  1440,366
+        1440,400
+      "/>
 
-      <!-- Flat top ridge line — the whole point -->
-      <line x1="440" y1="100" x2="980" y2="100"
-            stroke="rgba(42,175,170,0.65)" stroke-width="2.5"/>
-
-      <!-- Devil's Peak tip -->
-      <circle cx="271" cy="92" r="3" fill="rgba(42,175,170,0.5)"/>
-
-      <!-- Lion's Head tip -->
-      <circle cx="1031" cy="86" r="2.5" fill="rgba(42,175,170,0.4)"/>
+      <!-- THE flat top — unmistakable -->
+      <line x1="468" y1="92" x2="965" y2="92"
+            stroke="rgba(42,175,170,0.7)" stroke-width="2"/>
     </svg>
   </div>
 </div>
