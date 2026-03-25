@@ -3,318 +3,360 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Cannibisters — March 2026 Email Campaign Report</title>
+<title>Cannibisters — March 2026 Campaign Report</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <style>
   :root {
-    --gold:   #C9A84C;
-    --green:  #39FF14;
-    --black:  #080808;
-    --dark:   #111111;
-    --card:   #1a1a1a;
+    --gold: #C9A84C;
+    --green: #39FF14;
+    --bg: #0a0a0a;
+    --surface: #111111;
+    --surface2: #1a1a1a;
     --border: #2a2a2a;
-    --text:   #e8e8e8;
-    --muted:  #888888;
-    --red:    #ff4444;
+    --text: #f0f0f0;
+    --muted: #888;
     --orange: #ff9501;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
-    background: var(--black);
+    background: var(--bg);
     color: var(--text);
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-size: 14px;
-    line-height: 1.6;
+    min-height: 100vh;
+    padding: 0 0 60px;
   }
 
-  /* ── HEADER ── */
-  header {
-    background: linear-gradient(135deg, #111 0%, #1a1a1a 50%, #0d0d0d 100%);
+  /* ── Header ── */
+  .header {
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1200 100%);
     border-bottom: 2px solid var(--gold);
-    padding: 40px 48px 32px;
+    padding: 36px 48px 28px;
     position: relative;
     overflow: hidden;
   }
-  header::before {
+  .header::before {
     content: '';
     position: absolute;
     top: -60px; right: -60px;
-    width: 300px; height: 300px;
-    background: radial-gradient(circle, rgba(201,168,76,0.08) 0%, transparent 70%);
-    pointer-events: none;
+    width: 280px; height: 280px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(201,168,76,0.12) 0%, transparent 70%);
   }
-  .header-inner { max-width: 1200px; margin: 0 auto; }
-  .logo-row { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
-  .logo-dot {
-    width: 10px; height: 10px; border-radius: 50%;
+  .header-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .logo-mark {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 5px;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .header h1 {
+    font-size: clamp(24px, 4vw, 42px);
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: -1px;
+    color: #fff;
+  }
+  .header h1 span { color: var(--gold); }
+  .header-meta { text-align: right; }
+  .header-meta .period {
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 6px;
+  }
+  .header-meta .date { font-size: 20px; font-weight: 700; color: var(--gold); }
+  .green-line {
+    width: 56px; height: 3px;
     background: var(--green);
-    box-shadow: 0 0 12px var(--green);
-    animation: pulse 2s infinite;
-  }
-  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
-  .brand {
-    font-size: 11px; font-weight: 700; letter-spacing: 5px;
-    text-transform: uppercase; color: var(--gold);
-  }
-  h1 {
-    font-size: 36px; font-weight: 900; color: #fff;
-    letter-spacing: -1px; line-height: 1.1;
-  }
-  h1 span { color: var(--gold); }
-  .header-meta {
-    margin-top: 12px; display: flex; gap: 24px; flex-wrap: wrap;
-  }
-  .meta-pill {
-    background: rgba(201,168,76,0.1);
-    border: 1px solid rgba(201,168,76,0.3);
-    border-radius: 20px;
-    padding: 4px 14px;
-    font-size: 11px; font-weight: 600; letter-spacing: 1px;
-    text-transform: uppercase; color: var(--gold);
+    box-shadow: 0 0 10px var(--green);
+    margin-top: 18px;
   }
 
-  /* ── LAYOUT ── */
-  main { max-width: 1200px; margin: 0 auto; padding: 40px 48px 80px; }
-  section { margin-bottom: 48px; }
-  .section-title {
-    font-size: 11px; font-weight: 700; letter-spacing: 3px;
-    text-transform: uppercase; color: var(--gold);
-    margin-bottom: 20px; padding-bottom: 10px;
-    border-bottom: 1px solid var(--border);
-  }
+  /* ── Layout ── */
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 
-  /* ── KPI CARDS ── */
-  .kpi-grid {
+  /* ── KPI Cards ── */
+  .kpis {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 16px;
+    margin: 32px 0;
   }
-  .kpi-card {
-    background: var(--card);
+  .kpi {
+    background: var(--surface);
     border: 1px solid var(--border);
     border-radius: 10px;
-    padding: 20px;
-    transition: border-color 0.2s, transform 0.2s;
-    cursor: default;
+    padding: 20px 22px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s, border-color 0.2s;
   }
-  .kpi-card:hover { border-color: var(--gold); transform: translateY(-2px); }
+  .kpi:hover { transform: translateY(-3px); border-color: var(--gold); }
+  .kpi::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s;
+  }
+  .kpi:hover::after { transform: scaleX(1); }
   .kpi-label {
-    font-size: 10px; font-weight: 700; letter-spacing: 2px;
-    text-transform: uppercase; color: var(--muted);
-    margin-bottom: 8px;
+    font-size: 10px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 10px;
   }
-  .kpi-value {
-    font-size: 28px; font-weight: 900; color: #fff;
-    letter-spacing: -1px; line-height: 1;
-  }
-  .kpi-value.gold { color: var(--gold); }
+  .kpi-value { font-size: 28px; font-weight: 900; color: #fff; line-height: 1; }
+  .kpi-value.highlight { color: var(--gold); }
   .kpi-value.green { color: var(--green); }
-  .kpi-sub {
-    font-size: 11px; color: var(--muted); margin-top: 6px;
-  }
+  .kpi-sub { font-size: 11px; color: var(--muted); margin-top: 6px; }
 
-  /* ── CHARTS GRID ── */
+  /* ── Section titles ── */
+  .section-title {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-title .dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--green);
+    box-shadow: 0 0 6px var(--green);
+    flex-shrink: 0;
+  }
+  section { margin-bottom: 40px; }
+
+  /* ── Charts grid ── */
   .charts-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
+    margin-bottom: 40px;
   }
-  @media(max-width: 768px) { .charts-grid { grid-template-columns: 1fr; } }
+  @media (max-width: 768px) { .charts-grid { grid-template-columns: 1fr; } }
   .chart-card {
-    background: var(--card);
+    background: var(--surface);
     border: 1px solid var(--border);
     border-radius: 10px;
-    padding: 24px;
+    padding: 22px;
   }
   .chart-card.full { grid-column: 1 / -1; }
   .chart-title {
-    font-size: 11px; font-weight: 700; letter-spacing: 2px;
-    text-transform: uppercase; color: var(--muted);
-    margin-bottom: 20px;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 18px;
   }
   .chart-wrap { position: relative; }
 
-  /* ── TABLE ── */
-  .table-wrap { overflow-x: auto; }
-  table {
-    width: 100%; border-collapse: collapse;
-    font-size: 13px;
+  /* ── Data table ── */
+  .table-wrap {
+    overflow-x: auto;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
   }
-  thead tr { border-bottom: 2px solid var(--gold); }
-  th {
-    text-align: left; padding: 10px 14px;
-    font-size: 10px; font-weight: 700; letter-spacing: 1.5px;
-    text-transform: uppercase; color: var(--muted);
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  thead th {
+    background: var(--surface2);
+    padding: 13px 16px;
+    text-align: left;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
     white-space: nowrap;
+    border-bottom: 1px solid var(--border);
   }
-  th.sortable { cursor: pointer; user-select: none; }
-  th.sortable:hover { color: var(--gold); }
-  th .sort-arrow { margin-left: 4px; opacity: 0.4; }
-  th.active-sort .sort-arrow { opacity: 1; color: var(--gold); }
   tbody tr {
     border-bottom: 1px solid var(--border);
     transition: background 0.15s;
+    cursor: default;
   }
+  tbody tr:last-child { border-bottom: none; }
   tbody tr:hover { background: rgba(201,168,76,0.05); }
-  td { padding: 12px 14px; white-space: nowrap; }
-  td.name { color: #fff; font-weight: 600; white-space: normal; min-width: 180px; }
-  td.date { color: var(--muted); font-size: 12px; }
+  tbody td { padding: 13px 16px; white-space: nowrap; color: var(--text); }
+  tbody td.name { color: #fff; font-weight: 600; max-width: 220px; white-space: normal; }
+  tbody td.date { color: var(--muted); font-size: 12px; }
   .badge {
-    display: inline-block; padding: 2px 8px; border-radius: 20px;
-    font-size: 10px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase;
+    display: inline-block;
+    padding: 3px 9px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
   }
-  .badge-sent     { background: rgba(57,255,20,0.12);  color: var(--green); }
-  .badge-sending  { background: rgba(201,168,76,0.15); color: var(--gold); }
-  .badge-cancelled{ background: rgba(255,68,68,0.12);  color: var(--red); }
+  .badge.sent     { background: rgba(57,255,20,0.15); color: var(--green); }
+  .badge.sending  { background: rgba(255,149,1,0.15); color: var(--orange); }
+  .num { text-align: right; font-variant-numeric: tabular-nums; }
+  .num.good { color: var(--green); font-weight: 700; }
+  .num.warn { color: var(--orange); font-weight: 700; }
+  .num.bad  { color: #ff6060; font-weight: 700; }
+  .num.gold { color: var(--gold); font-weight: 700; }
+  .tooltip-val { font-size: 11px; color: var(--muted); margin-left: 4px; }
 
-  /* progress bars in table */
-  .bar-cell { min-width: 120px; }
-  .bar-wrap { display: flex; align-items: center; gap: 8px; }
-  .bar-bg {
-    flex: 1; height: 4px; background: var(--border);
-    border-radius: 2px; overflow: hidden;
-  }
-  .bar-fill { height: 100%; border-radius: 2px; transition: width 0.8s ease; }
-  .bar-fill.gold  { background: var(--gold); }
-  .bar-fill.green { background: var(--green); box-shadow: 0 0 6px var(--green); }
-  .bar-fill.red   { background: var(--red); }
-  .bar-fill.orange{ background: var(--orange); }
-  .bar-num { font-size: 12px; color: var(--text); min-width: 44px; text-align: right; }
-
-  /* ── INSIGHTS ── */
-  .insights-grid {
+  /* ── Insights ── */
+  .insights {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 16px;
+    margin-bottom: 40px;
   }
   .insight-card {
-    background: var(--card);
+    background: var(--surface);
     border: 1px solid var(--border);
     border-radius: 10px;
-    padding: 20px 22px;
-    border-left: 3px solid var(--border);
-    transition: border-left-color 0.2s;
+    padding: 20px;
   }
-  .insight-card:hover { border-left-color: var(--gold); }
-  .insight-card.positive { border-left-color: var(--green); }
-  .insight-card.warning  { border-left-color: var(--orange); }
-  .insight-card.negative { border-left-color: var(--red); }
-  .insight-icon { font-size: 20px; margin-bottom: 8px; }
-  .insight-title { font-weight: 700; color: #fff; margin-bottom: 6px; font-size: 13px; }
-  .insight-body  { color: var(--muted); font-size: 12px; line-height: 1.6; }
-  .insight-stat  { color: var(--gold); font-weight: 700; }
+  .insight-card.positive { border-left: 3px solid var(--green); }
+  .insight-card.warning  { border-left: 3px solid var(--orange); }
+  .insight-card.negative { border-left: 3px solid #ff6060; }
+  .insight-card.info     { border-left: 3px solid var(--gold); }
+  .insight-icon { font-size: 22px; margin-bottom: 10px; }
+  .insight-title { font-size: 13px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+  .insight-body { font-size: 12px; color: var(--muted); line-height: 1.7; }
+  .insight-body strong { color: var(--text); }
 
-  /* ── FOOTER ── */
-  footer {
-    border-top: 1px solid var(--border);
-    padding: 20px 48px;
-    text-align: center;
-    color: var(--muted);
+  /* ── Tab filter ── */
+  .tab-bar { display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; }
+  .tab {
+    padding: 7px 16px;
+    border-radius: 6px;
     font-size: 11px;
-    letter-spacing: 1px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--muted);
+    transition: all 0.2s;
   }
+  .tab:hover, .tab.active { background: var(--gold); color: #000; border-color: var(--gold); }
 
-  /* ── TOOLTIP ── */
-  .tooltip-trigger { position: relative; display: inline-block; }
-  .tooltip-trigger:hover .tooltip-box { opacity: 1; pointer-events: auto; transform: translateY(0); }
-  .tooltip-box {
-    position: absolute; bottom: calc(100% + 8px); left: 50%; transform: translateX(-50%) translateY(4px);
-    background: #2a2a2a; border: 1px solid var(--border);
-    border-radius: 6px; padding: 8px 12px;
-    font-size: 12px; color: #fff; white-space: nowrap;
-    opacity: 0; pointer-events: none;
-    transition: opacity 0.15s, transform 0.15s;
-    z-index: 10;
+  /* ── Footer ── */
+  .footer {
+    margin-top: 48px;
+    padding: 20px 48px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
   }
+  .footer p { font-size: 11px; color: var(--muted); letter-spacing: 1px; }
 </style>
 </head>
 <body>
 
-<header>
-  <div class="header-inner">
-    <div class="logo-row">
-      <div class="logo-dot"></div>
-      <span class="brand">Cannibisters Herbal Apothecary</span>
-    </div>
-    <h1>Email Campaign <span>Performance</span></h1>
-    <div class="header-meta">
-      <span class="meta-pill">March 2026</span>
-      <span class="meta-pill">7 Campaigns</span>
-      <span class="meta-pill">Klaviyo Analytics</span>
-      <span class="meta-pill">Generated 25 Mar 2026</span>
+<!-- HEADER -->
+<div class="header">
+  <div class="container">
+    <div class="header-top">
+      <div>
+        <div class="logo-mark">Cannibisters Herbal Apothecary</div>
+        <h1>Campaign<br/><span>Performance Report</span></h1>
+        <div class="green-line"></div>
+      </div>
+      <div class="header-meta">
+        <div class="period">Reporting Period</div>
+        <div class="date">March 2026</div>
+        <div class="period" style="margin-top:8px;">Generated 25 Mar 2026</div>
+      </div>
     </div>
   </div>
-</header>
+</div>
 
-<main>
+<div class="container">
 
-  <!-- KPI CARDS -->
-  <section>
-    <div class="section-title">Month at a Glance</div>
-    <div class="kpi-grid">
-      <div class="kpi-card">
-        <div class="kpi-label">Total Revenue</div>
-        <div class="kpi-value gold">R229,615</div>
-        <div class="kpi-sub">Placed Orders attributed</div>
-      </div>
-      <div class="kpi-card">
-        <div class="kpi-label">Total Sends</div>
-        <div class="kpi-value">50,728</div>
-        <div class="kpi-sub">Across 7 campaigns</div>
-      </div>
-      <div class="kpi-card">
-        <div class="kpi-label">Total Conversions</div>
-        <div class="kpi-value green">433</div>
-        <div class="kpi-sub">Placed orders</div>
-      </div>
-      <div class="kpi-card">
-        <div class="kpi-label">Avg Open Rate</div>
-        <div class="kpi-value">17.0%</div>
-        <div class="kpi-sub">Industry avg ~21%</div>
-      </div>
-      <div class="kpi-card">
-        <div class="kpi-label">Best Rev/Recipient</div>
-        <div class="kpi-value gold">R10.49</div>
-        <div class="kpi-sub">Loyalty Points – 1M</div>
-      </div>
-      <div class="kpi-card">
-        <div class="kpi-label">Total Unsubscribes</div>
-        <div class="kpi-value">158</div>
-        <div class="kpi-sub">4 spam complaints</div>
-      </div>
+  <!-- KPI STRIP -->
+  <div class="kpis">
+    <div class="kpi">
+      <div class="kpi-label">Total Sends</div>
+      <div class="kpi-value">50,728</div>
+      <div class="kpi-sub">across 7 campaigns</div>
     </div>
-  </section>
+    <div class="kpi">
+      <div class="kpi-label">Revenue Attributed</div>
+      <div class="kpi-value highlight">R229,615</div>
+      <div class="kpi-sub">Placed Order conversions</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Total Conversions</div>
+      <div class="kpi-value green">433</div>
+      <div class="kpi-sub">avg ~R530 order value</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Avg Open Rate</div>
+      <div class="kpi-value">18.5%</div>
+      <div class="kpi-sub">excl. re-engagement</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Avg Click Rate</div>
+      <div class="kpi-value">0.55%</div>
+      <div class="kpi-sub">across sent campaigns</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Unsubscribes</div>
+      <div class="kpi-value" style="color:#ff9501;">158</div>
+      <div class="kpi-sub">0.31% avg unsub rate</div>
+    </div>
+  </div>
 
   <!-- CHARTS -->
   <section>
-    <div class="section-title">Visual Breakdown</div>
+    <div class="section-title"><span class="dot"></span> Performance Overview</div>
     <div class="charts-grid">
 
       <div class="chart-card full">
-        <div class="chart-title">Revenue Attributed per Campaign (ZAR)</div>
-        <div class="chart-wrap" style="height:260px;">
+        <div class="chart-title">Revenue by Campaign (ZAR)</div>
+        <div class="chart-wrap" style="height:220px;">
           <canvas id="revenueChart"></canvas>
         </div>
       </div>
 
       <div class="chart-card">
-        <div class="chart-title">Open Rate vs Click Rate (%)</div>
+        <div class="chart-title">Open Rate by Campaign (%)</div>
+        <div class="chart-wrap" style="height:260px;">
+          <canvas id="openRateChart"></canvas>
+        </div>
+      </div>
+
+      <div class="chart-card">
+        <div class="chart-title">Total Engagement Breakdown</div>
         <div class="chart-wrap" style="height:260px;">
           <canvas id="engagementChart"></canvas>
         </div>
       </div>
 
       <div class="chart-card">
-        <div class="chart-title">Bounce Rate & Unsubscribe Rate (%)</div>
+        <div class="chart-title">Bounce Rate by Campaign (%)</div>
         <div class="chart-wrap" style="height:260px;">
-          <canvas id="healthChart"></canvas>
-        </div>
-      </div>
-
-      <div class="chart-card">
-        <div class="chart-title">Conversions per Campaign</div>
-        <div class="chart-wrap" style="height:260px;">
-          <canvas id="convChart"></canvas>
+          <canvas id="bounceChart"></canvas>
         </div>
       </div>
 
@@ -328,9 +370,14 @@
     </div>
   </section>
 
-  <!-- DATA TABLE -->
+  <!-- DETAILED TABLE -->
   <section>
-    <div class="section-title">Campaign Details <span style="color:var(--muted);font-weight:400;letter-spacing:0;">(click headers to sort)</span></div>
+    <div class="section-title"><span class="dot"></span> Campaign Breakdown</div>
+    <div class="tab-bar">
+      <button class="tab active" onclick="filterTable('all', this)">All Campaigns</button>
+      <button class="tab" onclick="filterTable('sent', this)">Sent</button>
+      <button class="tab" onclick="filterTable('sending', this)">Sending</button>
+    </div>
     <div class="table-wrap">
       <table id="campaignTable">
         <thead>
@@ -338,416 +385,323 @@
             <th>Campaign</th>
             <th>Date</th>
             <th>Status</th>
-            <th class="sortable" data-col="3">Recipients <span class="sort-arrow">↕</span></th>
-            <th class="sortable bar-cell" data-col="4">Open Rate <span class="sort-arrow">↕</span></th>
-            <th class="sortable bar-cell" data-col="5">Click Rate <span class="sort-arrow">↕</span></th>
-            <th class="sortable bar-cell" data-col="6">Bounce Rate <span class="sort-arrow">↕</span></th>
-            <th class="sortable" data-col="7">Unsubs <span class="sort-arrow">↕</span></th>
-            <th class="sortable" data-col="8">Conversions <span class="sort-arrow">↕</span></th>
-            <th class="sortable" data-col="9">Revenue <span class="sort-arrow">↕</span></th>
-            <th class="sortable" data-col="10">Rev/Recipient <span class="sort-arrow">↕</span></th>
+            <th class="num">Recipients</th>
+            <th class="num">Opens</th>
+            <th class="num">Open Rate</th>
+            <th class="num">Clicks</th>
+            <th class="num">Click Rate</th>
+            <th class="num">Bounce Rate</th>
+            <th class="num">Unsubs</th>
+            <th class="num">Conversions</th>
+            <th class="num">Revenue (ZAR)</th>
+            <th class="num">Rev / Recipient</th>
           </tr>
         </thead>
-        <tbody id="tableBody"></tbody>
+        <tbody>
+          <tr data-status="sent">
+            <td class="name">March Newsletter</td>
+            <td class="date">5 Mar</td>
+            <td><span class="badge sent">Sent</span></td>
+            <td class="num">7,103</td>
+            <td class="num">2,098</td>
+            <td class="num good">22.2%</td>
+            <td class="num">63</td>
+            <td class="num">0.62%</td>
+            <td class="num warn">4.07%</td>
+            <td class="num">35</td>
+            <td class="num">103</td>
+            <td class="num gold">R54,559</td>
+            <td class="num">R8.01</td>
+          </tr>
+          <tr data-status="sent">
+            <td class="name">Campaign Feb 26 <span class="tooltip-val">(re-send)</span></td>
+            <td class="date">5 Mar</td>
+            <td><span class="badge sent">Sent</span></td>
+            <td class="num">3,716</td>
+            <td class="num">83</td>
+            <td class="num bad">2.1%</td>
+            <td class="num">9</td>
+            <td class="num bad">0.24%</td>
+            <td class="num bad">8.61%</td>
+            <td class="num">0</td>
+            <td class="num">0</td>
+            <td class="num">R0</td>
+            <td class="num bad">R0</td>
+          </tr>
+          <tr data-status="sent">
+            <td class="name">Loyalty Points — 1M Redeemed</td>
+            <td class="date">12 Mar</td>
+            <td><span class="badge sent">Sent</span></td>
+            <td class="num">7,104</td>
+            <td class="num">2,447</td>
+            <td class="num good">25.9%</td>
+            <td class="num">62</td>
+            <td class="num">0.70%</td>
+            <td class="num good">1.52%</td>
+            <td class="num">19</td>
+            <td class="num good">139</td>
+            <td class="num gold">R73,378</td>
+            <td class="num gold">R10.49</td>
+          </tr>
+          <tr data-status="sent">
+            <td class="name">Happy Hour March</td>
+            <td class="date">17 Mar</td>
+            <td><span class="badge sent">Sent</span></td>
+            <td class="num">7,135</td>
+            <td class="num">1,997</td>
+            <td class="num good">21.6%</td>
+            <td class="num">65</td>
+            <td class="num">0.75%</td>
+            <td class="num">2.14%</td>
+            <td class="num warn">38</td>
+            <td class="num">53</td>
+            <td class="num gold">R34,717</td>
+            <td class="num">R4.97</td>
+          </tr>
+          <tr data-status="sent">
+            <td class="name">Loyalty Kiosk Launch</td>
+            <td class="date">19 Mar</td>
+            <td><span class="badge sent">Sent</span></td>
+            <td class="num">7,095</td>
+            <td class="num">2,289</td>
+            <td class="num good">24.8%</td>
+            <td class="num">63</td>
+            <td class="num">0.69%</td>
+            <td class="num good">1.38%</td>
+            <td class="num">32</td>
+            <td class="num good">132</td>
+            <td class="num gold">R63,398</td>
+            <td class="num">R9.06</td>
+          </tr>
+          <tr data-status="sent">
+            <td class="name">Re-engagement — March 2026</td>
+            <td class="date">21 Mar</td>
+            <td><span class="badge sent">Sent</span></td>
+            <td class="num">13,103</td>
+            <td class="num">1,249</td>
+            <td class="num warn">8.5%</td>
+            <td class="num">51</td>
+            <td class="num warn">0.34%</td>
+            <td class="num bad">10.39%</td>
+            <td class="num">23</td>
+            <td class="num">6</td>
+            <td class="num">R3,562</td>
+            <td class="num bad">R0.30</td>
+          </tr>
+          <tr data-status="sending">
+            <td class="name">Hip Hop Night — 28 Mar 2026</td>
+            <td class="date">25 Mar</td>
+            <td><span class="badge sending">Sending</span></td>
+            <td class="num">5,472</td>
+            <td class="num">516</td>
+            <td class="num warn">8.7%</td>
+            <td class="num">2</td>
+            <td class="num bad">0.04%</td>
+            <td class="num good">0.86%</td>
+            <td class="num">11</td>
+            <td class="num">—</td>
+            <td class="num">—</td>
+            <td class="num">—</td>
+          </tr>
+        </tbody>
       </table>
     </div>
   </section>
 
   <!-- INSIGHTS -->
   <section>
-    <div class="section-title">Insights & Recommendations</div>
-    <div class="insights-grid">
+    <div class="section-title"><span class="dot"></span> Key Insights &amp; Recommendations</div>
+    <div class="insights">
       <div class="insight-card positive">
         <div class="insight-icon">🏆</div>
-        <div class="insight-title">Top Performer: Loyalty Points – 1M Redeemed</div>
-        <div class="insight-body">Best open rate (<span class="insight-stat">25.9%</span>), highest revenue (<span class="insight-stat">R73,378</span>), and best RPR at <span class="insight-stat">R10.49</span>. Milestone celebration emails are your highest-ROI content type.</div>
+        <div class="insight-title">Best Performer: Loyalty Points – 1M Redeemed</div>
+        <div class="insight-body">
+          Highest open rate at <strong>25.9%</strong>, top revenue at <strong>R73,378</strong>, and best revenue per recipient at <strong>R10.49</strong>. Milestone celebration emails resonate deeply. Plan more of these.
+        </div>
       </div>
       <div class="insight-card positive">
-        <div class="insight-icon">🎯</div>
-        <div class="insight-title">Loyalty Kiosk Launch — Strong Product Email</div>
-        <div class="insight-body">132 conversions generating <span class="insight-stat">R63,398</span>. Feature/product launch emails consistently drive strong purchase intent. Lowest bounce rate at <span class="insight-stat">1.4%</span>.</div>
-      </div>
-      <div class="insight-card warning">
-        <div class="insight-icon">⚠️</div>
-        <div class="insight-title">Re-engagement List Needs Cleaning</div>
-        <div class="insight-body">Sent to <span class="insight-stat">13,103</span> — your biggest audience — but only <span class="insight-stat">8.5%</span> open rate and a <span class="insight-stat">10.4%</span> bounce rate. Stale addresses are hurting deliverability. Clean before the April send.</div>
-      </div>
-      <div class="insight-card warning">
-        <div class="insight-icon">📉</div>
-        <div class="insight-title">Happy Hour: Highest Unsubscribes</div>
-        <div class="insight-body"><span class="insight-stat">38 unsubscribes (0.54%)</span> — the most of the month. Promotional send frequency may be causing fatigue. Consider A/B testing the subject line or reducing cadence.</div>
+        <div class="insight-icon">🎰</div>
+        <div class="insight-title">Loyalty Kiosk Launch — Consistent Revenue Driver</div>
+        <div class="insight-body">
+          132 conversions, <strong>R63,398 revenue</strong>, near-perfect <strong>1.38% bounce rate</strong>. Feature-launch emails reliably convert — lean into new product and feature moments.
+        </div>
       </div>
       <div class="insight-card negative">
-        <div class="insight-icon">🚫</div>
-        <div class="insight-title">Campaign Feb 26 Re-send: No Value</div>
-        <div class="insight-body"><span class="insight-stat">2.1%</span> open rate, <span class="insight-stat">8.6%</span> bounce rate, zero conversions. This cold segment is not worth re-sending to. Retire or suppress this list.</div>
+        <div class="insight-icon">⚠️</div>
+        <div class="insight-title">Re-engagement List Needs Urgent Cleaning</div>
+        <div class="insight-body">
+          <strong>10.4% bounce rate</strong> on 13,103 sends is a serious deliverability risk. Only 6 conversions at <strong>R0.30/recipient</strong>. Validate and prune this list before the April re-engagement send.
+        </div>
       </div>
-      <div class="insight-card">
+      <div class="insight-card negative">
+        <div class="insight-icon">🗑️</div>
+        <div class="insight-title">Retire the Feb 26 Re-send Segment</div>
+        <div class="insight-body">
+          <strong>2.1% open rate, 8.6% bounce rate, zero conversions.</strong> This cold segment is damaging deliverability with zero return. Remove it from rotation entirely.
+        </div>
+      </div>
+      <div class="insight-card warning">
+        <div class="insight-icon">📤</div>
+        <div class="insight-title">Happy Hour: Highest Unsubscribes (38)</div>
+        <div class="insight-body">
+          <strong>0.54% unsub rate</strong> — the highest this month. Review frequency of promotional sends; audience may be fatiguing from discount-led messaging.
+        </div>
+      </div>
+      <div class="insight-card info">
         <div class="insight-icon">🎤</div>
-        <div class="insight-title">Hip Hop Night — Still Early</div>
-        <div class="insight-body">Only <span class="insight-stat">2 clicks</span> so far — still sending today. No revenue expected until after the Mar 28 event. Plan a post-event follow-up email to capitalise on momentum.</div>
+        <div class="insight-title">Hip Hop Night — Event Still Ahead</div>
+        <div class="insight-body">
+          Currently sending. Event is <strong>Saturday 28 March</strong>. Revenue attribution will come post-event. Plan a follow-up recap email next week to capture the buzz.
+        </div>
       </div>
     </div>
   </section>
 
-</main>
+</div>
 
-<footer>
-  Cannibisters Herbal Apothecary · cannibisters.co.za · Data source: Klaviyo — March 2026
-</footer>
+<!-- FOOTER -->
+<div class="footer">
+  <p>Cannibisters Herbal Apothecary · Klaviyo Campaign Report · March 2026</p>
+  <p>Conversion metric: Placed Order · Data as of 25 Mar 2026</p>
+</div>
 
 <script>
-// ── DATA ──────────────────────────────────────────────────────────────────────
-const campaigns = [
-  {
-    name: 'March Newsletter',
-    date: 'Mar 5',
-    status: 'Sent',
-    recipients: 7103,
-    openRate: 22.2,
-    clickRate: 0.62,
-    bounceRate: 4.1,
-    unsubs: 35,
-    conversions: 103,
-    revenue: 54559,
-    rpr: 8.01,
-  },
-  {
-    name: 'Campaign Feb 26 (re-send)',
-    date: 'Mar 5',
-    status: 'Sent',
-    recipients: 3716,
-    openRate: 2.1,
-    clickRate: 0.24,
-    bounceRate: 8.6,
-    unsubs: 0,
-    conversions: 0,
-    revenue: 0,
-    rpr: 0,
-  },
-  {
-    name: 'Loyalty Points – 1M Redeemed',
-    date: 'Mar 12',
-    status: 'Sent',
-    recipients: 7104,
-    openRate: 25.9,
-    clickRate: 0.70,
-    bounceRate: 1.5,
-    unsubs: 19,
-    conversions: 139,
-    revenue: 73378,
-    rpr: 10.49,
-  },
-  {
-    name: 'Happy Hour March',
-    date: 'Mar 17',
-    status: 'Sent',
-    recipients: 7135,
-    openRate: 21.6,
-    clickRate: 0.75,
-    bounceRate: 2.1,
-    unsubs: 38,
-    conversions: 53,
-    revenue: 34717,
-    rpr: 4.97,
-  },
-  {
-    name: 'Loyalty Kiosk Launch',
-    date: 'Mar 19',
-    status: 'Sent',
-    recipients: 7095,
-    openRate: 24.8,
-    clickRate: 0.69,
-    bounceRate: 1.4,
-    unsubs: 32,
-    conversions: 132,
-    revenue: 63398,
-    rpr: 9.06,
-  },
-  {
-    name: 'Re-engagement – March',
-    date: 'Mar 21',
-    status: 'Sent',
-    recipients: 13103,
-    openRate: 8.5,
-    clickRate: 0.34,
-    bounceRate: 10.4,
-    unsubs: 23,
-    conversions: 6,
-    revenue: 3562,
-    rpr: 0.30,
-  },
-  {
-    name: 'Hip Hop Night – 28 Mar',
-    date: 'Mar 25',
-    status: 'Sending',
-    recipients: 5472,
-    openRate: 8.7,
-    clickRate: 0.04,
-    bounceRate: 0.9,
-    unsubs: 11,
-    conversions: 0,
-    revenue: 0,
-    rpr: 0,
-  },
-];
+const shortLabels = ['Newsletter', 'Feb 26', '1M Loyalty', 'Happy Hour', 'Kiosk', 'Re-engage', 'Hip Hop'];
+const GOLD = '#C9A84C', GREEN = '#39FF14', ORANGE = '#ff9501', RED = '#ff6060', DARK = '#222';
 
-const GOLD   = 'rgba(201,168,76,1)';
-const GOLDF  = 'rgba(201,168,76,0.15)';
-const GREEN  = 'rgba(57,255,20,1)';
-const GREENF = 'rgba(57,255,20,0.15)';
-const RED    = 'rgba(255,68,68,1)';
-const REDF   = 'rgba(255,68,68,0.15)';
-const ORANGE = 'rgba(255,149,1,1)';
-const ORANGEF= 'rgba(255,149,1,0.15)';
-const MUTED  = 'rgba(136,136,136,0.6)';
-
-const labels = campaigns.map(c => c.name);
-const shortLabels = campaigns.map(c => c.name.length > 22 ? c.name.slice(0,20)+'…' : c.name);
-
-const chartDefaults = {
+const baseOpts = {
   responsive: true,
   maintainAspectRatio: false,
+  animation: { duration: 800, easing: 'easeOutQuart' },
   plugins: {
     legend: { display: false },
     tooltip: {
       backgroundColor: '#1a1a1a',
-      borderColor: '#2a2a2a',
+      borderColor: '#333',
       borderWidth: 1,
-      titleColor: '#C9A84C',
-      bodyColor: '#e8e8e8',
+      titleColor: '#fff',
+      bodyColor: '#aaa',
       padding: 10,
     }
   },
   scales: {
-    x: {
-      ticks: { color: '#888', font: { size: 10 }, maxRotation: 30 },
-      grid: { color: 'rgba(255,255,255,0.04)' },
-    },
-    y: {
-      ticks: { color: '#888', font: { size: 10 } },
-      grid: { color: 'rgba(255,255,255,0.04)' },
-    }
+    x: { ticks: { color: '#555', font: { size: 10 } }, grid: { color: '#1a1a1a' } },
+    y: { ticks: { color: '#555', font: { size: 10 } }, grid: { color: '#1a1a1a' } },
   }
 };
 
-// Revenue chart
+// Revenue
 new Chart(document.getElementById('revenueChart'), {
   type: 'bar',
   data: {
     labels: shortLabels,
     datasets: [{
-      data: campaigns.map(c => c.revenue),
-      backgroundColor: campaigns.map(c => c.revenue > 50000 ? GOLD : GOLDF),
-      borderColor:     campaigns.map(c => c.revenue > 50000 ? GOLD : 'rgba(201,168,76,0.4)'),
-      borderWidth: 1, borderRadius: 4,
+      data: [54559, 0, 73378, 34717, 63398, 3562, 0],
+      backgroundColor: [GOLD, DARK, GREEN, ORANGE, GOLD, RED, DARK],
+      borderRadius: 6,
+      borderSkipped: false,
     }]
   },
   options: {
-    ...chartDefaults,
-    plugins: { ...chartDefaults.plugins,
-      tooltip: { ...chartDefaults.plugins.tooltip,
-        callbacks: { label: ctx => ` R${ctx.parsed.y.toLocaleString()}` }
-      }
-    },
-    scales: { ...chartDefaults.scales,
-      y: { ...chartDefaults.scales.y,
-        ticks: { ...chartDefaults.scales.y.ticks,
-          callback: v => 'R' + (v/1000).toFixed(0) + 'k'
-        }
-      }
-    }
+    ...baseOpts,
+    plugins: { ...baseOpts.plugins, tooltip: { ...baseOpts.plugins.tooltip, callbacks: { label: c => ` R${c.raw.toLocaleString()}` } } },
+    scales: { ...baseOpts.scales, y: { ...baseOpts.scales.y, ticks: { ...baseOpts.scales.y.ticks, callback: v => `R${(v/1000).toFixed(0)}k` } } }
   }
 });
 
-// Engagement chart
-new Chart(document.getElementById('engagementChart'), {
-  type: 'bar',
-  data: {
-    labels: shortLabels,
-    datasets: [
-      {
-        label: 'Open Rate %',
-        data: campaigns.map(c => c.openRate),
-        backgroundColor: GOLD, borderColor: GOLD, borderWidth: 1, borderRadius: 3,
-      },
-      {
-        label: 'Click Rate %',
-        data: campaigns.map(c => c.clickRate),
-        backgroundColor: GREEN, borderColor: GREEN, borderWidth: 1, borderRadius: 3,
-      }
-    ]
-  },
-  options: {
-    ...chartDefaults,
-    plugins: { ...chartDefaults.plugins,
-      legend: {
-        display: true,
-        labels: { color: '#888', font: { size: 11 }, boxWidth: 10, padding: 12 }
-      },
-      tooltip: { ...chartDefaults.plugins.tooltip,
-        callbacks: { label: ctx => ` ${ctx.dataset.label}: ${ctx.parsed.y}%` }
-      }
-    },
-    scales: { ...chartDefaults.scales,
-      y: { ...chartDefaults.scales.y,
-        ticks: { ...chartDefaults.scales.y.ticks, callback: v => v + '%' }
-      }
-    }
-  }
-});
-
-// Health chart
-new Chart(document.getElementById('healthChart'), {
-  type: 'bar',
-  data: {
-    labels: shortLabels,
-    datasets: [
-      {
-        label: 'Bounce Rate %',
-        data: campaigns.map(c => c.bounceRate),
-        backgroundColor: campaigns.map(c => c.bounceRate > 5 ? RED : REDF),
-        borderColor: campaigns.map(c => c.bounceRate > 5 ? RED : 'rgba(255,68,68,0.4)'),
-        borderWidth: 1, borderRadius: 3,
-      },
-      {
-        label: 'Unsub Rate %',
-        data: campaigns.map(c => +(c.unsubs / c.recipients * 100).toFixed(3)),
-        backgroundColor: ORANGE, borderColor: ORANGE, borderWidth: 1, borderRadius: 3,
-      }
-    ]
-  },
-  options: {
-    ...chartDefaults,
-    plugins: { ...chartDefaults.plugins,
-      legend: {
-        display: true,
-        labels: { color: '#888', font: { size: 11 }, boxWidth: 10, padding: 12 }
-      },
-      tooltip: { ...chartDefaults.plugins.tooltip,
-        callbacks: { label: ctx => ` ${ctx.dataset.label}: ${ctx.parsed.y.toFixed(2)}%` }
-      }
-    },
-    scales: { ...chartDefaults.scales,
-      y: { ...chartDefaults.scales.y,
-        ticks: { ...chartDefaults.scales.y.ticks, callback: v => v + '%' }
-      }
-    }
-  }
-});
-
-// Conversions chart
-new Chart(document.getElementById('convChart'), {
+// Open rate (horizontal)
+new Chart(document.getElementById('openRateChart'), {
   type: 'bar',
   data: {
     labels: shortLabels,
     datasets: [{
-      data: campaigns.map(c => c.conversions),
-      backgroundColor: campaigns.map(c => c.conversions > 100 ? GREEN : GREENF),
-      borderColor:     campaigns.map(c => c.conversions > 100 ? GREEN : 'rgba(57,255,20,0.4)'),
-      borderWidth: 1, borderRadius: 4,
+      data: [22.2, 2.1, 25.9, 21.6, 24.8, 8.5, 8.7],
+      backgroundColor: ctx => { const v = ctx.raw; return v >= 22 ? GREEN : v >= 15 ? GOLD : v >= 8 ? ORANGE : RED; },
+      borderRadius: 5,
+      borderSkipped: false,
     }]
   },
   options: {
-    ...chartDefaults,
-    plugins: { ...chartDefaults.plugins,
-      tooltip: { ...chartDefaults.plugins.tooltip,
-        callbacks: { label: ctx => ` ${ctx.parsed.y} conversions` }
-      }
+    ...baseOpts,
+    indexAxis: 'y',
+    plugins: { ...baseOpts.plugins, tooltip: { ...baseOpts.plugins.tooltip, callbacks: { label: c => ` ${c.raw}%` } } },
+    scales: {
+      x: { ...baseOpts.scales.x, ticks: { ...baseOpts.scales.x.ticks, callback: v => `${v}%` } },
+      y: { ...baseOpts.scales.y, ticks: { color: '#888', font: { size: 11 } } },
     }
   }
 });
 
-// RPR chart
+// Engagement doughnut
+new Chart(document.getElementById('engagementChart'), {
+  type: 'doughnut',
+  data: {
+    labels: ['Opens', 'Clicks', 'Unsubscribes', 'No Engagement'],
+    datasets: [{
+      data: [10679, 315, 158, 39576],
+      backgroundColor: [GREEN, GOLD, RED, '#1e1e1e'],
+      borderColor: '#0a0a0a',
+      borderWidth: 3,
+      hoverOffset: 6,
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    animation: { duration: 800 },
+    plugins: {
+      legend: { display: true, position: 'bottom', labels: { color: '#888', font: { size: 10 }, padding: 12, boxWidth: 10 } },
+      tooltip: { ...baseOpts.plugins.tooltip, callbacks: { label: c => ` ${c.label}: ${c.raw.toLocaleString()} (${(c.raw/50728*100).toFixed(1)}%)` } }
+    }
+  }
+});
+
+// Bounce rate
+new Chart(document.getElementById('bounceChart'), {
+  type: 'bar',
+  data: {
+    labels: shortLabels,
+    datasets: [{
+      data: [4.07, 8.61, 1.52, 2.14, 1.38, 10.39, 0.86],
+      backgroundColor: ctx => { const v = ctx.raw; return v >= 7 ? RED : v >= 3 ? ORANGE : GREEN; },
+      borderRadius: 5,
+      borderSkipped: false,
+    }]
+  },
+  options: {
+    ...baseOpts,
+    plugins: { ...baseOpts.plugins, tooltip: { ...baseOpts.plugins.tooltip, callbacks: { label: c => ` ${c.raw}%` } } },
+    scales: { ...baseOpts.scales, y: { ...baseOpts.scales.y, ticks: { ...baseOpts.scales.y.ticks, callback: v => `${v}%` } } }
+  }
+});
+
+// Revenue per recipient
 new Chart(document.getElementById('rprChart'), {
   type: 'bar',
   data: {
     labels: shortLabels,
     datasets: [{
-      data: campaigns.map(c => c.rpr),
-      backgroundColor: campaigns.map(c => c.rpr > 5 ? GOLD : GOLDF),
-      borderColor:     campaigns.map(c => c.rpr > 5 ? GOLD : 'rgba(201,168,76,0.4)'),
-      borderWidth: 1, borderRadius: 4,
+      data: [8.01, 0, 10.49, 4.97, 9.06, 0.30, 0],
+      backgroundColor: ctx => { const v = ctx.raw; return v >= 9 ? GREEN : v >= 5 ? GOLD : v >= 1 ? ORANGE : RED; },
+      borderRadius: 5,
+      borderSkipped: false,
     }]
   },
   options: {
-    ...chartDefaults,
-    plugins: { ...chartDefaults.plugins,
-      tooltip: { ...chartDefaults.plugins.tooltip,
-        callbacks: { label: ctx => ` R${ctx.parsed.y.toFixed(2)} per recipient` }
-      }
-    },
-    scales: { ...chartDefaults.scales,
-      y: { ...chartDefaults.scales.y,
-        ticks: { ...chartDefaults.scales.y.ticks, callback: v => 'R' + v }
-      }
-    }
+    ...baseOpts,
+    plugins: { ...baseOpts.plugins, tooltip: { ...baseOpts.plugins.tooltip, callbacks: { label: c => ` R${c.raw}` } } },
+    scales: { ...baseOpts.scales, y: { ...baseOpts.scales.y, ticks: { ...baseOpts.scales.y.ticks, callback: v => `R${v}` } } }
   }
 });
 
-// ── TABLE BUILD ───────────────────────────────────────────────────────────────
-const maxOpen   = Math.max(...campaigns.map(c => c.openRate));
-const maxClick  = Math.max(...campaigns.map(c => c.clickRate));
-const maxBounce = Math.max(...campaigns.map(c => c.bounceRate));
-
-function buildTable(data) {
-  const tbody = document.getElementById('tableBody');
-  tbody.innerHTML = '';
-  data.forEach(c => {
-    const statusClass = c.status === 'Sent' ? 'badge-sent'
-                      : c.status === 'Sending' ? 'badge-sending'
-                      : 'badge-cancelled';
-    const bounceColor = c.bounceRate > 5 ? 'red' : c.bounceRate > 2 ? 'orange' : 'green';
-    tbody.innerHTML += `
-      <tr>
-        <td class="name">${c.name}</td>
-        <td class="date">${c.date}</td>
-        <td><span class="badge ${statusClass}">${c.status}</span></td>
-        <td>${c.recipients.toLocaleString()}</td>
-        <td class="bar-cell">
-          <div class="bar-wrap">
-            <div class="bar-bg"><div class="bar-fill gold" style="width:${(c.openRate/maxOpen*100).toFixed(1)}%"></div></div>
-            <span class="bar-num">${c.openRate}%</span>
-          </div>
-        </td>
-        <td class="bar-cell">
-          <div class="bar-wrap">
-            <div class="bar-bg"><div class="bar-fill green" style="width:${(c.clickRate/maxClick*100).toFixed(1)}%"></div></div>
-            <span class="bar-num">${c.clickRate}%</span>
-          </div>
-        </td>
-        <td class="bar-cell">
-          <div class="bar-wrap">
-            <div class="bar-bg"><div class="bar-fill ${bounceColor}" style="width:${(c.bounceRate/maxBounce*100).toFixed(1)}%"></div></div>
-            <span class="bar-num">${c.bounceRate}%</span>
-          </div>
-        </td>
-        <td>${c.unsubs}</td>
-        <td>${c.conversions}</td>
-        <td>R${c.revenue.toLocaleString()}</td>
-        <td>R${c.rpr.toFixed(2)}</td>
-      </tr>`;
+// Table filter
+function filterTable(status, btn) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('#campaignTable tbody tr').forEach(row => {
+    row.style.display = (status === 'all' || row.dataset.status === status) ? '' : 'none';
   });
 }
-buildTable(campaigns);
-
-// ── SORT ─────────────────────────────────────────────────────────────────────
-const colKeys = [null, null, null, 'recipients','openRate','clickRate','bounceRate','unsubs','conversions','revenue','rpr'];
-let sortCol = null, sortAsc = true;
-
-document.querySelectorAll('th.sortable').forEach(th => {
-  th.addEventListener('click', () => {
-    const col = parseInt(th.dataset.col);
-    const key = colKeys[col];
-    if (!key) return;
-    if (sortCol === col) sortAsc = !sortAsc; else { sortCol = col; sortAsc = false; }
-    document.querySelectorAll('th.sortable').forEach(t => t.classList.remove('active-sort'));
-    th.classList.add('active-sort');
-    th.querySelector('.sort-arrow').textContent = sortAsc ? '↑' : '↓';
-    const sorted = [...campaigns].sort((a,b) => sortAsc ? a[key]-b[key] : b[key]-a[key]);
-    buildTable(sorted);
-  });
-});
 </script>
 </body>
 </html>
