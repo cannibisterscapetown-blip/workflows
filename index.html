@@ -206,17 +206,16 @@
     .mountain-bg {
       position: absolute;
       bottom: 0; left: 0; right: 0;
-      height: 48%;
+      height: 42%;
       pointer-events: none;
       will-change: transform;
       z-index: 0;
-      opacity: 0.85;
     }
 
     .mountain-bg svg { width: 100%; height: 100%; display: block; }
 
     @media (max-width: 820px) {
-      .mountain-bg { height: 32%; opacity: 0.6; }
+      .mountain-bg { height: 26%; }
     }
 
     .problems {
@@ -794,41 +793,35 @@
     </div>
   </div>
 
-  <!-- TABLE MOUNTAIN: Devil's Peak (L) · Flat Top (C) · Lion's Head (R) -->
+  <!-- TABLE MOUNTAIN silhouette -->
   <div class="mountain-bg" id="mountain-bg">
-    <svg viewBox="0 0 1440 400" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <!--
+      viewBox 0 0 100 50. Top edge (y=0) = Table Mountain flat top.
+      Devil's Peak: left bump, y≈20 (lower than flat top).
+      Lion's Head:  right bump, y≈26 (lower than Devil's Peak).
+      preserveAspectRatio none only stretches horizontally — fine for a flat mountain.
+    -->
+    <svg viewBox="0 0 100 50" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
       <defs>
         <linearGradient id="mtFill" x1="0%" y1="0%" x2="0%" y2="100%">
-          <stop offset="0%" stop-color="rgba(30,27,20,0.9)"/>
+          <stop offset="0%" stop-color="rgba(32,28,22,0.95)"/>
           <stop offset="100%" stop-color="rgba(26,23,18,1)"/>
         </linearGradient>
       </defs>
 
-      <!-- Polygon: cleaner than paths. Points go clockwise from bottom-left.
-           Devil's Peak peak  ≈ x266, y92
-           Table Mtn flat top : x468→x965, y=92
-           Lion's Head peak   ≈ x1089, y128  (shorter)
-      -->
       <polygon fill="url(#mtFill)" points="
-        0,400
-        0,332
-        101,306  144,280  188,252  220,224  240,198
-        250,172  257,150  262,132  265,116  266,104  267,92
-        268,104  272,122  278,142  288,164  302,190  320,212
-        342,230  368,240  394,240  418,234  440,220
-        453,198  461,170  465,140  467,112  468,100  468,92
-        965,92
-        965,100  967,114  972,134  980,158  990,182  998,198
-        1010,212  1022,222  1034,226  1048,216  1060,198
-        1070,178  1078,158  1083,140  1087,128
-        1091,140  1098,158  1108,178  1122,200  1142,226
-        1174,258  1220,288  1282,316  1370,348  1440,366
-        1440,400
+        0,50
+        8,50  14,44  19,36  22,28  24,22  25,20
+        26,22  28,28  30,18  32,8  34,2  35,0
+        65,0
+        66,2  68,8  70,18  72,28  74,22  75,26
+        76,28  80,36  86,44  93,50
+        100,50
       "/>
 
-      <!-- THE flat top — unmistakable -->
-      <line x1="468" y1="92" x2="965" y2="92"
-            stroke="rgba(42,175,170,0.7)" stroke-width="2"/>
+      <!-- Flat top highlight -->
+      <line x1="35" y1="0.4" x2="65" y2="0.4"
+            stroke="rgba(42,175,170,0.75)" stroke-width="0.8"/>
     </svg>
   </div>
 </div>
