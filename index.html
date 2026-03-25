@@ -332,8 +332,56 @@
 
     .tiers-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 1.25rem;
+    }
+
+    .device-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .device-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2rem 1.5rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      position: relative;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+
+    .device-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(0,245,196,0.35);
+    }
+
+    .device-card.featured {
+      border-color: rgba(0,245,196,0.5);
+      background: linear-gradient(135deg, #16161f, #1a1a28);
+    }
+
+    .device-badge {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      background: rgba(0,245,196,0.08);
+      border: 1px solid rgba(0,245,196,0.2);
+      color: var(--neon);
+      margin-bottom: 0.5rem;
+      width: fit-content;
+    }
+
+    .device-icon {
+      font-size: 2rem;
+      margin-bottom: 0.25rem;
     }
 
     .tier-card {
@@ -741,48 +789,36 @@
   <div class="tiers-grid">
     <div class="tier-card">
       <div class="tier-name">Basic Install</div>
-      <div class="tier-price">R500 <small>– R1,200</small></div>
+      <div class="tier-price">R1,500</div>
       <div class="tier-target">For individuals & remote workers</div>
       <ul class="tier-features">
         <li>Ollama installed on your device</li>
         <li>1–2 models configured</li>
         <li>30-min hands-on walkthrough</li>
-        <li>Works on existing hardware</li>
+        <li>Works on your existing hardware</li>
+        <li>Same-day setup available</li>
       </ul>
       <button class="tier-btn" onclick="scrollToContact('Basic Install')">Get Started</button>
     </div>
 
     <div class="tier-card featured">
       <div class="tier-name">Pro Setup</div>
-      <div class="tier-price">R1,500 <small>– R3,500</small></div>
+      <div class="tier-price">R3,700</div>
       <div class="tier-target">For small businesses & freelancers</div>
       <ul class="tier-features">
         <li>Optimized model selection</li>
-        <li>Custom system prompts</li>
-        <li>Branded UI skin</li>
-        <li>1-hour training session</li>
-        <li>1 month email support</li>
+        <li>Custom system prompts & persona</li>
+        <li>Branded Open WebUI skin</li>
+        <li>1-hour hands-on training session</li>
+        <li>1 month priority email support</li>
+        <li>Performance tuning & fine-tuning</li>
       </ul>
       <button class="tier-btn" onclick="scrollToContact('Pro Setup')">Get Started</button>
     </div>
 
     <div class="tier-card">
-      <div class="tier-name">Device Package</div>
-      <div class="tier-price">R4,000 <small>– R12,000</small></div>
-      <div class="tier-target">For technophobes & gift buyers</div>
-      <ul class="tier-features">
-        <li>Pre-configured mini PC or laptop</li>
-        <li>Ready out of the box</li>
-        <li>Models pre-loaded</li>
-        <li>Full setup & delivery CPT</li>
-        <li>Great gift for family/farmers</li>
-      </ul>
-      <button class="tier-btn" onclick="scrollToContact('Device Package')">Get Started</button>
-    </div>
-
-    <div class="tier-card">
       <div class="tier-name">Enterprise / Org</div>
-      <div class="tier-price">R10k <small>+</small></div>
+      <div class="tier-price" style="font-size:1.3rem;padding-top:0.3rem">Let's talk</div>
       <div class="tier-target">Schools, NGOs, clinics, farms</div>
       <ul class="tier-features">
         <li>Multi-device deployment</li>
@@ -790,8 +826,66 @@
         <li>Custom model fine-tuning</li>
         <li>Ongoing support contract</li>
         <li>Multilingual (Afrikaans, isiXhosa)</li>
+        <li>Tailored to your organisation</li>
       </ul>
       <button class="tier-btn" onclick="scrollToContact('Enterprise')">Get a Quote</button>
+    </div>
+  </div>
+
+  <!-- DEVICE PACKAGES -->
+  <div style="margin-top:3rem">
+    <div class="section-label" style="margin-bottom:0.5rem">Device Packages</div>
+    <h3 style="font-size:1.4rem;font-weight:800;letter-spacing:-0.02em;margin-bottom:0.5rem">Need a device too? We've got you.</h3>
+    <p class="section-intro" style="margin-bottom:1.5rem">Pre-configured and ready to go. You choose the hardware, we handle everything else — models loaded, UI set up, delivered to your door in Cape Town.</p>
+
+    <div class="device-grid">
+      <div class="device-card">
+        <div class="device-badge">Budget</div>
+        <div class="device-icon">🍓</div>
+        <div class="tier-name">Raspberry Pi 5</div>
+        <div class="tier-price">R3,500 <small>+ Pro Setup</small></div>
+        <div class="tier-target">Schools, education, tight budgets</div>
+        <ul class="tier-features">
+          <li>Raspberry Pi 5 (8GB)</li>
+          <li>Runs Phi-3 Mini & small models</li>
+          <li>Silent, low power draw</li>
+          <li>Great for learning & classrooms</li>
+          <li>Fully configured & delivered</li>
+        </ul>
+        <button class="tier-btn" onclick="scrollToContact('Device Package – Raspberry Pi')">Get Started</button>
+      </div>
+
+      <div class="device-card featured">
+        <div class="device-badge" style="background:var(--neon);color:var(--bg)">Most Popular</div>
+        <div class="device-icon">🖥️</div>
+        <div class="tier-name">Mini PC</div>
+        <div class="tier-price">R7,500 <small>+ Pro Setup</small></div>
+        <div class="tier-target">Home offices, remote workers, farms</div>
+        <ul class="tier-features">
+          <li>Beelink or MINISFORUM mini PC</li>
+          <li>16GB RAM — runs Mistral 7B fast</li>
+          <li>Compact, fanless, energy efficient</li>
+          <li>Handles most everyday AI tasks</li>
+          <li>Fully configured & delivered</li>
+        </ul>
+        <button class="tier-btn" onclick="scrollToContact('Device Package – Mini PC')">Get Started</button>
+      </div>
+
+      <div class="device-card">
+        <div class="device-badge" style="background:rgba(123,47,255,0.15);color:var(--neon2);border-color:rgba(123,47,255,0.3)">High Performance</div>
+        <div class="device-icon">⚡</div>
+        <div class="tier-name">GPU Workstation</div>
+        <div class="tier-price">R18,000 <small>+ Pro Setup</small></div>
+        <div class="tier-target">Power users, agencies, developers</div>
+        <ul class="tier-features">
+          <li>RTX 3060 / 4060 GPU</li>
+          <li>Runs 13B–70B models smoothly</li>
+          <li>Multiple concurrent users</li>
+          <li>Built for heavy daily use</li>
+          <li>Fully configured & delivered</li>
+        </ul>
+        <button class="tier-btn" onclick="scrollToContact('Device Package – GPU Workstation')">Get Started</button>
+      </div>
     </div>
   </div>
 </section>
