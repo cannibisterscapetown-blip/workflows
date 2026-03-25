@@ -51,11 +51,21 @@ def create_campaign(account):
     return campaign['id']
 
 def create_ad_set(account, campaign_id):
-    """Creates an ad set targeting broad audience for now."""
+    """Creates an ad set targeting high-converting South African cities."""
     # Start time slightly in the future
-    start_time = int(time.time()) + 60*10 
+    start_time = int(time.time()) + 60*10
     end_time = start_time + (7 * 24 * 60 * 60) # 7 days
-    
+
+    # Top cities based on lead data: Cape Town, Johannesburg, Pretoria, Durban, Soweto
+    # Using coordinates + radius to avoid relying on Meta's internal city key IDs
+    top_cities = [
+        {'latitude': -33.9249, 'longitude': 18.4241, 'radius': 30, 'distance_unit': 'kilometer', 'name': 'Cape Town'},
+        {'latitude': -26.2041, 'longitude': 28.0473, 'radius': 30, 'distance_unit': 'kilometer', 'name': 'Johannesburg'},
+        {'latitude': -25.7479, 'longitude': 28.2293, 'radius': 30, 'distance_unit': 'kilometer', 'name': 'Pretoria'},
+        {'latitude': -29.8587, 'longitude': 31.0218, 'radius': 30, 'distance_unit': 'kilometer', 'name': 'Durban'},
+        {'latitude': -26.2677, 'longitude': 27.8585, 'radius': 20, 'distance_unit': 'kilometer', 'name': 'Soweto'},
+    ]
+
     params = {
         'name': 'Ad Set - 7 Days Boost - R200/day',
         'campaign_id': campaign_id,
@@ -65,15 +75,14 @@ def create_ad_set(account, campaign_id):
         'bid_strategy': 'LOWEST_COST_WITHOUT_CAP',
         'targeting': {
             'geo_locations': {
-                'countries': ['ZA'], # South Africa
+                'custom_locations': top_cities,
             },
             'age_min': 18,
-            'age_max': 65,
-             # We can add more specific targeting here later
+            'age_max': 40,  # Cannabis audience skews 18-40; 65 was wasting budget
         },
         'start_time': start_time,
         'end_time': end_time,
-        'status': 'PAUSED', 
+        'status': 'PAUSED',
     }
     ad_set = account.create_ad_set(params=params)
     print(f"Created Ad Set: {ad_set['id']}")
