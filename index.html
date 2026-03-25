@@ -6,15 +6,15 @@
   <title>OffGrid AI — Local AI for Cape Town & Beyond</title>
   <style>
     :root {
-      --neon: #c8793a;
-      --neon2: #2a7ea8;
-      --neon3: #c8793a;
-      --bg: #0e0c0a;
-      --bg2: #151210;
-      --card: #1c1915;
-      --border: rgba(200, 121, 58, 0.18);
-      --text: #f0ebe3;
-      --muted: #8a7e70;
+      --neon: #2aafaa;
+      --neon2: #5a8fa8;
+      --neon3: #2aafaa;
+      --bg: #1a1712;
+      --bg2: #221e18;
+      --card: #2c2820;
+      --border: rgba(42, 175, 170, 0.18);
+      --text: #f2ede4;
+      --muted: #9a9080;
       --font: Georgia, 'Times New Roman', serif;
       --font-ui: 'Segoe UI', system-ui, -apple-system, sans-serif;
     }
@@ -39,7 +39,7 @@
       align-items: center;
       justify-content: space-between;
       padding: 1rem 2rem;
-      background: rgba(14,12,10,0.92);
+      background: rgba(26,23,18,0.92);
       backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--border);
     }
@@ -89,7 +89,7 @@
       text-align: center;
       padding: 8rem 2rem 5rem;
       position: relative;
-      background: radial-gradient(ellipse at 50% 30%, rgba(200,121,58,0.06) 0%, transparent 65%),
+      background: radial-gradient(ellipse at 50% 30%, rgba(42,175,170,0.06) 0%, transparent 65%),
                   radial-gradient(ellipse at 70% 70%, rgba(42,126,168,0.05) 0%, transparent 55%);
     }
 
@@ -100,8 +100,8 @@
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      background: rgba(200,121,58,0.1);
-      border: 1px solid rgba(200,121,58,0.3);
+      background: rgba(42,175,170,0.1);
+      border: 1px solid rgba(42,175,170,0.3);
       color: var(--neon);
       font-size: 0.75rem;
       font-weight: 600;
@@ -188,8 +188,8 @@
     }
 
     .btn-secondary:hover {
-      border-color: rgba(200,121,58,0.5);
-      background: rgba(200,121,58,0.06);
+      border-color: rgba(42,175,170,0.5);
+      background: rgba(42,175,170,0.06);
     }
 
     .skyline {
@@ -510,7 +510,7 @@
 
     .loadshed-widget {
       background: var(--card);
-      border: 1px solid rgba(200,121,58,0.3);
+      border: 1px solid rgba(42,175,170,0.3);
       border-radius: 16px;
       padding: 2rem;
       display: flex;
@@ -558,7 +558,7 @@
     .cta-bg {
       position: absolute;
       inset: 0;
-      background: linear-gradient(135deg, rgba(200,121,58,0.05), rgba(42,126,168,0.04));
+      background: linear-gradient(135deg, rgba(42,175,170,0.05), rgba(42,126,168,0.04));
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
     }
@@ -613,7 +613,7 @@
       width: 100%;
       margin-top: 0.5rem;
       transition: opacity 0.2s, transform 0.2s;
-      box-shadow: 0 2px 12px rgba(200,121,58,0.2);
+      box-shadow: 0 2px 12px rgba(42,175,170,0.2);
     }
 
     .form-submit:hover { opacity: 0.9; transform: translateY(-1px); }
@@ -635,6 +635,92 @@
     }
 
     footer strong { color: var(--neon); }
+
+    /* ─── PARALLAX MOUNTAIN ─────────────── */
+    .skyline {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 160px;
+      overflow: hidden;
+      will-change: transform;
+    }
+
+    /* ─── TERMINAL DEMO ─────────────────── */
+    .terminal {
+      background: #1e1b14;
+      border: 1px solid rgba(42,175,170,0.25);
+      border-radius: 10px;
+      padding: 0;
+      max-width: 420px;
+      width: 100%;
+      margin-top: 3rem;
+      text-align: left;
+      font-family: 'Courier New', monospace;
+      font-size: 0.82rem;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.4);
+      overflow: hidden;
+    }
+
+    .terminal-bar {
+      background: #2a2620;
+      padding: 0.6rem 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      border-bottom: 1px solid rgba(42,175,170,0.15);
+    }
+
+    .terminal-bar .dot {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+    }
+
+    .terminal-bar .dot:nth-child(1) { background: #ff5f57; }
+    .terminal-bar .dot:nth-child(2) { background: #febc2e; }
+    .terminal-bar .dot:nth-child(3) { background: #28c840; }
+
+    .terminal-status {
+      margin-left: auto;
+      font-size: 0.7rem;
+      color: #2aafaa;
+      font-family: var(--font-ui);
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .terminal-status::before {
+      content: '';
+      width: 6px; height: 6px;
+      background: #2aafaa;
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    .terminal-body {
+      padding: 1rem 1.25rem 1.25rem;
+      line-height: 1.7;
+      min-height: 140px;
+    }
+
+    .terminal-line { color: #9a9080; }
+    .terminal-line.user { color: #f2ede4; }
+    .terminal-line.user::before { content: '> '; color: #2aafaa; }
+    .terminal-line.ai { color: #c8d8d6; }
+    .terminal-line.ai::before { content: '● '; color: #2aafaa; font-size: 0.7rem; }
+    .terminal-cursor {
+      display: inline-block;
+      width: 8px; height: 14px;
+      background: #2aafaa;
+      vertical-align: middle;
+      animation: blink 1s infinite;
+      margin-left: 2px;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
 
     @media (max-width: 680px) {
       nav ul { display: none; }
@@ -678,16 +764,27 @@
     <a href="#tiers" class="btn-secondary">View Services</a>
   </div>
 
-  <div class="skyline">
-    <svg viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- OFFLINE TERMINAL DEMO -->
+  <div class="terminal">
+    <div class="terminal-bar">
+      <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+      <span class="terminal-status">Offline — No internet</span>
+    </div>
+    <div class="terminal-body" id="terminal-body">
+      <div class="terminal-line">OffGrid AI v1.0 — Cape Town</div>
+    </div>
+  </div>
+
+  <div class="skyline" id="skyline">
+    <svg viewBox="0 0 1440 160" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
       <defs>
         <linearGradient id="mtGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-          <stop offset="0%" style="stop-color:rgba(200,121,58,0.12)"/>
+          <stop offset="0%" style="stop-color:rgba(42,175,170,0.12)"/>
           <stop offset="100%" style="stop-color:rgba(0,0,0,0)"/>
         </linearGradient>
       </defs>
-      <path d="M0,120 L0,90 L80,85 L160,75 L220,40 L260,38 L300,40 L340,20 L400,18 L460,20 L520,22 L560,25 L600,22 L650,18 L700,20 L750,22 L800,30 L840,38 L880,45 L920,50 L980,60 L1060,70 L1150,78 L1250,82 L1350,86 L1440,88 L1440,120 Z"
-            fill="url(#mtGrad)" stroke="rgba(200,121,58,0.25)" stroke-width="1"/>
+      <path d="M0,160 L0,115 L80,108 L160,95 L220,55 L260,50 L300,52 L340,28 L400,24 L460,26 L520,28 L560,32 L600,28 L650,24 L700,26 L750,30 L800,40 L840,50 L880,58 L920,65 L980,76 L1060,88 L1150,98 L1250,105 L1350,110 L1440,112 L1440,160 Z"
+            fill="url(#mtGrad)" stroke="rgba(42,175,170,0.35)" stroke-width="1"/>
     </svg>
   </div>
 </div>
@@ -956,6 +1053,7 @@
 </footer>
 
 <script>
+  // ── Scroll to contact
   function scrollToContact(tier) {
     document.getElementById('tier-select').value = tier;
     document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
@@ -967,13 +1065,16 @@
     document.getElementById('form-success').style.display = 'block';
   }
 
-  document.addEventListener('mousemove', (e) => {
-    const x = (e.clientX / window.innerWidth - 0.5) * 20;
-    const y = (e.clientY / window.innerHeight - 0.5) * 20;
-    const glow = document.querySelector('.hero-glow');
-    if (glow) glow.style.transform = `translate(calc(-50% + ${x}px), calc(-60% + ${y}px))`;
-  });
+  // ── Parallax Mountain on scroll
+  const skyline = document.getElementById('skyline');
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    if (skyline) {
+      skyline.style.transform = `translateY(${scrollY * 0.35}px)`;
+    }
+  }, { passive: true });
 
+  // ── Fade-in cards on scroll
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(el => {
       if (el.isIntersecting) {
@@ -983,12 +1084,76 @@
     });
   }, { threshold: 0.1 });
 
-  document.querySelectorAll('.problem-card, .tier-card, .tech-card').forEach(el => {
+  document.querySelectorAll('.problem-card, .tier-card, .tech-card, .device-card').forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(20px)';
     el.style.transition = 'opacity 0.5s ease, transform 0.5s ease, border-color 0.2s';
     observer.observe(el);
   });
+
+  // ── Animated terminal demo
+  const lines = [
+    { type: 'line', text: '— Loadshedding Stage 4. Router offline.' },
+    { type: 'pause', ms: 600 },
+    { type: 'user', text: 'Best braai spots near Hout Bay?' },
+    { type: 'pause', ms: 800 },
+    { type: 'ai', text: 'Chapman\'s Peak lookout is unbeatable. Sandy Bay for sunset. Bring your own wood — Spar on Main Rd stocks Sekelbos.' },
+    { type: 'pause', ms: 1200 },
+    { type: 'user', text: 'Write me a quote email for a client.' },
+    { type: 'pause', ms: 700 },
+    { type: 'ai', text: 'Sure — formal or friendly tone?' },
+  ];
+
+  const body = document.getElementById('terminal-body');
+  let lineIndex = 0;
+
+  function addLine(type, text) {
+    const div = document.createElement('div');
+    div.className = `terminal-line ${type === 'user' ? 'user' : type === 'ai' ? 'ai' : ''}`;
+    body.appendChild(div);
+
+    if (type === 'line') {
+      div.textContent = text;
+      return Promise.resolve();
+    }
+
+    return new Promise(resolve => {
+      let i = 0;
+      const cursor = document.createElement('span');
+      cursor.className = 'terminal-cursor';
+      div.appendChild(cursor);
+
+      const interval = setInterval(() => {
+        div.textContent = text.slice(0, i);
+        div.appendChild(cursor);
+        body.scrollTop = body.scrollHeight;
+        i++;
+        if (i > text.length) {
+          clearInterval(interval);
+          cursor.remove();
+          resolve();
+        }
+      }, 28);
+    });
+  }
+
+  async function runTerminal() {
+    await new Promise(r => setTimeout(r, 1200));
+    for (const step of lines) {
+      if (step.type === 'pause') {
+        await new Promise(r => setTimeout(r, step.ms));
+      } else {
+        await addLine(step.type, step.text);
+        await new Promise(r => setTimeout(r, 120));
+      }
+    }
+    // Loop after a pause
+    await new Promise(r => setTimeout(r, 3000));
+    body.innerHTML = '<div class="terminal-line">OffGrid AI v1.0 — Cape Town</div>';
+    runTerminal();
+  }
+
+  runTerminal();
 </script>
 </body>
 </html>
