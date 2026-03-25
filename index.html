@@ -6,15 +6,15 @@
   <title>OffGrid AI — Local AI for Cape Town & Beyond</title>
   <style>
     :root {
-      --neon: #2aafaa;
-      --neon2: #5a8fa8;
-      --neon3: #2aafaa;
-      --bg: #1a1712;
-      --bg2: #221e18;
-      --card: #2c2820;
-      --border: rgba(42, 175, 170, 0.18);
-      --text: #f2ede4;
-      --muted: #9a9080;
+      --neon: #1f9e99;
+      --neon2: #4a7fa0;
+      --neon3: #1f9e99;
+      --bg: #2a2520;
+      --bg2: #332e28;
+      --card: #3d3830;
+      --border: rgba(31, 158, 153, 0.2);
+      --text: #f5f0e8;
+      --muted: #a89e90;
       --font: Georgia, 'Times New Roman', serif;
       --font-ui: 'Segoe UI', system-ui, -apple-system, sans-serif;
     }
@@ -39,7 +39,7 @@
       align-items: center;
       justify-content: space-between;
       padding: 1rem 2rem;
-      background: rgba(26,23,18,0.92);
+      background: rgba(38,34,28,0.92);
       backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--border);
     }
@@ -636,6 +636,36 @@
 
     footer strong { color: var(--neon); }
 
+    /* ─── SCROLL ZONE + STICKY HERO ────── */
+    #hero-scroll-zone {
+      height: 320vh;
+      position: relative;
+    }
+
+    #hero-sticky {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+    }
+
+    .scroll-hint {
+      position: absolute;
+      bottom: 1.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.75rem;
+      color: var(--muted);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-family: var(--font-ui);
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(5px); }
+    }
+
     /* ─── PARALLAX MOUNTAIN ─────────────── */
     .skyline {
       position: absolute;
@@ -647,7 +677,7 @@
 
     /* ─── TERMINAL DEMO ─────────────────── */
     .terminal {
-      background: #1e1b14;
+      background: #232019;
       border: 1px solid rgba(42,175,170,0.25);
       border-radius: 10px;
       padding: 0;
@@ -662,7 +692,7 @@
     }
 
     .terminal-bar {
-      background: #2a2620;
+      background: #2d2922;
       padding: 0.6rem 1rem;
       display: flex;
       align-items: center;
@@ -742,50 +772,55 @@
   </ul>
 </nav>
 
-<div class="hero">
-  <div class="hero-glow"></div>
-  <div class="hero-glow2"></div>
+<!-- SCROLL ZONE: hero is sticky inside a tall container -->
+<div id="hero-scroll-zone">
+  <div class="hero" id="hero-sticky">
+    <div class="hero-glow"></div>
+    <div class="hero-glow2"></div>
 
-  <div class="badge">Cape Town · South Africa</div>
+    <div class="badge">Cape Town · South Africa</div>
 
-  <h1>
-    AI that works<br>
-    <span class="accent">without the internet.</span><br>
-    <span class="accent2">Or the power.</span>
-  </h1>
+    <h1>
+      AI that works<br>
+      <span class="accent">without the internet.</span><br>
+      <span class="accent2">Or the power.</span>
+    </h1>
 
-  <p class="hero-sub">
-    We install and configure <strong>local AI</strong> on your device — fully offline,
-    loadshedding-proof, and ready for the Karoo, Cederberg, or Stage 6.
-  </p>
+    <p class="hero-sub">
+      We install and configure <strong>local AI</strong> on your device — fully offline,
+      loadshedding-proof, and ready for the Karoo, Cederberg, or Stage 6.
+    </p>
 
-  <div class="hero-btns">
-    <a href="#contact" class="btn-primary">Book an Install</a>
-    <a href="#tiers" class="btn-secondary">View Services</a>
-  </div>
-
-  <!-- OFFLINE TERMINAL DEMO -->
-  <div class="terminal">
-    <div class="terminal-bar">
-      <span class="dot"></span><span class="dot"></span><span class="dot"></span>
-      <span class="terminal-status">Offline — No internet</span>
+    <!-- SCROLL-DRIVEN TERMINAL -->
+    <div class="terminal">
+      <div class="terminal-bar">
+        <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+        <span class="terminal-status">Offline — No internet</span>
+      </div>
+      <div class="terminal-body" id="terminal-body">
+        <div class="terminal-line" id="t-boot">OffGrid AI v1.0 · Cape Town ↓ scroll to try it</div>
+      </div>
     </div>
-    <div class="terminal-body" id="terminal-body">
-      <div class="terminal-line">OffGrid AI v1.0 — Cape Town</div>
-    </div>
-  </div>
 
-  <div class="skyline" id="skyline">
-    <svg viewBox="0 0 1440 160" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <linearGradient id="mtGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-          <stop offset="0%" style="stop-color:rgba(42,175,170,0.12)"/>
-          <stop offset="100%" style="stop-color:rgba(0,0,0,0)"/>
-        </linearGradient>
-      </defs>
-      <path d="M0,160 L0,115 L80,108 L160,95 L220,55 L260,50 L300,52 L340,28 L400,24 L460,26 L520,28 L560,32 L600,28 L650,24 L700,26 L750,30 L800,40 L840,50 L880,58 L920,65 L980,76 L1060,88 L1150,98 L1250,105 L1350,110 L1440,112 L1440,160 Z"
-            fill="url(#mtGrad)" stroke="rgba(42,175,170,0.35)" stroke-width="1"/>
-    </svg>
+    <div class="scroll-hint" id="scroll-hint">scroll to see it work</div>
+
+    <div class="skyline" id="skyline">
+      <svg viewBox="0 0 1440 160" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="mtGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" style="stop-color:rgba(42,175,170,0.12)"/>
+            <stop offset="100%" style="stop-color:rgba(0,0,0,0)"/>
+          </linearGradient>
+        </defs>
+        <path d="M0,160 L0,115 L80,108 L160,95 L220,55 L260,50 L300,52 L340,28 L400,24 L460,26 L520,28 L560,32 L600,28 L650,24 L700,26 L750,30 L800,40 L840,50 L880,58 L920,65 L980,76 L1060,88 L1150,98 L1250,105 L1350,110 L1440,112 L1440,160 Z"
+              fill="url(#mtGrad)" stroke="rgba(42,175,170,0.35)" stroke-width="1"/>
+      </svg>
+    </div>
+
+    <div class="hero-btns" id="hero-btns" style="position:absolute;bottom:3rem;opacity:0;transition:opacity 0.6s">
+      <a href="#contact" class="btn-primary">Book an Install</a>
+      <a href="#tiers" class="btn-secondary">View Services</a>
+    </div>
   </div>
 </div>
 
@@ -1053,7 +1088,6 @@
 </footer>
 
 <script>
-  // ── Scroll to contact
   function scrollToContact(tier) {
     document.getElementById('tier-select').value = tier;
     document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
@@ -1065,17 +1099,8 @@
     document.getElementById('form-success').style.display = 'block';
   }
 
-  // ── Parallax Mountain on scroll
-  const skyline = document.getElementById('skyline');
-  window.addEventListener('scroll', () => {
-    const scrollY = window.scrollY;
-    if (skyline) {
-      skyline.style.transform = `translateY(${scrollY * 0.35}px)`;
-    }
-  }, { passive: true });
-
-  // ── Fade-in cards on scroll
-  const observer = new IntersectionObserver((entries) => {
+  // ── Fade-in cards
+  const cardObserver = new IntersectionObserver((entries) => {
     entries.forEach(el => {
       if (el.isIntersecting) {
         el.target.style.opacity = '1';
@@ -1088,72 +1113,93 @@
     el.style.opacity = '0';
     el.style.transform = 'translateY(20px)';
     el.style.transition = 'opacity 0.5s ease, transform 0.5s ease, border-color 0.2s';
-    observer.observe(el);
+    cardObserver.observe(el);
   });
 
-  // ── Animated terminal demo
-  const lines = [
-    { type: 'line', text: '— Loadshedding Stage 4. Router offline.' },
-    { type: 'pause', ms: 600 },
-    { type: 'user', text: 'Best braai spots near Hout Bay?' },
-    { type: 'pause', ms: 800 },
-    { type: 'ai', text: 'Chapman\'s Peak lookout is unbeatable. Sandy Bay for sunset. Bring your own wood — Spar on Main Rd stocks Sekelbos.' },
-    { type: 'pause', ms: 1200 },
-    { type: 'user', text: 'Write me a quote email for a client.' },
-    { type: 'pause', ms: 700 },
-    { type: 'ai', text: 'Sure — formal or friendly tone?' },
+  // ── Scroll-driven terminal
+  // Each step triggers at a scroll progress threshold (0–1) through the hero scroll zone
+  const steps = [
+    { at: 0.10, cls: 'line',  text: '⚡ Loadshedding Stage 4 — router just died.' },
+    { at: 0.22, cls: 'user',  text: 'Are you still running?' },
+    { at: 0.34, cls: 'ai',    text: 'Fully operational. No internet needed — ever.' },
+    { at: 0.48, cls: 'user',  text: 'Best braai spot near Hout Bay?' },
+    { at: 0.60, cls: 'ai',    text: "Chapman's Peak lookout. Bring Sekelbos wood — Spar on Main Rd has it." },
+    { at: 0.74, cls: 'user',  text: 'Write me a short quote email for a client.' },
+    { at: 0.86, cls: 'ai',    text: 'Done. Formal tone, R3,700 Pro Setup. Want me to adjust anything?' },
   ];
 
-  const body = document.getElementById('terminal-body');
-  let lineIndex = 0;
+  const zone       = document.getElementById('hero-scroll-zone');
+  const tBody      = document.getElementById('terminal-body');
+  const scrollHint = document.getElementById('scroll-hint');
+  const heroBtns   = document.getElementById('hero-btns');
+  const skyline    = document.getElementById('skyline');
 
-  function addLine(type, text) {
-    const div = document.createElement('div');
-    div.className = `terminal-line ${type === 'user' ? 'user' : type === 'ai' ? 'ai' : ''}`;
-    body.appendChild(div);
+  // Track which steps have been rendered & their DOM nodes
+  const rendered = new Array(steps.length).fill(null);
+  let typingAbort = []; // per-step abort flags
 
-    if (type === 'line') {
-      div.textContent = text;
-      return Promise.resolve();
-    }
-
+  function typeInto(el, text, abortRef) {
     return new Promise(resolve => {
       let i = 0;
       const cursor = document.createElement('span');
       cursor.className = 'terminal-cursor';
-      div.appendChild(cursor);
+      el.appendChild(cursor);
 
-      const interval = setInterval(() => {
-        div.textContent = text.slice(0, i);
-        div.appendChild(cursor);
-        body.scrollTop = body.scrollHeight;
+      const iv = setInterval(() => {
+        if (abortRef.stop) { clearInterval(iv); cursor.remove(); resolve(); return; }
+        el.textContent = text.slice(0, i);
+        el.appendChild(cursor);
+        tBody.scrollTop = tBody.scrollHeight;
         i++;
-        if (i > text.length) {
-          clearInterval(interval);
-          cursor.remove();
-          resolve();
-        }
-      }, 28);
+        if (i > text.length) { clearInterval(iv); cursor.remove(); resolve(); }
+      }, 22);
     });
   }
 
-  async function runTerminal() {
-    await new Promise(r => setTimeout(r, 1200));
-    for (const step of lines) {
-      if (step.type === 'pause') {
-        await new Promise(r => setTimeout(r, step.ms));
+  let lastProgress = -1;
+
+  function onScroll() {
+    const zoneTop    = zone.getBoundingClientRect().top + window.scrollY;
+    const zoneHeight = zone.offsetHeight - window.innerHeight;
+    const scrolled   = window.scrollY - zoneTop;
+    const progress   = Math.max(0, Math.min(1, scrolled / zoneHeight));
+
+    // Parallax mountain
+    if (skyline) skyline.style.transform = `translateY(${window.scrollY * 0.3}px)`;
+
+    // Hide scroll hint once user starts
+    if (progress > 0.05 && scrollHint) scrollHint.style.opacity = '0';
+
+    // Show CTA buttons near end
+    if (heroBtns) heroBtns.style.opacity = progress > 0.88 ? '1' : '0';
+
+    steps.forEach((step, i) => {
+      if (progress >= step.at) {
+        // Should be visible — add if not already
+        if (!rendered[i]) {
+          const div = document.createElement('div');
+          div.className = `terminal-line ${step.cls === 'user' ? 'user' : step.cls === 'ai' ? 'ai' : ''}`;
+          tBody.appendChild(div);
+          rendered[i] = div;
+          const abortRef = { stop: false };
+          typingAbort[i] = abortRef;
+          typeInto(div, step.text, abortRef);
+        }
       } else {
-        await addLine(step.type, step.text);
-        await new Promise(r => setTimeout(r, 120));
+        // Should be hidden — remove if present
+        if (rendered[i]) {
+          if (typingAbort[i]) typingAbort[i].stop = true;
+          rendered[i].remove();
+          rendered[i] = null;
+        }
       }
-    }
-    // Loop after a pause
-    await new Promise(r => setTimeout(r, 3000));
-    body.innerHTML = '<div class="terminal-line">OffGrid AI v1.0 — Cape Town</div>';
-    runTerminal();
+    });
+
+    lastProgress = progress;
   }
 
-  runTerminal();
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll(); // run once on load
 </script>
 </body>
 </html>
