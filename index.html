@@ -244,7 +244,7 @@
       background: rgba(42,175,170,0.06);
     }
 
-    /* ─── PARALLAX MOUNTAIN LAYERS ───────── */
+    /* ─── PARALLAX MOUNTAIN CANVAS LAYERS ── */
     .para-mountains {
       position: absolute;
       inset: 0;
@@ -253,27 +253,12 @@
       overflow: hidden;
     }
 
-    .para-back,
-    .para-mtn,
-    .para-fg {
+    #cv-back, #cv-mtn, #cv-fg {
       position: absolute;
-      left: 0; right: 0; bottom: 0;
+      left: 0; bottom: 0;
+      pointer-events: none;
       will-change: transform;
-    }
-
-    /* Back range sits low — covers bottom ~58% of hero */
-    .para-back { height: 58%; min-height: 260px; }
-    /* Main mountain fills ~75% of hero height */
-    .para-mtn  { height: 75%; min-height: 360px; }
-    /* Foreground rocks at very bottom */
-    .para-fg   { height: 22%; min-height: 100px; }
-
-    .para-back svg,
-    .para-mtn  svg,
-    .para-fg   svg {
       display: block;
-      width: 100%;
-      height: 100%;
     }
 
     .mountain-bg { display: none; }
@@ -853,153 +838,13 @@
     </div>
   </div>
 
-  <!-- MULTI-LAYER PARALLAX TABLE MOUNTAIN -->
+  <!-- CANVAS PARALLAX MOUNTAIN -->
   <div class="para-mountains">
     <div class="para-sky"></div>
     <div class="para-glow"></div>
-
-    <!-- Layer 1: distant hazy mountain range behind Table Mountain -->
-    <div class="para-back" id="para-back">
-      <svg viewBox="0 0 1440 320" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="bgRange" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="rgba(32,52,62,0.45)"/>
-            <stop offset="100%" stop-color="rgba(24,38,48,0.75)"/>
-          </linearGradient>
-          <filter id="haze">
-            <feGaussianBlur stdDeviation="2.5"/>
-          </filter>
-        </defs>
-        <!-- Distant rolling range, softened by blur -->
-        <path fill="url(#bgRange)" filter="url(#haze)" d="
-          M 0 320 L 0 210
-          C 80 195 160 182 240 175
-          C 310 169 380 170 450 165
-          C 520 160 590 152 660 155
-          C 730 158 800 165 870 158
-          C 940 150 1010 138 1080 142
-          C 1150 146 1220 158 1300 168
-          C 1360 176 1400 185 1440 192
-          L 1440 320 Z
-        "/>
-      </svg>
-    </div>
-
-    <!-- Layer 2: Table Mountain — Devil's Peak left, flat top, slope right -->
-    <div class="para-mtn" id="para-mtn">
-      <svg viewBox="0 0 1440 560" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <!-- Rocky displacement filter: fractal noise roughens all edges -->
-          <filter id="rocky" x="-10%" y="-18%" width="120%" height="136%">
-            <feTurbulence type="fractalNoise" baseFrequency="0.016 0.042" numOctaves="5" seed="9" result="noise"/>
-            <feDisplacementMap in="SourceGraphic" in2="noise" scale="10" xChannelSelector="R" yChannelSelector="G"/>
-          </filter>
-
-          <!-- Main body: darkest on right (east shadow), lighter on left face -->
-          <linearGradient id="mtnBody" x1="0" y1="0" x2="1" y2="0">
-            <stop offset="0%"   stop-color="#2f2b25"/>
-            <stop offset="20%"  stop-color="#201d18"/>
-            <stop offset="55%"  stop-color="#161310"/>
-            <stop offset="100%" stop-color="#0c0a08"/>
-          </linearGradient>
-
-          <!-- Flat top surface: catches sky light, slightly lighter -->
-          <linearGradient id="topSurface" x1="0" y1="0" x2="0.4" y2="1">
-            <stop offset="0%"  stop-color="#3e3930"/>
-            <stop offset="100%" stop-color="#1e1b16"/>
-          </linearGradient>
-
-          <!-- Devil's Peak lit face (left-facing, catches afternoon Atlantic light) -->
-          <linearGradient id="devilLit" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%"  stop-color="#383228"/>
-            <stop offset="100%" stop-color="#161310"/>
-          </linearGradient>
-        </defs>
-
-        <g filter="url(#rocky)">
-          <!-- ── Main mountain silhouette ── -->
-          <path fill="url(#mtnBody)" d="
-            M -20 560
-            L -20 460 L 30 415 L 75 368 L 115 325 L 148 284
-            L 168 252 L 180 230 L 190 210 L 198 193
-            L 202 183 L 206 174 L 210 167 L 214 161
-            L 218 156 L 222 152 L 226 150 L 229 149
-            L 233 150 L 237 154 L 241 160 L 245 169
-            L 249 180 L 253 194 L 257 210 L 262 228
-            L 268 248 L 275 264 L 285 277 L 298 285
-            L 312 290 L 326 290 L 338 286 L 348 278
-            L 356 268 L 363 255 L 368 241 L 373 226
-            L 378 210 L 383 194 L 388 177 L 394 160
-            L 400 144 L 408 130 L 416 119 L 424 112
-            L 432 108 L 438 106 L 444 106 L 449 108
-            L 454 112 L 458 118 L 461 125 L 463 132
-            L 465 140 L 466 147 L 467 153
-            L 468 157 L 470 160
-            L 480 160 L 540 157 L 600 155 L 660 154
-            L 720 153 L 780 153 L 840 154 L 900 155
-            L 950 157 L 970 158 L 978 159
-            L 985 161 L 990 165 L 994 171 L 997 178
-            L 1000 187 L 1003 198 L 1007 211 L 1012 227
-            L 1018 244 L 1026 262 L 1036 278 L 1050 292
-            L 1066 304 L 1084 314 L 1106 321 L 1130 325
-            L 1156 325 L 1182 320 L 1208 312 L 1236 300
-            L 1264 288 L 1296 276 L 1332 266 L 1370 260
-            L 1410 257 L 1460 256
-            L 1460 560 Z
-          "/>
-
-          <!-- ── Flat top surface (sky-lit) ── -->
-          <polygon fill="url(#topSurface)" points="
-            469,160 469,135 472,128 478,122 488,118
-            540,115 600,113 660,112 720,111 780,111
-            840,112 900,113 950,115 968,117 976,120
-            982,124 986,130 988,137 988,161
-            978,159 970,158 950,157 900,155 840,154
-            780,153 720,153 660,154 600,155 540,157
-            480,160
-          "/>
-        </g>
-
-        <!-- Teal atmospheric rim light along flat top — blurred glow -->
-        <line x1="469" y1="124" x2="988" y2="114"
-              stroke="rgba(42,175,170,0.28)" stroke-width="3"
-              filter="url(#rocky)"/>
-        <line x1="469" y1="124" x2="988" y2="114"
-              stroke="rgba(42,175,170,0.12)" stroke-width="8"
-              filter="url(#rocky)"/>
-      </svg>
-    </div>
-
-    <!-- Layer 3: foreground boulders / cliff base (closest, moves fastest) -->
-    <div class="para-fg" id="para-fg">
-      <svg viewBox="0 0 1440 180" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <filter id="fgRock" x="-5%" y="-25%" width="110%" height="150%">
-            <feTurbulence type="fractalNoise" baseFrequency="0.028 0.07" numOctaves="3" seed="3" result="n"/>
-            <feDisplacementMap in="SourceGraphic" in2="n" scale="7" xChannelSelector="R" yChannelSelector="G"/>
-          </filter>
-        </defs>
-        <!-- Jagged cliff/boulder silhouette at base -->
-        <path fill="#080604" filter="url(#fgRock)" d="
-          M -10 180 L -10 100
-          C 25 92 55 84 82 80
-          L 92 77 L 98 73 L 104 70 L 108 73 L 112 79
-          C 130 87 155 92 188 96
-          C 230 101 282 104 345 108
-          C 395 111 445 117 490 120
-          L 502 124 L 508 129 L 511 134 L 514 129 L 518 122 L 525 118
-          C 555 112 600 110 660 112
-          C 720 115 795 120 880 124
-          C 945 127 1005 130 1055 129
-          C 1085 128 1112 124 1138 118
-          C 1162 112 1186 104 1215 98
-          C 1245 92 1278 88 1310 86
-          L 1328 84 L 1336 80 L 1341 76 L 1346 80 L 1350 87
-          C 1372 96 1406 108 1440 116
-          L 1460 120 L 1460 180 Z
-        "/>
-      </svg>
-    </div>
+    <canvas id="cv-back"></canvas>
+    <canvas id="cv-mtn"></canvas>
+    <canvas id="cv-fg"></canvas>
   </div>
 </div>
 
@@ -1278,19 +1123,291 @@
     document.getElementById('form-success').style.display = 'block';
   }
 
-  // ── Parallax: each mountain layer moves at a different speed
-  const paraBack = document.getElementById('para-back');
-  const paraMtn  = document.getElementById('para-mtn');
-  const paraFg   = document.getElementById('para-fg');
+  // ── SEEDED RNG (Mulberry32) ──────────────────────────────────────────
+  function rng32(seed) {
+    let s = seed >>> 0;
+    return function () {
+      s = (s + 0x6D2B79F5) >>> 0;
+      let t = Math.imul(s ^ (s >>> 15), 1 | s);
+      t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+      return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+    };
+  }
+
+  // ── MOUNTAIN PROFILE ────────────────────────────────────────────────
+  // Normalised [x, y] fractions of canvas (W×H)
+  // Devil's Peak LEFT, flat Table top CENTRE, smooth descent RIGHT
+  // y=0 is top of canvas, y=1 is bottom (ground)
+  function getMtnProfile(W, H) {
+    const raw = [
+      [0, 1],
+      // Left base rising:
+      [0, 0.82], [0.042, 0.73], [0.078, 0.64],
+      [0.112, 0.56], [0.138, 0.47], [0.156, 0.40],
+      [0.164, 0.34], [0.168, 0.28],
+      // Devil's Peak climb:
+      [0.169, 0.235], [0.170, 0.192], [0.170, 0.155],
+      [0.170, 0.118], // Devil's Peak apex — tallest left feature
+      // Down into saddle:
+      [0.171, 0.135], [0.173, 0.158], [0.177, 0.188],
+      [0.183, 0.220], [0.191, 0.253], [0.201, 0.280],
+      [0.214, 0.302], [0.229, 0.318], [0.245, 0.326],
+      [0.260, 0.328], [0.274, 0.322], [0.285, 0.310],
+      [0.294, 0.294], [0.301, 0.276], [0.308, 0.256],
+      // Rising to Table Mountain left cliff (steepest section):
+      [0.315, 0.234], [0.323, 0.212], [0.333, 0.188],
+      [0.346, 0.163], [0.362, 0.139], [0.381, 0.116],
+      [0.402, 0.096], [0.421, 0.082], [0.439, 0.074],
+      [0.452, 0.070],
+      // Table Mountain flat top (slight undulation — not ruler-flat):
+      [0.500, 0.067], [0.560, 0.065], [0.630, 0.064],
+      [0.700, 0.065], [0.770, 0.065], [0.840, 0.066],
+      [0.898, 0.068], [0.930, 0.069],
+      // Right cliff drop:
+      [0.936, 0.074], [0.941, 0.083], [0.946, 0.096],
+      [0.950, 0.113], [0.954, 0.132], [0.958, 0.155],
+      [0.963, 0.179], [0.968, 0.206], [0.975, 0.234],
+      [0.983, 0.262], [0.993, 0.288], [1.004, 0.311],
+      // Right shoulder descent (off-screen to right is fine):
+      [1.018, 0.331], [1.036, 0.346], [1.058, 0.356],
+      [1.084, 0.362], [1.116, 0.364], [1.155, 0.363],
+      [1.200, 0.361], [1.260, 0.359], [1.440 / W * W, 0.356],
+      [1, 0.356], [1, 1]
+    ];
+    return raw.map(([px, py]) => [px * W, py * H]);
+  }
+
+  // ── DRAW: distant background range ──────────────────────────────────
+  function drawBackRange(canvas) {
+    const ctx = canvas.getContext('2d');
+    const W = canvas.width, H = canvas.height;
+    const r = rng32(111);
+
+    // Procedural ridge using layered sine waves
+    function ridge(x) {
+      const t = x / W;
+      return H * (0.32
+        + 0.10 * Math.sin(t * Math.PI * 2.1 + 0.8)
+        + 0.05 * Math.sin(t * Math.PI * 4.7 + 1.4)
+        + 0.025 * Math.sin(t * Math.PI * 9.3 + 2.7)
+        + 0.012 * Math.sin(t * Math.PI * 18 + 0.3));
+    }
+
+    // Hazy fill
+    ctx.beginPath();
+    ctx.moveTo(0, H);
+    for (let x = 0; x <= W; x += 3) ctx.lineTo(x, ridge(x));
+    ctx.lineTo(W, H);
+    ctx.closePath();
+    ctx.fillStyle = 'rgba(26,42,52,0.5)';
+    ctx.fill();
+
+    // Soft contour lines
+    for (let off = 0; off < 48; off += 10) {
+      ctx.beginPath();
+      ctx.moveTo(0, ridge(0) + off);
+      for (let x = 3; x <= W; x += 3) ctx.lineTo(x, ridge(x) + off);
+      ctx.strokeStyle = `rgba(35,60,72,${(0.28 - off * 0.004).toFixed(2)})`;
+      ctx.lineWidth = 0.7;
+      ctx.stroke();
+    }
+  }
+
+  // ── DRAW: Table Mountain (contour lines + stipple dots) ──────────────
+  function drawTableMountain(canvas) {
+    const ctx = canvas.getContext('2d');
+    const W = canvas.width, H = canvas.height;
+
+    const pts = getMtnProfile(W, H);
+
+    // ── 1. Dark base fill ──
+    ctx.beginPath();
+    pts.forEach(([x, y], i) => i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y));
+    ctx.closePath();
+    ctx.fillStyle = '#070504';
+    ctx.fill();
+
+    // ── 2. Clip to mountain shape ──
+    ctx.save();
+    ctx.beginPath();
+    pts.forEach(([x, y], i) => i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y));
+    ctx.closePath();
+    ctx.clip();
+
+    const minY = Math.min(...pts.map(p => p[1]));
+    const maxY = H;
+
+    // ── 3. Contour lines — variable density by height ──
+    let cy = minY;
+    while (cy < maxY) {
+      const t = (cy - minY) / (maxY - minY); // 0=top, 1=bottom
+
+      // Tight spacing at the steep cliff faces, loose at base
+      let step;
+      if (t < 0.04) step = 7;        // flat top plateau
+      else if (t < 0.38) step = 2.8; // vertical cliff faces
+      else if (t < 0.60) step = 6;   // lower slopes
+      else step = 14;                  // base
+
+      // Organic wobble so lines aren't ruler-straight
+      const wob = Math.sin(cy * 0.14 + 1.1) * 3.5 + Math.sin(cy * 0.33) * 1.8;
+      const ly = cy + wob;
+
+      // Colour: teal-bright near top of mountain, fades dark toward base
+      const alpha = Math.max(0.04, 0.58 - t * 0.52);
+      const g = Math.round(168 - t * 128);
+      const b = Math.round(164 - t * 122);
+      ctx.beginPath();
+      ctx.moveTo(-4, ly);
+      ctx.lineTo(W + 4, ly);
+      ctx.strokeStyle = `rgba(42,${g},${b},${alpha.toFixed(2)})`;
+      ctx.lineWidth = Math.max(0.35, 1.3 - t * 0.95);
+      ctx.stroke();
+
+      cy += step;
+    }
+
+    // ── 4. Stipple dots — the "rocky clumped" texture ──
+    // Dense in cliff / shadow zones, sparse elsewhere
+    const dot = rng32(8675309);
+    const attempts = Math.round(W * 5.5); // scales with canvas width
+
+    for (let i = 0; i < attempts; i++) {
+      const dx = dot() * W;
+      const dy = minY + dot() * (maxY - minY);
+      const t  = (dy - minY) / (maxY - minY);
+
+      // Pass-through probability by zone
+      const pass = t < 0.04  ? 0.18  // plateau: sparse
+                 : t < 0.38  ? 0.62  // cliff face: dense
+                 : t < 0.58  ? 0.30  // lower slope: medium
+                 :             0.07; // base: very sparse
+      if (dot() > pass) continue;
+
+      const radius = 0.7 + dot() * 2.8;
+      const alpha  = 0.10 + dot() * 0.42;
+
+      // Dots in lit (upper) zone are more teal; shadow zone darker/dimmer
+      const litness = Math.max(0, 1 - t * 2.2);
+      const dr = Math.round(42 + litness * 30);
+      const dg = Math.round(155 + litness * 20 - t * 100);
+      const db = Math.round(150 + litness * 15 - t * 95);
+
+      ctx.beginPath();
+      ctx.arc(dx, dy, radius, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(${dr},${Math.max(20,dg)},${Math.max(20,db)},${alpha.toFixed(2)})`;
+      ctx.fill();
+    }
+
+    ctx.restore();
+
+    // ── 5. Atmospheric teal rim along flat top ──
+    const rimY  = H * 0.067;
+    const rimX1 = W * 0.452;
+    const rimX2 = W * 0.930;
+
+    // Outer glow pass
+    ctx.beginPath();
+    ctx.moveTo(rimX1, rimY + 1);
+    ctx.lineTo(rimX2, rimY + 1);
+    ctx.strokeStyle = 'rgba(42,175,170,0.13)';
+    ctx.lineWidth = 9;
+    ctx.stroke();
+    // Sharp line
+    ctx.beginPath();
+    ctx.moveTo(rimX1, rimY);
+    ctx.lineTo(rimX2, rimY);
+    ctx.strokeStyle = 'rgba(42,175,170,0.42)';
+    ctx.lineWidth = 1.2;
+    ctx.stroke();
+  }
+
+  // ── DRAW: foreground boulders ────────────────────────────────────────
+  function drawForeground(canvas) {
+    const ctx = canvas.getContext('2d');
+    const W = canvas.width, H = canvas.height;
+    const r = rng32(777);
+
+    // Jagged cliff-base profile
+    const nPts = 60;
+    const profile = Array.from({ length: nPts + 1 }, (_, i) => {
+      const x = (i / nPts) * W;
+      const base = H * 0.38;
+      const jag  = r() * H * 0.38;
+      // More prominent near left and centre
+      const prom = 0.5 + 0.5 * Math.sin((i / nPts) * Math.PI * 2.4 + 0.2);
+      return [x, base + jag * (1 - prom * 0.55)];
+    });
+
+    ctx.beginPath();
+    ctx.moveTo(0, H);
+    ctx.lineTo(profile[0][0], profile[0][1]);
+    profile.forEach(([x, y]) => ctx.lineTo(x, y));
+    ctx.lineTo(W, H);
+    ctx.closePath();
+    ctx.fillStyle = '#050302';
+    ctx.fill();
+
+    // Scattered boulders
+    const r2 = rng32(444);
+    for (let i = 0; i < 80; i++) {
+      const bx = r2() * W;
+      const by = H * 0.08 + r2() * H * 0.48;
+      const br = 2 + r2() * 14;
+      ctx.beginPath();
+      ctx.arc(bx, by, br, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(5,3,2,${0.55 + r2() * 0.45})`;
+      ctx.fill();
+    }
+  }
+
+  // ── INIT all canvases ────────────────────────────────────────────────
+  function initMountains() {
+    const hero = document.querySelector('.hero');
+    if (!hero) return;
+    const W = hero.offsetWidth;
+    const H = hero.offsetHeight;
+
+    const back = document.getElementById('cv-back');
+    const mtn  = document.getElementById('cv-mtn');
+    const fg   = document.getElementById('cv-fg');
+
+    // Heights as fractions of hero
+    const backH = Math.round(H * 0.60);
+    const mtnH  = Math.round(H * 0.78);
+    const fgH   = Math.round(H * 0.22);
+
+    back.width  = W; back.height  = backH;
+    mtn.width   = W; mtn.height   = mtnH;
+    fg.width    = W; fg.height    = fgH;
+
+    back.style.width = '100%'; back.style.height = backH + 'px';
+    mtn.style.width  = '100%'; mtn.style.height  = mtnH  + 'px';
+    fg.style.width   = '100%'; fg.style.height   = fgH   + 'px';
+
+    drawBackRange(back);
+    drawTableMountain(mtn);
+    drawForeground(fg);
+  }
+
+  // Draw on load, redraw on resize
+  initMountains();
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(initMountains, 200);
+  });
+
+  // ── Parallax scroll ──────────────────────────────────────────────────
+  const cvBack = document.getElementById('cv-back');
+  const cvMtn  = document.getElementById('cv-mtn');
+  const cvFg   = document.getElementById('cv-fg');
 
   window.addEventListener('scroll', () => {
     const y = window.scrollY;
-    // Back range moves slowest (feels furthest away)
-    if (paraBack) paraBack.style.transform = `translateY(${y * 0.10}px)`;
-    // Table Mountain moves at medium speed
-    if (paraMtn)  paraMtn.style.transform  = `translateY(${y * 0.24}px)`;
-    // Foreground rocks move fastest (closest)
-    if (paraFg)   paraFg.style.transform   = `translateY(${y * 0.52}px)`;
+    if (cvBack) cvBack.style.transform = `translateY(${y * 0.10}px)`;
+    if (cvMtn)  cvMtn.style.transform  = `translateY(${y * 0.24}px)`;
+    if (cvFg)   cvFg.style.transform   = `translateY(${y * 0.52}px)`;
   }, { passive: true });
 
   // ── Fade-in cards on scroll
