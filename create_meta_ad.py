@@ -78,7 +78,7 @@ def create_ad_set(account, campaign_id, name, locations, daily_budget_zar):
     return ad_set['id']
 
 
-# Budget split: R130 Cape Town (65%), R70 other cities (35%)
+# Budget split: R110 Cape Town (55%), R90 other cities (45%)
 # Based on lead data: Cape Town accounts for ~33% of leads but is the #1 city
 CAPE_TOWN = [
     {'latitude': -33.9249, 'longitude': 18.4241, 'radius': 40, 'distance_unit': 'kilometer', 'name': 'Cape Town'},
@@ -135,8 +135,8 @@ def main():
     campaign_id = create_campaign(account)
     
     # 2. Create Ad Sets — Cape Town gets 65% of budget, other cities get 35%
-    ct_ad_set_id = create_ad_set(account, campaign_id, 'Ad Set - Cape Town - R130/day', CAPE_TOWN, 130)
-    other_ad_set_id = create_ad_set(account, campaign_id, 'Ad Set - JHB/PTA/DBN/Soweto - R70/day', OTHER_CITIES, 70)
+    ct_ad_set_id = create_ad_set(account, campaign_id, 'Ad Set - Cape Town - R110/day', CAPE_TOWN, 110)
+    other_ad_set_id = create_ad_set(account, campaign_id, 'Ad Set - JHB/PTA/DBN/Soweto - R90/day', OTHER_CITIES, 90)
 
     # 3. Create Creative
     try:
