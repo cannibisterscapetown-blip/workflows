@@ -86,6 +86,7 @@
       align-items: center;
       padding: 7rem 2rem 6rem;
       position: relative;
+      overflow: hidden;
       background: radial-gradient(ellipse at 30% 40%, rgba(31,158,153,0.07) 0%, transparent 60%);
     }
 
@@ -200,16 +201,16 @@
       background: rgba(42,175,170,0.06);
     }
 
-    .skyline {
+    .mountain-bg {
       position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 120px;
-      overflow: hidden;
+      bottom: 0; left: 0; right: 0;
+      height: 62%;
+      pointer-events: none;
+      will-change: transform;
+      overflow: visible;
     }
 
-    .skyline svg { width: 100%; height: 100%; }
+    .mountain-bg svg { width: 100%; height: 100%; }
 
     .problems {
       background: var(--bg2);
@@ -645,13 +646,6 @@
     footer strong { color: var(--neon); }
 
     /* ─── PARALLAX MOUNTAIN ─────────────── */
-    .skyline {
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      height: 160px;
-      overflow: hidden;
-      will-change: transform;
-    }
 
     /* ─── TERMINAL DEMO ─────────────────── */
     .terminal {
@@ -793,16 +787,77 @@
     </div>
   </div>
 
-  <div class="skyline" id="skyline">
-    <svg viewBox="0 0 1440 160" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- TABLE MOUNTAIN SILHOUETTE — parallaxes on scroll -->
+  <div class="mountain-bg" id="mountain-bg">
+    <svg viewBox="0 0 1440 400" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
       <defs>
-        <linearGradient id="mtGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-          <stop offset="0%" style="stop-color:rgba(42,175,170,0.12)"/>
-          <stop offset="100%" style="stop-color:rgba(0,0,0,0)"/>
+        <linearGradient id="bgMtGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="rgba(42,175,170,0.10)"/>
+          <stop offset="100%" stop-color="rgba(42,175,170,0.04)"/>
+        </linearGradient>
+        <linearGradient id="fgMtGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="rgba(28,24,18,0.85)"/>
+          <stop offset="100%" stop-color="rgba(28,24,18,1)"/>
         </linearGradient>
       </defs>
-      <path d="M0,160 L0,115 L80,108 L160,95 L220,55 L260,50 L300,52 L340,28 L400,24 L460,26 L520,28 L560,32 L600,28 L650,24 L700,26 L750,30 L800,40 L840,50 L880,58 L920,65 L980,76 L1060,88 L1150,98 L1250,105 L1350,110 L1440,112 L1440,160 Z"
-            fill="url(#mtGrad)" stroke="rgba(42,175,170,0.35)" stroke-width="1"/>
+
+      <!-- Back range: distant mountains, lighter -->
+      <path d="M0,400 L0,310 L60,290 L120,265 L180,240 L230,210 L270,190 L310,170 L350,155 L390,145 L430,155 L470,170 L510,160 L550,148 L590,140 L630,138 L680,140 L730,145 L780,148 L820,145 L860,150 L900,162 L940,175 L980,190 L1030,210 L1090,230 L1160,255 L1240,278 L1320,300 L1440,320 L1440,400 Z"
+            fill="url(#bgMtGrad)"/>
+
+      <!-- Teal ridge line on back range -->
+      <path d="M0,310 L60,290 L120,265 L180,240 L230,210 L270,190 L310,170 L350,155 L390,145 L430,155 L470,170 L510,160 L550,148 L590,140 L630,138 L680,140 L730,145 L780,148 L820,145 L860,150 L900,162 L940,175 L980,190 L1030,210 L1090,230 L1160,255 L1240,278 L1320,300 L1440,320"
+            fill="none" stroke="rgba(42,175,170,0.18)" stroke-width="1.5"/>
+
+      <!-- Foreground: Table Mountain, Devil's Peak, Lion's Head -->
+      <!-- Devil's Peak left, Table Mountain flat top centre, Lion's Head right -->
+      <path d="
+        M0,400
+        L0,360
+        L40,340 L80,310 L120,275 L155,245 L180,220
+        L210,195 L235,175 L255,158
+        L275,142 L295,128 L315,115
+        L335,105 L355,98 L375,93
+        L395,90 L415,88
+        L435,82 L455,78 L470,76
+        L485,78 L495,82
+        L508,86 L518,82 L528,76
+        L540,72 L552,70 L565,70
+        L578,70 L592,70 L608,70
+        L622,70 L638,70 L655,70
+        L672,70 L690,70 L708,70
+        L726,70 L744,70 L762,70
+        L780,70 L797,70 L813,70
+        L828,71 L842,72
+        L856,76 L868,82
+        L878,90 L886,96
+        L894,100 L900,105
+        L908,108 L915,106
+        L924,100 L934,92
+        L946,82 L958,76
+        L970,78 L980,86
+        L988,96 L994,108
+        L998,120 L1000,130
+        L1006,122 L1014,112
+        L1024,100 L1034,92
+        L1044,96 L1052,106
+        L1058,118 L1062,132
+        L1068,148 L1076,165
+        L1088,185 L1104,210
+        L1125,240 L1150,270
+        L1185,305 L1230,338
+        L1290,365 L1370,385
+        L1440,395
+        L1440,400 Z"
+            fill="url(#fgMtGrad)"/>
+
+      <!-- Teal highlight on the mountain ridge (iconic flat top) -->
+      <path d="M540,70 L565,70 L592,70 L622,70 L655,70 L690,70 L726,70 L762,70 L797,70 L828,71"
+            fill="none" stroke="rgba(42,175,170,0.55)" stroke-width="2" stroke-linecap="round"/>
+
+      <!-- Subtle ridge detail lines -->
+      <path d="M455,78 L470,76 L485,78" fill="none" stroke="rgba(42,175,170,0.3)" stroke-width="1"/>
+      <path d="M958,76 L970,78 L980,86" fill="none" stroke="rgba(42,175,170,0.25)" stroke-width="1"/>
     </svg>
   </div>
 </div>
@@ -1082,10 +1137,10 @@
     document.getElementById('form-success').style.display = 'block';
   }
 
-  // ── Parallax mountain on scroll
-  const skyline = document.getElementById('skyline');
+  // ── Parallax Table Mountain on scroll
+  const mountain = document.getElementById('mountain-bg');
   window.addEventListener('scroll', () => {
-    if (skyline) skyline.style.transform = `translateY(${window.scrollY * 0.28}px)`;
+    if (mountain) mountain.style.transform = `translateY(${window.scrollY * 0.45}px)`;
   }, { passive: true });
 
   // ── Fade-in cards on scroll
