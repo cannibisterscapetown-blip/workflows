@@ -353,8 +353,8 @@ function Particles() {
 
 // ─── Photo slideshow — 4 shots, each ~60 frames (2s), overlapping ─────────────
 const SLIDES = [
-  { src: 'artist1.jpg', direction: 'left',  start: 0,   end: 90  },
-  { src: 'artist2.jpg', direction: 'right', start: 75,  end: 160 },
+  { src: 'artist2.jpg', direction: 'left',  start: 0,   end: 90  },
+  { src: 'artist1.jpg', direction: 'right', start: 75,  end: 160 },
   { src: 'artist3.jpg', direction: 'left',  start: 145, end: 230 },
   { src: 'artist4.jpg', direction: 'right', start: 215, end: 300 },
 ];
