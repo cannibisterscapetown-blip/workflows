@@ -792,6 +792,103 @@
       .form-grid .full { grid-column: 1; }
       .loadshed-widget { flex-direction: column; }
     }
+
+    /* ─── TESTIMONIALS ───────────────────────────────────────────── */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+
+    .testimonial-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.75rem;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .testimonial-card:hover {
+      border-color: rgba(42,175,170,0.35);
+      transform: translateY(-3px);
+    }
+
+    .t-quote {
+      font-size: 2.8rem;
+      color: var(--neon);
+      line-height: 1;
+      margin-bottom: 0.6rem;
+      opacity: 0.35;
+      font-family: Georgia, serif;
+    }
+
+    .t-text {
+      font-size: 0.94rem;
+      color: var(--text);
+      line-height: 1.75;
+      margin-bottom: 1.25rem;
+      font-style: italic;
+    }
+
+    .t-author {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .t-avatar {
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      background: var(--neon);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.78rem; font-weight: 700;
+      color: var(--bg); flex-shrink: 0;
+      font-family: var(--font-ui);
+    }
+
+    .t-name {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .t-meta {
+      font-size: 0.76rem;
+      color: var(--neon);
+      margin-top: 0.1rem;
+    }
+
+    /* ─── WHATSAPP FAB ───────────────────────────────────────────── */
+    .wa-fab {
+      position: fixed;
+      bottom: 1.6rem; right: 1.6rem;
+      z-index: 200;
+      display: flex; align-items: center; gap: 0.6rem;
+      background: #25D366;
+      color: #fff;
+      border-radius: 999px;
+      padding: 0.72rem 1.2rem 0.72rem 0.85rem;
+      text-decoration: none;
+      font-weight: 700; font-size: 0.86rem;
+      font-family: var(--font-ui);
+      box-shadow: 0 4px 22px rgba(37,211,102,0.38);
+      transition: transform 0.2s, box-shadow 0.2s;
+      white-space: nowrap;
+    }
+
+    .wa-fab:hover {
+      transform: translateY(-2px) scale(1.04);
+      box-shadow: 0 6px 30px rgba(37,211,102,0.52);
+      color: #fff;
+    }
+
+    .wa-fab svg { flex-shrink: 0; }
+
+    @media (max-width: 480px) {
+      .wa-fab .wa-label { display: none; }
+      .wa-fab { padding: 0.88rem; }
+    }
   </style>
 </head>
 <body>
@@ -1078,6 +1175,50 @@
   </div>
 </section>
 
+<section id="testimonials">
+  <div class="section-label">What People Say</div>
+  <h2>Working for real people.<br>In real South African conditions.</h2>
+  <p class="section-intro">From Khayelitsha to Stellenbosch wine farms — what our early clients have to say.</p>
+
+  <div class="testimonials-grid">
+    <div class="testimonial-card">
+      <div class="t-quote">"</div>
+      <p class="t-text">Loadshedding was destroying my freelance income — I'd lose hours every day waiting for power and internet to recover. Now my AI keeps running through Stage 6 on battery. Completely changed how I work.</p>
+      <div class="t-author">
+        <div class="t-avatar">SM</div>
+        <div>
+          <div class="t-name">Sipho M.</div>
+          <div class="t-meta">Freelance Developer · Khayelitsha · Pro Setup</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial-card">
+      <div class="t-quote">"</div>
+      <p class="t-text">We farm in the Helderberg — signal in the valley is terrible. Our cellar master now uses it for harvest logs, blending notes, and supplier emails without needing WiFi at all. Brilliant piece of kit.</p>
+      <div class="t-author">
+        <div class="t-avatar">AV</div>
+        <div>
+          <div class="t-name">Anita van der Berg</div>
+          <div class="t-meta">Wine Estate Owner · Stellenbosch · Mini PC Package</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial-card">
+      <div class="t-quote">"</div>
+      <p class="t-text">They installed it during the July holidays. Teachers use it for lesson plans, marking rubrics, and report comments. Even when the power goes out — which it does, often — it just keeps going.</p>
+      <div class="t-author">
+        <div class="t-avatar">NS</div>
+        <div>
+          <div class="t-name">Mrs. N. Sibanda</div>
+          <div class="t-meta">Primary School Principal · Gugulethu · Enterprise</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <div class="cta-section" id="contact">
   <div class="cta-bg"></div>
   <div class="section-label" style="display:inline-block;margin-bottom:0.75rem">Get In Touch</div>
@@ -1123,8 +1264,8 @@
     document.getElementById('form-success').style.display = 'block';
   }
 
-  // ── SEEDED RNG (Mulberry32) ──────────────────────────────────────────
-  function rng32(seed) {
+  // ── SEEDED RNG ───────────────────────────────────────────────────────
+  function mkRng(seed) {
     let s = seed >>> 0;
     return function () {
       s = (s + 0x6D2B79F5) >>> 0;
@@ -1134,281 +1275,176 @@
     };
   }
 
-  // ── MOUNTAIN PROFILE ────────────────────────────────────────────────
-  // Normalised [x, y] fractions of canvas (W×H)
-  // Devil's Peak LEFT, flat Table top CENTRE, smooth descent RIGHT
-  // y=0 is top of canvas, y=1 is bottom (ground)
-  function getMtnProfile(W, H) {
-    const raw = [
-      [0, 1],
-      // Left base rising:
-      [0, 0.82], [0.042, 0.73], [0.078, 0.64],
-      [0.112, 0.56], [0.138, 0.47], [0.156, 0.40],
-      [0.164, 0.34], [0.168, 0.28],
-      // Devil's Peak climb:
-      [0.169, 0.235], [0.170, 0.192], [0.170, 0.155],
-      [0.170, 0.118], // Devil's Peak apex — tallest left feature
-      // Down into saddle:
-      [0.171, 0.135], [0.173, 0.158], [0.177, 0.188],
-      [0.183, 0.220], [0.191, 0.253], [0.201, 0.280],
-      [0.214, 0.302], [0.229, 0.318], [0.245, 0.326],
-      [0.260, 0.328], [0.274, 0.322], [0.285, 0.310],
-      [0.294, 0.294], [0.301, 0.276], [0.308, 0.256],
-      // Rising to Table Mountain left cliff (steepest section):
-      [0.315, 0.234], [0.323, 0.212], [0.333, 0.188],
-      [0.346, 0.163], [0.362, 0.139], [0.381, 0.116],
-      [0.402, 0.096], [0.421, 0.082], [0.439, 0.074],
-      [0.452, 0.070],
-      // Table Mountain flat top (slight undulation — not ruler-flat):
-      [0.500, 0.067], [0.560, 0.065], [0.630, 0.064],
-      [0.700, 0.065], [0.770, 0.065], [0.840, 0.066],
-      [0.898, 0.068], [0.930, 0.069],
-      // Right cliff drop:
-      [0.936, 0.074], [0.941, 0.083], [0.946, 0.096],
-      [0.950, 0.113], [0.954, 0.132], [0.958, 0.155],
-      [0.963, 0.179], [0.968, 0.206], [0.975, 0.234],
-      [0.983, 0.262], [0.993, 0.288], [1.004, 0.311],
-      // Right shoulder descent (off-screen to right is fine):
-      [1.018, 0.331], [1.036, 0.346], [1.058, 0.356],
-      [1.084, 0.362], [1.116, 0.364], [1.155, 0.363],
-      [1.200, 0.361], [1.260, 0.359], [1.440 / W * W, 0.356],
-      [1, 0.356], [1, 1]
-    ];
-    return raw.map(([px, py]) => [px * W, py * H]);
+  // ── TABLE MOUNTAIN PROFILE ───────────────────────────────────────────
+  // Normalised height 0–1 at horizontal position t (0–1).
+  // Devil's Peak LEFT (0.88), flat Table top CENTRE (1.0), no Lion's Head.
+  function mtnAt(t) {
+    var sig = function(x) { return 1 / (1 + Math.exp(-x)); };
+    // Devil's Peak: Gaussian centred at t=0.155
+    var dp   = 0.88 * Math.exp(-0.5 * Math.pow((t - 0.155) / 0.021, 2));
+    // Table Mountain: sigmoid-edged flat top, left cliff t≈0.348, right≈0.918
+    var tm   = sig((t - 0.348) * 155) * sig((0.918 - t) * 148);
+    // General mountain mass connecting left base / saddle floor / right base
+    var mass = 0.22 * sig((t - 0.02) * 26) * sig((1.12 - t) * 22);
+    return Math.max(dp, tm, mass);
   }
 
-  // ── DRAW: distant background range ──────────────────────────────────
-  function drawBackRange(canvas) {
-    const ctx = canvas.getContext('2d');
-    const W = canvas.width, H = canvas.height;
-    const r = rng32(111);
+  // ── BACK LAYER: stars + distant ridge ────────────────────────────────
+  function drawBack(cv) {
+    var ctx = cv.getContext('2d');
+    var W = cv.width, H = cv.height;
 
-    // Procedural ridge using layered sine waves
-    function ridge(x) {
-      const t = x / W;
-      return H * (0.32
-        + 0.10 * Math.sin(t * Math.PI * 2.1 + 0.8)
-        + 0.05 * Math.sin(t * Math.PI * 4.7 + 1.4)
-        + 0.025 * Math.sin(t * Math.PI * 9.3 + 2.7)
-        + 0.012 * Math.sin(t * Math.PI * 18 + 0.3));
+    var sky = ctx.createLinearGradient(0, 0, 0, H);
+    sky.addColorStop(0.00, '#0c1218'); sky.addColorStop(0.28, '#162230');
+    sky.addColorStop(0.58, '#1e3038'); sky.addColorStop(0.82, '#1a2820');
+    sky.addColorStop(1.00, '#0e0b08');
+    ctx.fillStyle = sky; ctx.fillRect(0, 0, W, H);
+
+    var rs = mkRng(271828);
+    for (var i = 0; i < 200; i++) {
+      var sx = rs() * W, sy = rs() * H * 0.58;
+      var sr = 0.4 + rs() * 1.1, sa = 0.15 + rs() * 0.55;
+      ctx.beginPath(); ctx.arc(sx, sy, sr, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(215,228,240,' + sa.toFixed(2) + ')'; ctx.fill();
     }
 
-    // Hazy fill
-    ctx.beginPath();
-    ctx.moveTo(0, H);
-    for (let x = 0; x <= W; x += 3) ctx.lineTo(x, ridge(x));
-    ctx.lineTo(W, H);
-    ctx.closePath();
-    ctx.fillStyle = 'rgba(26,42,52,0.5)';
-    ctx.fill();
+    function ridge(t) {
+      return 0.16 * (0.5 + 0.5 * Math.sin(t * Math.PI * 2.4 + 0.7))
+           + 0.07 * Math.sin(t * Math.PI * 5.1 + 1.8)
+           + 0.025 * Math.sin(t * Math.PI * 11 + 3.1);
+    }
 
-    // Soft contour lines
-    for (let off = 0; off < 48; off += 10) {
+    ctx.beginPath(); ctx.moveTo(0, H);
+    for (var x = 0; x <= W; x += 4)
+      ctx.lineTo(x, H - Math.max(0, ridge(x / W)) * H * 0.30);
+    ctx.lineTo(W, H); ctx.closePath();
+    ctx.fillStyle = 'rgba(22,38,50,0.48)'; ctx.fill();
+
+    for (var l = 0; l < 5; l++) {
+      var off = l * 11;
       ctx.beginPath();
-      ctx.moveTo(0, ridge(0) + off);
-      for (let x = 3; x <= W; x += 3) ctx.lineTo(x, ridge(x) + off);
-      ctx.strokeStyle = `rgba(35,60,72,${(0.28 - off * 0.004).toFixed(2)})`;
-      ctx.lineWidth = 0.7;
+      for (var xx = 0; xx <= W; xx += 4) {
+        var y = H - Math.max(0, ridge(xx / W)) * H * 0.30 + off;
+        xx === 0 ? ctx.moveTo(xx, y) : ctx.lineTo(xx, y);
+      }
+      ctx.strokeStyle = 'rgba(42,72,92,' + (0.16 - l * 0.025).toFixed(2) + ')';
+      ctx.lineWidth = 0.8; ctx.stroke();
+    }
+  }
+
+  // ── MAIN LAYER: Table Mountain ridgelines (Joy Division technique) ────
+  // 72 scan lines bend upward where the mountain rises. The fill below
+  // each line uses the sky gradient, which occludes previous lines and
+  // creates the layered 3-D depth illusion.
+  function drawMain(cv) {
+    var ctx = cv.getContext('2d');
+    var W = cv.width, H = cv.height;
+
+    var sky = ctx.createLinearGradient(0, 0, 0, H);
+    sky.addColorStop(0.00, '#0c1218'); sky.addColorStop(0.28, '#162230');
+    sky.addColorStop(0.58, '#1e3038'); sky.addColorStop(0.82, '#1a2820');
+    sky.addColorStop(1.00, '#0e0b08');
+
+    var LINES = 72, MTN_H = H * 0.82, SPAN = H * 0.88;
+
+    for (var i = 0; i < LINES; i++) {
+      var frac  = (i + 0.5) / LINES;
+      var yBase = H - frac * SPAN;
+
+      function buildPath(ii, yB) {
+        ctx.beginPath(); ctx.moveTo(-3, yB);
+        for (var px = 0; px <= W + 3; px += 2) {
+          var h    = mtnAt(px / W);
+          var mtnY = H - h * MTN_H;
+          var jit  = Math.sin(px * 0.09 + ii * 1.73) * 0.45
+                   + Math.sin(px * 0.24 + ii * 0.81) * 0.25;
+          ctx.lineTo(px, Math.min(yB, mtnY) + jit);
+        }
+        ctx.lineTo(W + 3, yB);
+      }
+
+      // Occlude with sky fill
+      buildPath(i, yBase);
+      ctx.lineTo(W + 3, H + 3); ctx.lineTo(-3, H + 3); ctx.closePath();
+      ctx.fillStyle = sky; ctx.fill();
+
+      // Draw teal scan line — brighter near summit
+      var alpha = Math.min(0.74, 0.06 + frac * 0.68).toFixed(2);
+      buildPath(i, yBase);
+      ctx.strokeStyle = 'rgba(42,175,170,' + alpha + ')';
+      ctx.lineWidth   = 0.35 + frac * 0.95;
       ctx.stroke();
     }
-  }
 
-  // ── DRAW: Table Mountain (contour lines + stipple dots) ──────────────
-  function drawTableMountain(canvas) {
-    const ctx = canvas.getContext('2d');
-    const W = canvas.width, H = canvas.height;
-
-    const pts = getMtnProfile(W, H);
-
-    // ── 1. Dark base fill ──
-    ctx.beginPath();
-    pts.forEach(([x, y], i) => i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y));
-    ctx.closePath();
-    ctx.fillStyle = '#070504';
-    ctx.fill();
-
-    // ── 2. Clip to mountain shape ──
+    // Bright teal rim along the flat top edge
+    var rimY = H - MTN_H, rimX1 = W * 0.362, rimX2 = W * 0.902;
     ctx.save();
-    ctx.beginPath();
-    pts.forEach(([x, y], i) => i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y));
-    ctx.closePath();
-    ctx.clip();
-
-    const minY = Math.min(...pts.map(p => p[1]));
-    const maxY = H;
-
-    // ── 3. Contour lines — variable density by height ──
-    let cy = minY;
-    while (cy < maxY) {
-      const t = (cy - minY) / (maxY - minY); // 0=top, 1=bottom
-
-      // Tight spacing at the steep cliff faces, loose at base
-      let step;
-      if (t < 0.04) step = 7;        // flat top plateau
-      else if (t < 0.38) step = 2.8; // vertical cliff faces
-      else if (t < 0.60) step = 6;   // lower slopes
-      else step = 14;                  // base
-
-      // Organic wobble so lines aren't ruler-straight
-      const wob = Math.sin(cy * 0.14 + 1.1) * 3.5 + Math.sin(cy * 0.33) * 1.8;
-      const ly = cy + wob;
-
-      // Colour: teal-bright near top of mountain, fades dark toward base
-      const alpha = Math.max(0.04, 0.58 - t * 0.52);
-      const g = Math.round(168 - t * 128);
-      const b = Math.round(164 - t * 122);
-      ctx.beginPath();
-      ctx.moveTo(-4, ly);
-      ctx.lineTo(W + 4, ly);
-      ctx.strokeStyle = `rgba(42,${g},${b},${alpha.toFixed(2)})`;
-      ctx.lineWidth = Math.max(0.35, 1.3 - t * 0.95);
-      ctx.stroke();
-
-      cy += step;
-    }
-
-    // ── 4. Stipple dots — the "rocky clumped" texture ──
-    // Dense in cliff / shadow zones, sparse elsewhere
-    const dot = rng32(8675309);
-    const attempts = Math.round(W * 5.5); // scales with canvas width
-
-    for (let i = 0; i < attempts; i++) {
-      const dx = dot() * W;
-      const dy = minY + dot() * (maxY - minY);
-      const t  = (dy - minY) / (maxY - minY);
-
-      // Pass-through probability by zone
-      const pass = t < 0.04  ? 0.18  // plateau: sparse
-                 : t < 0.38  ? 0.62  // cliff face: dense
-                 : t < 0.58  ? 0.30  // lower slope: medium
-                 :             0.07; // base: very sparse
-      if (dot() > pass) continue;
-
-      const radius = 0.7 + dot() * 2.8;
-      const alpha  = 0.10 + dot() * 0.42;
-
-      // Dots in lit (upper) zone are more teal; shadow zone darker/dimmer
-      const litness = Math.max(0, 1 - t * 2.2);
-      const dr = Math.round(42 + litness * 30);
-      const dg = Math.round(155 + litness * 20 - t * 100);
-      const db = Math.round(150 + litness * 15 - t * 95);
-
-      ctx.beginPath();
-      ctx.arc(dx, dy, radius, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(${dr},${Math.max(20,dg)},${Math.max(20,db)},${alpha.toFixed(2)})`;
-      ctx.fill();
-    }
-
+    ctx.shadowColor = 'rgba(42,175,170,0.55)'; ctx.shadowBlur = 10;
+    ctx.beginPath(); ctx.moveTo(rimX1, rimY); ctx.lineTo(rimX2, rimY);
+    ctx.strokeStyle = 'rgba(42,175,170,0.65)'; ctx.lineWidth = 1.8; ctx.stroke();
     ctx.restore();
-
-    // ── 5. Atmospheric teal rim along flat top ──
-    const rimY  = H * 0.067;
-    const rimX1 = W * 0.452;
-    const rimX2 = W * 0.930;
-
-    // Outer glow pass
-    ctx.beginPath();
-    ctx.moveTo(rimX1, rimY + 1);
-    ctx.lineTo(rimX2, rimY + 1);
-    ctx.strokeStyle = 'rgba(42,175,170,0.13)';
-    ctx.lineWidth = 9;
-    ctx.stroke();
-    // Sharp line
-    ctx.beginPath();
-    ctx.moveTo(rimX1, rimY);
-    ctx.lineTo(rimX2, rimY);
-    ctx.strokeStyle = 'rgba(42,175,170,0.42)';
-    ctx.lineWidth = 1.2;
-    ctx.stroke();
   }
 
-  // ── DRAW: foreground boulders ────────────────────────────────────────
-  function drawForeground(canvas) {
-    const ctx = canvas.getContext('2d');
-    const W = canvas.width, H = canvas.height;
-    const r = rng32(777);
+  // ── FOREGROUND LAYER: boulders ────────────────────────────────────────
+  function drawFore(cv) {
+    var ctx = cv.getContext('2d');
+    var W = cv.width, H = cv.height;
+    var r = mkRng(31415), fgY = H * 0.80, n = 90;
 
-    // Jagged cliff-base profile
-    const nPts = 60;
-    const profile = Array.from({ length: nPts + 1 }, (_, i) => {
-      const x = (i / nPts) * W;
-      const base = H * 0.38;
-      const jag  = r() * H * 0.38;
-      // More prominent near left and centre
-      const prom = 0.5 + 0.5 * Math.sin((i / nPts) * Math.PI * 2.4 + 0.2);
-      return [x, base + jag * (1 - prom * 0.55)];
-    });
+    var pts = [];
+    for (var i = 0; i <= n; i++) {
+      var x    = (i / n) * W;
+      var base = fgY + (H - fgY) * 0.35;
+      var jag  = r() * (H - fgY) * 0.50;
+      var prom = 0.45 + 0.55 * Math.sin(i / n * Math.PI * 2.8 + 0.5);
+      pts.push([x, base + jag * (1 - prom * 0.5)]);
+    }
 
-    ctx.beginPath();
-    ctx.moveTo(0, H);
-    ctx.lineTo(profile[0][0], profile[0][1]);
-    profile.forEach(([x, y]) => ctx.lineTo(x, y));
-    ctx.lineTo(W, H);
-    ctx.closePath();
-    ctx.fillStyle = '#050302';
-    ctx.fill();
+    ctx.beginPath(); ctx.moveTo(-2, H + 2); ctx.lineTo(pts[0][0], pts[0][1]);
+    pts.forEach(function(p) { ctx.lineTo(p[0], p[1]); });
+    ctx.lineTo(W + 2, H + 2); ctx.closePath();
+    ctx.fillStyle = '#040302'; ctx.fill();
 
-    // Scattered boulders
-    const r2 = rng32(444);
-    for (let i = 0; i < 80; i++) {
-      const bx = r2() * W;
-      const by = H * 0.08 + r2() * H * 0.48;
-      const br = 2 + r2() * 14;
-      ctx.beginPath();
-      ctx.arc(bx, by, br, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(5,3,2,${0.55 + r2() * 0.45})`;
-      ctx.fill();
+    var rb = mkRng(55555);
+    for (var j = 0; j < 35; j++) {
+      var bx = rb() * W, by = fgY + rb() * (H - fgY) * 0.55, br = 3 + rb() * 18;
+      ctx.beginPath(); ctx.arc(bx, by, br, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(3,2,1,' + (0.5 + rb() * 0.5).toFixed(2) + ')'; ctx.fill();
     }
   }
 
-  // ── INIT all canvases ────────────────────────────────────────────────
+  // ── INIT ─────────────────────────────────────────────────────────────
+  var _cvBack = document.getElementById('cv-back');
+  var _cvMtn  = document.getElementById('cv-mtn');
+  var _cvFg   = document.getElementById('cv-fg');
+
   function initMountains() {
-    const hero = document.querySelector('.hero');
+    var hero = document.querySelector('.hero');
     if (!hero) return;
-    const W = hero.offsetWidth;
-    const H = hero.offsetHeight;
-
-    const back = document.getElementById('cv-back');
-    const mtn  = document.getElementById('cv-mtn');
-    const fg   = document.getElementById('cv-fg');
-
-    // Heights as fractions of hero
-    const backH = Math.round(H * 0.60);
-    const mtnH  = Math.round(H * 0.78);
-    const fgH   = Math.round(H * 0.22);
-
-    back.width  = W; back.height  = backH;
-    mtn.width   = W; mtn.height   = mtnH;
-    fg.width    = W; fg.height    = fgH;
-
-    back.style.width = '100%'; back.style.height = backH + 'px';
-    mtn.style.width  = '100%'; mtn.style.height  = mtnH  + 'px';
-    fg.style.width   = '100%'; fg.style.height   = fgH   + 'px';
-
-    drawBackRange(back);
-    drawTableMountain(mtn);
-    drawForeground(fg);
+    var W = hero.offsetWidth, H = hero.offsetHeight;
+    [_cvBack, _cvMtn, _cvFg].forEach(function(cv) {
+      cv.width = W; cv.height = H;
+      cv.style.width = '100%'; cv.style.height = H + 'px';
+    });
+    drawBack(_cvBack); drawMain(_cvMtn); drawFore(_cvFg);
   }
 
-  // Draw on load, redraw on resize
   initMountains();
-  let resizeTimer;
-  window.addEventListener('resize', () => {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(initMountains, 200);
+  var _rt;
+  window.addEventListener('resize', function() {
+    clearTimeout(_rt); _rt = setTimeout(initMountains, 220);
   });
 
   // ── Parallax scroll ──────────────────────────────────────────────────
-  const cvBack = document.getElementById('cv-back');
-  const cvMtn  = document.getElementById('cv-mtn');
-  const cvFg   = document.getElementById('cv-fg');
-
-  window.addEventListener('scroll', () => {
-    const y = window.scrollY;
-    if (cvBack) cvBack.style.transform = `translateY(${y * 0.10}px)`;
-    if (cvMtn)  cvMtn.style.transform  = `translateY(${y * 0.24}px)`;
-    if (cvFg)   cvFg.style.transform   = `translateY(${y * 0.52}px)`;
+  window.addEventListener('scroll', function() {
+    var y = window.scrollY;
+    _cvBack.style.transform = 'translateY(' + (y * 0.08).toFixed(1) + 'px)';
+    _cvMtn.style.transform  = 'translateY(' + (y * 0.22).toFixed(1) + 'px)';
+    _cvFg.style.transform   = 'translateY(' + (y * 0.48).toFixed(1) + 'px)';
   }, { passive: true });
+
+
+
 
   // ── Fade-in cards on scroll
   const cardObserver = new IntersectionObserver((entries) => {
@@ -1420,7 +1456,7 @@
     });
   }, { threshold: 0.1 });
 
-  document.querySelectorAll('.problem-card, .tier-card, .tech-card, .device-card').forEach(el => {
+  document.querySelectorAll('.problem-card, .tier-card, .tech-card, .device-card, .testimonial-card').forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(20px)';
     el.style.transition = 'opacity 0.5s ease, transform 0.5s ease, border-color 0.2s';
@@ -1475,5 +1511,12 @@
   // Start after a short delay so user sees the boot line first
   setTimeout(runConversation, 1000);
 </script>
+<a href="https://wa.me/27000000000?text=Hi!%20I%27m%20interested%20in%20an%20OffGrid%20AI%20install." class="wa-fab" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg width="20" height="20" viewBox="0 0 32 32" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M16 0C7.163 0 0 7.163 0 16c0 2.824.737 5.47 2.028 7.77L0 32l8.41-2.002A15.935 15.935 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm8.182 22.273c-.336.94-1.96 1.793-2.716 1.906-.728.107-1.647.152-2.657-.167-1.615-.513-2.588-.97-5.31-4.16-2.318-2.736-3.71-6.124-3.21-7.23.5-1.107 1.01-1.434 1.373-1.504.363-.07.726-.085 1.044-.077.345.009.808-.13 1.267.97.468 1.124 1.592 3.87 1.728 4.149.136.278.227.605.044.975-.183.37-.274.598-.535.916-.26.319-.548.71-.782.955-.26.27-.53.562-.228 1.1.302.538 1.343 2.215 2.886 3.587 1.984 1.769 3.655 2.318 4.175 2.579.52.261.82.217 1.127-.13.308-.348 1.322-1.543 1.676-2.074.354-.53.707-.441 1.192-.265.485.176 3.072 1.449 3.6 1.713.527.264.879.396 1.009.617.131.22.131 1.266-.205 2.207z"/>
+  </svg>
+  <span class="wa-label">WhatsApp Us</span>
+</a>
+
 </body>
 </html>
