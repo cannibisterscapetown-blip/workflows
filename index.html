@@ -87,10 +87,48 @@
       padding: 7rem 2rem 6rem;
       position: relative;
       overflow: hidden;
-      background:
-        linear-gradient(to right, rgba(20,18,14,0.88) 0%, rgba(20,18,14,0.6) 55%, rgba(20,18,14,0.75) 100%),
-        linear-gradient(to top, rgba(20,18,14,0.95) 0%, transparent 40%),
-        url('https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Table_Mountain_DanieVDM.jpg/1280px-Table_Mountain_DanieVDM.jpg') center 60% / cover no-repeat;
+      background: #0e0b08;
+    }
+
+    /* ── Parallax layer base */
+    .para-layer {
+      position: absolute;
+      left: 0; right: 0; bottom: 0;
+      pointer-events: none;
+      will-change: transform;
+      z-index: 0;
+    }
+
+    /* Sky gradient fills the whole hero */
+    .para-sky {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      background: linear-gradient(180deg,
+        #0c1218 0%,
+        #162230 25%,
+        #1e3038 55%,
+        #1a2820 80%,
+        #0e0b08 100%
+      );
+    }
+
+    /* Atmospheric glow near horizon */
+    .para-glow {
+      position: absolute;
+      left: 0; right: 0;
+      height: 30%;
+      bottom: 30%;
+      z-index: 0;
+      pointer-events: none;
+      background: radial-gradient(ellipse 80% 100% at 50% 100%,
+        rgba(42,175,170,0.08) 0%, transparent 70%);
+    }
+
+    .para-layer svg {
+      display: block;
+      width: 100%;
     }
 
     .hero-inner {
@@ -204,6 +242,38 @@
     .btn-secondary:hover {
       border-color: rgba(42,175,170,0.5);
       background: rgba(42,175,170,0.06);
+    }
+
+    /* ─── PARALLAX MOUNTAIN LAYERS ───────── */
+    .para-mountains {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .para-back,
+    .para-mtn,
+    .para-fg {
+      position: absolute;
+      left: 0; right: 0; bottom: 0;
+      will-change: transform;
+    }
+
+    /* Back range sits low — covers bottom ~58% of hero */
+    .para-back { height: 58%; min-height: 260px; }
+    /* Main mountain fills ~75% of hero height */
+    .para-mtn  { height: 75%; min-height: 360px; }
+    /* Foreground rocks at very bottom */
+    .para-fg   { height: 22%; min-height: 100px; }
+
+    .para-back svg,
+    .para-mtn  svg,
+    .para-fg   svg {
+      display: block;
+      width: 100%;
+      height: 100%;
     }
 
     .mountain-bg { display: none; }
@@ -783,36 +853,153 @@
     </div>
   </div>
 
-  <!-- TABLE MOUNTAIN silhouette -->
-  <div class="mountain-bg" id="mountain-bg">
-    <!--
-      viewBox 0 0 100 50. Top edge (y=0) = Table Mountain flat top.
-      Devil's Peak: left bump, y≈20 (lower than flat top).
-      Lion's Head:  right bump, y≈26 (lower than Devil's Peak).
-      preserveAspectRatio none only stretches horizontally — fine for a flat mountain.
-    -->
-    <svg viewBox="0 0 100 50" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <linearGradient id="mtFill" x1="0%" y1="0%" x2="0%" y2="100%">
-          <stop offset="0%" stop-color="rgba(32,28,22,0.95)"/>
-          <stop offset="100%" stop-color="rgba(26,23,18,1)"/>
-        </linearGradient>
-      </defs>
+  <!-- MULTI-LAYER PARALLAX TABLE MOUNTAIN -->
+  <div class="para-mountains">
+    <div class="para-sky"></div>
+    <div class="para-glow"></div>
 
-      <polygon fill="url(#mtFill)" points="
-        0,50
-        8,50  14,44  19,36  22,28  24,22  25,20
-        26,22  28,28  30,18  32,8  34,2  35,0
-        65,0
-        66,2  68,8  70,18  72,28  74,22  75,26
-        76,28  80,36  86,44  93,50
-        100,50
-      "/>
+    <!-- Layer 1: distant hazy mountain range behind Table Mountain -->
+    <div class="para-back" id="para-back">
+      <svg viewBox="0 0 1440 320" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="bgRange" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="rgba(32,52,62,0.45)"/>
+            <stop offset="100%" stop-color="rgba(24,38,48,0.75)"/>
+          </linearGradient>
+          <filter id="haze">
+            <feGaussianBlur stdDeviation="2.5"/>
+          </filter>
+        </defs>
+        <!-- Distant rolling range, softened by blur -->
+        <path fill="url(#bgRange)" filter="url(#haze)" d="
+          M 0 320 L 0 210
+          C 80 195 160 182 240 175
+          C 310 169 380 170 450 165
+          C 520 160 590 152 660 155
+          C 730 158 800 165 870 158
+          C 940 150 1010 138 1080 142
+          C 1150 146 1220 158 1300 168
+          C 1360 176 1400 185 1440 192
+          L 1440 320 Z
+        "/>
+      </svg>
+    </div>
 
-      <!-- Flat top highlight -->
-      <line x1="35" y1="0.4" x2="65" y2="0.4"
-            stroke="rgba(42,175,170,0.75)" stroke-width="0.8"/>
-    </svg>
+    <!-- Layer 2: Table Mountain — Devil's Peak left, flat top, slope right -->
+    <div class="para-mtn" id="para-mtn">
+      <svg viewBox="0 0 1440 560" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <!-- Rocky displacement filter: fractal noise roughens all edges -->
+          <filter id="rocky" x="-10%" y="-18%" width="120%" height="136%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.016 0.042" numOctaves="5" seed="9" result="noise"/>
+            <feDisplacementMap in="SourceGraphic" in2="noise" scale="10" xChannelSelector="R" yChannelSelector="G"/>
+          </filter>
+
+          <!-- Main body: darkest on right (east shadow), lighter on left face -->
+          <linearGradient id="mtnBody" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%"   stop-color="#2f2b25"/>
+            <stop offset="20%"  stop-color="#201d18"/>
+            <stop offset="55%"  stop-color="#161310"/>
+            <stop offset="100%" stop-color="#0c0a08"/>
+          </linearGradient>
+
+          <!-- Flat top surface: catches sky light, slightly lighter -->
+          <linearGradient id="topSurface" x1="0" y1="0" x2="0.4" y2="1">
+            <stop offset="0%"  stop-color="#3e3930"/>
+            <stop offset="100%" stop-color="#1e1b16"/>
+          </linearGradient>
+
+          <!-- Devil's Peak lit face (left-facing, catches afternoon Atlantic light) -->
+          <linearGradient id="devilLit" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%"  stop-color="#383228"/>
+            <stop offset="100%" stop-color="#161310"/>
+          </linearGradient>
+        </defs>
+
+        <g filter="url(#rocky)">
+          <!-- ── Main mountain silhouette ── -->
+          <path fill="url(#mtnBody)" d="
+            M -20 560
+            L -20 460 L 30 415 L 75 368 L 115 325 L 148 284
+            L 168 252 L 180 230 L 190 210 L 198 193
+            L 202 183 L 206 174 L 210 167 L 214 161
+            L 218 156 L 222 152 L 226 150 L 229 149
+            L 233 150 L 237 154 L 241 160 L 245 169
+            L 249 180 L 253 194 L 257 210 L 262 228
+            L 268 248 L 275 264 L 285 277 L 298 285
+            L 312 290 L 326 290 L 338 286 L 348 278
+            L 356 268 L 363 255 L 368 241 L 373 226
+            L 378 210 L 383 194 L 388 177 L 394 160
+            L 400 144 L 408 130 L 416 119 L 424 112
+            L 432 108 L 438 106 L 444 106 L 449 108
+            L 454 112 L 458 118 L 461 125 L 463 132
+            L 465 140 L 466 147 L 467 153
+            L 468 157 L 470 160
+            L 480 160 L 540 157 L 600 155 L 660 154
+            L 720 153 L 780 153 L 840 154 L 900 155
+            L 950 157 L 970 158 L 978 159
+            L 985 161 L 990 165 L 994 171 L 997 178
+            L 1000 187 L 1003 198 L 1007 211 L 1012 227
+            L 1018 244 L 1026 262 L 1036 278 L 1050 292
+            L 1066 304 L 1084 314 L 1106 321 L 1130 325
+            L 1156 325 L 1182 320 L 1208 312 L 1236 300
+            L 1264 288 L 1296 276 L 1332 266 L 1370 260
+            L 1410 257 L 1460 256
+            L 1460 560 Z
+          "/>
+
+          <!-- ── Flat top surface (sky-lit) ── -->
+          <polygon fill="url(#topSurface)" points="
+            469,160 469,135 472,128 478,122 488,118
+            540,115 600,113 660,112 720,111 780,111
+            840,112 900,113 950,115 968,117 976,120
+            982,124 986,130 988,137 988,161
+            978,159 970,158 950,157 900,155 840,154
+            780,153 720,153 660,154 600,155 540,157
+            480,160
+          "/>
+        </g>
+
+        <!-- Teal atmospheric rim light along flat top — blurred glow -->
+        <line x1="469" y1="124" x2="988" y2="114"
+              stroke="rgba(42,175,170,0.28)" stroke-width="3"
+              filter="url(#rocky)"/>
+        <line x1="469" y1="124" x2="988" y2="114"
+              stroke="rgba(42,175,170,0.12)" stroke-width="8"
+              filter="url(#rocky)"/>
+      </svg>
+    </div>
+
+    <!-- Layer 3: foreground boulders / cliff base (closest, moves fastest) -->
+    <div class="para-fg" id="para-fg">
+      <svg viewBox="0 0 1440 180" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <filter id="fgRock" x="-5%" y="-25%" width="110%" height="150%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.028 0.07" numOctaves="3" seed="3" result="n"/>
+            <feDisplacementMap in="SourceGraphic" in2="n" scale="7" xChannelSelector="R" yChannelSelector="G"/>
+          </filter>
+        </defs>
+        <!-- Jagged cliff/boulder silhouette at base -->
+        <path fill="#080604" filter="url(#fgRock)" d="
+          M -10 180 L -10 100
+          C 25 92 55 84 82 80
+          L 92 77 L 98 73 L 104 70 L 108 73 L 112 79
+          C 130 87 155 92 188 96
+          C 230 101 282 104 345 108
+          C 395 111 445 117 490 120
+          L 502 124 L 508 129 L 511 134 L 514 129 L 518 122 L 525 118
+          C 555 112 600 110 660 112
+          C 720 115 795 120 880 124
+          C 945 127 1005 130 1055 129
+          C 1085 128 1112 124 1138 118
+          C 1162 112 1186 104 1215 98
+          C 1245 92 1278 88 1310 86
+          L 1328 84 L 1336 80 L 1341 76 L 1346 80 L 1350 87
+          C 1372 96 1406 108 1440 116
+          L 1460 120 L 1460 180 Z
+        "/>
+      </svg>
+    </div>
   </div>
 </div>
 
@@ -1091,10 +1278,19 @@
     document.getElementById('form-success').style.display = 'block';
   }
 
-  // ── Parallax: background-position shifts on scroll for depth effect
-  const hero = document.querySelector('.hero');
+  // ── Parallax: each mountain layer moves at a different speed
+  const paraBack = document.getElementById('para-back');
+  const paraMtn  = document.getElementById('para-mtn');
+  const paraFg   = document.getElementById('para-fg');
+
   window.addEventListener('scroll', () => {
-    if (hero) hero.style.backgroundPositionY = `calc(60% + ${window.scrollY * 0.4}px)`;
+    const y = window.scrollY;
+    // Back range moves slowest (feels furthest away)
+    if (paraBack) paraBack.style.transform = `translateY(${y * 0.10}px)`;
+    // Table Mountain moves at medium speed
+    if (paraMtn)  paraMtn.style.transform  = `translateY(${y * 0.24}px)`;
+    // Foreground rocks move fastest (closest)
+    if (paraFg)   paraFg.style.transform   = `translateY(${y * 0.52}px)`;
   }, { passive: true });
 
   // ── Fade-in cards on scroll
