@@ -50,43 +50,46 @@ def create_campaign(account):
     print(f"Created Campaign: {campaign['id']}")
     return campaign['id']
 
-def create_ad_set(account, campaign_id):
-    """Creates an ad set targeting high-converting South African cities."""
-    # Start time slightly in the future
+def create_ad_set(account, campaign_id, name, locations, daily_budget_zar):
+    """Creates an ad set for a given set of locations and budget."""
     start_time = int(time.time()) + 60*10
     end_time = start_time + (7 * 24 * 60 * 60) # 7 days
 
-    # Top cities based on lead data: Cape Town, Johannesburg, Pretoria, Durban, Soweto
-    # Using coordinates + radius to avoid relying on Meta's internal city key IDs
-    top_cities = [
-        {'latitude': -33.9249, 'longitude': 18.4241, 'radius': 30, 'distance_unit': 'kilometer', 'name': 'Cape Town'},
-        {'latitude': -26.2041, 'longitude': 28.0473, 'radius': 30, 'distance_unit': 'kilometer', 'name': 'Johannesburg'},
-        {'latitude': -25.7479, 'longitude': 28.2293, 'radius': 30, 'distance_unit': 'kilometer', 'name': 'Pretoria'},
-        {'latitude': -29.8587, 'longitude': 31.0218, 'radius': 30, 'distance_unit': 'kilometer', 'name': 'Durban'},
-        {'latitude': -26.2677, 'longitude': 27.8585, 'radius': 20, 'distance_unit': 'kilometer', 'name': 'Soweto'},
-    ]
-
     params = {
-        'name': 'Ad Set - 7 Days Boost - R200/day',
+        'name': name,
         'campaign_id': campaign_id,
-        'daily_budget': 20000, # 200 ZAR in cents (assuming currency is ZAR)
+        'daily_budget': daily_budget_zar * 100,  # ZAR cents
         'billing_event': 'IMPRESSIONS',
         'optimization_goal': 'POST_ENGAGEMENT',
         'bid_strategy': 'LOWEST_COST_WITHOUT_CAP',
         'targeting': {
             'geo_locations': {
-                'custom_locations': top_cities,
+                'custom_locations': locations,
             },
             'age_min': 18,
-            'age_max': 40,  # Cannabis audience skews 18-40; 65 was wasting budget
+            'age_max': 40,
         },
         'start_time': start_time,
         'end_time': end_time,
         'status': 'PAUSED',
     }
     ad_set = account.create_ad_set(params=params)
-    print(f"Created Ad Set: {ad_set['id']}")
+    print(f"Created Ad Set '{name}': {ad_set['id']}")
     return ad_set['id']
+
+
+# Budget split: R130 Cape Town (65%), R70 other cities (35%)
+# Based on lead data: Cape Town accounts for ~33% of leads but is the #1 city
+CAPE_TOWN = [
+    {'latitude': -33.9249, 'longitude': 18.4241, 'radius': 40, 'distance_unit': 'kilometer', 'name': 'Cape Town'},
+]
+
+OTHER_CITIES = [
+    {'latitude': -26.2041, 'longitude': 28.0473, 'radius': 30, 'distance_unit': 'kilometer', 'name': 'Johannesburg'},
+    {'latitude': -25.7479, 'longitude': 28.2293, 'radius': 30, 'distance_unit': 'kilometer', 'name': 'Pretoria'},
+    {'latitude': -29.8587, 'longitude': 31.0218, 'radius': 30, 'distance_unit': 'kilometer', 'name': 'Durban'},
+    {'latitude': -26.2677, 'longitude': 27.8585, 'radius': 20, 'distance_unit': 'kilometer', 'name': 'Soweto'},
+]
 
 def create_ad_creative(account, instagram_post_id):
     """Creates an ad creative using the Instagram post."""
@@ -131,16 +134,18 @@ def main():
     # 1. Create Campaign (or use existing if we wanted to be smarter, but let's create new for now as per simple workflow)
     campaign_id = create_campaign(account)
     
-    # 2. Create Ad Set
-    ad_set_id = create_ad_set(account, campaign_id)
-    
+    # 2. Create Ad Sets — Cape Town gets 65% of budget, other cities get 35%
+    ct_ad_set_id = create_ad_set(account, campaign_id, 'Ad Set - Cape Town - R130/day', CAPE_TOWN, 130)
+    other_ad_set_id = create_ad_set(account, campaign_id, 'Ad Set - JHB/PTA/DBN/Soweto - R70/day', OTHER_CITIES, 70)
+
     # 3. Create Creative
     try:
         creative_id = create_ad_creative(account, args.post_id)
-        
-        # 4. Create Ad
-        ad_id = create_ad(account, ad_set_id, creative_id)
-        print(f"Successfully created Ad Campaign! Ad ID: {ad_id}")
+
+        # 4. Create Ads — one per ad set
+        ct_ad_id = create_ad(account, ct_ad_set_id, creative_id)
+        other_ad_id = create_ad(account, other_ad_set_id, creative_id)
+        print(f"Successfully created Ad Campaign! Cape Town Ad ID: {ct_ad_id} | Other Cities Ad ID: {other_ad_id}")
         
     except Exception as e:
         print(f"Error creating creative or ad: {e}")
