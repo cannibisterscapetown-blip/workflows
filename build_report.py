@@ -99,9 +99,28 @@ campaigns = [
     },
 ]
 
-total_revenue     = sum(c['revenue'] for c in campaigns)
+flows = [
+    {
+        'name': 'Abandoned Checkout Reminder',
+        'trigger': 'Checkout started, not completed',
+        'recipients': 344, 'delivered': 334, 'delivery_rate': 97.1,
+        'opens': 82, 'open_rate': 24.6, 'clicks': 8, 'click_rate': 2.4,
+        'conversions': 65, 'conv_rate': 8.68, 'revenue': 53518.25, 'aov': 823.36, 'rpr': 160.23,
+    },
+    {
+        'name': 'Meta Lead Ad Flow',
+        'trigger': 'Filled out lead ad',
+        'recipients': 1104, 'delivered': 1048, 'delivery_rate': 94.9,
+        'opens': 52, 'open_rate': 5.0, 'clicks': 11, 'click_rate': 1.0,
+        'conversions': 0, 'conv_rate': 0, 'revenue': 0, 'aov': 0, 'rpr': 0,
+    },
+]
+
+flow_revenue      = sum(f['revenue'] for f in flows)
+campaign_revenue  = sum(c['revenue'] for c in campaigns)
+total_revenue     = campaign_revenue + flow_revenue
 total_recipients  = sum(c['recipients'] for c in campaigns)
-total_conversions = sum(c['conversions'] for c in campaigns)
+total_conversions = sum(c['conversions'] for c in campaigns) + sum(f['conversions'] for f in flows)
 avg_open          = sum(c['open_rate'] for c in campaigns) / len(campaigns)
 
 used_keys = set()
@@ -164,6 +183,37 @@ for c in campaigns:
 
 rows_html = '\n'.join(rows_parts)
 
+flow_rows_parts = []
+for f in flows:
+    oc = stat_cls(f['open_rate'], 18, 8)
+    cc = stat_cls(f['click_rate'], 2.0, 0.5)
+    row = (
+        '<tr>'
+        '<td><b>{name}</b><br><span class="aud">&#9889; {trigger}</span></td>'
+        '<td class="c">\u2014</td>'
+        '<td class="c"><span class="badge flow">Live</span></td>'
+        '<td class="r">{recipients:,}</td>'
+        '<td class="r">{delivery_rate:.1f}%</td>'
+        '<td class="r"><span class="{oc}">{open_rate:.1f}%</span></td>'
+        '<td class="r"><span class="{cc}">{click_rate:.1f}%</span></td>'
+        '<td class="r">{conversions}</td>'
+        '<td class="r rev">{revenue}</td>'
+        '<td class="r">{aov}</td>'
+        '<td><span class="dim">\u2014</span></td>'
+        '</tr>'
+    ).format(
+        name=f['name'], trigger=f['trigger'],
+        recipients=f['recipients'], delivery_rate=f['delivery_rate'],
+        oc=oc, open_rate=f['open_rate'],
+        cc=cc, click_rate=f['click_rate'],
+        conversions=f['conversions'],
+        revenue=fmt_rev(f['revenue']),
+        aov=fmt_aov(f['aov']),
+    )
+    flow_rows_parts.append(row)
+
+flow_rows_html = '\n'.join(flow_rows_parts)
+
 css = """
 *{box-sizing:border-box;margin:0;padding:0}
 :root{--o:#ff9501;--bg:#0d0d0d;--c1:#181818;--c2:#202020;--bd:#282828;--tx:#eee;--mu:#777;--gr:#4caf50;--rd:#e53935;--yl:#ffc107}
@@ -203,6 +253,7 @@ b{font-weight:700;font-size:13.5px}
 .badge.sent{background:rgba(76,175,80,.12);color:var(--gr);border:1px solid var(--gr)}
 .badge.multi{background:rgba(255,149,1,.12);color:var(--o);border:1px solid var(--o)}
 .badge.cancelled{background:rgba(229,57,53,.12);color:var(--rd);border:1px solid var(--rd)}
+.badge.flow{background:rgba(138,43,226,.12);color:#b57bee;border:1px solid #b57bee}
 span.good{color:var(--gr);font-weight:600}
 span.mid{color:var(--yl);font-weight:600}
 span.bad{color:var(--rd);font-weight:600}
@@ -293,6 +344,33 @@ ROWS_PLACEHOLDER
   </table>
 </div>
 
+<div class="sec">&#9889; Automated Flows (March 2026)</div>
+<div class="tw">
+  <table>
+    <thead><tr>
+      <th>Flow</th><th class="c">Date</th><th class="c">Status</th>
+      <th class="r">Recipients</th><th class="r">Delivery</th><th class="r">Open Rate</th>
+      <th class="r">CTR</th><th class="r">Convs</th><th class="r">Revenue</th><th class="r">AOV</th>
+      <th>Preview</th>
+    </tr></thead>
+    <tbody>
+FLOW_ROWS_PLACEHOLDER
+    </tbody>
+  </table>
+</div>
+
+<div class="sec">&#128181; Revenue Summary</div>
+<div class="tw">
+  <table>
+    <thead><tr><th>Source</th><th class="r">Revenue</th><th class="r">Conversions</th><th class="r">% of Total</th></tr></thead>
+    <tbody>
+      <tr><td><b>Campaigns</b></td><td class="r rev">CAMPAIGN_REVENUE</td><td class="r">CAMPAIGN_CONVS</td><td class="r">CAMPAIGN_PCT%</td></tr>
+      <tr><td><b>Flows</b></td><td class="r rev">FLOW_REVENUE</td><td class="r">FLOW_CONVS</td><td class="r">FLOW_PCT%</td></tr>
+      <tr style="border-top:2px solid var(--o)"><td><b>Total</b></td><td class="r rev" style="font-size:15px">TOTAL_REVENUE_FULL</td><td class="r"><b>TOTAL_CONVS_FULL</b></td><td class="r">100%</td></tr>
+    </tbody>
+  </table>
+</div>
+
 <footer>Generated for <strong>Cannibisters Herbal Apothecary</strong> &middot; Klaviyo data &middot; March 2026</footer>
 
 <div class="overlay" id="ov" onclick="chkClose(event)">
@@ -311,13 +389,28 @@ JS_PLACEHOLDER
 </body>
 </html>"""
 
+campaign_convs = sum(c['conversions'] for c in campaigns)
+flow_convs     = sum(f['conversions'] for f in flows)
+camp_pct       = campaign_revenue / total_revenue * 100 if total_revenue else 0
+flow_pct       = flow_revenue / total_revenue * 100 if total_revenue else 0
+
 html = html.replace('CSS_PLACEHOLDER', css)
 html = html.replace('LOGO_PLACEHOLDER', logo_b64)
+# Replace longer/specific strings BEFORE shorter ones that are substrings of them
+html = html.replace('TOTAL_REVENUE_FULL', 'R{:,.0f}'.format(total_revenue))
+html = html.replace('TOTAL_CONVS_FULL', str(total_conversions))
 html = html.replace('TOTAL_RECIPIENTS', '{:,}'.format(total_recipients))
 html = html.replace('TOTAL_REVENUE', 'R{:,.0f}'.format(total_revenue))
-html = html.replace('AVG_OPEN', '{:.1f}%'.format(avg_open))
 html = html.replace('TOTAL_CONVS', str(total_conversions))
+html = html.replace('AVG_OPEN', '{:.1f}%'.format(avg_open))
+html = html.replace('FLOW_ROWS_PLACEHOLDER', flow_rows_html)
 html = html.replace('ROWS_PLACEHOLDER', rows_html)
+html = html.replace('CAMPAIGN_REVENUE', 'R{:,.0f}'.format(campaign_revenue))
+html = html.replace('CAMPAIGN_CONVS', str(campaign_convs))
+html = html.replace('CAMPAIGN_PCT', '{:.0f}'.format(camp_pct))
+html = html.replace('FLOW_REVENUE', 'R{:,.0f}'.format(flow_revenue))
+html = html.replace('FLOW_CONVS', str(flow_convs))
+html = html.replace('FLOW_PCT', '{:.0f}'.format(flow_pct))
 html = html.replace('JS_PLACEHOLDER', js)
 
 out = '/home/user/workflows/March_2026_Klaviyo_Report.html'
