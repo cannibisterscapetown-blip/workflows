@@ -1022,8 +1022,9 @@
   <div class="logo">OffGrid<span>AI</span></div>
   <ul>
     <li><a href="#problem">Why</a></li>
+    <li><a href="#how">How It Works</a></li>
     <li><a href="#tiers">Services</a></li>
-    <li><a href="#tech">Tech</a></li>
+    <li><a href="#faq">FAQ</a></li>
     <li><a href="#contact" class="nav-cta">Get Started</a></li>
   </ul>
 </nav>
@@ -1138,6 +1139,85 @@
       <p>OffGrid AI is still running. <strong>On your laptop. On battery. Answering your questions.</strong> No signal needed.</p>
     </div>
   </div>
+
+  <!-- COST CALCULATOR -->
+  <div class="calc-box">
+    <div class="section-label" style="margin-bottom:0.5rem">Productivity Loss Calculator</div>
+    <h3 style="font-size:1.35rem;font-weight:800;letter-spacing:-0.02em;margin-bottom:0.4rem">How much is loadshedding costing you?</h3>
+    <p style="color:var(--muted);font-size:0.9rem;margin-bottom:1.5rem">Enter your rate and AI usage — see your real annual loss.</p>
+
+    <div class="calc-inputs">
+      <div class="calc-field">
+        <label>Your hourly rate (ZAR)</label>
+        <input type="number" id="calc-rate" placeholder="e.g. 350" min="0" />
+      </div>
+      <div class="calc-field">
+        <label>Hours using AI per week</label>
+        <input type="number" id="calc-hours" placeholder="e.g. 10" min="0" max="80" />
+      </div>
+    </div>
+
+    <div style="display:flex;gap:0.6rem;flex-wrap:wrap;margin:1rem 0 1.25rem">
+      <button class="calc-preset" onclick="setCalc(250,5)">Freelancer</button>
+      <button class="calc-preset" onclick="setCalc(450,12)">Consultant</button>
+      <button class="calc-preset" onclick="setCalc(180,8)">Teacher</button>
+      <button class="calc-preset" onclick="setCalc(700,20)">Agency</button>
+    </div>
+
+    <div class="calc-results-inner" id="calc-results" style="display:none">
+      <div class="calc-stat-grid">
+        <div>
+          <div class="calc-stat-value" id="calc-weekly">R0</div>
+          <div class="calc-stat-label">Lost per week</div>
+        </div>
+        <div>
+          <div class="calc-stat-value" id="calc-annual">R0</div>
+          <div class="calc-stat-label">Lost per year</div>
+        </div>
+        <div>
+          <div class="calc-stat-value" id="calc-payback">—</div>
+          <div class="calc-stat-label">Payback period</div>
+        </div>
+      </div>
+      <div class="calc-verdict" id="calc-verdict"></div>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="section-label">The Process</div>
+  <h2>Up and running<br>in a single afternoon.</h2>
+  <p class="section-intro">No IT degree required. We handle everything — you just show up with your device.</p>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">01</div>
+      <div class="step-icon">☎️</div>
+      <h3>Free Consult</h3>
+      <p>We chat about your device, your use case, and what you actually need. WhatsApp or in-person in Cape Town.</p>
+    </div>
+    <div class="step-arrow">→</div>
+    <div class="step">
+      <div class="step-num">02</div>
+      <div class="step-icon">🧠</div>
+      <h3>Model Selection</h3>
+      <p>We match the right model to your hardware — Mistral 7B for speed, Qwen 2.5 for multilingual, Phi-3 for budget setups.</p>
+    </div>
+    <div class="step-arrow">→</div>
+    <div class="step">
+      <div class="step-num">03</div>
+      <div class="step-icon">⚙️</div>
+      <h3>Install & Configure</h3>
+      <p>We install Ollama, set up Open WebUI, load your models, and configure system prompts specific to your workflow.</p>
+    </div>
+    <div class="step-arrow">→</div>
+    <div class="step">
+      <div class="step-num">04</div>
+      <div class="step-icon">🔌</div>
+      <h3>Go Offline — Forever</h3>
+      <p>Walk away with a fully working local AI. No subscriptions. No data costs. No dependency on Eskom or a cell tower.</p>
+    </div>
+  </div>
 </section>
 
 <section id="tiers">
@@ -1249,6 +1329,68 @@
   </div>
 </section>
 
+<section id="compare">
+  <div class="section-label">How We Stack Up</div>
+  <h2>OffGrid AI vs<br>the cloud alternatives.</h2>
+  <p class="section-intro">No internet. No subscription. No surprises on your data bill.</p>
+
+  <div class="compare-wrap">
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th></th>
+          <th><strong>OffGrid AI</strong></th>
+          <th>ChatGPT</th>
+          <th>Copilot</th>
+          <th>Gemini</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Works offline</td>
+          <td class="ck">✓</td><td class="cx">✗</td><td class="cx">✗</td><td class="cx">✗</td>
+        </tr>
+        <tr>
+          <td>Loadshedding-proof</td>
+          <td class="ck">✓</td><td class="cx">✗</td><td class="cx">✗</td><td class="cx">✗</td>
+        </tr>
+        <tr>
+          <td>No data costs</td>
+          <td class="ck">✓</td><td class="cx">✗</td><td class="cx">✗</td><td class="cx">✗</td>
+        </tr>
+        <tr>
+          <td>Fully private (no cloud)</td>
+          <td class="ck">✓</td><td class="cx">✗</td><td class="cx">✗</td><td class="cx">✗</td>
+        </tr>
+        <tr>
+          <td>Works in rural SA</td>
+          <td class="ck">✓</td><td class="cx">✗</td><td class="cx">✗</td><td class="cx">✗</td>
+        </tr>
+        <tr>
+          <td>No monthly subscription</td>
+          <td class="ck">✓</td><td class="cx">✗</td><td class="cx">✗</td><td class="cx">✗</td>
+        </tr>
+        <tr>
+          <td>Runs on your own hardware</td>
+          <td class="ck">✓</td><td class="cx">✗</td><td class="cx">✗</td><td class="cx">✗</td>
+        </tr>
+        <tr>
+          <td>SA-specific setup &amp; support</td>
+          <td class="ck">✓</td><td class="cx">✗</td><td class="cx">✗</td><td class="cx">✗</td>
+        </tr>
+        <tr>
+          <td>Afrikaans &amp; isiXhosa support</td>
+          <td class="ck">✓</td><td class="cm">Partial</td><td class="cm">Partial</td><td class="cm">Partial</td>
+        </tr>
+        <tr>
+          <td>One-time cost</td>
+          <td class="ck">R1,500–R3,700</td><td class="cx">R340+/mo</td><td class="cx">R380+/mo</td><td class="cx">R320+/mo</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
 <section id="tech">
   <div class="section-label">The Tech</div>
   <h2>Open source.<br>Battle-tested. Private.</h2>
@@ -1298,6 +1440,78 @@
       </div>
     </div>
   </div>
+</section>
+
+<section id="faq">
+  <div class="section-label">FAQ</div>
+  <h2>Questions we get<br>all the time.</h2>
+  <p class="section-intro">Straight answers for South Africans considering local AI.</p>
+
+  <ul class="faq-list">
+    <li class="faq-item">
+      <button class="faq-q" aria-expanded="false">
+        <span>Do I need a powerful computer?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a">
+        <p>Not necessarily. A basic 8GB RAM laptop handles Phi-3 Mini smoothly. For Mistral 7B (our most popular model) you want 16GB RAM. We assess your hardware during the free consult and recommend the best model for what you have — no hardware upsell pressure.</p>
+      </div>
+    </li>
+    <li class="faq-item">
+      <button class="faq-q" aria-expanded="false">
+        <span>What happens during load shedding?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a">
+        <p>Nothing changes. The AI runs entirely on your device's processor — it doesn't need WiFi, LTE, or even an active router. As long as your laptop or desktop has battery or UPS power, OffGrid AI keeps working through any stage of loadshedding.</p>
+      </div>
+    </li>
+    <li class="faq-item">
+      <button class="faq-q" aria-expanded="false">
+        <span>Can it speak Afrikaans or isiXhosa?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a">
+        <p>Yes. We primarily use Qwen 2.5 for multilingual installs, which has strong Afrikaans support and decent isiXhosa capability. For enterprise or school deployments we can fine-tune a model specifically on your language and subject matter. This is one area where local AI has a genuine edge over generic cloud tools.</p>
+      </div>
+    </li>
+    <li class="faq-item">
+      <button class="faq-q" aria-expanded="false">
+        <span>How does the install actually work?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a">
+        <p>We come to you (Cape Town in-person, or remote for other provinces). The install takes 1–3 hours depending on your package. We install Ollama as the model runner, set up Open WebUI as your interface, configure the models, and walk you through how to use everything. You're up and running the same day.</p>
+      </div>
+    </li>
+    <li class="faq-item">
+      <button class="faq-q" aria-expanded="false">
+        <span>Is it as good as ChatGPT?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a">
+        <p>For everyday tasks — writing, summarising, answering questions, drafting emails, coding help — Mistral 7B and Qwen 2.5 are genuinely excellent. GPT-4 class models are more capable for complex reasoning, but they require constant internet and a R340+/month subscription. The question isn't "which is smarter" — it's "which one actually works when Eskom cuts the lights."</p>
+      </div>
+    </li>
+    <li class="faq-item">
+      <button class="faq-q" aria-expanded="false">
+        <span>What does it cost to run after the install?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a">
+        <p>Almost nothing. There's no subscription, no API fees, no data charges. The only running cost is a small amount of electricity — roughly the same as running a gaming PC for a few hours a week. After the one-time install fee, you own it forever.</p>
+      </div>
+    </li>
+    <li class="faq-item">
+      <button class="faq-q" aria-expanded="false">
+        <span>Can I use it on multiple devices or share it with my team?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a">
+        <p>Yes — with our Enterprise package we set up a local server that any device on your network can connect to. Your whole team shares one model instance over WiFi, with no data leaving your premises. Schools, clinics, and small offices are a great fit for this setup.</p>
+      </div>
+    </li>
+  </ul>
 </section>
 
 <section id="testimonials">
@@ -1635,6 +1849,75 @@
 
   // Start after a short delay so user sees the boot line first
   setTimeout(runConversation, 1000);
+
+  // ── FAQ ACCORDION ────────────────────────────────────────────────────
+  document.querySelectorAll('.faq-q').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var item = btn.closest('.faq-item');
+      var answer = item.querySelector('.faq-a');
+      var isOpen = btn.getAttribute('aria-expanded') === 'true';
+
+      // Close all
+      document.querySelectorAll('.faq-item').forEach(function(el) {
+        el.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+        el.querySelector('.faq-icon').textContent = '+';
+        el.querySelector('.faq-a').style.maxHeight = '0';
+      });
+
+      // Open this one if it was closed
+      if (!isOpen) {
+        btn.setAttribute('aria-expanded', 'true');
+        btn.querySelector('.faq-icon').textContent = '−';
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+      }
+    });
+  });
+
+  // ── COST CALCULATOR ──────────────────────────────────────────────────
+  function fmtRand(n) {
+    if (n >= 1000) return 'R' + (n / 1000).toFixed(1) + 'k';
+    return 'R' + Math.round(n);
+  }
+
+  function updateCalc() {
+    var rate  = parseFloat(document.getElementById('calc-rate').value)  || 0;
+    var hours = parseFloat(document.getElementById('calc-hours').value) || 0;
+    if (rate <= 0 || hours <= 0) {
+      document.getElementById('calc-results').style.display = 'none';
+      return;
+    }
+
+    // Average SA loadshedding: ~4 hrs/day, ~18 days/month = 72 hrs/month
+    // Proportion of AI work lost = hours/40 (as fraction of 40hr week)
+    var lostFraction = Math.min(1, hours / 40) * 0.35; // 35% disruption estimate
+    var weeklyLoss   = rate * hours * lostFraction;
+    var annualLoss   = weeklyLoss * 52;
+
+    // Payback: cheapest install R1,500
+    var paybackWeeks = weeklyLoss > 0 ? Math.ceil(1500 / weeklyLoss) : null;
+    var paybackStr   = paybackWeeks ? (paybackWeeks <= 4 ? paybackWeeks + ' weeks' : Math.ceil(paybackWeeks / 4) + ' months') : '—';
+
+    document.getElementById('calc-weekly').textContent  = fmtRand(weeklyLoss);
+    document.getElementById('calc-annual').textContent  = fmtRand(annualLoss);
+    document.getElementById('calc-payback').textContent = paybackStr;
+
+    var verdict = 'At <strong>' + fmtRand(rate) + '/hr</strong> using AI <strong>' + hours + ' hrs/week</strong>, '
+      + 'loadshedding is costing you roughly <strong>' + fmtRand(annualLoss) + ' per year</strong> in lost productivity. '
+      + (paybackWeeks && paybackWeeks <= 12
+          ? 'A Basic Install (R1,500) pays for itself in <strong>' + paybackStr + '</strong>.'
+          : 'An OffGrid AI install eliminates that loss — once.');
+    document.getElementById('calc-verdict').innerHTML = verdict;
+    document.getElementById('calc-results').style.display = 'block';
+  }
+
+  function setCalc(rate, hours) {
+    document.getElementById('calc-rate').value  = rate;
+    document.getElementById('calc-hours').value = hours;
+    updateCalc();
+  }
+
+  document.getElementById('calc-rate').addEventListener('input', updateCalc);
+  document.getElementById('calc-hours').addEventListener('input', updateCalc);
 </script>
 <a href="https://wa.me/27000000000?text=Hi!%20I%27m%20interested%20in%20an%20OffGrid%20AI%20install." class="wa-fab" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
   <svg width="20" height="20" viewBox="0 0 32 32" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
