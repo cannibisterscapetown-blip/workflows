@@ -793,7 +793,132 @@
       .loadshed-widget { flex-direction: column; }
     }
 
-    /* ─── TESTIMONIALS ───────────────────────────────────────────── */
+    /* ─── HOW IT WORKS ────────────────────────────────────── */
+    .steps {
+      display: grid;
+      grid-template-columns: 1fr 28px 1fr 28px 1fr 28px 1fr;
+      align-items: start;
+      gap: 0;
+      margin-top: 3rem;
+    }
+    @media (max-width: 860px) {
+      .steps { grid-template-columns: 1fr; gap: 1.25rem; }
+      .step-arrow { display: none; }
+    }
+    .step {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.75rem 1.4rem;
+      text-align: center;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .step:hover { border-color: rgba(42,175,170,0.4); transform: translateY(-3px); }
+    .step-num {
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em;
+      color: var(--neon); font-family: var(--font-ui); margin-bottom: 0.7rem;
+    }
+    .step-icon { font-size: 2rem; margin-bottom: 0.7rem; }
+    .step h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.45rem; }
+    .step p { font-size: 0.83rem; color: var(--muted); line-height: 1.65; }
+    .step-arrow {
+      color: var(--neon); font-size: 1.2rem; opacity: 0.35;
+      display: flex; align-items: center; justify-content: center;
+      padding-top: 3.8rem;
+    }
+
+    /* ─── COMPARISON TABLE ─────────────────────────────────── */
+    .compare-wrap { overflow-x: auto; margin-top: 2.5rem; border-radius: 12px; border: 1px solid var(--border); }
+    .compare-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; min-width: 580px; }
+    .compare-table th, .compare-table td {
+      padding: 0.85rem 1.1rem; text-align: center; border-bottom: 1px solid var(--border);
+    }
+    .compare-table th:first-child, .compare-table td:first-child {
+      text-align: left; color: var(--text); font-weight: 500; width: 40%;
+    }
+    .compare-table th {
+      font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--muted);
+      background: var(--bg2); font-family: var(--font-ui);
+    }
+    .compare-table th.col-us { color: var(--neon); background: rgba(42,175,170,0.10); }
+    .compare-table td.col-us { background: rgba(42,175,170,0.05); font-weight: 700; }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table tr:hover td { background: rgba(255,255,255,0.015); }
+    .compare-table tr:hover td.col-us { background: rgba(42,175,170,0.08); }
+    .ck { color: #2aafaa; font-size: 1.05rem; }
+    .cx { color: rgba(180,70,70,0.75); font-size: 1.05rem; }
+    .cm { color: var(--muted); font-size: 0.78rem; }
+
+    /* ─── FAQ ACCORDION ────────────────────────────────────── */
+    .faq-list { max-width: 740px; margin: 2.5rem auto 0; }
+    .faq-item {
+      border: 1px solid var(--border); border-radius: 10px;
+      margin-bottom: 0.65rem; overflow: hidden; transition: border-color 0.2s;
+    }
+    .faq-item.open { border-color: rgba(42,175,170,0.4); }
+    .faq-q {
+      width: 100%; background: var(--card); border: none;
+      color: var(--text); padding: 1.05rem 1.35rem;
+      text-align: left; font-size: 0.95rem; font-weight: 600;
+      cursor: pointer; display: flex; justify-content: space-between;
+      align-items: center; gap: 1rem; font-family: var(--font-ui);
+      transition: background 0.2s;
+    }
+    .faq-q:hover { background: rgba(42,175,170,0.05); }
+    .faq-icon {
+      font-size: 1.2rem; color: var(--neon); flex-shrink: 0;
+      transition: transform 0.25s; line-height: 1; font-weight: 300;
+    }
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+    .faq-a {
+      max-height: 0; overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.2s;
+      background: var(--bg2); padding: 0 1.35rem;
+    }
+    .faq-item.open .faq-a { max-height: 320px; padding: 1rem 1.35rem 1.25rem; }
+    .faq-a p { font-size: 0.89rem; color: var(--muted); line-height: 1.75; }
+    .faq-a p strong { color: var(--text); }
+    .faq-a a { color: var(--neon); text-decoration: none; }
+
+    /* ─── COST CALCULATOR ──────────────────────────────────── */
+    .calc-box {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 16px; padding: 2.5rem;
+      max-width: 700px; margin: 2.5rem auto 0;
+    }
+    .calc-inputs { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-bottom: 1.5rem; }
+    @media (max-width: 560px) { .calc-inputs { grid-template-columns: 1fr; } }
+    .calc-field label {
+      display: block; font-size: 0.76rem; font-weight: 600;
+      color: var(--muted); margin-bottom: 0.45rem;
+      font-family: var(--font-ui); text-transform: uppercase; letter-spacing: 0.07em;
+    }
+    .calc-field input {
+      width: 100%; background: var(--bg2); border: 1px solid var(--border);
+      color: var(--text); padding: 0.78rem 1rem; border-radius: 8px;
+      font-size: 1.05rem; font-family: var(--font-ui); font-weight: 600;
+      transition: border-color 0.2s; outline: none;
+    }
+    .calc-field input:focus { border-color: var(--neon); }
+    .calc-field input::placeholder { color: var(--muted); font-weight: 400; font-size: 0.88rem; }
+    .calc-btn { width: 100%; border: none; cursor: pointer; font-size: 1rem; }
+    .calc-results-inner {
+      margin-top: 1.75rem; padding-top: 1.75rem; border-top: 1px solid var(--border);
+    }
+    .calc-stat-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; margin-bottom: 1.25rem; }
+    @media (max-width: 480px) { .calc-stat-grid { grid-template-columns: 1fr 1fr; } }
+    .calc-stat-value {
+      font-size: 1.55rem; font-weight: 800; color: var(--neon);
+      letter-spacing: -0.03em; line-height: 1; margin-bottom: 0.3rem;
+    }
+    .calc-stat-label { font-size: 0.72rem; color: var(--muted); font-family: var(--font-ui); text-transform: uppercase; letter-spacing: 0.07em; }
+    .calc-verdict {
+      font-size: 0.93rem; color: var(--text); line-height: 1.65;
+      background: rgba(42,175,170,0.07); border: 1px solid rgba(42,175,170,0.22);
+      border-radius: 8px; padding: 1rem 1.15rem;
+    }
+    .calc-verdict strong { color: var(--neon); }
     .testimonials-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
