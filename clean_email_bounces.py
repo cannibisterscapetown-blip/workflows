@@ -33,21 +33,15 @@ KLAVIYO_HEADERS = {
 }
 
 
-def get_suppressed_emails() -> set:
-    """
-    Fetch all suppressed (hard bounce + manual) profiles from Klaviyo.
-    Returns a set of lowercase email addresses.
-    """
-    suppressed = set()
+def _fetch_by_reason(reason: str) -> set:
+    """Fetch all profile emails suppressed for a given reason (paginated)."""
+    emails = set()
     url = f'{KLAVIYO_BASE}/profiles/'
-    # Filter to suppression reasons that indicate deliverability risk
     params = {
-        'filter': 'any(subscriptions.email.marketing.suppressions[].reason,'
-                  '["hard_bounce","invalid_email","reported_as_spam"])',
+        'filter': f'equals(subscriptions.email.marketing.suppression.reason,"{reason}")',
         'fields[profile]': 'email',
         'page[size]': 100,
     }
-
     page = 0
     while url:
         page += 1
@@ -57,17 +51,26 @@ def get_suppressed_emails() -> set:
             sys.exit(1)
         resp.raise_for_status()
         data = resp.json()
-
         for profile in data.get('data', []):
             email = profile.get('attributes', {}).get('email', '').lower().strip()
             if email:
-                suppressed.add(email)
+                emails.add(email)
+        url = data.get('links', {}).get('next')
+        params = None
+    return emails
 
-        # Follow pagination
-        next_cursor = data.get('links', {}).get('next')
-        url = next_cursor if next_cursor else None
-        params = None  # cursor URL is fully formed
 
+def get_suppressed_emails() -> set:
+    """
+    Fetch all suppressed profiles from Klaviyo for deliverability-risk reasons.
+    Returns a set of lowercase email addresses.
+    Valid suppression reasons: hard_bounce, invalid_email, user_suppressed.
+    """
+    suppressed = set()
+    for reason in ('hard_bounce', 'invalid_email', 'user_suppressed'):
+        batch = _fetch_by_reason(reason)
+        print(f"   {reason}: {len(batch):,}")
+        suppressed |= batch
     return suppressed
 
 
