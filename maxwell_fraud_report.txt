@@ -1,0 +1,1288 @@
+============================================================
+MAXWELL FRAUD DETECTION REPORT
+Generated: 2026-04-02 12:37:59
+============================================================
+
+CUSTOMER: Maxwell Iluromi
+  ID:            8517141004500
+  Email:         takenworldwide@icloud.com
+  Phone:         +27640371824
+  Account Since: 2025-12-08
+  Orders (API):  92  (Shopify record: 92)
+  Unique Codes:  52
+  Total Code Uses: 52
+
+  Discount Code Summary:
+    LLMK9AUD                        x1
+    USMVPK4O                        x1
+    Q3KAOOXE                        x1
+    JMQPUMPV                        x1
+    RHA6FOHO                        x1
+    OJHEJUJJ                        x1
+    AZRHVCFT                        x1
+    JKA0S30K                        x1
+    HAPPYHOUR24                     x1
+    RUNRSBXZ                        x1
+    O91NTSOX                        x1
+    YXODT5EO                        x1
+    RV0UX7ZI                        x1
+    XWRT1EMV                        x1
+    4DN8PZ4O                        x1
+    2MFBVWDV                        x1
+    2DZ7GOQ1                        x1
+    4DEQKIXS                        x1
+    JJAIF7Y5                        x1
+    HPP5WB8X                        x1
+    HUYHHZGT                        x1
+    EQE9OP2L                        x1
+    Y1AYX1QT                        x1
+    263W00RX                        x1
+    0AVDVVDS                        x1
+    DUK0FCJC                        x1
+    RR7RHCU8                        x1
+    MWJRQKMO                        x1
+    ML98L35J                        x1
+    NLTQO4UF                        x1
+    WWHQGVRW                        x1
+    DQSKXBZ6                        x1
+    F77ZXUM2                        x1
+    OE3OREOH                        x1
+    E6FIZELS                        x1
+    TNEE4QNF                        x1
+    WQ6BK0WF                        x1
+    6GZ99O5V                        x1
+    188ZTABL                        x1
+    6NGB3YAW                        x1
+    11PRQ403                        x1
+    ICFBWEHQ                        x1
+    0XOCVQO5                        x1
+    UBMTGS6K                        x1
+    F766ZMP0                        x1
+    EMCD7YHX                        x1
+    LMVEWZJ4                        x1
+    RXDMCQ8R                        x1
+    XPGQKNHX                        x1
+    QSWD9LAT                        x1
+    GL4IHKEK                        x1
+    FRBMGAQB                        x1
+
+  Per-Order Breakdown:
+    #298542  2026-04-02  R  824.00  Codes: LLMK9AUD (fixed_amount, -126.00)
+    #298321  2026-04-01  R 1448.00  Codes: USMVPK4O (fixed_amount, -72.00)
+    #298077  2026-03-31  R  875.00  Codes: Q3KAOOXE (fixed_amount, -75.00)
+    #297933  2026-03-30  R  879.00  Codes: JMQPUMPV (fixed_amount, -71.00)
+    #297649  2026-03-29  R  840.00  Codes: RHA6FOHO (fixed_amount, -110.00)
+    #297235  2026-03-27  R 1229.00  Codes: OJHEJUJJ (fixed_amount, -101.00)
+    #296912  2026-03-26  R 1280.00  Codes: AZRHVCFT (fixed_amount, -50.00)
+    #296589  2026-03-25  R  600.00  Codes: JKA0S30K (fixed_amount, -160.00)
+    #296318  2026-03-23  R 1509.00  Codes: HAPPYHOUR24 (percentage, -456.00)
+    #296001  2026-03-22  R    0.00  Codes: RUNRSBXZ (fixed_amount, -50.00)
+    #296000  2026-03-22  R  825.00  Codes: None
+    #295734  2026-03-21  R  687.00  Codes: O91NTSOX (fixed_amount, -73.00)
+    #295436  2026-03-20  R  879.00  Codes: YXODT5EO (fixed_amount, -71.00)
+    #295210  2026-03-19  R  842.00  Codes: RV0UX7ZI (fixed_amount, -108.00)
+    #295019  2026-03-18  R 1249.00  Codes: XWRT1EMV (fixed_amount, -76.00)
+    #294776  2026-03-17  R  880.00  Codes: 4DN8PZ4O (fixed_amount, -70.00)
+    #294656  2026-03-16  R  765.00  Codes: 2MFBVWDV (fixed_amount, -100.00)
+    #294414  2026-03-15  R 1271.00  Codes: 2DZ7GOQ1 (fixed_amount, -59.00)
+    #294193  2026-03-14  R  701.00  Codes: 4DEQKIXS (fixed_amount, -59.00)
+    #294046  2026-03-13  R  680.00  Codes: JJAIF7Y5 (fixed_amount, -180.00)
+    #293647  2026-03-11  R 1050.00  Codes: None
+    #293420  2026-03-10  R 1070.00  Codes: HPP5WB8X (fixed_amount, -90.00)
+    #293133  2026-03-09  R  975.00  Codes: HUYHHZGT (fixed_amount, -200.00)
+    #292951  2026-03-08  R 1035.00  Codes: None
+    #292727  2026-03-07  R 1235.00  Codes: EQE9OP2L (fixed_amount, -90.00)
+    #292522  2026-03-06  R 1070.00  Codes: Y1AYX1QT (fixed_amount, -65.00)
+    #292272  2026-03-05  R   65.00  Codes: None
+    #292261  2026-03-05  R  625.00  Codes: 263W00RX (fixed_amount, -130.00)
+    #292109  2026-03-04  R   75.00  Codes: None
+    #292105  2026-03-04  R   65.00  Codes: None
+    #292102  2026-03-04  R 1649.00  Codes: 0AVDVVDS (fixed_amount, -61.00)
+    #291843  2026-03-03  R 1240.00  Codes: DUK0FCJC (fixed_amount, -90.00)
+    #291298  2026-03-01  R   65.00  Codes: None
+    #291293  2026-03-01  R 1658.00  Codes: RR7RHCU8 (fixed_amount, -52.00)
+    #290935  2026-02-27  R 1075.00  Codes: MWJRQKMO (fixed_amount, -60.00)
+    #290593  2026-02-26  R 1254.00  Codes: ML98L35J (fixed_amount, -76.00)
+    #290300  2026-02-24  R   42.00  Codes: None
+    #290289  2026-02-24  R 1443.00  Codes: NLTQO4UF (fixed_amount, -72.00)
+    #290257  2026-02-24  R 1464.00  Codes: WWHQGVRW (fixed_amount, -51.00)
+    #290025  2026-02-23  R 1005.00  Codes: DQSKXBZ6 (fixed_amount, -130.00)
+    #289792  2026-02-22  R 1515.00  Codes: None
+    #289529  2026-02-21  R 1094.00  Codes: F77ZXUM2 (fixed_amount, -41.00)
+    #289318  2026-02-20  R  820.00  Codes: OE3OREOH (fixed_amount, -90.00)
+    #289106  2026-02-19  R  725.00  Codes: None
+    #288740  2026-02-17  R 1064.00  Codes: E6FIZELS (fixed_amount, -71.00)
+    #288493  2026-02-16  R 1465.00  Codes: TNEE4QNF (fixed_amount, -50.00)
+    #288289  2026-02-15  R  864.00  Codes: WQ6BK0WF (fixed_amount, -81.00)
+    #287988  2026-02-14  R 1635.00  Codes: 6GZ99O5V (fixed_amount, -70.00)
+    #287562  2026-02-12  R 1525.00  Codes: 188ZTABL (fixed_amount, -180.00)
+    #287336  2026-02-11  R 1591.00  Codes: None
+    #287056  2026-02-10  R 1464.00  Codes: 6NGB3YAW (fixed_amount, -51.00)
+    #286757  2026-02-09  R 1095.00  Codes: 11PRQ403 (fixed_amount, -40.00)
+    #286643  2026-02-08  R  805.00  Codes: ICFBWEHQ (fixed_amount, -100.00)
+    #286341  2026-02-07  R 1059.00  Codes: None
+    #286026  2026-02-06  R  640.00  Codes: 0XOCVQO5 (fixed_amount, -80.00)
+    #285807  2026-02-05  R  983.00  Codes: None
+    #285459  2026-02-04  R 1835.00  Codes: None
+    #285228  2026-02-03  R  690.00  Codes: UBMTGS6K (fixed_amount, -65.00)
+    #285028  2026-02-02  R 1306.00  Codes: F766ZMP0 (fixed_amount, -59.00)
+    #284773  2026-02-01  R 1085.00  Codes: EMCD7YHX (fixed_amount, -50.00)
+    #284350  2026-01-30  R 1080.00  Codes: LMVEWZJ4 (fixed_amount, -40.00)
+    #284078  2026-01-29  R  625.00  Codes: RXDMCQ8R (fixed_amount, -100.00)
+    #283834  2026-01-28  R  820.00  Codes: XPGQKNHX (fixed_amount, -400.00)
+    #283435  2026-01-26  R 1190.00  Codes: None
+    #283130  2026-01-25  R 1410.00  Codes: None
+    #282336  2026-01-22  R 1890.00  Codes: QSWD9LAT (percentage, -210.00)
+    #281844  2026-01-20  R  130.00  Codes: None
+    #281835  2026-01-20  R 1620.00  Codes: None
+    #281470  2026-01-18  R 1220.00  Codes: None
+    #280886  2026-01-16  R   65.00  Codes: None
+    #280871  2026-01-16  R 1580.00  Codes: None
+    #280417  2026-01-14  R 1070.00  Codes: None
+    #279869  2026-01-12  R   65.00  Codes: None
+    #279860  2026-01-12  R 1615.00  Codes: None
+    #278945  2026-01-09  R 1470.00  Codes: None
+    #278944  2026-01-09  R  100.00  Codes: None
+    #278731  2026-01-08  R  660.00  Codes: None
+    #278465  2026-01-07  R 1079.00  Codes: GL4IHKEK (fixed_amount, -1.00)
+    #278053  2026-01-05  R 1170.00  Codes: FRBMGAQB (percentage, -130.00)
+    #277686  2026-01-04  R 1290.00  Codes: None
+    #277248  2026-01-02  R 1090.00  Codes: None
+    #276620  2025-12-31  R  480.00  Codes: None
+    #275912  2025-12-29  R 1995.00  Codes: None
+    #275432  2025-12-28  R  880.00  Codes: None
+    #274954  2025-12-26  R  860.00  Codes: None
+    #274257  2025-12-24  R 1260.00  Codes: None
+    #273348  2025-12-21  R 1340.00  Codes: None
+    #272435  2025-12-18  R  515.00  Codes: None
+    #271938  2025-12-16  R  940.00  Codes: None
+    #271084  2025-12-13  R 1380.00  Codes: None
+    #270068  2025-12-09  R 1210.00  Codes: None
+    #270055  2025-12-09  R  100.00  Codes: None
+
+------------------------------------------------------------
+
+CUSTOMER: Maxwell Chibueze
+  ID:            9312342606036
+  Email:         maxiisix56@gmail.com
+  Phone:         +27673067518
+  Account Since: 2026-01-31
+  Orders (API):  3  (Shopify record: 3)
+  Unique Codes:  0
+  Total Code Uses: 0
+
+  Per-Order Breakdown:
+    #295686  2026-03-21  R  100.00  Codes: None
+    #284952  2026-02-01  R 1330.00  Codes: None
+    #284588  2026-01-31  R  100.00  Codes: None
+
+------------------------------------------------------------
+
+CUSTOMER: Maxwell Donkoh
+  ID:            9919198298324
+  Email:         max@maxxager.com
+  Phone:         None
+  Account Since: 2026-02-27
+  Orders (API):  3  (Shopify record: 3)
+  Unique Codes:  0
+  Total Code Uses: 0
+
+  Per-Order Breakdown:
+    #290953  2026-02-27  R 1340.00  Codes: None
+    #290944  2026-02-27  R   20.00  Codes: None
+    #290942  2026-02-27  R  545.00  Codes: None
+
+------------------------------------------------------------
+
+CUSTOMER: Maxwell Sean
+  ID:            7625735536852
+  Email:         maxwell.bako@yahoo.com
+  Phone:         +237698401491
+  Account Since: 2024-11-12
+  Orders (API):  26  (Shopify record: 26)
+  Unique Codes:  1
+  Total Code Uses: 1
+
+  Discount Code Summary:
+    Needed a R5 for joints .        x1
+
+  Per-Order Breakdown:
+    #269993  2025-12-09  R  570.00  Codes: None
+    #267584  2025-12-01  R  570.00  Codes: None
+    #263517  2025-11-17  R  990.00  Codes: None
+    #260102  2025-11-06  R 1009.00  Codes: None
+    #254305  2025-10-17  R  760.00  Codes: None
+    #253809  2025-10-15  R  380.00  Codes: None
+    #253808  2025-10-15  R  100.00  Codes: None
+    #252401  2025-10-10  R  570.00  Codes: None
+    #251790  2025-10-08  R  380.00  Codes: None
+    #250464  2025-10-03  R  819.00  Codes: None
+    #247669  2025-09-24  R  570.00  Codes: None
+    #246432  2025-09-20  R  190.00  Codes: None
+    #245980  2025-09-18  R  570.00  Codes: None
+    #244478  2025-09-13  R  760.00  Codes: None
+    #244476  2025-09-13  R  100.00  Codes: None
+    #243097  2025-09-08  R  570.00  Codes: None
+    #241461  2025-09-03  R  610.00  Codes: None
+    #239763  2025-08-28  R  700.00  Codes: None
+    #239220  2025-08-26  R  379.00  Codes: None
+    #235265  2025-08-12  R  820.00  Codes: None
+    #235262  2025-08-12  R  100.00  Codes: None
+    #159684  2024-11-21  R  450.00  Codes: None
+    #158545  2024-11-17  R 1050.00  Codes: None
+    #157562  2024-11-14  R  700.00  Codes: None
+    #157253  2024-11-12  R  100.00  Codes: None
+    #157212  2024-11-12  R  290.00  Codes: Needed a R5 for joints . (fixed_amount, -5.00)
+
+------------------------------------------------------------
+
+CUSTOMER: Maxwell Tevin
+  ID:            6691136078036
+  Email:         maxwellovoke@gmail.com
+  Phone:         +27653303013
+  Account Since: 2023-04-13
+  Orders (API):  610  (Shopify record: 610)
+  Unique Codes:  13
+  Total Code Uses: 382
+
+  Discount Code Summary:
+    Cash deal + friends and family   x336  *** USED MULTIPLE TIMES ***
+    Friends and family              x19  *** USED MULTIPLE TIMES ***
+    POS ad 1000 ZAR                 x9  *** USED MULTIPLE TIMES ***
+    POS ad 500 ZAR                  x5  *** USED MULTIPLE TIMES ***
+    POS ad 200 ZAR                  x4  *** USED MULTIPLE TIMES ***
+    Family discount                 x2  *** USED MULTIPLE TIMES ***
+    22IVFTUO                        x1
+    DAMI3DVD                        x1
+    BCEXA64L                        x1
+    YYO7WRMD                        x1
+    OG0EWTMQ                        x1
+    BTHRM3BY                        x1
+    Was owed R70                    x1
+
+  Per-Order Breakdown:
+    #245722  2025-09-17  R  155.00  Codes: None
+    #245477  2025-09-16  R  210.00  Codes: None
+    #244732  2025-09-14  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #244604  2025-09-13  R   70.00  Codes: None
+    #244603  2025-09-13  R  523.20  Codes: Cash deal + friends and family  (percentage, -130.80)
+    #244428  2025-09-13  R   70.00  Codes: None
+    #244423  2025-09-13  R  304.00  Codes: Cash deal + friends and family  (percentage, -76.00)
+    #244260  2025-09-12  R   85.00  Codes: None
+    #243980  2025-09-11  R  130.00  Codes: None
+    #243979  2025-09-11  R    0.00  Codes: 22IVFTUO (fixed_amount, -85.00)
+    #243977  2025-09-11  R  912.00  Codes: Cash deal + friends and family  (percentage, -228.00)
+    #243575  2025-09-10  R   99.00  Codes: None
+    #243548  2025-09-10  R   70.00  Codes: None
+    #243547  2025-09-10  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #243228  2025-09-08  R   95.00  Codes: None
+    #243197  2025-09-08  R   95.00  Codes: None
+    #243150  2025-09-08  R  181.00  Codes: None
+    #243145  2025-09-08  R   70.00  Codes: None
+    #243144  2025-09-08  R  608.00  Codes: Cash deal + friends and family  (percentage, -152.00)
+    #242766  2025-09-07  R  608.00  Codes: Cash deal + friends and family  (percentage, -152.00)
+    #242635  2025-09-07  R  304.00  Codes: Cash deal + friends and family  (percentage, -76.00)
+    #242384  2025-09-06  R  130.00  Codes: None
+    #242330  2025-09-06  R  180.00  Codes: DAMI3DVD (fixed_amount, -200.00)
+    #242306  2025-09-06  R  304.00  Codes: Cash deal + friends and family  (percentage, -76.00)
+    #241878  2025-09-04  R 1064.00  Codes: Cash deal + friends and family  (percentage, -266.00)
+    #241833  2025-09-04  R   65.00  Codes: None
+    #241784  2025-09-04  R 1064.00  Codes: Cash deal + friends and family  (percentage, -266.00)
+    #241622  2025-09-03  R    0.00  Codes: BCEXA64L (fixed_amount, -450.00)
+    #241342  2025-09-02  R    0.00  Codes: YYO7WRMD (fixed_amount, -450.00)
+    #241306  2025-09-02  R   84.00  Codes: None
+    #241183  2025-09-02  R  132.00  Codes: OG0EWTMQ (fixed_amount, -1000.00)
+    #241044  2025-09-01  R   70.00  Codes: None
+    #240982  2025-09-01  R  304.00  Codes: Cash deal + friends and family  (percentage, -76.00)
+    #240608  2025-08-31  R  102.00  Codes: None
+    #240576  2025-08-31  R  304.00  Codes: Cash deal + friends and family  (percentage, -76.00)
+    #240552  2025-08-31  R  304.00  Codes: Cash deal + friends and family  (percentage, -76.00)
+    #240430  2025-08-30  R  294.00  Codes: None
+    #240428  2025-08-30  R  350.00  Codes: None
+    #240415  2025-08-30  R 1216.00  Codes: Cash deal + friends and family  (percentage, -304.00)
+    #240322  2025-08-30  R   70.00  Codes: None
+    #240229  2025-08-30  R  449.00  Codes: None
+    #240074  2025-08-29  R   99.00  Codes: None
+    #240057  2025-08-29  R  304.00  Codes: Cash deal + friends and family  (percentage, -76.00)
+    #240022  2025-08-29  R  164.00  Codes: None
+    #240019  2025-08-29  R  304.00  Codes: Cash deal + friends and family  (percentage, -76.00)
+    #239926  2025-08-29  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #239923  2025-08-29  R   99.00  Codes: None
+    #239619  2025-08-27  R  350.00  Codes: None
+    #239618  2025-08-27  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #239339  2025-08-26  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #239052  2025-08-25  R   42.00  Codes: None
+    #238660  2025-08-24  R   42.00  Codes: None
+    #238284  2025-08-23  R   45.00  Codes: None
+    #238265  2025-08-23  R   95.00  Codes: None
+    #238264  2025-08-23  R  920.00  Codes: Cash deal + friends and family  (percentage, -230.00)
+    #238210  2025-08-23  R  116.00  Codes: None
+    #237924  2025-08-22  R  793.60  Codes: Cash deal + friends and family  (percentage, -198.40)
+    #237915  2025-08-22  R  999.20  Codes: Cash deal + friends and family  (percentage, -249.80)
+    #237041  2025-08-18  R   70.00  Codes: None
+    #237040  2025-08-18  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #236320  2025-08-16  R   99.00  Codes: None
+    #236230  2025-08-16  R   60.00  Codes: None
+    #236083  2025-08-15  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #235463  2025-08-13  R 1000.00  Codes: Cash deal + friends and family  (percentage, -250.00)
+    #235396  2025-08-12  R   99.00  Codes: None
+    #235389  2025-08-12  R   65.00  Codes: None
+    #235338  2025-08-12  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #235322  2025-08-12  R   42.00  Codes: None
+    #235192  2025-08-12  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #234956  2025-08-11  R   92.00  Codes: None
+    #234721  2025-08-10  R   50.00  Codes: None
+    #234642  2025-08-10  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #234382  2025-08-09  R  134.00  Codes: None
+    #234377  2025-08-09  R  169.00  Codes: None
+    #234375  2025-08-09  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #234051  2025-08-08  R   84.00  Codes: None
+    #234031  2025-08-08  R   65.00  Codes: None
+    #233975  2025-08-07  R   70.00  Codes: None
+    #233973  2025-08-07  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #233537  2025-08-06  R  140.00  Codes: None
+    #233536  2025-08-06  R  839.20  Codes: Cash deal + friends and family  (percentage, -209.80)
+    #233239  2025-08-05  R   99.00  Codes: None
+    #233069  2025-08-04  R  150.00  Codes: BTHRM3BY (fixed_amount, -1000.00)
+    #233048  2025-08-04  R  314.00  Codes: None
+    #232974  2025-08-04  R  165.00  Codes: None
+    #232852  2025-08-03  R   70.00  Codes: None
+    #232841  2025-08-03  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #232714  2025-08-03  R  260.00  Codes: None
+    #232339  2025-08-02  R   70.00  Codes: None
+    #232338  2025-08-02  R  920.00  Codes: Cash deal + friends and family  (percentage, -230.00)
+    #232231  2025-08-01  R   45.00  Codes: None
+    #232128  2025-08-01  R  130.00  Codes: None
+    #232104  2025-08-01  R   65.00  Codes: None
+    #232095  2025-08-01  R   70.00  Codes: None
+    #232094  2025-08-01  R  383.20  Codes: Cash deal + friends and family  (percentage, -95.80)
+    #231970  2025-07-31  R   27.00  Codes: None
+    #231917  2025-07-31  R  839.20  Codes: Cash deal + friends and family  (percentage, -209.80)
+    #231645  2025-07-30  R  839.20  Codes: Cash deal + friends and family  (percentage, -209.80)
+    #231643  2025-07-30  R   65.00  Codes: None
+    #231641  2025-07-30  R   99.00  Codes: None
+    #231175  2025-07-28  R   90.00  Codes: None
+    #231127  2025-07-28  R  920.00  Codes: Cash deal + friends and family  (percentage, -230.00)
+    #231100  2025-07-28  R   99.00  Codes: None
+    #230712  2025-07-27  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #230344  2025-07-26  R 1840.00  Codes: Cash deal + friends and family  (percentage, -460.00)
+    #230225  2025-07-25  R   84.00  Codes: None
+    #230170  2025-07-25  R  815.20  Codes: Cash deal + friends and family  (percentage, -203.80)
+    #230166  2025-07-25  R  119.00  Codes: None
+    #230036  2025-07-25  R  812.00  Codes: Cash deal + friends and family  (percentage, -203.00)
+    #229766  2025-07-24  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #229608  2025-07-23  R   70.00  Codes: None
+    #229602  2025-07-23  R  950.00  Codes: None
+    #229479  2025-07-23  R  160.00  Codes: None
+    #229452  2025-07-23  R   70.00  Codes: None
+    #229438  2025-07-23  R  920.00  Codes: Cash deal + friends and family  (percentage, -230.00)
+    #229335  2025-07-22  R  130.00  Codes: None
+    #229326  2025-07-22  R   99.00  Codes: None
+    #229185  2025-07-22  R  140.00  Codes: None
+    #229175  2025-07-22  R  736.00  Codes: Cash deal + friends and family  (percentage, -184.00)
+    #228640  2025-07-20  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #228342  2025-07-19  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #228130  2025-07-18  R   79.20  Codes: Cash deal + friends and family  (percentage, -19.80)
+    #228129  2025-07-18  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #227754  2025-07-17  R 2758.40  Codes: Cash deal + friends and family  (percentage, -689.60)
+    #227642  2025-07-16  R   65.00  Codes: None
+    #227639  2025-07-16  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #227501  2025-07-16  R   99.00  Codes: None
+    #227425  2025-07-15  R  195.00  Codes: None
+    #227422  2025-07-15  R  999.20  Codes: Cash deal + friends and family  (percentage, -249.80)
+    #227351  2025-07-15  R   65.00  Codes: None
+    #227350  2025-07-15  R  274.00  Codes: None
+    #227330  2025-07-15  R  891.20  Codes: Cash deal + friends and family  (percentage, -222.80)
+    #227234  2025-07-15  R   65.00  Codes: None
+    #227230  2025-07-15  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #227063  2025-07-14  R  195.00  Codes: None
+    #227062  2025-07-14  R  920.00  Codes: Cash deal + friends and family  (percentage, -230.00)
+    #226653  2025-07-13  R  780.00  Codes: Cash deal + friends and family  (percentage, -195.00)
+    #226570  2025-07-12  R  195.00  Codes: None
+    #226562  2025-07-12  R 2616.00  Codes: Cash deal + friends and family  (percentage, -654.00)
+    #226433  2025-07-12  R  587.20  Codes: Cash deal + friends and family  (percentage, -146.80)
+    #226171  2025-07-11  R 1520.00  Codes: Cash deal + friends and family  (percentage, -380.00)
+    #225949  2025-07-10  R  390.00  Codes: None
+    #225787  2025-07-10  R   65.00  Codes: None
+    #225785  2025-07-10  R  839.20  Codes: Cash deal + friends and family  (percentage, -209.80)
+    #225497  2025-07-09  R   99.00  Codes: None
+    #225496  2025-07-09  R 5520.00  Codes: Cash deal + friends and family  (percentage, -1380.00)
+    #225326  2025-07-08  R 1520.00  Codes: Cash deal + friends and family  (percentage, -380.00)
+    #225224  2025-07-08  R   65.00  Codes: None
+    #225223  2025-07-08  R  600.00  Codes: Cash deal + friends and family  (percentage, -150.00)
+    #225098  2025-07-07  R  325.00  Codes: None
+    #225096  2025-07-07  R 1840.00  Codes: Cash deal + friends and family  (percentage, -460.00)
+    #224618  2025-07-06  R   99.00  Codes: None
+    #224342  2025-07-05  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #224204  2025-07-04  R  325.00  Codes: None
+    #224203  2025-07-04  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #223354  2025-07-01  R  325.00  Codes: None
+    #223351  2025-07-01  R 1718.40  Codes: Cash deal + friends and family  (percentage, -429.60)
+    #222587  2025-06-29  R  175.00  Codes: None
+    #222565  2025-06-29  R  195.00  Codes: None
+    #222564  2025-06-29  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #222103  2025-06-27  R 1054.00  Codes: None
+    #221664  2025-06-26  R  325.00  Codes: None
+    #221663  2025-06-26  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #220932  2025-06-23  R  491.00  Codes: None
+    #220931  2025-06-23  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #220302  2025-06-21  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #220262  2025-06-21  R  325.00  Codes: None
+    #220261  2025-06-21  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #220238  2025-06-20  R  325.00  Codes: None
+    #220235  2025-06-20  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #218982  2025-06-16  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #218857  2025-06-15  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #217132  2025-06-09  R  608.00  Codes: Cash deal + friends and family  (percentage, -152.00)
+    #216976  2025-06-08  R  456.00  Codes: Cash deal + friends and family  (percentage, -114.00)
+    #216504  2025-06-07  R  260.00  Codes: None
+    #213909  2025-05-29  R   65.00  Codes: None
+    #213907  2025-05-29  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #213693  2025-05-28  R 1560.00  Codes: Cash deal + friends and family  (percentage, -390.00)
+    #213597  2025-05-27  R  325.00  Codes: None
+    #213596  2025-05-27  R 1520.00  Codes: Cash deal + friends and family  (percentage, -380.00)
+    #211327  2025-05-20  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #211048  2025-05-19  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #210744  2025-05-18  R  445.00  Codes: None
+    #209864  2025-05-15  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #209461  2025-05-13  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #209149  2025-05-12  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #208818  2025-05-11  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #208550  2025-05-10  R   65.00  Codes: None
+    #208548  2025-05-10  R 1064.00  Codes: Cash deal + friends and family  (percentage, -266.00)
+    #197078  2025-03-28  R  325.00  Codes: None
+    #197077  2025-03-28  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #194513  2025-03-18  R  325.00  Codes: None
+    #194512  2025-03-18  R 2280.00  Codes: Cash deal + friends and family  (percentage, -570.00)
+    #193972  2025-03-16  R  325.00  Codes: None
+    #193971  2025-03-16  R 2280.00  Codes: Cash deal + friends and family  (percentage, -570.00)
+    #190728  2025-03-04  R  304.00  Codes: Cash deal + friends and family  (percentage, -76.00)
+    #184358  2025-02-09  R  480.00  Codes: None
+    #179047  2025-01-21  R  304.00  Codes: Cash deal + friends and family  (percentage, -76.00)
+    #178052  2025-01-17  R  130.00  Codes: None
+    #178050  2025-01-17  R  304.00  Codes: Cash deal + friends and family  (percentage, -76.00)
+    #175705  2025-01-09  R  304.00  Codes: Cash deal + friends and family  (percentage, -76.00)
+    #175203  2025-01-07  R  130.00  Codes: None
+    #175202  2025-01-07  R  608.00  Codes: Cash deal + friends and family  (percentage, -152.00)
+    #174327  2025-01-04  R  130.00  Codes: None
+    #174326  2025-01-04  R  304.00  Codes: Cash deal + friends and family  (percentage, -76.00)
+    #174014  2025-01-03  R  304.00  Codes: Cash deal + friends and family  (percentage, -76.00)
+    #172562  2024-12-30  R    0.00  Codes: POS ad 200 ZAR (fixed_amount, -195.00)
+    #172561  2024-12-30  R  370.00  Codes: POS ad 200 ZAR (fixed_amount, -200.00)
+    #172234  2024-12-29  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #172230  2024-12-29  R  325.00  Codes: None
+    #172137  2024-12-29  R  130.00  Codes: None
+    #172136  2024-12-29  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #171374  2024-12-27  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #170859  2024-12-26  R   65.00  Codes: None
+    #170848  2024-12-26  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #170461  2024-12-25  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #170370  2024-12-24  R  304.00  Codes: Cash deal + friends and family  (percentage, -76.00)
+    #167465  2024-12-16  R  450.00  Codes: POS ad 500 ZAR (fixed_amount, -500.00)
+    #166816  2024-12-14  R    0.00  Codes: POS ad 500 ZAR (fixed_amount, -485.00)
+    #166529  2024-12-13  R  325.00  Codes: None
+    #166528  2024-12-13  R 1680.00  Codes: Cash deal + friends and family  (percentage, -420.00)
+    #166506  2024-12-13  R    0.00  Codes: POS ad 1000 ZAR (fixed_amount, -990.00)
+    #165965  2024-12-11  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #165781  2024-12-10  R  325.00  Codes: None
+    #165779  2024-12-10  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #165303  2024-12-08  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #165164  2024-12-08  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #164803  2024-12-07  R  325.00  Codes: None
+    #164802  2024-12-07  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #164632  2024-12-06  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #164473  2024-12-06  R  325.00  Codes: None
+    #164454  2024-12-06  R  304.00  Codes: Cash deal + friends and family  (percentage, -76.00)
+    #164453  2024-12-06  R 1976.00  Codes: Cash deal + friends and family  (percentage, -494.00)
+    #164317  2024-12-05  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #164104  2024-12-05  R    0.00  Codes: POS ad 1000 ZAR (fixed_amount, -950.00)
+    #164099  2024-12-05  R    0.00  Codes: POS ad 1000 ZAR (fixed_amount, -975.00)
+    #163606  2024-12-03  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #163311  2024-12-02  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #162938  2024-12-01  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #162529  2024-11-29  R  325.00  Codes: None
+    #162497  2024-11-29  R  210.00  Codes: None
+    #162494  2024-11-29  R  839.20  Codes: Cash deal + friends and family  (percentage, -209.80)
+    #162132  2024-11-28  R  320.00  Codes: None
+    #161954  2024-11-28  R  456.00  Codes: Cash deal + friends and family  (percentage, -114.00)
+    #161007  2024-11-25  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #160713  2024-11-24  R 1157.60  Codes: Cash deal + friends and family  (percentage, -289.40)
+    #160432  2024-11-23  R 1019.20  Codes: Cash deal + friends and family  (percentage, -254.80)
+    #160327  2024-11-23  R  325.00  Codes: None
+    #160325  2024-11-23  R 1520.00  Codes: Cash deal + friends and family  (percentage, -380.00)
+    #160010  2024-11-22  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #159928  2024-11-21  R  325.00  Codes: None
+    #159927  2024-11-21  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #159884  2024-11-21  R  840.00  Codes: Cash deal + friends and family  (percentage, -210.00)
+    #159718  2024-11-21  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #159694  2024-11-21  R  920.00  Codes: Cash deal + friends and family  (percentage, -230.00)
+    #159452  2024-11-20  R  800.00  Codes: None
+    #159444  2024-11-20  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #159190  2024-11-19  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #159170  2024-11-19  R  325.00  Codes: None
+    #159169  2024-11-19  R  839.20  Codes: Cash deal + friends and family  (percentage, -209.80)
+    #156437  2024-11-10  R 1224.00  Codes: None
+    #156400  2024-11-09  R  800.00  Codes: None
+    #156243  2024-11-09  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #155964  2024-11-08  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #153904  2024-11-01  R 2584.00  Codes: Cash deal + friends and family  (percentage, -646.00)
+    #153709  2024-10-31  R  304.00  Codes: Cash deal + friends and family  (percentage, -76.00)
+    #153621  2024-10-31  R  325.00  Codes: None
+    #153618  2024-10-31  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #153513  2024-10-31  R  325.00  Codes: None
+    #153512  2024-10-31  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #153364  2024-10-30  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #153160  2024-10-30  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #152906  2024-10-29  R  920.00  Codes: Cash deal + friends and family  (percentage, -230.00)
+    #152872  2024-10-29  R  325.00  Codes: None
+    #152871  2024-10-29  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #152742  2024-10-28  R  325.00  Codes: None
+    #152739  2024-10-28  R  920.00  Codes: Cash deal + friends and family  (percentage, -230.00)
+    #152489  2024-10-27  R  304.00  Codes: Cash deal + friends and family  (percentage, -76.00)
+    #152400  2024-10-27  R  325.00  Codes: None
+    #152399  2024-10-27  R 1472.00  Codes: Cash deal + friends and family  (percentage, -368.00)
+    #152317  2024-10-27  R  920.00  Codes: Cash deal + friends and family  (percentage, -230.00)
+    #152019  2024-10-26  R  325.00  Codes: None
+    #152018  2024-10-26  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #151763  2024-10-25  R  920.00  Codes: Cash deal + friends and family  (percentage, -230.00)
+    #151546  2024-10-24  R  920.00  Codes: Cash deal + friends and family  (percentage, -230.00)
+    #151402  2024-10-24  R 1520.00  Codes: Cash deal + friends and family  (percentage, -380.00)
+    #151181  2024-10-23  R  375.00  Codes: None
+    #151180  2024-10-23  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #151178  2024-10-23  R  800.00  Codes: Cash deal + friends and family  (percentage, -200.00)
+    #151073  2024-10-23  R 1222.40  Codes: Cash deal + friends and family  (percentage, -305.60)
+    #150906  2024-10-22  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #150905  2024-10-22  R  325.00  Codes: None
+    #150821  2024-10-22  R 1216.00  Codes: Cash deal + friends and family  (percentage, -304.00)
+    #150512  2024-10-21  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #150314  2024-10-20  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #150239  2024-10-20  R  325.00  Codes: None
+    #150238  2024-10-20  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #149902  2024-10-19  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #149614  2024-10-18  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #149369  2024-10-17  R  325.00  Codes: None
+    #149368  2024-10-17  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #149136  2024-10-16  R  325.00  Codes: None
+    #149135  2024-10-16  R  839.20  Codes: Cash deal + friends and family  (percentage, -209.80)
+    #148886  2024-10-15  R  839.20  Codes: Cash deal + friends and family  (percentage, -209.80)
+    #148819  2024-10-15  R  130.00  Codes: None
+    #148818  2024-10-15  R 1520.00  Codes: Cash deal + friends and family  (percentage, -380.00)
+    #148641  2024-10-14  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #148635  2024-10-14  R  325.00  Codes: None
+    #148567  2024-10-14  R  997.60  Codes: Cash deal + friends and family  (percentage, -249.40)
+    #148390  2024-10-13  R 1072.00  Codes: Cash deal + friends and family  (percentage, -268.00)
+    #148244  2024-10-13  R  130.00  Codes: None
+    #148243  2024-10-13  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #148131  2024-10-12  R  650.00  Codes: None
+    #148117  2024-10-12  R 1520.00  Codes: Cash deal + friends and family  (percentage, -380.00)
+    #148097  2024-10-12  R  800.00  Codes: Cash deal + friends and family  (percentage, -200.00)
+    #147963  2024-10-12  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #147827  2024-10-11  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #147673  2024-10-11  R   65.00  Codes: None
+    #147660  2024-10-11  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #147504  2024-10-10  R 1520.00  Codes: Cash deal + friends and family  (percentage, -380.00)
+    #147401  2024-10-10  R  687.20  Codes: Cash deal + friends and family  (percentage, -171.80)
+    #147080  2024-10-09  R  608.00  Codes: Cash deal + friends and family  (percentage, -152.00)
+    #146809  2024-10-08  R  325.00  Codes: None
+    #146808  2024-10-08  R 1064.00  Codes: Cash deal + friends and family  (percentage, -266.00)
+    #146771  2024-10-08  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #146542  2024-10-07  R  135.00  Codes: None
+    #146541  2024-10-07  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #146476  2024-10-07  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #146329  2024-10-06  R  325.00  Codes: None
+    #146328  2024-10-06  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #146227  2024-10-06  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #146189  2024-10-06  R  144.00  Codes: Cash deal + friends and family  (percentage, -36.00)
+    #146008  2024-10-05  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #145875  2024-10-05  R  325.00  Codes: None
+    #145874  2024-10-05  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #145604  2024-10-04  R 1180.00  Codes: Cash deal + friends and family  (percentage, -295.00)
+    #145556  2024-10-04  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #145342  2024-10-03  R  920.00  Codes: Cash deal + friends and family  (percentage, -230.00)
+    #145174  2024-10-02  R 1020.00  Codes: Cash deal + friends and family  (percentage, -255.00)
+    #145057  2024-10-02  R  325.00  Codes: None
+    #145056  2024-10-02  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #144805  2024-10-01  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #144589  2024-09-30  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #144545  2024-09-30  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #144471  2024-09-29  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #144278  2024-09-29  R 1216.00  Codes: Cash deal + friends and family  (percentage, -304.00)
+    #143938  2024-09-28  R  325.00  Codes: None
+    #143646  2024-09-27  R  325.00  Codes: None
+    #143642  2024-09-27  R 2424.00  Codes: Cash deal + friends and family  (percentage, -606.00)
+    #143364  2024-09-26  R  325.00  Codes: None
+    #143360  2024-09-26  R  144.00  Codes: Cash deal + friends and family  (percentage, -36.00)
+    #143357  2024-09-26  R 2280.00  Codes: Cash deal + friends and family  (percentage, -570.00)
+    #143194  2024-09-25  R  456.00  Codes: Cash deal + friends and family  (percentage, -114.00)
+    #143186  2024-09-25  R  325.00  Codes: None
+    #143185  2024-09-25  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #143122  2024-09-25  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #143066  2024-09-25  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #143017  2024-09-24  R  325.00  Codes: None
+    #143003  2024-09-24  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #142952  2024-09-24  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #142863  2024-09-24  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #142744  2024-09-23  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #142571  2024-09-22  R  315.00  Codes: Family discount (percentage, -135.00)
+    #142561  2024-09-22  R  848.00  Codes: Cash deal + friends and family  (percentage, -212.00)
+    #142406  2024-09-22  R 1125.00  Codes: None
+    #142338  2024-09-22  R 1804.00  Codes: Cash deal + friends and family  (percentage, -451.00)
+    #142114  2024-09-21  R  300.00  Codes: None
+    #142113  2024-09-21  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #141807  2024-09-20  R 1216.00  Codes: Cash deal + friends and family  (percentage, -304.00)
+    #141633  2024-09-19  R 1520.00  Codes: Cash deal + friends and family  (percentage, -380.00)
+    #141494  2024-09-19  R 1000.00  Codes: Cash deal + friends and family  (percentage, -250.00)
+    #141242  2024-09-18  R 1030.40  Codes: Cash deal + friends and family  (percentage, -257.60)
+    #141074  2024-09-17  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #140988  2024-09-17  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #140841  2024-09-16  R  608.00  Codes: Cash deal + friends and family  (percentage, -152.00)
+    #140496  2024-09-15  R  568.00  Codes: Cash deal + friends and family  (percentage, -142.00)
+    #140358  2024-09-14  R  456.00  Codes: Cash deal + friends and family  (percentage, -114.00)
+    #140165  2024-09-14  R  352.00  Codes: Cash deal + friends and family  (percentage, -88.00)
+    #139830  2024-09-13  R  120.00  Codes: None
+    #139828  2024-09-13  R  456.00  Codes: Cash deal + friends and family  (percentage, -114.00)
+    #139738  2024-09-12  R  756.00  Codes: Cash deal + friends and family  (percentage, -189.00)
+    #139441  2024-09-11  R  456.00  Codes: Cash deal + friends and family  (percentage, -114.00)
+    #139299  2024-09-11  R  608.00  Codes: Cash deal + friends and family  (percentage, -152.00)
+    #139154  2024-09-10  R  696.00  Codes: Cash deal + friends and family  (percentage, -174.00)
+    #139150  2024-09-10  R  636.00  Codes: Cash deal + friends and family  (percentage, -159.00)
+    #139144  2024-09-10  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #138584  2024-09-08  R  456.00  Codes: Cash deal + friends and family  (percentage, -114.00)
+    #138405  2024-09-08  R  704.00  Codes: Cash deal + friends and family  (percentage, -176.00)
+    #137991  2024-09-06  R  856.00  Codes: Cash deal + friends and family  (percentage, -214.00)
+    #137848  2024-09-06  R  304.00  Codes: Cash deal + friends and family  (percentage, -76.00)
+    #137520  2024-09-05  R  504.00  Codes: Cash deal + friends and family  (percentage, -126.00)
+    #137516  2024-09-05  R  130.00  Codes: POS ad 500 ZAR (fixed_amount, -500.00)
+    #137402  2024-09-04  R  662.40  Codes: Cash deal + friends and family  (percentage, -165.60)
+    #137075  2024-09-03  R 1000.00  Codes: Cash deal + friends and family  (percentage, -250.00)
+    #136808  2024-09-02  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #136602  2024-09-01  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #136597  2024-09-01  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #136441  2024-09-01  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #136154  2024-08-31  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #135767  2024-08-29  R 1672.00  Codes: Cash deal + friends and family  (percentage, -418.00)
+    #135308  2024-08-28  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #135306  2024-08-28  R    0.00  Codes: POS ad 1000 ZAR (fixed_amount, -950.00)
+    #135065  2024-08-26  R  456.00  Codes: Cash deal + friends and family  (percentage, -114.00)
+    #135064  2024-08-26  R    0.00  Codes: POS ad 1000 ZAR (fixed_amount, -950.00)
+    #131163  2024-08-13  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #131076  2024-08-12  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #129157  2024-08-05  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #128961  2024-08-05  R  516.80  Codes: Cash deal + friends and family  (percentage, -129.20)
+    #128895  2024-08-04  R  456.00  Codes: Cash deal + friends and family  (percentage, -114.00)
+    #128686  2024-08-04  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #128408  2024-08-03  R  456.00  Codes: Cash deal + friends and family  (percentage, -114.00)
+    #128330  2024-08-02  R  450.00  Codes: POS ad 500 ZAR (fixed_amount, -500.00)
+    #128092  2024-08-02  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #127776  2024-08-01  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #127695  2024-07-31  R    0.00  Codes: POS ad 1000 ZAR (fixed_amount, -1000.00)
+    #127557  2024-07-31  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #127495  2024-07-30  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #125720  2024-07-24  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #125566  2024-07-23  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #125455  2024-07-23  R  608.00  Codes: Cash deal + friends and family  (percentage, -152.00)
+    #125392  2024-07-22  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #125245  2024-07-22  R  144.00  Codes: Cash deal + friends and family  (percentage, -36.00)
+    #125231  2024-07-22  R  872.00  Codes: Cash deal + friends and family  (percentage, -218.00)
+    #125156  2024-07-21  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #124929  2024-07-21  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #124749  2024-07-20  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #124639  2024-07-20  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #124547  2024-07-19  R  608.00  Codes: Cash deal + friends and family  (percentage, -152.00)
+    #124355  2024-07-19  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #124290  2024-07-18  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #124137  2024-07-18  R  304.00  Codes: Cash deal + friends and family  (percentage, -76.00)
+    #124087  2024-07-18  R  520.00  Codes: POS ad 1000 ZAR (fixed_amount, -1000.00)
+    #124050  2024-07-17  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #123829  2024-07-16  R 1520.00  Codes: Cash deal + friends and family  (percentage, -380.00)
+    #123620  2024-07-16  R 1520.00  Codes: Cash deal + friends and family  (percentage, -380.00)
+    #123451  2024-07-15  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #123408  2024-07-15  R  304.00  Codes: Cash deal + friends and family  (percentage, -76.00)
+    #123379  2024-07-15  R 1140.00  Codes: Cash deal + friends and family  (percentage, -285.00)
+    #123170  2024-07-14  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #123102  2024-07-14  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #123009  2024-07-13  R 1216.00  Codes: Cash deal + friends and family  (percentage, -304.00)
+    #122851  2024-07-13  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #122765  2024-07-12  R 3040.00  Codes: Cash deal + friends and family  (percentage, -760.00)
+    #122518  2024-07-12  R 1520.00  Codes: Cash deal + friends and family  (percentage, -380.00)
+    #122371  2024-07-11  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #122291  2024-07-11  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #122234  2024-07-10  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #122101  2024-07-10  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #121941  2024-07-09  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #121804  2024-07-09  R 1520.00  Codes: Cash deal + friends and family  (percentage, -380.00)
+    #121619  2024-07-08  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #121563  2024-07-07  R 1520.00  Codes: Cash deal + friends and family  (percentage, -380.00)
+    #121289  2024-07-06  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #121272  2024-07-06  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #121057  2024-07-06  R 1520.00  Codes: Cash deal + friends and family  (percentage, -380.00)
+    #120997  2024-07-05  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #120766  2024-07-05  R  456.00  Codes: Cash deal + friends and family  (percentage, -114.00)
+    #120705  2024-07-05  R  304.00  Codes: Cash deal + friends and family  (percentage, -76.00)
+    #120604  2024-07-04  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #120271  2024-07-03  R  144.00  Codes: Cash deal + friends and family  (percentage, -36.00)
+    #120268  2024-07-03  R  144.00  Codes: Cash deal + friends and family  (percentage, -36.00)
+    #120266  2024-07-03  R 1236.00  Codes: Cash deal + friends and family  (percentage, -309.00)
+    #120120  2024-07-02  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #119961  2024-07-02  R  399.00  Codes: Family discount (percentage, -171.00)
+    #119959  2024-07-01  R  370.00  Codes: POS ad 200 ZAR (fixed_amount, -200.00)
+    #119702  2024-07-01  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #119572  2024-06-30  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #119409  2024-06-30  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #119068  2024-06-29  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #118921  2024-06-28  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #118646  2024-06-27  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #118569  2024-06-27  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #118528  2024-06-27  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #118308  2024-06-26  R 2304.00  Codes: Cash deal + friends and family  (percentage, -576.00)
+    #118257  2024-06-26  R  304.00  Codes: Cash deal + friends and family  (percentage, -76.00)
+    #118038  2024-06-25  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #118005  2024-06-24  R  608.00  Codes: Cash deal + friends and family  (percentage, -152.00)
+    #117826  2024-06-24  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #117378  2024-06-22  R  871.20  Codes: Cash deal + friends and family  (percentage, -217.80)
+    #117248  2024-06-22  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #117040  2024-06-21  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #116913  2024-06-20  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #116704  2024-06-20  R  912.00  Codes: Cash deal + friends and family  (percentage, -228.00)
+    #116588  2024-06-19  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #116465  2024-06-19  R 1368.00  Codes: Cash deal + friends and family  (percentage, -342.00)
+    #116425  2024-06-19  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #116189  2024-06-18  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #115625  2024-06-16  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #115515  2024-06-15  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #115314  2024-06-15  R 1760.00  Codes: Cash deal + friends and family  (percentage, -440.00)
+    #115098  2024-06-14  R 1710.00  Codes: Friends and family  (percentage, -190.00)
+    #114845  2024-06-13  R  855.00  Codes: Friends and family  (percentage, -95.00)
+    #114704  2024-06-13  R 1400.00  Codes: POS ad 500 ZAR (fixed_amount, -500.00)
+    #114649  2024-06-12  R 1710.00  Codes: Friends and family  (percentage, -190.00)
+    #114549  2024-06-12  R  900.00  Codes: POS ad 1000 ZAR (fixed_amount, -1000.00)
+    #114246  2024-06-11  R 2727.00  Codes: Friends and family  (percentage, -303.00)
+    #113669  2024-06-09  R  855.00  Codes: Friends and family  (percentage, -95.00)
+    #113490  2024-06-08  R 1520.00  Codes: Cash deal + friends and family  (percentage, -380.00)
+    #113191  2024-06-07  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #112981  2024-06-07  R  855.00  Codes: Friends and family  (percentage, -95.00)
+    #112879  2024-06-06  R  855.00  Codes: Friends and family  (percentage, -95.00)
+    #112789  2024-06-06  R  855.00  Codes: Friends and family  (percentage, -95.00)
+    #112642  2024-06-05  R 3339.00  Codes: Friends and family  (percentage, -371.00)
+    #112559  2024-06-05  R 1710.00  Codes: Friends and family  (percentage, -190.00)
+    #112510  2024-06-05  R  855.00  Codes: Friends and family  (percentage, -95.00)
+    #112162  2024-06-03  R 1700.00  Codes: Cash deal + friends and family  (percentage, -425.00)
+    #112111  2024-06-03  R  656.00  Codes: Cash deal + friends and family  (percentage, -164.00)
+    #112031  2024-06-03  R 1350.00  Codes: Friends and family  (percentage, -150.00)
+    #111574  2024-06-01  R 2052.00  Codes: Friends and family  (percentage, -228.00)
+    #111332  2024-05-31  R 3216.00  Codes: Cash deal + friends and family  (percentage, -804.00)
+    #111126  2024-05-30  R 1520.00  Codes: Cash deal + friends and family  (percentage, -380.00)
+    #110624  2024-05-29  R  855.00  Codes: Friends and family  (percentage, -95.00)
+    #110460  2024-05-28  R  230.00  Codes: None
+    #110259  2024-05-27  R 2230.00  Codes: POS ad 1000 ZAR (fixed_amount, -1000.00)
+    #109863  2024-05-26  R  855.00  Codes: Friends and family  (percentage, -95.00)
+    #109776  2024-05-26  R  988.00  Codes: None
+    #109589  2024-05-25  R 1696.50  Codes: Friends and family  (percentage, -188.50)
+    #109544  2024-05-25  R  855.00  Codes: Friends and family  (percentage, -95.00)
+    #109422  2024-05-25  R 1010.00  Codes: None
+    #109129  2024-05-24  R  760.00  Codes: Cash deal + friends and family  (percentage, -190.00)
+    #109125  2024-05-24  R  540.00  Codes: None
+    #109115  2024-05-23  R 3744.00  Codes: Cash deal + friends and family  (percentage, -936.00)
+    #108677  2024-05-22  R 1710.00  Codes: Friends and family  (percentage, -190.00)
+    #108670  2024-05-22  R  360.00  Codes: None
+    #108617  2024-05-22  R 1150.00  Codes: None
+    #108611  2024-05-22  R 2655.00  Codes: Friends and family  (percentage, -295.00)
+    #108580  2024-05-21  R  725.00  Codes: POS ad 200 ZAR (fixed_amount, -200.00)
+    #108133  2024-05-20  R  338.00  Codes: None
+    #108127  2024-05-20  R 1075.00  Codes: None
+    #107717  2024-05-18  R  140.00  Codes: None
+    #107303  2024-05-17  R  555.00  Codes: None
+    #107292  2024-05-17  R  925.00  Codes: None
+    #107171  2024-05-16  R  555.00  Codes: None
+    #106264  2024-05-13  R  370.00  Codes: None
+    #100640  2024-04-24  R   30.00  Codes: Was owed R70 (fixed_amount, -70.00)
+    #98786  2024-04-18  R  925.00  Codes: None
+    #97498  2024-04-13  R  925.00  Codes: None
+    #97167  2024-04-12  R  370.00  Codes: None
+    #97123  2024-04-12  R  925.00  Codes: None
+    #96861  2024-04-11  R  370.00  Codes: None
+    #95981  2024-04-07  R  370.00  Codes: None
+    #95713  2024-04-06  R  555.00  Codes: None
+    #95245  2024-04-05  R  370.00  Codes: None
+    #95198  2024-04-05  R  185.00  Codes: None
+    #95099  2024-04-04  R  260.00  Codes: None
+    #94143  2024-04-01  R  555.00  Codes: None
+    #93702  2024-03-30  R  925.00  Codes: None
+    #93001  2024-03-28  R  555.00  Codes: None
+    #92440  2024-03-26  R  555.00  Codes: None
+    #90764  2024-03-21  R  324.00  Codes: Cash deal + friends and family  (percentage, -81.00)
+    #89427  2024-03-16  R  370.00  Codes: None
+    #88952  2024-03-15  R  444.00  Codes: Cash deal + friends and family  (percentage, -111.00)
+    #88388  2024-03-13  R  100.00  Codes: None
+    #86942  2024-03-08  R 1555.00  Codes: None
+    #86486  2024-03-06  R 1480.00  Codes: None
+    #85675  2024-03-04  R  370.00  Codes: None
+    #84600  2024-03-01  R  370.00  Codes: None
+    #84388  2024-02-29  R  445.00  Codes: None
+    #84288  2024-02-29  R  444.00  Codes: Cash deal + friends and family  (percentage, -111.00)
+    #82540  2024-02-23  R  555.00  Codes: None
+    #82019  2024-02-22  R  296.00  Codes: Cash deal + friends and family  (percentage, -74.00)
+    #81981  2024-02-22  R  501.60  Codes: Cash deal + friends and family  (percentage, -125.40)
+    #81533  2024-02-20  R  997.00  Codes: None
+    #81487  2024-02-20  R  442.00  Codes: None
+    #81301  2024-02-19  R  442.00  Codes: None
+    #78901  2024-02-11  R  555.00  Codes: None
+    #77570  2024-02-07  R  555.00  Codes: None
+    #76104  2024-02-02  R  555.00  Codes: None
+    #76096  2024-02-02  R  100.00  Codes: None
+    #75324  2024-01-31  R  740.00  Codes: Cash deal + friends and family  (percentage, -185.00)
+    #74405  2024-01-28  R  740.00  Codes: Cash deal + friends and family  (percentage, -185.00)
+    #72816  2024-01-23  R  740.00  Codes: Cash deal + friends and family  (percentage, -185.00)
+    #72566  2024-01-22  R  555.00  Codes: None
+    #72558  2024-01-22  R  555.00  Codes: None
+    #71269  2024-01-18  R  925.00  Codes: None
+    #67530  2024-01-06  R  555.00  Codes: None
+    #59760  2023-12-18  R  555.00  Codes: None
+    #59759  2023-12-18  R  100.00  Codes: None
+    #55413  2023-12-05  R  925.00  Codes: None
+    #52137  2023-11-25  R  925.00  Codes: None
+    #51553  2023-11-23  R  675.00  Codes: None
+    #51181  2023-11-22  R  925.00  Codes: None
+    #49537  2023-11-17  R  300.00  Codes: None
+    #48420  2023-11-14  R  925.00  Codes: None
+    #48224  2023-11-13  R  925.00  Codes: None
+    #47963  2023-11-13  R  600.00  Codes: None
+    #47831  2023-11-12  R  300.00  Codes: None
+    #47351  2023-11-11  R  400.00  Codes: None
+    #45698  2023-11-06  R  175.00  Codes: None
+    #45557  2023-11-06  R  535.00  Codes: None
+    #45349  2023-11-05  R  925.00  Codes: None
+    #45061  2023-11-05  R  925.00  Codes: None
+    #44558  2023-11-03  R  925.00  Codes: None
+    #44327  2023-11-03  R  925.00  Codes: None
+    #43717  2023-11-01  R  300.00  Codes: None
+    #43560  2023-11-01  R  300.00  Codes: None
+    #43558  2023-11-01  R  100.00  Codes: None
+    #41444  2023-10-26  R  180.00  Codes: None
+    #41233  2023-10-25  R  300.00  Codes: None
+    #40007  2023-10-22  R  400.00  Codes: None
+    #39821  2023-10-21  R  300.00  Codes: None
+    #36275  2023-10-10  R  135.00  Codes: None
+    #35144  2023-10-07  R  670.00  Codes: None
+    #34342  2023-10-04  R  300.00  Codes: None
+    #32576  2023-09-30  R  300.00  Codes: None
+    #31605  2023-09-27  R  100.00  Codes: None
+    #27455  2023-08-24  R  100.00  Codes: None
+    #24621  2023-07-23  R  100.00  Codes: None
+    #18873  2023-05-16  R  100.00  Codes: None
+    #16008  2023-04-13  R  100.00  Codes: None
+
+------------------------------------------------------------
+
+CUSTOMER: Maxwell Rarey
+  ID:            7002106101972
+  Email:         maxrarey@gmail.com
+  Phone:         +17077726162
+  Account Since: 2023-12-19
+  Orders (API):  4  (Shopify record: 4)
+  Unique Codes:  0
+  Total Code Uses: 0
+
+  Per-Order Breakdown:
+    #240225  2025-08-30  R 3007.00  Codes: None
+    #61289  2023-12-22  R  527.00  Codes: None
+    #60294  2023-12-19  R  370.00  Codes: None
+    #60293  2023-12-19  R  100.00  Codes: None
+
+------------------------------------------------------------
+
+CUSTOMER: Maxwell Motloung
+  ID:            7782993625300
+  Email:         maxwell.motloung@gmail.com
+  Phone:         +27614421660
+  Account Since: 2025-02-24
+  Orders (API):  2  (Shopify record: 2)
+  Unique Codes:  0
+  Total Code Uses: 0
+
+  Per-Order Breakdown:
+    #188686  2025-02-24  R  355.00  Codes: None
+    #188684  2025-02-24  R  100.00  Codes: None
+
+------------------------------------------------------------
+
+CUSTOMER: Maxwell Ballot
+  ID:            7708719612116
+  Email:         max.ballot@gmail.com
+  Phone:         +447318206953
+  Account Since: 2024-12-30
+  Orders (API):  2  (Shopify record: 2)
+  Unique Codes:  0
+  Total Code Uses: 0
+
+  Per-Order Breakdown:
+    #172666  2024-12-30  R  180.00  Codes: None
+    #172664  2024-12-30  R  100.00  Codes: None
+
+------------------------------------------------------------
+
+CUSTOMER: Maxwell Nkosi
+  ID:            7654986252500
+  Email:         dmmnkosi@gmail.com
+  Phone:         +27823000998
+  Account Since: 2024-11-29
+  Orders (API):  1  (Shopify record: 1)
+  Unique Codes:  0
+  Total Code Uses: 0
+
+  Per-Order Breakdown:
+    #162546  2024-11-29  R  100.00  Codes: None
+
+------------------------------------------------------------
+
+CUSTOMER: Maxwell Odoh
+  ID:            7642895679700
+  Email:         mazitwista@gmail.com
+  Phone:         +27796622734
+  Account Since: 2024-11-24
+  Orders (API):  2  (Shopify record: 2)
+  Unique Codes:  0
+  Total Code Uses: 0
+
+  Per-Order Breakdown:
+    #161015  2024-11-25  R  190.00  Codes: None
+    #160775  2024-11-24  R   65.00  Codes: None
+
+------------------------------------------------------------
+
+CUSTOMER: Holden Maxwell Kenne
+  ID:            6299652391124
+  Email:         holdenkenne@gmail.com
+  Phone:         None
+  Account Since: 2022-07-05
+  Orders (API):  1  (Shopify record: 1)
+  Unique Codes:  0
+  Total Code Uses: 0
+
+  Per-Order Breakdown:
+    #157255  2024-11-12  R  100.00  Codes: None
+
+------------------------------------------------------------
+
+CUSTOMER: Maxwell Polan
+  ID:            7619240820948
+  Email:         mpolan93@gmail.com
+  Phone:         +12402477277
+  Account Since: 2024-11-07
+  Orders (API):  1  (Shopify record: 1)
+  Unique Codes:  0
+  Total Code Uses: 0
+
+  Per-Order Breakdown:
+    #155760  2024-11-07  R  100.00  Codes: None
+
+------------------------------------------------------------
+
+CUSTOMER: Maxwell Ogor
+  ID:            6771732054228
+  Email:         ogormaxwell1000@gmail.com
+  Phone:         +27682421375
+  Account Since: 2023-07-18
+  Orders (API):  2  (Shopify record: 2)
+  Unique Codes:  0
+  Total Code Uses: 0
+
+  Per-Order Breakdown:
+    #123711  2024-07-16  R  100.00  Codes: None
+    #24237  2023-07-18  R  100.00  Codes: None
+
+------------------------------------------------------------
+
+CUSTOMER: Maxwell Napoleon
+  ID:            7364037083348
+  Email:         napoleon12max@gmail.com
+  Phone:         +27633460317
+  Account Since: 2024-07-04
+  Orders (API):  1  (Shopify record: 1)
+  Unique Codes:  0
+  Total Code Uses: 0
+
+  Per-Order Breakdown:
+    #120531  2024-07-04  R  100.00  Codes: None
+
+------------------------------------------------------------
+
+CUSTOMER: Maxwell Anyasi
+  ID:            7270394036436
+  Email:         thomashans880@gmail.com
+  Phone:         +27728280843
+  Account Since: 2024-05-08
+  Orders (API):  1  (Shopify record: 1)
+  Unique Codes:  0
+  Total Code Uses: 0
+
+  Per-Order Breakdown:
+    #105024  2024-05-08  R  100.00  Codes: None
+
+------------------------------------------------------------
+
+CUSTOMER: Maxwell Luh
+  ID:            7026509414612
+  Email:         kodjoluh@gmail.com
+  Phone:         +27711553874
+  Account Since: 2023-12-29
+  Orders (API):  2  (Shopify record: 2)
+  Unique Codes:  0
+  Total Code Uses: 0
+
+  Per-Order Breakdown:
+    #64247  2023-12-29  R 2015.00  Codes: None
+    #64242  2023-12-29  R  100.00  Codes: None
+
+------------------------------------------------------------
+
+CUSTOMER: Dinong Maxwell Mathebe
+  ID:            9894102958292
+  Email:         lefalakoko@gmail.com
+  Phone:         +27799596033
+  Account Since: 2026-02-26
+  Orders (API):  0  (Shopify record: 0)
+  Unique Codes:  0
+  Total Code Uses: 0
+
+  Per-Order Breakdown:
+
+------------------------------------------------------------
+
+CUSTOMER: Tebogo Maxwell Mongale
+  ID:            9893447074004
+  Email:         maxwell.mongale@gmail.com
+  Phone:         +27607836188
+  Account Since: 2026-02-26
+  Orders (API):  0  (Shopify record: 0)
+  Unique Codes:  0
+  Total Code Uses: 0
+
+  Per-Order Breakdown:
+
+------------------------------------------------------------
+
+CUSTOMER: Maxwell Ludonga
+  ID:            9893422629076
+  Email:         bentonluyanda94@gmail.com
+  Phone:         +27839685723
+  Account Since: 2026-02-26
+  Orders (API):  0  (Shopify record: 0)
+  Unique Codes:  0
+  Total Code Uses: 0
+
+  Per-Order Breakdown:
+
+------------------------------------------------------------
+
+CUSTOMER: Maxwell Shilubane
+  ID:            9892843290836
+  Email:         maxwell.shilubane@supergrp.com
+  Phone:         +27711102106
+  Account Since: 2026-02-26
+  Orders (API):  0  (Shopify record: 0)
+  Unique Codes:  0
+  Total Code Uses: 0
+
+  Per-Order Breakdown:
+
+------------------------------------------------------------
+
+CUSTOMER: racheal maxwell
+  ID:            10146385723604
+  Email:         shona_m_1@hotmail.c.uk
+  Phone:         None
+  Account Since: 2026-03-21
+  Orders (API):  1  (Shopify record: 1)
+  Unique Codes:  0
+  Total Code Uses: 0
+
+  Per-Order Breakdown:
+    #295717  2026-03-21  R  890.00  Codes: None
+
+------------------------------------------------------------
+
+CUSTOMER: Jude Maxwell
+  ID:            8960969769172
+  Email:         maxjud15@gmail.com
+  Phone:         None
+  Account Since: 2026-01-16
+  Orders (API):  9  (Shopify record: 9)
+  Unique Codes:  0
+  Total Code Uses: 0
+
+  Per-Order Breakdown:
+    #290176  2026-02-24  R  450.00  Codes: None
+    #290173  2026-02-24  R   20.00  Codes: None
+    #288871  2026-02-18  R   20.00  Codes: None
+    #288870  2026-02-18  R  300.00  Codes: None
+    #287770  2026-02-13  R  350.00  Codes: None
+    #287769  2026-02-13  R   20.00  Codes: None
+    #284961  2026-02-01  R   20.00  Codes: None
+    #280896  2026-01-16  R  175.00  Codes: None
+    #280895  2026-01-16  R   20.00  Codes: None
+
+------------------------------------------------------------
+
+CUSTOMER: Njabulo Maxwell
+  ID:            8374795436244
+  Email:         maxwell.njabulo9@gmail.com
+  Phone:         +27848715804
+  Account Since: 2025-10-03
+  Orders (API):  2  (Shopify record: 2)
+  Unique Codes:  0
+  Total Code Uses: 0
+
+  Per-Order Breakdown:
+    #250598  2025-10-03  R  180.00  Codes: None
+    #250597  2025-10-03  R   20.00  Codes: None
+
+------------------------------------------------------------
+
+CUSTOMER: Kelvin Maxwell
+  ID:            7791258960084
+  Email:         iduwekelvin@icloud.com
+  Phone:         +2348145272545
+  Account Since: 2025-03-04
+  Orders (API):  8  (Shopify record: 8)
+  Unique Codes:  0
+  Total Code Uses: 0
+
+  Per-Order Breakdown:
+    #195492  2025-03-21  R  380.00  Codes: None
+    #195462  2025-03-21  R  380.00  Codes: None
+    #194238  2025-03-17  R  905.00  Codes: None
+    #193543  2025-03-14  R 1160.00  Codes: None
+    #192140  2025-03-09  R  629.00  Codes: None
+    #191823  2025-03-08  R  795.00  Codes: None
+    #190797  2025-03-04  R 2269.00  Codes: None
+    #190790  2025-03-04  R  100.00  Codes: None
+
+------------------------------------------------------------
+
+CUSTOMER: Alex Maxwell
+  ID:            7740834250964
+  Email:         alex.maxwell79@gmail.com
+  Phone:         +27661340281
+  Account Since: 2025-01-23
+  Orders (API):  12  (Shopify record: 12)
+  Unique Codes:  0
+  Total Code Uses: 0
+
+  Per-Order Breakdown:
+    #188036  2025-02-22  R  250.00  Codes: None
+    #188034  2025-02-22  R  870.00  Codes: None
+    #187459  2025-02-20  R  895.00  Codes: None
+    #187202  2025-02-19  R  215.00  Codes: None
+    #186095  2025-02-15  R 1110.00  Codes: None
+    #185464  2025-02-13  R  180.00  Codes: None
+    #185133  2025-02-12  R 1255.00  Codes: None
+    #184606  2025-02-10  R 1890.00  Codes: None
+    #184362  2025-02-09  R  335.00  Codes: None
+    #184359  2025-02-09  R  745.00  Codes: None
+    #184028  2025-02-08  R 2955.00  Codes: None
+    #184026  2025-02-08  R  100.00  Codes: None
+
+------------------------------------------------------------
+
+CUSTOMER: Humphrey Maxwell
+  ID:            7762096193748
+  Email:         humphreymaxwell47@gmail.com
+  Phone:         +27746648545
+  Account Since: 2025-02-09
+  Orders (API):  1  (Shopify record: 1)
+  Unique Codes:  0
+  Total Code Uses: 0
+
+  Per-Order Breakdown:
+    #184415  2025-02-09  R  100.00  Codes: None
+
+------------------------------------------------------------
+
+CUSTOMER: Joseph Maxwell
+  ID:            6674552783060
+  Email:         joseph.d.maxwell244@gmail.com
+  Phone:         +27634997496
+  Account Since: 2023-03-26
+  Orders (API):  31  (Shopify record: 31)
+  Unique Codes:  1
+  Total Code Uses: 1
+
+  Discount Code Summary:
+    POS ad 200 ZAR                  x1
+
+  Per-Order Breakdown:
+    #124809  2024-07-20  R  380.00  Codes: None
+    #120868  2024-07-05  R  405.00  Codes: None
+    #120865  2024-07-05  R  100.00  Codes: None
+    #117545  2024-06-23  R  460.00  Codes: None
+    #114573  2024-06-12  R  190.00  Codes: None
+    #112416  2024-06-04  R  560.00  Codes: POS ad 200 ZAR (fixed_amount, -200.00)
+    #112414  2024-06-04  R  100.00  Codes: None
+    #107485  2024-05-17  R  650.00  Codes: None
+    #104486  2024-05-06  R  820.00  Codes: None
+    #100278  2024-04-22  R  820.00  Codes: None
+    #98759  2024-04-17  R  710.00  Codes: None
+    #98758  2024-04-17  R  100.00  Codes: None
+    #95446  2024-04-05  R  415.00  Codes: None
+    #93143  2024-03-28  R  595.00  Codes: None
+    #91292  2024-03-22  R  595.00  Codes: None
+    #89119  2024-03-15  R  595.00  Codes: None
+    #86222  2024-03-05  R  555.00  Codes: None
+    #86220  2024-03-05  R  100.00  Codes: None
+    #58521  2023-12-14  R  370.00  Codes: None
+    #54294  2023-12-01  R  370.00  Codes: None
+    #51584  2023-11-23  R  185.00  Codes: None
+    #49576  2023-11-17  R  260.00  Codes: None
+    #49571  2023-11-17  R  100.00  Codes: None
+    #47165  2023-11-10  R  185.00  Codes: None
+    #41405  2023-10-26  R  225.00  Codes: None
+    #37305  2023-10-13  R  185.00  Codes: None
+    #37300  2023-10-13  R  100.00  Codes: None
+    #27624  2023-08-25  R  100.00  Codes: None
+    #22808  2023-07-01  R  100.00  Codes: None
+    #18229  2023-05-07  R  100.00  Codes: None
+    #14659  2023-03-26  R  100.00  Codes: None
+
+------------------------------------------------------------
+
+CUSTOMER: Justin Maxwell
+  ID:            6698160292052
+  Email:         justincharlesmaxwell@gmail.com
+  Phone:         +447463956479
+  Account Since: 2023-04-21
+  Orders (API):  1  (Shopify record: 1)
+  Unique Codes:  0
+  Total Code Uses: 0
+
+  Per-Order Breakdown:
+    #16699  2023-04-21  R  100.00  Codes: None
+
+------------------------------------------------------------
+
+CUSTOMER: Nathan Maxwell
+  ID:            9894796132564
+  Email:         nathanmaxgrease@gmail.com
+  Phone:         +27718738842
+  Account Since: 2026-02-26
+  Orders (API):  0  (Shopify record: 0)
+  Unique Codes:  0
+  Total Code Uses: 0
+
+  Per-Order Breakdown:
+
+------------------------------------------------------------
+
+SUMMARY
+  Maxwell customers found:  29
+  Total orders examined:    818
+  Total discount code uses: 436
+
+RECOMMENDED ACTIONS
+  [ ] Disable or expire discount codes used more than once per customer
+  [ ] Add 'fraud-flagged' tag to affected customer accounts in Shopify
+  [ ] Suspend account(s) pending review if abuse is confirmed
+  [ ] Audit the discount code generator: enforce per-customer usage caps
+  [ ] Review all orders with discounted totals for refund/chargeback risk
+
+============================================================
