@@ -24,7 +24,6 @@ const tiers = {
             "Exclusive Strain Sample",
             "One Hit Wonder Puff",
             "One Hit Wonder Capsule",
-            "Bucket Hat",
             "Free Pre-Roll",
             "10,000 Loyalty Points",
             "Hot/Cold Infused Drink",
@@ -38,7 +37,6 @@ const tiers = {
         prizes: [
             "Infused Drink",
             "Exclusive Strain Sample",
-            "Bucket Hat",
             "15% Off Purchase",
             "15,000 Loyalty Points",
             "Free Moonstick",
