@@ -1,0 +1,96 @@
+{\rtf1\ansi\deff0
+{\fonttbl{\f0 Courier New;}}
+\f0\fs20 
+Cannibisters Google Ads API Tool — Design Documentation\line
+\line
+OVERVIEW\line
+--------\line
+Tool name: Cannibisters Google Ads Agent\line
+Purpose: Internal automation tool to manage Google Ads campaigns for\line
+         Cannibisters Herbal Apothecary's social club membership funnel\line
+Primary user: Single internal operator (marketing manager)\line
+Language: Python 3\line
+API version: Google Ads API v23\line
+\line
+ARCHITECTURE\line
+------------\line
+The tool is a command-line Python application consisting of the following modules:\line
+\line
+1. auth.py\line
+   - Loads OAuth2 credentials from environment variables (.env file)\line
+   - Instantiates a GoogleAdsClient using the google-ads Python library\line
+   - Validates that all required credentials are present before making API calls\line
+\line
+2. config.py\line
+   - Stores account-specific constants (customer IDs, geo targets, budget defaults)\line
+   - Defines optimization thresholds (CPA targets, CTR floors, impression share floors)\line
+\line
+3. compliance.py\line
+   - Pre-submission compliance checker for ad copy and landing page URLs\line
+   - Maintains lists of prohibited and medium-risk terms\line
+   - Prevents submission of ads that violate Google Ads policies\line
+   - Provides compliant headline and description templates\line
+\line
+4. manager.py\line
+   - Creates Search and Display campaigns via the CampaignService API\line
+   - Creates ad groups, keywords, and Responsive Search Ads (RSAs)\line
+   - Manages negative keyword lists at the campaign level\line
+   - Applies geo-targeting criteria to campaigns\line
+\line
+5. optimizer.py\line
+   - Audits keyword Quality Scores using GAQL queries\line
+   - Pauses ads with CTR below threshold after sufficient impression volume\line
+   - Analyses campaign-level CPA and generates budget recommendations\line
+   - All optimization actions default to dry-run mode for safety\line
+\line
+6. reporter.py\line
+   - Generates performance reports across campaign, ad group, keyword, and ad levels\line
+   - Includes a Search Terms Report to identify negative keyword opportunities\line
+   - Uses GAQL (Google Ads Query Language) for all data retrieval\line
+\line
+7. customer_match.py\line
+   - Loads leads from CSV export of CRM (Klaviyo)\line
+   - SHA-256 hashes all PII (email, phone) before upload per Google requirements\line
+   - Creates UserList and uploads via OfflineUserDataJobService\line
+\line
+ENTRY POINT\line
+-----------\line
+google_ads_agent.py — CLI tool with the following actions:\line
+  --action scaffold_campaign       Create full Search campaign with ad group, keywords, RSA\line
+  --action create_display_campaign Create Display/remarketing campaign\line
+  --action list_campaigns          List all campaigns with 30-day performance metrics\line
+  --action report                  Full performance report (campaigns, keywords, ads, search terms)\line
+  --action optimize                Run optimization pass (keyword QS, CTR, CPA, budget)\line
+  --action upload_customer_match   Upload CRM leads as hashed Customer Match audience\line
+  --action check_compliance        Check ad copy for policy violations before submission\line
+  --action pause_campaign          Pause a specific campaign by ID\line
+\line
+All mutating actions require an explicit --execute flag; default is dry-run preview.\line
+\line
+DATA FLOW\line
+---------\line
+1. Operator runs CLI command (e.g. python google_ads_agent.py --action report)\line
+2. auth.py loads credentials from local .env file\line
+3. GoogleAdsClient authenticates via OAuth2 refresh token\line
+4. GAQL queries or mutation operations are sent to Google Ads API\line
+5. Results are printed to stdout or applied to the account\line
+\line
+CREDENTIAL STORAGE\line
+------------------\line
+All API credentials are stored in a local .env file which is excluded from\line
+version control via .gitignore. No credentials are hardcoded in source files.\line
+\line
+HUMAN OVERSIGHT\line
+---------------\line
+- All campaign creation and optimization actions default to dry-run mode\line
+- Campaigns are always created in PAUSED status; humans activate them manually\line
+- Compliance checker must pass before any ad is submitted to Google\line
+- Weekly optimization runs are reviewed by the operator before execution\line
+\line
+INTENDED USE\line
+------------\line
+This tool is used exclusively to manage Cannibisters' own Google Ads account\line
+(Customer ID: 949-215-4896) under MCC 135-251-2062. It is an internal tool\line
+and is not offered to, distributed to, or used by any other advertisers.\line
+\line
+}
