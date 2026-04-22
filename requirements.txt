@@ -2,3 +2,7 @@ requests
 python-dotenv
 
 facebook_business
+
+# Google Ads agent
+google-ads
+google-auth-oauthlib
