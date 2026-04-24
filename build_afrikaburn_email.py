@@ -103,6 +103,13 @@ VAPES = [
     dict(title="Vape Cartridge — AK 47",         price="R 900,00", handle="vape-cartridge-ak-48",        img="https://cdn.shopify.com/s/files/1/0631/7749/0644/files/MG_9769.jpg?v=1742305114"),
 ]
 
+FAN_FAVS = [
+    # Source: Shopify "Premium Bud" collection — best-selling active strains
+    dict(title="Elvis",                price="R 200,00", handle="elvis-90-10-sativa", img="https://cdn.shopify.com/s/files/1/0631/7749/0644/files/elvis.jpg?v=1740402820"),
+    dict(title="Premium Lion's Bread", price="R 240,00", handle="lions-bread",        img="https://cdn.shopify.com/s/files/1/0631/7749/0644/files/Lions_bread_183fdfd4-f2f0-4582-94bb-72b688e47d89.jpg?v=1752828397"),
+    dict(title="Jessica Rabbit",       price="R 200,00", handle="jessica-rabbit",     img="https://cdn.shopify.com/s/files/1/0631/7749/0644/files/Jessica_Rabbit_Cannibister_Discover_with_Leigh_Photography_03.03.26_2_of_5.jpg?v=1772611089"),
+]
+
 EDIBLES = [
     dict(title="Gummy Bears — THC",             price="R 180,00", handle="gummie-bears-thc",              img="https://cdn.shopify.com/s/files/1/0631/7749/0644/files/Untitled_2_5.jpg?v=1751011092"),
     dict(title="Small THC Chocolate",           price="R 180,00", handle="small-thc-chocolate",           img="https://cdn.shopify.com/s/files/1/0631/7749/0644/files/Untitled_2_4.jpg?v=1751011147"),
@@ -361,13 +368,20 @@ Whether you're loading up on pre-rolls for the journey, grabbing vapes for the r
     )
 
     section4 = section_wrap(
-        section_title("Vapes") +
-        text_block('<div style="text-align:center;">Discreet, portable, playa-ready.</div>') +
-        product_grid(VAPES) +
+        section_title("Fan Favourites") +
+        text_block('<div style="text-align:center;">The strains our community keeps coming back for.</div>') +
+        product_grid(FAN_FAVS) +
         divider(),
     )
 
     section5 = section_wrap(
+        section_title("Vapes") +
+        text_block('<div style="text-align:center;">Discreet, portable, ready for the road.</div>') +
+        product_grid(VAPES) +
+        divider(),
+    )
+
+    section6 = section_wrap(
         section_title("Edibles") +
         text_block('<div style="text-align:center;">For the long nights and slow mornings.</div>') +
         product_grid(EDIBLES) +
@@ -383,6 +397,7 @@ Whether you're loading up on pre-rolls for the journey, grabbing vapes for the r
 {section3}
 {section4}
 {section5}
+{section6}
 {footer_section()}
 </div></div>
 <!-- TRACKING_PIXEL_BOTTOM -->
