@@ -322,15 +322,17 @@ def build_html():
     with open("/tmp/bf_head.html") as f:
         head = f.read()
 
-    # ── Section 1: Hero image + shadow + intro copy + featured Durban Poison ──
+    BANNER_URL = "https://cdn.shopify.com/s/files/1/0631/7749/0644/files/Durban_Poison_email_banner.png?v=1777027798"
+
+    # ── Section 1: Hero banner + shadow + intro copy + featured Durban Poison ──
     intro_text = text_block("""
 <div>
 <span style="font-size:18px;">Hi {{ person.first_name|default:'there' }}, she&#39;s back. &#127807;</span><br/><br/>
 <span style="font-size:18px;">
 <strong>Durban Poison</strong> &#8212; one of the oldest surviving cannabis landraces on earth, and a strain that belongs to us.
-Grown in the hills outside Durban long before the modern seed industry existed, this pure sativa is shaped by centuries of South African sun, soil and culture.
+Grown in the hills outside Durban long before the modern seed industry existed, it is shaped by centuries of South African sun, soil and culture.
 <br/><br/>
-Where most strains are engineered hybrids, Durban Poison is the real thing: <em>unadulterated, proudly South African, and utterly irreplaceable.</em>
+In a world where virtually every strain has been crossed, blended and hybridised, Durban Poison stands apart as one of the only <em>100% pure sativas</em> left on earth &#8212; never diluted, never compromised, <em>proudly South African and utterly irreplaceable.</em>
 Expect a sharp anise-sweet aroma, soaring cerebral energy and a creative clarity you simply cannot manufacture.
 <br/><br/>
 <strong>Limited stock. No compromises. This is your window.</strong> &#9203;
@@ -338,7 +340,7 @@ Expect a sharp anise-sweet aroma, soaring cerebral energy and a creative clarity
 </div>""")
 
     section1 = section_wrap(
-        image_block(DURBAN["img"], "Durban Poison — Premium South African Sativa") +
+        image_block(BANNER_URL, "Durban Poison — Back In Stock") +
         image_block("https://d3k81ch9hvuctc.cloudfront.net/assets/email/bottom_shadow_222.png", "Shadow") +
         intro_text +
         spacer(20) +
