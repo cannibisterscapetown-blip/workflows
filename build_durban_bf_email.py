@@ -335,7 +335,7 @@ Grown in the hills outside Durban long before the modern seed industry existed, 
 In a world where virtually every strain has been crossed, blended and hybridised, Durban Poison stands apart as one of the only <em>100% pure sativas</em> left on earth &#8212; never diluted, never compromised, <em>proudly South African and utterly irreplaceable.</em>
 Expect a sharp anise-sweet aroma, soaring cerebral energy and a creative clarity you simply cannot manufacture.
 <br/><br/>
-<strong>Limited stock. No compromises. This is your window.</strong> &#9203;
+<strong>Limited stock. No compromises. Taste the history.</strong> &#9203;
 </span>
 </div>""")
 
