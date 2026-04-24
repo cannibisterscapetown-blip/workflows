@@ -265,13 +265,13 @@ def product_grid(products):
 <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:100%;" width="100%"><tbody><tr>
 <td class="" style="vertical-align:top;padding:0;">
 <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="" width="100%"><tbody><tr>
-<td class="kl-product" style="font-size:0px;padding:0px;word-break:break-word;">
-<div style="margin:0px auto;max-width:600px;">
-<table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:100%;"><tbody><tr>
-<!--[if true]><table border="0" cellpadding="0" cellspacing="0" width="600" style="width:600px;direction:ltr"><tr><![endif]-->
+<td align="left" style="font-size:0px;padding:0px;word-break:break-word;">
+<!--[if true]><table class="kl-product" role="presentation" width="100%" style="all:unset;opacity:0;"><tr><![endif]-->
+<!--[if false]></td></tr></table><![endif]-->
+<div class="kl-product" style="display:table;width:100%;height:100%">
 {cards}
+</div>
 <!--[if true]></tr></table><![endif]-->
-</tr></tbody></table></div>
 </td></tr></tbody></table>
 </td></tr></tbody></table></div>"""
 
@@ -332,7 +332,7 @@ AfrikaBurn is almost here — and we want to help you pack right and burn bright
 <br/><br/>
 Come visit us <strong>in-store at the Apothecary</strong>, show us your <strong>AfrikaBurn ticket</strong> (or a copy thereof) and unlock <strong>exclusive in-store Burner pricing</strong> across our full range.
 <br/><br/>
-Whether you're loading up on pre-rolls for the journey, grabbing vapes for the dust, fuelling up on edibles for the long nights under the stars, or picking up something from our latest drops — we've got you sorted before you hit the playa.
+Whether you're loading up on pre-rolls for the journey, grabbing vapes for the road, stocking up on edibles for the long nights under the stars, or checking out our latest drops — come see us before you head up to the Karoo.
 <br/><br/>
 &#128204; <strong>In-store only &nbsp;&#183;&nbsp; 65 Regent Rd, Sea Point &nbsp;&#183;&nbsp; Valid while stock lasts.</strong>
 </span>
