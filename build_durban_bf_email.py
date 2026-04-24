@@ -66,10 +66,10 @@ DURBAN = dict(
 )
 
 NEW_ARRIVALS = [
-    # Source: Shopify "New Strains" smart collection (active products)
-    dict(title="Red Velvet Gary", price="R 200,00", handle="red-velvet",        img="https://cdn.shopify.com/s/files/1/0631/7749/0644/files/IMG_4349.jpg?v=1777018728"),
-    dict(title="Colt 45",         price="R 200,00", handle="colt-45",           img="https://cdn.shopify.com/s/files/1/0631/7749/0644/files/Colt_45.png?v=1772799342"),
-    dict(title="LA Rosa",         price="R 200,00", handle="la-rosa",           img="https://cdn.shopify.com/s/files/1/0631/7749/0644/files/LaRosa.png?v=1770639107"),
+    # Source: confirmed from Shopify new arrivals
+    dict(title="Greendoor Green Candy",   price="R 135,00", handle="greendoor-green-candy",   img="https://cdn.shopify.com/s/files/1/0631/7749/0644/files/IMG_4413.jpg?v=1777018585"),
+    dict(title="Greendoor Gelato Frosting",price="R 135,00",handle="greendoor-gelato-frosting",img="https://cdn.shopify.com/s/files/1/0631/7749/0644/files/IMG_4390.jpg?v=1777018121"),
+    dict(title="Ghost Train Haze Joint",  price="R 175,00", handle="ghost-train-haze-joint",  img="https://cdn.shopify.com/s/files/1/0631/7749/0644/files/cannibisters_joint_tube_11b22e82-b216-4e15-8333-1a8ffd31c4a5.jpg?v=1776676871"),
 ]
 
 FAN_FAVS = [
