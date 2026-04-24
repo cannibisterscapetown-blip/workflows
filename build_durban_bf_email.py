@@ -379,7 +379,7 @@ Expect a sharp anise-sweet aroma, soaring cerebral energy and a creative clarity
     # ── Section 5: Membership ─────────────────────────────────────────────────
     section5 = section_wrap(
         section_title("Membership") +
-        text_block('<div style="text-align:center;">Join the Apothecary. Member pricing, exclusive access &amp; more.</div>') +
+        text_block('<div style="text-align:center;">Be part of something. Members get more — always.</div>') +
         product_grid(MEMBERSHIP) +
         spacer(20),
     )
