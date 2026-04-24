@@ -15,7 +15,7 @@ HEADERS = [
     "-H", "Content-Type: application/json",
 ]
 
-BANNER_URL = "https://cdn.shopify.com/s/files/1/0631/7749/0644/files/In_Store_Only_1.png?v=1777032189"
+BANNER_URL = "https://cdn.shopify.com/s/files/1/0631/7749/0644/files/In_Store_Only_1500_x_1000_px_1888_x_1000_px_1.png?v=1777036965"
 
 
 # ── Klaviyo API helpers ───────────────────────────────────────────────────────
