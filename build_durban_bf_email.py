@@ -66,15 +66,17 @@ DURBAN = dict(
 )
 
 NEW_ARRIVALS = [
-    dict(title="Red Velvet Gary",   price="R 200,00", handle="red-velvet",       img="https://cdn.shopify.com/s/files/1/0631/7749/0644/files/20240726_131713.jpg?v=1722267168"),
-    dict(title="Colt 45",           price="R 200,00", handle="colt-45",          img="https://cdn.shopify.com/s/files/1/0631/7749/0644/files/Colt_45.png?v=1772799342"),
-    dict(title="Elvis",             price="R 200,00", handle="elvis-90-10-sativa",img="https://cdn.shopify.com/s/files/1/0631/7749/0644/files/elvis.jpg?v=1740402820"),
+    # Source: Shopify "New Strains" smart collection (active products)
+    dict(title="Red Velvet Gary", price="R 200,00", handle="red-velvet",        img="https://cdn.shopify.com/s/files/1/0631/7749/0644/files/IMG_4349.jpg?v=1777018728"),
+    dict(title="Colt 45",         price="R 200,00", handle="colt-45",           img="https://cdn.shopify.com/s/files/1/0631/7749/0644/files/Colt_45.png?v=1772799342"),
+    dict(title="LA Rosa",         price="R 200,00", handle="la-rosa",           img="https://cdn.shopify.com/s/files/1/0631/7749/0644/files/LaRosa.png?v=1770639107"),
 ]
 
 FAN_FAVS = [
-    dict(title="Premium Lion's Bread", price="R 240,00", handle="lions-bread",    img="https://cdn.shopify.com/s/files/1/0631/7749/0644/files/Lions_bread_183fdfd4-f2f0-4582-94bb-72b688e47d89.jpg?v=1752828397"),
-    dict(title="Jessica Rabbit",       price="R 200,00", handle="jessica-rabbit", img="https://cdn.shopify.com/s/files/1/0631/7749/0644/files/Jessica_Rabbit_Cannibister_Discover_with_Leigh_Photography_03.03.26_2_of_5.jpg?v=1772611089"),
-    dict(title="Acapulco Gold",        price="R 200,00", handle="acapulco-gold",  img="https://cdn.shopify.com/s/files/1/0631/7749/0644/files/Acapulco_gold.jpg?v=1740402820"),
+    # Source: Shopify "Premium Bud" custom collection (active products)
+    dict(title="Elvis",                price="R 200,00", handle="elvis-90-10-sativa", img="https://cdn.shopify.com/s/files/1/0631/7749/0644/files/elvis.jpg?v=1740402820"),
+    dict(title="Premium Lion's Bread", price="R 240,00", handle="lions-bread",        img="https://cdn.shopify.com/s/files/1/0631/7749/0644/files/Lions_bread_183fdfd4-f2f0-4582-94bb-72b688e47d89.jpg?v=1752828397"),
+    dict(title="Jessica Rabbit",       price="R 200,00", handle="jessica-rabbit",     img="https://cdn.shopify.com/s/files/1/0631/7749/0644/files/Jessica_Rabbit_Cannibister_Discover_with_Leigh_Photography_03.03.26_2_of_5.jpg?v=1772611089"),
 ]
 
 HASH = [
