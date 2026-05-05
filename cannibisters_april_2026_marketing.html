@@ -1,0 +1,1696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cannibisters — April 2026 Marketing Report</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+  :root {
+    --green: #2E8B57;
+    --green-light: #3da96a;
+    --green-dark: #1a5c39;
+    --gold: #c69c2a;
+    --gold-light: #e8b83c;
+    --gold-dark: #9a7715;
+    --purple: #6c3d91;
+    --bg: #0a0f0c;
+    --bg2: #0f1a12;
+    --bg3: #141f16;
+    --card: #111a13;
+    --card2: #162019;
+    --border: rgba(46,139,87,0.18);
+    --text: #e8f0eb;
+    --muted: #7a9a82;
+    --radius: 16px;
+    --shadow: 0 8px 40px rgba(0,0,0,0.5);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* Scroll progress */
+  #scroll-bar {
+    position: fixed; top: 0; left: 0; height: 3px; z-index: 9999;
+    background: linear-gradient(90deg, var(--green), var(--gold), var(--purple));
+    width: 0%; transition: width 0.1s linear;
+  }
+
+  /* Particle canvas */
+  #particles {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none; z-index: 0; opacity: 0.3;
+  }
+
+  /* Hero */
+  .hero {
+    position: relative; z-index: 1;
+    min-height: 100vh;
+    background: linear-gradient(160deg, #040a06 0%, #0a1a0e 35%, #0f2318 60%, #081409 100%);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    padding: 60px 24px;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 80% 60% at 50% 40%, rgba(108,61,145,0.12) 0%, transparent 70%),
+                radial-gradient(ellipse 60% 80% at 20% 80%, rgba(46,139,87,0.1) 0%, transparent 60%);
+  }
+
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(108,61,145,0.2); border: 1px solid rgba(108,61,145,0.4);
+    color: #c8a0e8; padding: 6px 16px; border-radius: 100px;
+    font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    font-weight: 800; letter-spacing: -1px;
+    line-height: 1.1; margin-bottom: 16px;
+    background: linear-gradient(135deg, #ffffff 0%, #b8d4c4 50%, var(--gold-light) 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  }
+
+  .hero-sub {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    color: var(--muted); max-width: 600px; margin: 0 auto 48px;
+  }
+
+  .hero-kpis {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 16px; width: 100%; max-width: 900px;
+  }
+
+  .hero-kpi {
+    background: rgba(255,255,255,0.04); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 20px 16px;
+    backdrop-filter: blur(12px);
+    transition: transform 0.2s, border-color 0.2s;
+  }
+  .hero-kpi:hover { transform: translateY(-4px); border-color: rgba(46,139,87,0.4); }
+
+  .hero-kpi .num {
+    font-size: 1.9rem; font-weight: 800; color: var(--gold-light);
+    display: block; line-height: 1;
+  }
+
+  .hero-kpi .label {
+    font-size: 11px; color: var(--muted); text-transform: uppercase;
+    letter-spacing: 1px; margin-top: 4px;
+  }
+
+  .hero-kpi .sublabel {
+    font-size: 11px; color: var(--green-light); margin-top: 2px;
+  }
+
+  /* Sections */
+  section {
+    position: relative; z-index: 1;
+    padding: 80px 24px;
+  }
+
+  .section-inner { max-width: 1100px; margin: 0 auto; }
+
+  .section-header { margin-bottom: 48px; }
+
+  .section-tag {
+    display: inline-block;
+    background: rgba(46,139,87,0.15); border: 1px solid rgba(46,139,87,0.3);
+    color: var(--green-light); padding: 4px 12px; border-radius: 100px;
+    font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .section-tag.purple {
+    background: rgba(108,61,145,0.15); border-color: rgba(108,61,145,0.3); color: #c8a0e8;
+  }
+
+  .section-tag.gold {
+    background: rgba(198,156,42,0.15); border-color: rgba(198,156,42,0.3); color: var(--gold-light);
+  }
+
+  section h2 {
+    font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 800;
+    letter-spacing: -0.5px; color: white; margin-bottom: 8px;
+  }
+
+  section p.lead {
+    color: var(--muted); font-size: 1rem; max-width: 680px;
+  }
+
+  /* Cards */
+  .card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 28px;
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+  }
+
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 60px rgba(46,139,87,0.15);
+    border-color: rgba(46,139,87,0.35);
+  }
+
+  /* Alternating section backgrounds */
+  section:nth-child(even) { background: var(--bg2); }
+
+  /* Chart containers */
+  .chart-wrap {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 28px; margin-top: 24px;
+  }
+
+  canvas { max-width: 100%; }
+
+  /* Grid helpers */
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+
+  @media (max-width: 900px) {
+    .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+  }
+
+  /* Campaign cards */
+  .campaign-card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 24px;
+    position: relative; overflow: hidden;
+    transition: transform 0.2s, border-color 0.2s;
+  }
+  .campaign-card:hover { transform: translateY(-3px); border-color: rgba(46,139,87,0.4); }
+
+  .campaign-card .date-badge {
+    font-size: 11px; color: var(--muted); text-transform: uppercase;
+    letter-spacing: 1px; margin-bottom: 8px;
+  }
+
+  .campaign-card h3 {
+    font-size: 1rem; font-weight: 700; color: white;
+    margin-bottom: 16px; line-height: 1.3;
+  }
+
+  .campaign-card .subject {
+    font-size: 12px; color: var(--muted); font-style: italic;
+    margin-bottom: 16px; padding: 8px 12px;
+    background: rgba(255,255,255,0.04); border-radius: 8px;
+    border-left: 3px solid var(--green);
+  }
+
+  .metrics-row {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 12px; margin-top: 16px;
+  }
+
+  .metric-box {
+    text-align: center; padding: 10px 6px;
+    background: rgba(255,255,255,0.04); border-radius: 8px;
+  }
+
+  .metric-box .val {
+    font-size: 1.2rem; font-weight: 800;
+    color: var(--gold-light); display: block;
+  }
+
+  .metric-box .lbl {
+    font-size: 10px; color: var(--muted); text-transform: uppercase;
+    letter-spacing: 0.8px; margin-top: 2px;
+  }
+
+  .campaign-revenue {
+    margin-top: 16px; padding: 12px 16px;
+    background: rgba(46,139,87,0.1); border: 1px solid rgba(46,139,87,0.2);
+    border-radius: 10px; display: flex; justify-content: space-between; align-items: center;
+  }
+
+  .campaign-revenue .rev-val {
+    font-size: 1.4rem; font-weight: 800; color: var(--green-light);
+  }
+
+  .campaign-revenue .rev-lbl {
+    font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 1px;
+  }
+
+  /* Highlight card */
+  .highlight-card {
+    background: linear-gradient(135deg, rgba(108,61,145,0.15) 0%, rgba(46,139,87,0.1) 100%);
+    border: 1px solid rgba(108,61,145,0.3);
+    border-radius: var(--radius); padding: 32px;
+    position: relative;
+  }
+
+  .highlight-card::before {
+    content: '★';
+    position: absolute; top: 16px; right: 20px;
+    font-size: 2rem; opacity: 0.3; color: var(--gold);
+  }
+
+  /* Timeline */
+  .timeline {
+    position: relative;
+    padding-left: 32px;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute; left: 12px; top: 0; bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, var(--purple), var(--green), var(--gold));
+  }
+
+  .timeline-item {
+    position: relative; margin-bottom: 28px;
+  }
+
+  .timeline-item::before {
+    content: '';
+    position: absolute; left: -26px; top: 6px;
+    width: 12px; height: 12px; border-radius: 50%;
+    border: 2px solid var(--green); background: var(--bg);
+  }
+
+  .timeline-item.star::before {
+    border-color: var(--gold); background: rgba(198,156,42,0.2);
+    box-shadow: 0 0 12px rgba(198,156,42,0.4);
+  }
+
+  .timeline-item .t-date {
+    font-size: 11px; color: var(--muted); text-transform: uppercase;
+    letter-spacing: 1px; margin-bottom: 4px;
+  }
+
+  .timeline-item .t-title {
+    font-weight: 700; color: white; font-size: 0.95rem; margin-bottom: 4px;
+  }
+
+  .timeline-item .t-desc {
+    font-size: 12px; color: var(--muted);
+  }
+
+  .timeline-item .t-stat {
+    font-size: 12px; color: var(--gold-light); font-weight: 600; margin-top: 4px;
+  }
+
+  /* Insight blocks */
+  .insight-block {
+    background: var(--card2); border-left: 4px solid var(--green);
+    border-radius: 0 12px 12px 0; padding: 20px 24px; margin-bottom: 16px;
+  }
+
+  .insight-block.gold { border-left-color: var(--gold); }
+  .insight-block.purple { border-left-color: var(--purple); }
+
+  .insight-block h4 { font-size: 0.95rem; font-weight: 700; color: white; margin-bottom: 6px; }
+  .insight-block p { font-size: 0.85rem; color: var(--muted); line-height: 1.6; }
+
+  /* AB test comparison */
+  .ab-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
+  }
+
+  .ab-card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 24px; text-align: center;
+  }
+
+  .ab-card.winner {
+    border-color: rgba(46,139,87,0.5);
+    background: linear-gradient(135deg, rgba(46,139,87,0.08) 0%, var(--card) 100%);
+  }
+
+  .ab-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 16px; }
+  .ab-card .big { font-size: 2.4rem; font-weight: 800; color: var(--gold-light); }
+  .ab-card .sub { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; }
+  .ab-card .winner-badge {
+    display: inline-block;
+    background: var(--green); color: white; border-radius: 100px;
+    padding: 4px 12px; font-size: 11px; font-weight: 700; margin-top: 12px;
+  }
+
+  /* Flow performance */
+  .flow-row {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 16px 20px;
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 12px; margin-bottom: 12px;
+    transition: border-color 0.2s;
+  }
+  .flow-row:hover { border-color: rgba(46,139,87,0.4); }
+
+  .flow-name { font-weight: 700; color: white; }
+  .flow-sub { font-size: 12px; color: var(--muted); margin-top: 2px; }
+  .flow-stat { text-align: right; }
+  .flow-stat .fval { font-size: 1.3rem; font-weight: 800; color: var(--green-light); }
+  .flow-stat .flbl { font-size: 11px; color: var(--muted); }
+
+  /* Reveal animation */
+  .reveal {
+    opacity: 0; transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* Raffle section */
+  .raffle-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px;
+  }
+
+  .raffle-card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 12px; padding: 14px; text-align: center;
+    transition: transform 0.2s, border-color 0.2s;
+  }
+  .raffle-card:hover { transform: translateY(-3px); border-color: rgba(198,156,42,0.4); }
+
+  .raffle-card .place {
+    font-size: 0.75rem; font-weight: 700; color: var(--gold);
+    text-transform: uppercase; letter-spacing: 1px;
+  }
+
+  .raffle-card .name {
+    font-size: 0.85rem; color: white; font-weight: 600; margin-top: 4px;
+  }
+
+  /* Divider */
+  .divider {
+    border: none; border-top: 1px solid var(--border); margin: 32px 0;
+  }
+
+  /* Table */
+  .data-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+  .data-table th {
+    text-align: left; padding: 10px 14px;
+    background: rgba(255,255,255,0.04);
+    color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: 1px;
+    border-bottom: 1px solid var(--border);
+  }
+  .data-table td {
+    padding: 12px 14px; border-bottom: 1px solid rgba(255,255,255,0.05);
+    color: var(--text);
+  }
+  .data-table tr:hover td { background: rgba(255,255,255,0.02); }
+  .data-table .num-col { text-align: right; font-weight: 700; }
+  .data-table .green { color: var(--green-light); }
+  .data-table .gold { color: var(--gold-light); }
+
+  /* Footer */
+  footer {
+    position: relative; z-index: 1;
+    padding: 48px 24px;
+    background: var(--bg2);
+    text-align: center;
+    border-top: 1px solid var(--border);
+  }
+
+  footer p { color: var(--muted); font-size: 0.85rem; }
+  footer .logo { font-size: 1.5rem; font-weight: 800; color: var(--green-light); margin-bottom: 8px; }
+</style>
+</head>
+<body>
+
+<div id="scroll-bar"></div>
+<canvas id="particles"></canvas>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge">📧 Email Marketing Report</div>
+  <h1>April 2026<br>Marketing Performance</h1>
+  <p class="hero-sub">Klaviyo email campaigns, automated flows & the month that turned a correction email into the top performer of the quarter.</p>
+
+  <div class="hero-kpis">
+    <div class="hero-kpi reveal">
+      <span class="num" data-target="62666">0</span>
+      <div class="label">Total Recipients</div>
+      <div class="sublabel">8 broadcast campaigns</div>
+    </div>
+    <div class="hero-kpi reveal">
+      <span class="num" data-target="18.9" data-suffix="%">0%</span>
+      <div class="label">Avg Open Rate</div>
+      <div class="sublabel">vs ~14% industry avg</div>
+    </div>
+    <div class="hero-kpi reveal">
+      <span class="num" data-prefix="R" data-target="376071">0</span>
+      <div class="label">Email Revenue</div>
+      <div class="sublabel">Campaign-attributed</div>
+    </div>
+    <div class="hero-kpi reveal">
+      <span class="num" data-prefix="R" data-target="37423">0</span>
+      <div class="label">Flow Revenue</div>
+      <div class="sublabel">Abandoned checkout</div>
+    </div>
+    <div class="hero-kpi reveal">
+      <span class="num" data-target="32.3" data-suffix="%">0%</span>
+      <div class="label">Peak Open Rate</div>
+      <div class="sublabel">Date Correction email</div>
+    </div>
+    <div class="hero-kpi reveal">
+      <span class="num" data-target="15">0</span>
+      <div class="label">Raffle Winners</div>
+      <div class="sublabel">4/20 Carnival</div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION: CAMPAIGN TIMELINE -->
+<section>
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-tag purple">Campaign Timeline</div>
+      <h2>April in Sequence</h2>
+      <p class="lead">Eight broadcast campaigns across a month dominated by the 4/20 Carnival event — plus 15 personalised raffle winner notifications.</p>
+    </div>
+
+    <div class="grid-2">
+      <div class="reveal">
+        <div class="timeline">
+
+          <div class="timeline-item">
+            <div class="t-date">Apr 3 · 06:00 SAST</div>
+            <div class="t-title">April Specials 2026</div>
+            <div class="t-desc">7,259 recipients · Loyalty segments</div>
+            <div class="t-stat">22.1% open · R52,699 revenue</div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="t-date">Apr 9 · 09:30 SAST</div>
+            <div class="t-title">Pre-rolled Backwoods — Daily Drop</div>
+            <div class="t-desc">14,786 recipients · Full email list · 20% throttle</div>
+            <div class="t-stat">9.8% open · R54,619 revenue</div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="t-date">Apr 14 · 08:00 SAST</div>
+            <div class="t-title">Re-engagement A/B Test</div>
+            <div class="t-desc">12,709 recipients · Lapsed 90-day segment</div>
+            <div class="t-stat">8.5% open · Free membership offer</div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="t-date">Apr 15 · 08:00 SAST</div>
+            <div class="t-title">4/20 Carnival Announcement</div>
+            <div class="t-desc">5,634 recipients · 25% throttle · Loyalty segments</div>
+            <div class="t-stat">24.7% open · R32,337 revenue</div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="t-date">Apr 15 · 08:34 SAST</div>
+            <div class="t-title">Love Project — WELCOME15</div>
+            <div class="t-desc">79 recipients · Love Project leads list</div>
+            <div class="t-stat">1.7% open · Cold audience</div>
+          </div>
+
+          <div class="timeline-item star">
+            <div class="t-date">Apr 15 · 18:29 SAST ⭐</div>
+            <div class="t-title">4/20 Carnival — Date Correction</div>
+            <div class="t-desc">7,380 recipients · Same day as original send</div>
+            <div class="t-stat">32.3% open · R107,289 revenue — #1 campaign!</div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="t-date">Apr 20 · 14:20 SAST</div>
+            <div class="t-title">15× 4/20 Raffle Winner Emails</div>
+            <div class="t-desc">Personalised 1:1 sends · 1st–15th place</div>
+            <div class="t-stat">Individual winner notifications</div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="t-date">Apr 21 · 13:00 SAST</div>
+            <div class="t-title">420 Thank You for Coming</div>
+            <div class="t-desc">7,414 recipients · Raffle winners announced</div>
+            <div class="t-stat">28.5% open · R66,680 revenue</div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="t-date">Apr 29 · 13:42 SAST</div>
+            <div class="t-title">Strain of the Week</div>
+            <div class="t-desc">7,405 recipients · Fresh Backwoods drop</div>
+            <div class="t-stat">22.3% open · R62,447 revenue</div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="reveal">
+        <div class="card">
+          <h3 style="color:var(--gold-light); margin-bottom: 20px;">Month at a Glance</h3>
+
+          <div style="margin-bottom: 20px;">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
+              <span style="color: var(--muted); font-size: 13px;">Broadcast campaigns sent</span>
+              <strong>8</strong>
+            </div>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
+              <span style="color: var(--muted); font-size: 13px;">SMS campaigns</span>
+              <strong style="color: var(--muted);">0</strong>
+            </div>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
+              <span style="color: var(--muted); font-size: 13px;">A/B tests run</span>
+              <strong>2 (Re-engagement + Carnival)</strong>
+            </div>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
+              <span style="color: var(--muted); font-size: 13px;">Personalised winner emails</span>
+              <strong>15</strong>
+            </div>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
+              <span style="color: var(--muted); font-size: 13px;">Active automation flows</span>
+              <strong>2</strong>
+            </div>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
+              <span style="color: var(--muted); font-size: 13px;">Total unsubscribes</span>
+              <strong style="color: #e05050;">180</strong>
+            </div>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
+              <span style="color: var(--muted); font-size: 13px;">Total bounces</span>
+              <strong style="color: #e05050;">3,061</strong>
+            </div>
+          </div>
+
+          <hr class="divider">
+
+          <div style="margin-bottom: 8px; font-size: 13px; color: var(--muted);">Revenue breakdown</div>
+
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; padding: 10px 14px; background: rgba(46,139,87,0.1); border-radius: 10px;">
+            <span style="font-size: 13px;">Campaign email revenue</span>
+            <strong style="color: var(--green-light);">R376,071</strong>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; padding: 10px 14px; background: rgba(108,61,145,0.1); border-radius: 10px;">
+            <span style="font-size: 13px;">Flow automation revenue</span>
+            <strong style="color: #c8a0e8;">R37,423</strong>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 14px; background: rgba(198,156,42,0.12); border-radius: 10px; border: 1px solid rgba(198,156,42,0.25);">
+            <strong>Total email-attributed revenue</strong>
+            <strong style="color: var(--gold-light); font-size: 1.15rem;">R413,494</strong>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top: 20px;">
+          <h3 style="color: white; margin-bottom: 16px; font-size: 0.95rem;">Campaign Type Split</h3>
+          <canvas id="typeSplitChart" height="180"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION: CAMPAIGN PERFORMANCE -->
+<section>
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-tag gold">Campaign Performance</div>
+      <h2>Email by Email</h2>
+      <p class="lead">Full metrics for every broadcast campaign sent in April 2026.</p>
+    </div>
+
+    <div class="chart-wrap reveal" style="margin-bottom: 32px;">
+      <h3 style="color: white; margin-bottom: 20px; font-size: 1rem;">Open Rate by Campaign</h3>
+      <canvas id="openRateChart" height="120"></canvas>
+    </div>
+
+    <div class="grid-2">
+
+      <!-- April Specials -->
+      <div class="campaign-card reveal">
+        <div class="date-badge">Apr 3 · 06:00 SAST</div>
+        <h3>April Specials 2026</h3>
+        <div class="subject">"Hey {{ first_name }}, our April Specials are here! 🌿"</div>
+        <div style="font-size: 12px; color: var(--muted); margin-bottom: 12px;">Segments: BonLoyalty Diamond/Platinum, Active Members, Engaged Subscribers</div>
+        <div class="metrics-row">
+          <div class="metric-box">
+            <span class="val">7,259</span>
+            <div class="lbl">Recipients</div>
+          </div>
+          <div class="metric-box">
+            <span class="val">22.1%</span>
+            <div class="lbl">Open Rate</div>
+          </div>
+          <div class="metric-box">
+            <span class="val">0.49%</span>
+            <div class="lbl">CTR</div>
+          </div>
+          <div class="metric-box">
+            <span class="val">0.77%</span>
+            <div class="lbl">Conv. Rate</div>
+          </div>
+        </div>
+        <div class="campaign-revenue">
+          <div>
+            <div class="rev-val">R52,699</div>
+            <div class="rev-lbl">attributed revenue</div>
+          </div>
+          <div style="text-align: right; font-size: 12px; color: var(--muted);">
+            R7.42 per recipient<br>
+            110 conversions · 55 unique buyers
+          </div>
+        </div>
+      </div>
+
+      <!-- Backwoods Drop -->
+      <div class="campaign-card reveal">
+        <div class="date-badge">Apr 9 · 09:30 SAST · 20% Throttle</div>
+        <h3>Pre-rolled Backwoods — Daily Drop</h3>
+        <div class="subject">"A fresh drop has arrived — Pre-rolled Backwoods 🌿"</div>
+        <div style="font-size: 12px; color: var(--muted); margin-bottom: 12px;">List: Full Email List (broad audience)</div>
+        <div class="metrics-row">
+          <div class="metric-box">
+            <span class="val">14,786</span>
+            <div class="lbl">Recipients</div>
+          </div>
+          <div class="metric-box">
+            <span class="val" style="color: #e08040;">9.8%</span>
+            <div class="lbl">Open Rate</div>
+          </div>
+          <div class="metric-box">
+            <span class="val">0.18%</span>
+            <div class="lbl">CTR</div>
+          </div>
+          <div class="metric-box">
+            <span class="val">0.33%</span>
+            <div class="lbl">Conv. Rate</div>
+          </div>
+        </div>
+        <div class="campaign-revenue">
+          <div>
+            <div class="rev-val">R54,619</div>
+            <div class="rev-lbl">attributed revenue</div>
+          </div>
+          <div style="text-align: right; font-size: 12px; color: var(--muted);">
+            R4.06 per recipient<br>
+            102 conversions · 1,285 bounces ⚠️
+          </div>
+        </div>
+      </div>
+
+      <!-- Re-engagement -->
+      <div class="campaign-card reveal">
+        <div class="date-badge">Apr 14 · 08:00 SAST · A/B Test</div>
+        <h3>Re-engagement — April 2026</h3>
+        <div class="subject">Var A: "We've missed you 🌿 Claim your FREE 30-Day Membership"<br>Var B: "Hey {{ first_name }}, we've been thinking about you!"</div>
+        <div style="font-size: 12px; color: var(--muted); margin-bottom: 12px;">Segment: Customers who have not purchased in 90+ days</div>
+        <div class="metrics-row">
+          <div class="metric-box">
+            <span class="val">12,709</span>
+            <div class="lbl">Recipients</div>
+          </div>
+          <div class="metric-box">
+            <span class="val" style="color: #e08040;">8.5%</span>
+            <div class="lbl">Open Rate</div>
+          </div>
+          <div class="metric-box">
+            <span class="val">0.20%</span>
+            <div class="lbl">CTR</div>
+          </div>
+          <div class="metric-box">
+            <span class="val" style="color: var(--muted);">0%</span>
+            <div class="lbl">Conv. Rate</div>
+          </div>
+        </div>
+        <div class="campaign-revenue" style="background: rgba(255,255,255,0.04); border-color: rgba(255,255,255,0.08);">
+          <div>
+            <div class="rev-val" style="color: var(--muted);">R0</div>
+            <div class="rev-lbl">purchase conversions tracked</div>
+          </div>
+          <div style="text-align: right; font-size: 12px; color: var(--muted);">
+            Free membership offer<br>
+            10 unsubscribes · 1,396 bounces
+          </div>
+        </div>
+      </div>
+
+      <!-- 4/20 Carnival -->
+      <div class="campaign-card reveal">
+        <div class="date-badge">Apr 15 · 08:00 SAST · 25% Throttle</div>
+        <h3>Cannibisters — 4/20 The Carnival 2026</h3>
+        <div class="subject">"{{ first_name }}, you won't want to miss this 420 Carnival 🎪 | Games. Live music. PS5 tournament."</div>
+        <div style="font-size: 12px; color: var(--muted); margin-bottom: 12px;">Segments: Loyalty + Active Members (throttled 25%)</div>
+        <div class="metrics-row">
+          <div class="metric-box">
+            <span class="val">5,634</span>
+            <div class="lbl">Recipients</div>
+          </div>
+          <div class="metric-box">
+            <span class="val">24.7%</span>
+            <div class="lbl">Open Rate</div>
+          </div>
+          <div class="metric-box">
+            <span class="val">0.24%</span>
+            <div class="lbl">CTR</div>
+          </div>
+          <div class="metric-box">
+            <span class="val">0.54%</span>
+            <div class="lbl">Conv. Rate</div>
+          </div>
+        </div>
+        <div class="campaign-revenue">
+          <div>
+            <div class="rev-val">R32,337</div>
+            <div class="rev-lbl">attributed revenue</div>
+          </div>
+          <div style="text-align: right; font-size: 12px; color: var(--muted);">
+            R7.00 per recipient<br>
+            45 conversions · 1,016 bounces ⚠️
+          </div>
+        </div>
+      </div>
+
+      <!-- Date Correction - STAR -->
+      <div class="campaign-card reveal" style="border-color: rgba(198,156,42,0.4); background: linear-gradient(135deg, rgba(198,156,42,0.07) 0%, var(--card) 100%); grid-column: span 2;">
+        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px;">
+          <div class="date-badge" style="margin: 0;">Apr 15 · 18:29 SAST</div>
+          <div style="background: var(--gold); color: #000; padding: 3px 10px; border-radius: 100px; font-size: 11px; font-weight: 800;">⭐ TOP PERFORMER</div>
+        </div>
+        <h3 style="font-size: 1.1rem;">4/20 Carnival — Date Correction</h3>
+        <div class="subject">"Correction: Our 4/20 Carnival is on Monday (not Sunday)"</div>
+        <div style="font-size: 12px; color: var(--muted); margin-bottom: 16px;">Same loyal segments as main carnival email · sent same afternoon</div>
+
+        <div style="display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px;">
+          <div class="metric-box">
+            <span class="val">7,380</span>
+            <div class="lbl">Recipients</div>
+          </div>
+          <div class="metric-box">
+            <span class="val" style="color: var(--gold-light);">98.5%</span>
+            <div class="lbl">Delivery Rate</div>
+          </div>
+          <div class="metric-box">
+            <span class="val" style="color: var(--gold-light);">32.3%</span>
+            <div class="lbl">Open Rate</div>
+          </div>
+          <div class="metric-box">
+            <span class="val">0.21%</span>
+            <div class="lbl">CTR</div>
+          </div>
+          <div class="metric-box">
+            <span class="val" style="color: var(--gold-light);">1.11%</span>
+            <div class="lbl">Conv. Rate</div>
+          </div>
+          <div class="metric-box">
+            <span class="val" style="color: var(--gold-light);">186</span>
+            <div class="lbl">Conversions</div>
+          </div>
+        </div>
+
+        <div class="campaign-revenue" style="background: rgba(198,156,42,0.1); border-color: rgba(198,156,42,0.3); margin-top: 16px;">
+          <div>
+            <div class="rev-val" style="color: var(--gold-light); font-size: 1.8rem;">R107,289</div>
+            <div class="rev-lbl">highest attributed revenue of any April campaign</div>
+          </div>
+          <div style="text-align: right; font-size: 12px; color: var(--muted);">
+            R14.76 per recipient<br>
+            81 unique buyers
+          </div>
+        </div>
+      </div>
+
+      <!-- 420 Thank you -->
+      <div class="campaign-card reveal">
+        <div class="date-badge">Apr 21 · 13:00 SAST</div>
+        <h3>420 Thank You for Coming</h3>
+        <div class="subject">"{{ first_name }}, thank you for making 4/20 one for the books 🎪"</div>
+        <div style="font-size: 12px; color: var(--muted); margin-bottom: 12px;">Segments: Loyalty + Active Members · includes raffle winners announcement</div>
+        <div class="metrics-row">
+          <div class="metric-box">
+            <span class="val">7,414</span>
+            <div class="lbl">Recipients</div>
+          </div>
+          <div class="metric-box">
+            <span class="val">28.5%</span>
+            <div class="lbl">Open Rate</div>
+          </div>
+          <div class="metric-box">
+            <span class="val">0.26%</span>
+            <div class="lbl">CTR</div>
+          </div>
+          <div class="metric-box">
+            <span class="val">0.91%</span>
+            <div class="lbl">Conv. Rate</div>
+          </div>
+        </div>
+        <div class="campaign-revenue">
+          <div>
+            <div class="rev-val">R66,680</div>
+            <div class="rev-lbl">attributed revenue</div>
+          </div>
+          <div style="text-align: right; font-size: 12px; color: var(--muted);">
+            R9.06 per recipient<br>
+            122 conversions · 48 unsubscribes
+          </div>
+        </div>
+      </div>
+
+      <!-- Strain of the week -->
+      <div class="campaign-card reveal">
+        <div class="date-badge">Apr 29 · 13:42 SAST</div>
+        <h3>Strain of the Week</h3>
+        <div class="subject">"Fresh Backwoods. Every. Single. Day. 💨"</div>
+        <div style="font-size: 12px; color: var(--muted); margin-bottom: 12px;">Segments: Loyalty + Active Members · month closer</div>
+        <div class="metrics-row">
+          <div class="metric-box">
+            <span class="val">7,405</span>
+            <div class="lbl">Recipients</div>
+          </div>
+          <div class="metric-box">
+            <span class="val">22.3%</span>
+            <div class="lbl">Open Rate</div>
+          </div>
+          <div class="metric-box">
+            <span class="val">0.22%</span>
+            <div class="lbl">CTR</div>
+          </div>
+          <div class="metric-box">
+            <span class="val">0.78%</span>
+            <div class="lbl">Conv. Rate</div>
+          </div>
+        </div>
+        <div class="campaign-revenue">
+          <div>
+            <div class="rev-val">R62,447</div>
+            <div class="rev-lbl">attributed revenue</div>
+          </div>
+          <div style="text-align: right; font-size: 12px; color: var(--muted);">
+            R8.53 per recipient<br>
+            107 conversions · 57 unique buyers
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Full comparison table -->
+    <div class="chart-wrap reveal" style="margin-top: 40px; overflow-x: auto;">
+      <h3 style="color: white; margin-bottom: 20px; font-size: 1rem;">Full Campaign Comparison</h3>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Campaign</th>
+            <th>Date</th>
+            <th class="num-col">Recipients</th>
+            <th class="num-col">Open Rate</th>
+            <th class="num-col">CTR</th>
+            <th class="num-col">Conv. Rate</th>
+            <th class="num-col">Revenue</th>
+            <th class="num-col">RPR</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>April Specials 2026</td>
+            <td style="color: var(--muted);">Apr 3</td>
+            <td class="num-col">7,259</td>
+            <td class="num-col green">22.1%</td>
+            <td class="num-col">0.49%</td>
+            <td class="num-col">0.77%</td>
+            <td class="num-col gold">R52,699</td>
+            <td class="num-col">R7.42</td>
+          </tr>
+          <tr>
+            <td>Pre-rolled Backwoods Drop</td>
+            <td style="color: var(--muted);">Apr 9</td>
+            <td class="num-col">14,786</td>
+            <td class="num-col" style="color: #e08040;">9.8%</td>
+            <td class="num-col">0.18%</td>
+            <td class="num-col">0.33%</td>
+            <td class="num-col gold">R54,619</td>
+            <td class="num-col">R4.06</td>
+          </tr>
+          <tr>
+            <td>Re-engagement A/B Test</td>
+            <td style="color: var(--muted);">Apr 14</td>
+            <td class="num-col">12,709</td>
+            <td class="num-col" style="color: #e08040;">8.5%</td>
+            <td class="num-col">0.20%</td>
+            <td class="num-col" style="color: var(--muted);">0%</td>
+            <td class="num-col" style="color: var(--muted);">R0</td>
+            <td class="num-col" style="color: var(--muted);">—</td>
+          </tr>
+          <tr>
+            <td>4/20 Carnival Announcement</td>
+            <td style="color: var(--muted);">Apr 15</td>
+            <td class="num-col">5,634</td>
+            <td class="num-col green">24.7%</td>
+            <td class="num-col">0.24%</td>
+            <td class="num-col">0.54%</td>
+            <td class="num-col gold">R32,337</td>
+            <td class="num-col">R7.00</td>
+          </tr>
+          <tr>
+            <td>Love Project — WELCOME15</td>
+            <td style="color: var(--muted);">Apr 15</td>
+            <td class="num-col">79</td>
+            <td class="num-col" style="color: #e05050;">1.7%</td>
+            <td class="num-col">0%</td>
+            <td class="num-col" style="color: var(--muted);">0%</td>
+            <td class="num-col" style="color: var(--muted);">R0</td>
+            <td class="num-col" style="color: var(--muted);">—</td>
+          </tr>
+          <tr style="background: rgba(198,156,42,0.06);">
+            <td><strong style="color: var(--gold-light);">Date Correction ⭐</strong></td>
+            <td style="color: var(--muted);">Apr 15</td>
+            <td class="num-col">7,380</td>
+            <td class="num-col" style="color: var(--gold-light); font-weight: 800;">32.3%</td>
+            <td class="num-col">0.21%</td>
+            <td class="num-col" style="color: var(--gold-light); font-weight: 800;">1.11%</td>
+            <td class="num-col" style="color: var(--gold-light); font-weight: 800;">R107,289</td>
+            <td class="num-col" style="color: var(--gold-light); font-weight: 800;">R14.76</td>
+          </tr>
+          <tr>
+            <td>420 Thank You for Coming</td>
+            <td style="color: var(--muted);">Apr 21</td>
+            <td class="num-col">7,414</td>
+            <td class="num-col green">28.5%</td>
+            <td class="num-col">0.26%</td>
+            <td class="num-col">0.91%</td>
+            <td class="num-col gold">R66,680</td>
+            <td class="num-col">R9.06</td>
+          </tr>
+          <tr>
+            <td>Strain of the Week</td>
+            <td style="color: var(--muted);">Apr 29</td>
+            <td class="num-col">7,405</td>
+            <td class="num-col green">22.3%</td>
+            <td class="num-col">0.22%</td>
+            <td class="num-col">0.78%</td>
+            <td class="num-col gold">R62,447</td>
+            <td class="num-col">R8.53</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</section>
+
+<!-- SECTION: CHARTS -->
+<section>
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-tag">Revenue Analysis</div>
+      <h2>Where the Revenue Came From</h2>
+      <p class="lead">Campaign-by-campaign revenue breakdown and revenue-per-recipient efficiency.</p>
+    </div>
+
+    <div class="grid-2">
+      <div class="chart-wrap reveal">
+        <h3 style="color: white; margin-bottom: 20px; font-size: 0.95rem;">Attributed Revenue by Campaign</h3>
+        <canvas id="revenueChart" height="220"></canvas>
+      </div>
+      <div class="chart-wrap reveal">
+        <h3 style="color: white; margin-bottom: 20px; font-size: 0.95rem;">Revenue per Recipient (R)</h3>
+        <canvas id="rprChart" height="220"></canvas>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION: STAR CAMPAIGN DEEP DIVE -->
+<section>
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-tag gold">Deep Dive</div>
+      <h2>The Correction Email That Broke Records</h2>
+      <p class="lead">A date mistake turned into April's highest-performing campaign — the accidental best email of the quarter.</p>
+    </div>
+
+    <div class="highlight-card reveal" style="margin-bottom: 32px;">
+      <h3 style="color: var(--gold-light); font-size: 1.2rem; margin-bottom: 16px;">What Happened</h3>
+      <p style="color: var(--muted); line-height: 1.8; margin-bottom: 16px;">
+        The 4/20 Carnival announcement sent that morning (8am) stated the wrong day. When a correction was sent at 6:29PM the same day, urgency and FOMO kicked in — subscribers who had just read the announcement email were primed and already thinking about the event.
+      </p>
+      <p style="color: var(--muted); line-height: 1.8;">
+        The correction email achieved a <strong style="color: white;">32.3% open rate</strong> — the highest of any April campaign and significantly above the 22% average for the loyal segments. Importantly, it drove <strong style="color: white;">R107,289 in attributed revenue</strong> — nearly 3× the original carnival announcement email (R32,337). The subject line "Correction: Our 4/20 Carnival is on Monday (not Sunday)" triggered curiosity-open behaviour at scale.
+      </p>
+    </div>
+
+    <div class="grid-3">
+      <div class="card reveal" style="text-align: center;">
+        <div style="font-size: 2.8rem; font-weight: 800; color: var(--gold-light);">32.3%</div>
+        <div style="font-size: 14px; color: white; margin-top: 4px; font-weight: 600;">Open Rate</div>
+        <div style="font-size: 12px; color: var(--muted); margin-top: 4px;">vs 22.1% April average</div>
+      </div>
+      <div class="card reveal" style="text-align: center;">
+        <div style="font-size: 2.8rem; font-weight: 800; color: var(--gold-light);">1.11%</div>
+        <div style="font-size: 14px; color: white; margin-top: 4px; font-weight: 600;">Conversion Rate</div>
+        <div style="font-size: 12px; color: var(--muted); margin-top: 4px;">Highest of any April campaign</div>
+      </div>
+      <div class="card reveal" style="text-align: center;">
+        <div style="font-size: 2.8rem; font-weight: 800; color: var(--gold-light);">R14.76</div>
+        <div style="font-size: 14px; color: white; margin-top: 4px; font-weight: 600;">Revenue per Recipient</div>
+        <div style="font-size: 12px; color: var(--muted); margin-top: 4px;">2× the average RPR</div>
+      </div>
+    </div>
+
+    <div class="insight-block gold reveal" style="margin-top: 28px;">
+      <h4>Takeaway: Urgency-framed subject lines drive opens</h4>
+      <p>A correction/update email pattern creates genuine curiosity that bypasses inbox fatigue. Consider testing "Update:" or "Important:" subject lines for future high-stakes campaigns — intentionally, not accidentally. The FOMO multiplier effect (two emails same day, same event) also doubled the touchpoints without feeling spammy for this audience.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION: 4/20 CARNIVAL FOCUS -->
+<section>
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-tag purple">4/20 Event Focus</div>
+      <h2>The Carnival — Apr 15 to Apr 21</h2>
+      <p class="lead">Games, live music, PS5 tournament, Canni Hotbox, bong pong, and a 15-winner raffle. The biggest Cannibisters event of 2026.</p>
+    </div>
+
+    <div class="grid-2">
+      <div>
+        <div class="card reveal" style="margin-bottom: 20px;">
+          <h3 style="color: white; margin-bottom: 20px;">4/20 Email Sequence Performance</h3>
+          <div style="padding: 16px; background: rgba(255,255,255,0.04); border-radius: 10px; margin-bottom: 12px;">
+            <div style="display: flex; justify-content: space-between;">
+              <span style="font-size: 13px;">Carnival Announcement (Apr 15, 8am)</span>
+              <span style="color: var(--green-light); font-weight: 700;">24.7% open</span>
+            </div>
+            <div style="font-size: 12px; color: var(--muted); margin-top: 4px;">5,634 sent · R32,337 revenue</div>
+          </div>
+          <div style="padding: 16px; background: rgba(198,156,42,0.1); border: 1px solid rgba(198,156,42,0.2); border-radius: 10px; margin-bottom: 12px;">
+            <div style="display: flex; justify-content: space-between;">
+              <span style="font-size: 13px; font-weight: 700;">Date Correction (Apr 15, 6:30pm) ⭐</span>
+              <span style="color: var(--gold-light); font-weight: 700;">32.3% open</span>
+            </div>
+            <div style="font-size: 12px; color: var(--muted); margin-top: 4px;">7,380 sent · R107,289 revenue</div>
+          </div>
+          <div style="padding: 16px; background: rgba(255,255,255,0.04); border-radius: 10px;">
+            <div style="display: flex; justify-content: space-between;">
+              <span style="font-size: 13px;">Thank You / Raffle Results (Apr 21)</span>
+              <span style="color: var(--green-light); font-weight: 700;">28.5% open</span>
+            </div>
+            <div style="font-size: 12px; color: var(--muted); margin-top: 4px;">7,414 sent · R66,680 revenue</div>
+          </div>
+
+          <div style="margin-top: 20px; padding: 16px; background: rgba(46,139,87,0.1); border-radius: 10px; border: 1px solid rgba(46,139,87,0.2);">
+            <div style="font-size: 12px; color: var(--muted); margin-bottom: 4px; text-transform: uppercase; letter-spacing: 1px;">Total 4/20 sequence revenue</div>
+            <div style="font-size: 2rem; font-weight: 800; color: var(--green-light);">R206,306</div>
+            <div style="font-size: 12px; color: var(--muted);">54.8% of total April campaign revenue</div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="card reveal" style="margin-bottom: 20px;">
+          <h3 style="color: var(--gold-light); margin-bottom: 20px; font-size: 0.95rem;">4/20 Raffle Winners — 15 Personalised Emails</h3>
+          <p style="font-size: 12px; color: var(--muted); margin-bottom: 16px;">Each winner received a unique personalised email at 14:20 SAST on 20 April 2026.</p>
+          <div class="raffle-grid">
+            <div class="raffle-card"><div class="place">1st</div><div class="name">Olasunkanmi</div></div>
+            <div class="raffle-card"><div class="place">2nd</div><div class="name">Pedro</div></div>
+            <div class="raffle-card"><div class="place">3rd</div><div class="name">Tayla</div></div>
+            <div class="raffle-card"><div class="place">4th</div><div class="name">Usman</div></div>
+            <div class="raffle-card"><div class="place">5th</div><div class="name">Enoch</div></div>
+            <div class="raffle-card"><div class="place">6th</div><div class="name">Victory</div></div>
+            <div class="raffle-card"><div class="place">7th</div><div class="name">Mark</div></div>
+            <div class="raffle-card"><div class="place">8th</div><div class="name">Audrey</div></div>
+            <div class="raffle-card"><div class="place">9th</div><div class="name">Bryn</div></div>
+            <div class="raffle-card"><div class="place">10th</div><div class="name">Xolani</div></div>
+            <div class="raffle-card"><div class="place">11th</div><div class="name">Olasunkanmi B.</div></div>
+            <div class="raffle-card"><div class="place">12th</div><div class="name">Daniel</div></div>
+            <div class="raffle-card"><div class="place">13th</div><div class="name">Edobor</div></div>
+            <div class="raffle-card"><div class="place">14th</div><div class="name">Christian</div></div>
+            <div class="raffle-card"><div class="place">15th</div><div class="name">Zeljko</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION: A/B TEST -->
+<section>
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-tag">A/B Testing</div>
+      <h2>Re-engagement A/B Test — April 2026</h2>
+      <p class="lead">Same lapsed-customer segment tested with two approaches: generic appeal vs. first-name personalisation. Neither drove purchases — but opened doors.</p>
+    </div>
+
+    <div class="ab-grid reveal">
+      <div class="ab-card">
+        <h3>Variation A — Generic</h3>
+        <div style="font-style: italic; font-size: 12px; color: var(--muted); margin-bottom: 20px; padding: 10px; background: rgba(255,255,255,0.04); border-radius: 8px;">
+          "We've missed you 🌿 Claim your FREE 30-Day Membership"
+        </div>
+        <div class="big">8.5%</div>
+        <div class="sub">Open Rate</div>
+        <div style="margin-top: 16px; font-size: 12px; color: var(--muted);">
+          No conversion value tracked<br>(membership offer, not purchase)
+        </div>
+      </div>
+      <div class="ab-card winner">
+        <h3>Variation B — Personalised</h3>
+        <div style="font-style: italic; font-size: 12px; color: var(--muted); margin-bottom: 20px; padding: 10px; background: rgba(255,255,255,0.04); border-radius: 8px;">
+          "Hey {{ first_name }}, we've been thinking about you!"
+        </div>
+        <div class="big">8.5%</div>
+        <div class="sub">Open Rate</div>
+        <div class="winner-badge">Near identical performance</div>
+        <div style="margin-top: 12px; font-size: 12px; color: var(--muted);">
+          Free 1-Month Membership offer<br>CTOR: 2.4% vs Var A: 2.4%
+        </div>
+      </div>
+    </div>
+
+    <div class="insight-block reveal" style="margin-top: 28px;">
+      <h4>A/B Conclusion: Personalisation didn't move the needle here</h4>
+      <p>Both variations landed near-identically at ~8.5% open rate and ~2.4% CTOR on the lapsed 90-day segment. The lapsed audience is harder to re-engage regardless of subject line framing. Worth A/B testing the actual offer (membership vs. discount code) rather than just the personalisation. Future consideration: segment lapsed 90-day vs. lapsed 180-day — they likely respond very differently.</p>
+    </div>
+
+    <div class="insight-block purple reveal">
+      <h4>Bounce alert: Re-engagement list has significant deliverability issues</h4>
+      <p>1,396 bounces on 12,709 recipients = 11% bounce rate. The lapsed segment naturally contains stale email addresses. Consider running a list cleaning pass — removing hard bounces from this segment before the next send to protect sender reputation.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION: FLOWS -->
+<section>
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-tag purple">Automation Flows</div>
+      <h2>Always-On Automations</h2>
+      <p class="lead">Two live flows ran throughout April. The Abandoned Checkout reminder is a quiet but consistent revenue machine.</p>
+    </div>
+
+    <div class="grid-2">
+
+      <div class="card reveal" style="background: linear-gradient(135deg, rgba(46,139,87,0.1) 0%, var(--card) 100%); border-color: rgba(46,139,87,0.3);">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px;">
+          <div>
+            <div style="font-size: 11px; color: var(--green-light); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px;">Live Since Aug 2025</div>
+            <h3 style="font-size: 1rem; font-weight: 700; color: white;">Abandoned Checkout Reminder</h3>
+          </div>
+          <div style="background: rgba(46,139,87,0.2); border: 1px solid rgba(46,139,87,0.4); border-radius: 100px; padding: 4px 10px; font-size: 11px; color: var(--green-light); font-weight: 600;">LIVE</div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-bottom: 20px;">
+          <div class="metric-box">
+            <span class="val">424</span>
+            <div class="lbl">Recipients</div>
+          </div>
+          <div class="metric-box">
+            <span class="val">17.6%</span>
+            <div class="lbl">Open Rate</div>
+          </div>
+          <div class="metric-box">
+            <span class="val" style="color: var(--gold-light);">5.25%</span>
+            <div class="lbl">Conv. Rate</div>
+          </div>
+        </div>
+
+        <div style="padding: 16px; background: rgba(46,139,87,0.15); border-radius: 10px; border: 1px solid rgba(46,139,87,0.25); margin-bottom: 16px;">
+          <div style="font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px;">April Flow Revenue</div>
+          <div style="font-size: 2.2rem; font-weight: 800; color: var(--green-light);">R37,423</div>
+          <div style="font-size: 12px; color: var(--muted);">48 conversions · R779 avg order value</div>
+        </div>
+
+        <div style="font-size: 12px; color: var(--muted);">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
+            <span>Revenue per recipient</span>
+            <strong style="color: var(--green-light);">R89.31</strong>
+          </div>
+          <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
+            <span>Clicks (unique)</span>
+            <strong>9 (2.1%)</strong>
+          </div>
+          <div style="display: flex; justify-content: space-between;">
+            <span>Delivery rate</span>
+            <strong>98.8%</strong>
+          </div>
+        </div>
+
+        <div style="margin-top: 16px; padding: 12px; background: rgba(198,156,42,0.1); border-radius: 8px; font-size: 12px; color: var(--gold-light);">
+          ⚡ R89 RPR vs R7–15 RPR for campaigns — the most efficient email touchpoint by far
+        </div>
+      </div>
+
+      <div class="card reveal">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px;">
+          <div>
+            <div style="font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px;">Live Since Mar 9, 2026</div>
+            <h3 style="font-size: 1rem; font-weight: 700; color: white;">Metric-triggered Flow</h3>
+          </div>
+          <div style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 100px; padding: 4px 10px; font-size: 11px; color: var(--muted); font-weight: 600;">LIVE</div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-bottom: 20px;">
+          <div class="metric-box">
+            <span class="val">485</span>
+            <div class="lbl">Recipients</div>
+          </div>
+          <div class="metric-box">
+            <span class="val" style="color: #e08040;">4.5%</span>
+            <div class="lbl">Open Rate</div>
+          </div>
+          <div class="metric-box">
+            <span class="val" style="color: var(--muted);">0%</span>
+            <div class="lbl">Conv. Rate</div>
+          </div>
+        </div>
+
+        <div style="padding: 16px; background: rgba(255,255,255,0.04); border-radius: 10px; margin-bottom: 16px;">
+          <div style="font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px;">April Flow Revenue</div>
+          <div style="font-size: 2.2rem; font-weight: 800; color: var(--muted);">R0</div>
+          <div style="font-size: 12px; color: var(--muted);">0 conversions tracked · 466 delivered</div>
+        </div>
+
+        <div style="font-size: 12px; color: var(--muted);">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
+            <span>Trigger type</span>
+            <strong>Metric-based</strong>
+          </div>
+          <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
+            <span>Delivery rate</span>
+            <strong>96.1%</strong>
+          </div>
+          <div style="display: flex; justify-content: space-between;">
+            <span>Click rate</span>
+            <strong>0.43%</strong>
+          </div>
+        </div>
+
+        <div class="insight-block purple" style="margin-top: 16px;">
+          <h4>Needs review</h4>
+          <p>4.5% open rate and 0 conversions — this flow may need trigger refinement or message optimisation.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="chart-wrap reveal" style="margin-top: 28px;">
+      <h3 style="color: white; margin-bottom: 20px; font-size: 0.95rem;">Flow vs Campaign Revenue Efficiency (Revenue per Recipient)</h3>
+      <canvas id="efficiencyChart" height="100"></canvas>
+    </div>
+
+  </div>
+</section>
+
+<!-- SECTION: DELIVERABILITY -->
+<section>
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-tag gold">Deliverability</div>
+      <h2>List Health & Sender Reputation</h2>
+      <p class="lead">Delivery rates were strong for segmented sends, but the broad email list and lapsed re-engagement segment dragged overall numbers down.</p>
+    </div>
+
+    <div class="grid-3">
+
+      <div class="card reveal" style="text-align: center;">
+        <div style="font-size: 2.4rem; font-weight: 800; color: var(--green-light);">98.5%</div>
+        <div style="font-size: 13px; color: white; font-weight: 600; margin-top: 4px;">Best Delivery Rate</div>
+        <div style="font-size: 12px; color: var(--muted); margin-top: 4px;">Date Correction email (engaged list)</div>
+      </div>
+
+      <div class="card reveal" style="text-align: center;">
+        <div style="font-size: 2.4rem; font-weight: 800; color: #e08040;">82.0%</div>
+        <div style="font-size: 13px; color: white; font-weight: 600; margin-top: 4px;">Lowest Delivery Rate</div>
+        <div style="font-size: 12px; color: var(--muted); margin-top: 4px;">4/20 Carnival (throttled, older list)</div>
+      </div>
+
+      <div class="card reveal" style="text-align: center;">
+        <div style="font-size: 2.4rem; font-weight: 800; color: #e05050;">3,061</div>
+        <div style="font-size: 13px; color: white; font-weight: 600; margin-top: 4px;">Total Bounces</div>
+        <div style="font-size: 12px; color: var(--muted); margin-top: 4px;">Across all April campaigns</div>
+      </div>
+
+    </div>
+
+    <div style="margin-top: 28px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+
+      <div class="insight-block gold reveal">
+        <h4>Backwoods Drop: 1,285 bounces from 14,786 recipients</h4>
+        <p>The full Email List contains a significant number of stale addresses. The 91.3% delivery rate on a cold-broad send means ~8.7% of the list is bouncing — well above the 2% threshold considered healthy. Sending to the full list without hygiene cleaning will continue to erode sender score over time.</p>
+      </div>
+
+      <div class="insight-block reveal">
+        <h4>Loyalty segment sends: excellent deliverability</h4>
+        <p>The campaigns targeting loyalty and active member segments consistently hit 97–99% delivery rates. This confirms that engaged, segmented lists are dramatically healthier than broad sends. Prioritise these segments for all future campaigns and consider sunsetting the full list unless cleaned.</p>
+      </div>
+
+    </div>
+
+    <div class="chart-wrap reveal" style="margin-top: 28px;">
+      <h3 style="color: white; margin-bottom: 20px; font-size: 0.95rem;">Bounce Breakdown by Campaign</h3>
+      <canvas id="bounceChart" height="80"></canvas>
+    </div>
+
+  </div>
+</section>
+
+<!-- SECTION: KEY INSIGHTS -->
+<section>
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-tag">Key Insights</div>
+      <h2>What April Taught Us</h2>
+      <p class="lead">Observations, patterns and action items from April 2026 email performance.</p>
+    </div>
+
+    <div class="grid-2">
+
+      <div class="reveal">
+        <div class="insight-block gold">
+          <h4>1. The accidental correction email formula works</h4>
+          <p>Subject lines framed as corrections or updates generate urgency-opens. 32.3% open rate vs 22% average. Consider intentionally engineering "update" emails for important campaigns.</p>
+        </div>
+        <div class="insight-block">
+          <h4>2. Post-event emails stay high-performing</h4>
+          <p>The "Thank You for Coming" email (Apr 21) achieved 28.5% opens and R66,680 revenue — proving that momentum continues after an event. The audience is warm, engaged and still buying.</p>
+        </div>
+        <div class="insight-block">
+          <h4>3. Abandoned Checkout is the highest-efficiency touchpoint</h4>
+          <p>R89.31 revenue per recipient vs R4–15 for campaigns. 5.25% conversion rate. Every rand invested in optimising this flow returns 6–20× more than broadcast campaigns.</p>
+        </div>
+        <div class="insight-block purple">
+          <h4>4. Re-engagement campaigns need offer testing, not subject testing</h4>
+          <p>Both A/B variations opened identically. The bottleneck is the offer (free membership) — not the personalisation. A direct discount code may work better for truly lapsed customers.</p>
+        </div>
+      </div>
+
+      <div class="reveal">
+        <div class="insight-block gold">
+          <h4>5. List hygiene is urgent on the full Email List</h4>
+          <p>91.3% delivery on 14,786 sends = ~1,285 hard bounces. A quarterly list clean pass on the full list would protect sender reputation and improve campaign performance metrics immediately.</p>
+        </div>
+        <div class="insight-block">
+          <h4>6. Click rates are uniformly low across all campaigns</h4>
+          <p>CTR ranges from 0.18%–0.49%. Opens are strong, but subscribers aren't clicking through to the site. Single large CTA buttons with more compelling copy or urgency could push click rates meaningfully higher.</p>
+        </div>
+        <div class="insight-block purple">
+          <h4>7. April had no SMS campaigns — an untapped channel</h4>
+          <p>All 8 sends were email-only. SMS campaigns, particularly for same-day event reminders like the 4/20 Carnival, would likely generate significantly higher open rates (SMS open rates average 90%+) and could drive in-store traffic on the day.</p>
+        </div>
+        <div class="insight-block">
+          <h4>8. The metric-based flow needs investigation</h4>
+          <p>485 recipients, 0 conversions, 4.5% open rate. This flow isn't working — either the trigger, timing or messaging needs a full rebuild before it can contribute to revenue.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="logo">Cannibisters</div>
+  <p>April 2026 Marketing Report · Generated May 2026</p>
+  <p style="margin-top: 8px;">Klaviyo data · All figures in ZAR · Email channel only</p>
+</footer>
+
+<script>
+// Scroll progress
+window.addEventListener('scroll', () => {
+  const pct = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+  document.getElementById('scroll-bar').style.width = pct + '%';
+});
+
+// Particles
+const canvas = document.getElementById('particles');
+const ctx = canvas.getContext('2d');
+let particles = [];
+
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+resizeCanvas();
+window.addEventListener('resize', resizeCanvas);
+
+for (let i = 0; i < 60; i++) {
+  particles.push({
+    x: Math.random() * window.innerWidth,
+    y: Math.random() * window.innerHeight,
+    r: Math.random() * 1.5 + 0.5,
+    dx: (Math.random() - 0.5) * 0.3,
+    dy: (Math.random() - 0.5) * 0.3,
+    opacity: Math.random() * 0.5 + 0.1,
+    hue: Math.random() > 0.5 ? '#2E8B57' : '#6c3d91'
+  });
+}
+
+function animateParticles() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  particles.forEach(p => {
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+    ctx.fillStyle = p.hue;
+    ctx.globalAlpha = p.opacity;
+    ctx.fill();
+    p.x += p.dx;
+    p.y += p.dy;
+    if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
+    if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
+  });
+  ctx.globalAlpha = 1;
+  requestAnimationFrame(animateParticles);
+}
+animateParticles();
+
+// Reveal on scroll
+const reveals = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+reveals.forEach(r => io.observe(r));
+
+// Number scramble
+function scramble(el) {
+  const target = parseFloat(el.dataset.target);
+  const prefix = el.dataset.prefix || '';
+  const suffix = el.dataset.suffix || '';
+  const isDecimal = target % 1 !== 0;
+  const duration = 1800;
+  const start = performance.now();
+  function step(now) {
+    const t = Math.min((now - start) / duration, 1);
+    const ease = 1 - Math.pow(1 - t, 3);
+    const val = target * ease;
+    if (isDecimal) {
+      el.textContent = prefix + val.toFixed(1) + suffix;
+    } else {
+      el.textContent = prefix + Math.floor(val).toLocaleString() + suffix;
+    }
+    if (t < 1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+
+const numEls = document.querySelectorAll('[data-target]');
+const numIO = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { scramble(e.target); numIO.unobserve(e.target); } });
+}, { threshold: 0.5 });
+numEls.forEach(el => numIO.observe(el));
+
+// Chart defaults
+Chart.defaults.color = '#7a9a82';
+Chart.defaults.borderColor = 'rgba(46,139,87,0.12)';
+Chart.defaults.font.family = "'Segoe UI', system-ui, sans-serif";
+
+// Type split doughnut
+new Chart(document.getElementById('typeSplitChart'), {
+  type: 'doughnut',
+  data: {
+    labels: ['Loyalty/Active Segments', 'Full Email List', 'Lapsed Segment', 'Love Project Leads'],
+    datasets: [{
+      data: [37633, 14786, 12709, 79],
+      backgroundColor: ['rgba(46,139,87,0.7)', 'rgba(108,61,145,0.7)', 'rgba(198,156,42,0.6)', 'rgba(255,80,80,0.5)'],
+      borderColor: ['rgba(46,139,87,1)', 'rgba(108,61,145,1)', 'rgba(198,156,42,1)', 'rgba(255,80,80,1)'],
+      borderWidth: 1
+    }]
+  },
+  options: {
+    responsive: true,
+    plugins: {
+      legend: { position: 'bottom', labels: { padding: 10, font: { size: 11 } } }
+    },
+    cutout: '65%'
+  }
+});
+
+// Open Rate chart
+const campaigns = ['Apr Specials', 'Backwoods Drop', 'Re-engagement', '4/20 Carnival', 'Date Correction', '420 Thank You', 'Strain/Week'];
+const openRates = [22.1, 9.8, 8.5, 24.7, 32.3, 28.5, 22.3];
+const colors = openRates.map(r => r > 25 ? 'rgba(198,156,42,0.8)' : r > 18 ? 'rgba(46,139,87,0.8)' : 'rgba(255,140,60,0.7)');
+
+new Chart(document.getElementById('openRateChart'), {
+  type: 'bar',
+  data: {
+    labels: campaigns,
+    datasets: [{
+      label: 'Unique Open Rate (%)',
+      data: openRates,
+      backgroundColor: colors,
+      borderRadius: 6,
+      borderSkipped: false
+    }]
+  },
+  options: {
+    indexAxis: 'x',
+    responsive: true,
+    plugins: {
+      legend: { display: false },
+      tooltip: {
+        callbacks: {
+          label: ctx => ctx.raw + '% open rate'
+        }
+      }
+    },
+    scales: {
+      y: {
+        beginAtZero: true, max: 40,
+        grid: { color: 'rgba(255,255,255,0.05)' },
+        ticks: { callback: v => v + '%' }
+      },
+      x: { grid: { display: false } }
+    }
+  }
+});
+
+// Revenue chart
+const revenues = [52699, 54619, 0, 32337, 107289, 66680, 62447];
+const revColors = revenues.map((v, i) => i === 4 ? 'rgba(198,156,42,0.85)' : 'rgba(46,139,87,0.7)');
+
+new Chart(document.getElementById('revenueChart'), {
+  type: 'bar',
+  data: {
+    labels: campaigns,
+    datasets: [{
+      label: 'Attributed Revenue (R)',
+      data: revenues,
+      backgroundColor: revColors,
+      borderRadius: 6
+    }]
+  },
+  options: {
+    responsive: true,
+    plugins: {
+      legend: { display: false },
+      tooltip: {
+        callbacks: {
+          label: ctx => 'R' + ctx.raw.toLocaleString()
+        }
+      }
+    },
+    scales: {
+      y: {
+        beginAtZero: true,
+        grid: { color: 'rgba(255,255,255,0.05)' },
+        ticks: { callback: v => 'R' + (v/1000).toFixed(0) + 'K' }
+      },
+      x: { grid: { display: false } }
+    }
+  }
+});
+
+// RPR chart
+const rprData = [7.42, 4.06, 0, 7.00, 14.76, 9.06, 8.53];
+new Chart(document.getElementById('rprChart'), {
+  type: 'bar',
+  data: {
+    labels: campaigns,
+    datasets: [{
+      label: 'Revenue per Recipient (R)',
+      data: rprData,
+      backgroundColor: rprData.map((v, i) => i === 4 ? 'rgba(198,156,42,0.85)' : 'rgba(108,61,145,0.7)'),
+      borderRadius: 6
+    }]
+  },
+  options: {
+    responsive: true,
+    plugins: {
+      legend: { display: false },
+      tooltip: {
+        callbacks: {
+          label: ctx => 'R' + ctx.raw.toFixed(2) + ' per recipient'
+        }
+      }
+    },
+    scales: {
+      y: {
+        beginAtZero: true,
+        grid: { color: 'rgba(255,255,255,0.05)' },
+        ticks: { callback: v => 'R' + v.toFixed(0) }
+      },
+      x: { grid: { display: false } }
+    }
+  }
+});
+
+// Efficiency chart (campaign vs flow RPR)
+new Chart(document.getElementById('efficiencyChart'), {
+  type: 'bar',
+  data: {
+    labels: ['Apr Specials', 'Backwoods Drop', '4/20 Carnival', 'Date Correction', '420 Thank You', 'Strain/Week', 'Abandoned Checkout Flow'],
+    datasets: [{
+      label: 'Revenue per Recipient (R)',
+      data: [7.42, 4.06, 7.00, 14.76, 9.06, 8.53, 89.31],
+      backgroundColor: ['rgba(46,139,87,0.7)','rgba(46,139,87,0.7)','rgba(46,139,87,0.7)','rgba(198,156,42,0.85)','rgba(46,139,87,0.7)','rgba(46,139,87,0.7)','rgba(108,61,145,0.9)'],
+      borderRadius: 6
+    }]
+  },
+  options: {
+    indexAxis: 'y',
+    responsive: true,
+    plugins: {
+      legend: { display: false },
+      tooltip: {
+        callbacks: {
+          label: ctx => 'R' + ctx.raw.toFixed(2) + ' per recipient'
+        }
+      }
+    },
+    scales: {
+      x: {
+        beginAtZero: true,
+        grid: { color: 'rgba(255,255,255,0.05)' },
+        ticks: { callback: v => 'R' + v }
+      },
+      y: { grid: { display: false } }
+    }
+  }
+});
+
+// Bounce chart
+new Chart(document.getElementById('bounceChart'), {
+  type: 'bar',
+  data: {
+    labels: ['Apr Specials', 'Backwoods Drop', 'Re-engagement', '4/20 Carnival', 'Date Correction', '420 Thank You', 'Strain/Week'],
+    datasets: [{
+      label: 'Bounces',
+      data: [152, 1285, 1396, 1016, 110, 58, 81],
+      backgroundColor: [152, 1285, 1396, 1016, 110, 58, 81].map(v => v > 500 ? 'rgba(224,80,80,0.75)' : 'rgba(198,156,42,0.6)'),
+      borderRadius: 6
+    }]
+  },
+  options: {
+    responsive: true,
+    plugins: {
+      legend: { display: false }
+    },
+    scales: {
+      y: {
+        beginAtZero: true,
+        grid: { color: 'rgba(255,255,255,0.05)' }
+      },
+      x: { grid: { display: false } }
+    }
+  }
+});
+</script>
+</body>
+</html>

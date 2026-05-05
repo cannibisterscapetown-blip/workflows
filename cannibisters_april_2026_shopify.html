@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cannibisters — April 2026 Online Store Report</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <style>
+    :root {
+      --green:#2E8B57;--green-dark:#1e6438;--green-mid:#3aab6e;--green-lt:#d4f0e0;
+      --cream:#f8faf6;--ink:#1a1a1a;--muted:#6b7280;--red:#c53030;--red-lt:#fff0f0;
+      --gold:#c69c2a;--gold-lt:#fffbeb;--card-rad:14px;--shadow:0 4px 24px rgba(0,0,0,.08);
+    }
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--cream);color:var(--ink);line-height:1.6;}
+    #scroll-bar{position:fixed;top:0;left:0;height:3px;width:0%;background:linear-gradient(90deg,var(--green-dark),var(--green-mid),#90e6b5);z-index:9999;box-shadow:0 0 10px rgba(46,200,100,.6);}
+    #particle-canvas{position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.3;}
+    .hero{background:linear-gradient(135deg,var(--green-dark) 0%,var(--green) 55%,var(--green-mid) 100%);color:#fff;padding:52px 40px 44px;text-align:center;position:relative;overflow:hidden;}
+    .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 20% 50%,rgba(255,255,255,.06) 0%,transparent 60%),radial-gradient(ellipse at 80% 20%,rgba(255,255,255,.04) 0%,transparent 50%);}
+    .hero .breadcrumb{display:flex;align-items:center;justify-content:center;gap:8px;font-size:.78rem;opacity:.7;margin-bottom:14px;}
+    .hero .breadcrumb a{color:#fff;text-decoration:none;opacity:.8;}
+    .hero .breadcrumb a:hover{opacity:1;text-decoration:underline;}
+    .hero .tag{display:inline-block;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:4px 16px;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:14px;}
+    .hero h1{font-size:clamp(1.8rem,4.5vw,3rem);font-weight:800;letter-spacing:-.02em;}
+    .hero .sub{font-size:1rem;opacity:.82;margin-top:8px;}
+    .hero .badges{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin-top:18px;}
+    .hero .badge-pill{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);border-radius:24px;padding:6px 18px;font-size:.82rem;font-weight:600;}
+    .hero .badge-pill span{font-weight:800;font-size:1.05rem;}
+    .vs-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:20px;padding:8px 18px;font-size:.82rem;margin-top:16px;}
+    .vs-badge .up{color:#86efac;font-weight:700;}
+    .vs-badge .down{color:#fca5a5;font-weight:700;}
+    .nav{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid #e5e7eb;display:flex;gap:4px;padding:0 24px;overflow-x:auto;scrollbar-width:none;}
+    .nav::-webkit-scrollbar{display:none;}
+    .nav a{white-space:nowrap;padding:14px 16px;font-size:.82rem;font-weight:600;color:var(--muted);text-decoration:none;border-bottom:2px solid transparent;transition:all .2s;}
+    .nav a:hover,.nav a.active{color:var(--green);border-bottom-color:var(--green);}
+    .nav .nav-sep{padding:14px 4px;color:#e5e7eb;font-size:.9rem;}
+    .container{max-width:1140px;margin:0 auto;padding:0 24px;}
+    .section{padding:52px 0 12px;}
+    .section-header{display:flex;align-items:center;gap:12px;margin-bottom:28px;}
+    .section-header .icon{width:40px;height:40px;border-radius:10px;background:var(--green-lt);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;}
+    .section-header h2{font-size:1.35rem;font-weight:700;color:var(--green-dark);position:relative;display:inline-block;}
+    .section-header h2::after{content:'';position:absolute;bottom:-4px;left:0;height:2px;width:0;background:var(--green);transition:width .8s cubic-bezier(.25,.46,.45,.94) .3s;}
+    .section-header.visible h2::after{width:100%;}
+    .section-header p{font-size:.88rem;color:var(--muted);margin-top:2px;}
+    .metrics-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:14px;margin-bottom:28px;}
+    .metric-card{background:#fff;border-radius:var(--card-rad);padding:20px 18px;box-shadow:var(--shadow);cursor:default;transition:transform .2s,box-shadow .2s;position:relative;overflow:hidden;transform-style:preserve-3d;}
+    .metric-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--green);transform:scaleX(0);transform-origin:left;transition:transform .3s;}
+    .metric-card:hover{transform:translateY(-4px);box-shadow:0 10px 32px rgba(0,0,0,.12);}
+    .metric-card:hover::before{transform:scaleX(1);}
+    .metric-card .label{font-size:.74rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px;}
+    .metric-card .value{font-size:1.55rem;font-weight:800;color:var(--ink);line-height:1;}
+    .metric-card .change{display:inline-flex;align-items:center;gap:4px;font-size:.78rem;font-weight:600;margin-top:8px;padding:2px 8px;border-radius:20px;}
+    .change.up{background:#dcfce7;color:#166534;}
+    .change.down{background:#fee2e2;color:#991b1b;}
+    .change.flat{background:#f3f4f6;color:#6b7280;}
+    .change.gold{background:#fef3c7;color:#92400e;}
+    .chart-row{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:28px;}
+    @media(max-width:750px){.chart-row{grid-template-columns:1fr;}}
+    .chart-card{background:#fff;border-radius:var(--card-rad);padding:24px;box-shadow:var(--shadow);}
+    .chart-card h3{font-size:.9rem;font-weight:700;color:var(--green-dark);margin-bottom:18px;}
+    .chart-wrap{position:relative;height:220px;}
+    .chart-full{background:#fff;border-radius:var(--card-rad);padding:24px;box-shadow:var(--shadow);margin-bottom:28px;}
+    .chart-full h3{font-size:.9rem;font-weight:700;color:var(--green-dark);margin-bottom:18px;}
+    .chart-full .chart-wrap-tall{position:relative;height:280px;}
+    .table-card{background:#fff;border-radius:var(--card-rad);padding:24px;box-shadow:var(--shadow);overflow-x:auto;margin-bottom:28px;}
+    .table-card h3{font-size:.9rem;font-weight:700;color:var(--green-dark);margin-bottom:16px;}
+    table{width:100%;border-collapse:collapse;font-size:.84rem;}
+    thead tr{background:var(--green);color:#fff;}
+    thead th{padding:10px 14px;text-align:left;font-weight:600;font-size:.78rem;letter-spacing:.04em;}
+    tbody tr{border-bottom:1px solid #f1f5f9;transition:background .15s;}
+    tbody tr:hover{background:var(--green-lt);}
+    tbody td{padding:10px 14px;}
+    tbody tr.gold-row{background:var(--gold-lt);}
+    tbody tr.total{background:#f8faf6;font-weight:700;}
+    .rank-badge{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:6px;font-size:.75rem;font-weight:800;}
+    .rank-1{background:#ffd700;color:#7a5800;}
+    .rank-2{background:#c0c0c0;color:#444;}
+    .rank-3{background:#cd7f32;color:#fff;}
+    .rank-other{background:#f1f5f9;color:var(--muted);}
+    .bar-bg{background:#f1f5f9;border-radius:4px;height:6px;margin-top:4px;}
+    .bar-fill{background:var(--green);height:6px;border-radius:4px;transition:width 1.2s ease;}
+    .badge{display:inline-block;padding:2px 8px;border-radius:10px;font-size:.72rem;font-weight:600;}
+    .badge.ltd{background:#fef3c7;color:#92400e;}
+    .badge.core{background:#dcfce7;color:#166534;}
+    .badge.bundle{background:#e0f2fe;color:#0369a1;}
+    .badge.acc{background:#f3e8ff;color:#7e22ce;}
+    .badge.mem{background:#f1f5f9;color:#374151;}
+    .spotlight-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px;margin-bottom:28px;}
+    .spotlight-card{background:#fff;border-radius:var(--card-rad);padding:20px;box-shadow:var(--shadow);border-top:3px solid var(--gold);position:relative;overflow:hidden;}
+    .spotlight-card::after{content:attr(data-rank);position:absolute;top:-6px;right:14px;font-size:3rem;font-weight:900;color:rgba(198,156,42,.12);line-height:1;}
+    .spotlight-card .sp-date{font-size:.72rem;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px;}
+    .spotlight-card .sp-rev{font-size:1.45rem;font-weight:800;color:var(--ink);}
+    .spotlight-card .sp-orders{font-size:.82rem;color:var(--muted);margin-top:3px;}
+    .spotlight-card .sp-note{font-size:.75rem;color:var(--green-dark);margin-top:8px;font-style:italic;}
+    .seg-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:28px;}
+    @media(max-width:650px){.seg-grid{grid-template-columns:1fr;}}
+    .seg-card{background:#fff;border-radius:var(--card-rad);padding:28px;box-shadow:var(--shadow);text-align:center;}
+    .seg-card .seg-num{font-size:2.8rem;font-weight:900;color:var(--green);}
+    .seg-card .seg-label{font-size:.82rem;font-weight:600;color:var(--muted);margin-top:4px;}
+    .seg-card .seg-sub{font-size:.78rem;color:var(--muted);margin-top:6px;}
+    .dow-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;margin-bottom:28px;}
+    @media(max-width:600px){.dow-grid{grid-template-columns:repeat(4,1fr);}}
+    .dow-card{background:#fff;border-radius:10px;padding:14px 10px;box-shadow:var(--shadow);text-align:center;position:relative;overflow:hidden;}
+    .dow-card::before{content:'';position:absolute;inset:0;background:var(--green);opacity:0;transition:opacity .3s;}
+    .dow-card:hover::before{opacity:.06;}
+    .dow-card .dow-name{font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:8px;}
+    .dow-card .dow-rev{font-size:.95rem;font-weight:800;color:var(--ink);}
+    .dow-card .dow-aov{font-size:.72rem;color:var(--muted);margin-top:4px;}
+    .dow-card .dow-bar{height:4px;border-radius:2px;background:var(--green);margin-top:8px;transition:width 1.2s ease;width:0;}
+    .dow-card.best .dow-name{color:var(--green);}
+    .dow-card.best .dow-rev{color:var(--green-dark);}
+    .takeaway-box{background:var(--green-lt);border-radius:var(--card-rad);padding:22px 24px;margin-bottom:28px;}
+    .takeaway-box h3{font-size:.88rem;font-weight:700;color:var(--green-dark);margin-bottom:12px;text-transform:uppercase;letter-spacing:.06em;}
+    .takeaway-list{list-style:none;}
+    .takeaway-list li{padding:6px 0 6px 20px;position:relative;font-size:.9rem;color:var(--ink);border-bottom:1px solid rgba(46,139,87,.15);}
+    .takeaway-list li:last-child{border-bottom:none;}
+    .takeaway-list li::before{content:'›';position:absolute;left:0;color:var(--green);font-weight:700;font-size:1.1rem;line-height:1.5;}
+    .report-footer{background:var(--green-dark);color:rgba(255,255,255,.7);text-align:center;padding:32px 24px;font-size:.82rem;margin-top:40px;}
+    .report-footer strong{color:#fff;}
+    .page-links{display:flex;justify-content:center;gap:16px;margin-bottom:16px;flex-wrap:wrap;}
+    .page-links a{background:rgba(255,255,255,.15);color:#fff;text-decoration:none;padding:8px 20px;border-radius:8px;font-size:.84rem;font-weight:600;border:1px solid rgba(255,255,255,.2);transition:background .2s;}
+    .page-links a:hover{background:rgba(255,255,255,.25);}
+    .page-links a.current{background:var(--green);border-color:var(--green-mid);}
+    .reveal{opacity:0;transform:translateY(40px);transition:opacity .65s cubic-bezier(.25,.46,.45,.94),transform .65s cubic-bezier(.25,.46,.45,.94);}
+    .reveal.visible{opacity:1;transform:translateY(0);}
+    .stagger>*{opacity:0;transform:translateY(30px);transition:opacity .5s ease,transform .5s ease;}
+    .stagger.visible>*:nth-child(1){opacity:1;transform:none;transition-delay:.05s;}
+    .stagger.visible>*:nth-child(2){opacity:1;transform:none;transition-delay:.12s;}
+    .stagger.visible>*:nth-child(3){opacity:1;transform:none;transition-delay:.19s;}
+    .stagger.visible>*:nth-child(4){opacity:1;transform:none;transition-delay:.26s;}
+    .stagger.visible>*:nth-child(5){opacity:1;transform:none;transition-delay:.33s;}
+    .stagger.visible>*:nth-child(6){opacity:1;transform:none;transition-delay:.40s;}
+    .stagger.visible>*:nth-child(7){opacity:1;transform:none;transition-delay:.47s;}
+    .stagger.visible>*:nth-child(8){opacity:1;transform:none;transition-delay:.54s;}
+    .scrambling{color:var(--green-mid) !important;}
+    .divider{height:1px;background:#e5e7eb;margin:28px 0;}
+  </style>
+</head>
+<body>
+<div id="scroll-bar"></div>
+<canvas id="particle-canvas"></canvas>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="breadcrumb">
+    <a href="cannibisters_store_overview.html">← Store Overview</a>
+    <span>›</span>
+    <a href="cannibisters_march_2026_shopify.html">← March Report</a>
+    <span>›</span>
+    <span>April 2026 Online Store</span>
+  </div>
+  <div class="tag">Shopify Online Store</div>
+  <h1>Cannibisters</h1>
+  <p class="sub">Online Store Performance — April 2026 &nbsp;|&nbsp; Excluding POS</p>
+  <div class="badges">
+    <div class="badge-pill">Orders: <span>612</span></div>
+    <div class="badge-pill">Revenue: <span>R634K</span></div>
+    <div class="badge-pill">AOV: <span>R1,036</span></div>
+    <div class="badge-pill">Repeat Rate: <span>52.4%</span></div>
+  </div>
+  <div class="vs-badge">
+    vs March: Revenue <span class="up">+8.5%</span> &nbsp;·&nbsp; AOV <span class="up">+7.8%</span> &nbsp;·&nbsp; Orders <span class="up">+0.7%</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav class="nav" id="mainNav">
+  <a href="cannibisters_store_overview.html">← Store Overview</a>
+  <span class="nav-sep">|</span>
+  <a href="#overview" class="active">Overview</a>
+  <a href="#daily">Daily Revenue</a>
+  <a href="#products">Products</a>
+  <a href="#dow">Day of Week</a>
+  <a href="#customers">Customers</a>
+  <a href="#categories">Categories</a>
+  <a href="#discounts">Discounts</a>
+  <a href="#topcustomers">Top Customers</a>
+</nav>
+
+<!-- ══════════════ OVERVIEW ══════════════ -->
+<section class="section container" id="overview">
+  <div class="section-header">
+    <div class="icon">🛒</div>
+    <div><h2>Store Overview</h2><p>April 2026 — online orders only, POS excluded</p></div>
+  </div>
+  <div class="metrics-grid stagger">
+    <div class="metric-card"><div class="label">Online Orders</div><div class="value" data-final="612">000</div><div class="change up">+0.7% vs Mar</div></div>
+    <div class="metric-card"><div class="label">Net Revenue</div><div class="value" data-final="R633,803">R000</div><div class="change up">+8.5% vs Mar</div></div>
+    <div class="metric-card"><div class="label">Gross Revenue</div><div class="value" data-final="R624,270">R000</div><div class="change up">Pre-discount</div></div>
+    <div class="metric-card"><div class="label">Avg Order Value</div><div class="value" data-final="R1,036">R000</div><div class="change up">+R75 vs Mar</div></div>
+    <div class="metric-card"><div class="label">Discounts Given</div><div class="value" data-final="R67,366">R000</div><div class="change down">41.8% of orders</div></div>
+    <div class="metric-card"><div class="label">Unique Customers</div><div class="value" data-final="166">000</div><div class="change flat">Online shoppers</div></div>
+    <div class="metric-card"><div class="label">Repeat Customers</div><div class="value" data-final="87">00</div><div class="change up">52.4% of base</div></div>
+    <div class="metric-card"><div class="label">Payment Success</div><div class="value" data-final="100%">00%</div><div class="change up">All 612 paid</div></div>
+  </div>
+  <div class="chart-row">
+    <div class="chart-card reveal">
+      <h3>Revenue vs Orders — Daily Trend</h3>
+      <div class="chart-wrap"><canvas id="revOrdersChart"></canvas></div>
+    </div>
+    <div class="chart-card reveal">
+      <h3>Revenue by Category</h3>
+      <div class="chart-wrap"><canvas id="catChart"></canvas></div>
+    </div>
+  </div>
+  <div class="takeaway-box reveal">
+    <h3>Key Takeaways</h3>
+    <ul class="takeaway-list">
+      <li>R634K net online revenue — Cannibisters' strongest online month yet, up 8.5% on March's R584K</li>
+      <li>AOV climbed to R1,036 (+R75 vs March) — customers are spending more per visit despite more discounted orders</li>
+      <li>52.4% repeat rate — loyalty holding firm as over half of April's online buyers had ordered before</li>
+      <li>100% payment success rate — every single one of the 612 orders processed cleanly, zero payment failures</li>
+      <li>April shifted to personalised one-time discount codes — no shared promo codes; staff issued unique codes per customer</li>
+      <li>Easter weekend (Sat–Mon, Apr 4–6) was the quietest stretch; Good Friday (Apr 3) surprised with R24,653 in revenue</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ══════════════ DAILY REVENUE ══════════════ -->
+<section class="section container" id="daily">
+  <div class="section-header">
+    <div class="icon">📈</div>
+    <div><h2>Daily Revenue Breakdown</h2><p>All 30 days — online store revenue in ZAR</p></div>
+  </div>
+  <div class="chart-full reveal">
+    <h3>Daily Revenue — April 2026 (Online Store)</h3>
+    <div class="chart-wrap-tall"><canvas id="dailyChart"></canvas></div>
+  </div>
+  <div class="section-header" style="margin-top:8px;">
+    <div class="icon">🏆</div>
+    <div><h2>Best Performing Days</h2><p>Top 5 revenue days in April</p></div>
+  </div>
+  <div class="spotlight-grid stagger">
+    <div class="spotlight-card" data-rank="1">
+      <div class="sp-date">Fri 17 Apr</div>
+      <div class="sp-rev">R31,698</div>
+      <div class="sp-orders">27 orders · AOV R1,174</div>
+      <div class="sp-note">Mid-month Friday surge — consistent with email send timing</div>
+    </div>
+    <div class="spotlight-card" data-rank="2">
+      <div class="sp-date">Fri 24 Apr</div>
+      <div class="sp-rev">R31,410</div>
+      <div class="sp-orders">28 orders · AOV R1,122</div>
+      <div class="sp-note">Second consecutive peak Friday — pre-Freedom Day momentum</div>
+    </div>
+    <div class="spotlight-card" data-rank="3">
+      <div class="sp-date">Thu 23 Apr</div>
+      <div class="sp-rev">R27,691</div>
+      <div class="sp-orders">17 orders · AOV R1,629</div>
+      <div class="sp-note">Highest AOV in top 5 — small order count, high-value basket</div>
+    </div>
+    <div class="spotlight-card" data-rank="4">
+      <div class="sp-date">Sat 11 Apr</div>
+      <div class="sp-rev">R27,286</div>
+      <div class="sp-orders">25 orders · AOV R1,091</div>
+      <div class="sp-note">Post-Easter recovery — strong Saturday rebound</div>
+    </div>
+    <div class="spotlight-card" data-rank="5">
+      <div class="sp-date">Sun 26 Apr</div>
+      <div class="sp-rev">R26,521</div>
+      <div class="sp-orders">17 orders · AOV R1,560</div>
+      <div class="sp-note">Freedom Day weekend — high-value Sunday shoppers</div>
+    </div>
+  </div>
+  <div class="takeaway-box reveal">
+    <h3>Key Takeaways</h3>
+    <ul class="takeaway-list">
+      <li>Friday is April's strongest day — both #1 (Apr 17) and #2 (Apr 24) fell on Fridays, combining for R63K in two days</li>
+      <li>Apr 23–24 (Thu–Fri) back-to-back: R59K across 45 orders — the month's best 48-hour window</li>
+      <li>Good Friday (Apr 3) delivered R24,653 — a public holiday that punched well above a typical Wednesday</li>
+      <li>Easter Saturday–Monday (Apr 4–6): combined only R38,925 — the month's weakest 3-day stretch</li>
+      <li>Apr 21 (Tue) was the single worst day: 12 orders, R7,934 — the only day below R10K</li>
+      <li>Freedom Day (Apr 27, Mon) held its own at R24,146 — public holidays don't kill online demand</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ══════════════ PRODUCTS ══════════════ -->
+<section class="section container" id="products">
+  <div class="section-header">
+    <div class="icon">🌿</div>
+    <div><h2>Product Performance</h2><p>Top sellers by revenue — online store, April 2026</p></div>
+  </div>
+  <div class="chart-row">
+    <div class="chart-card reveal">
+      <h3>Top 10 Products by Revenue</h3>
+      <div class="chart-wrap" style="height:260px"><canvas id="prodRevChart"></canvas></div>
+    </div>
+    <div class="chart-card reveal">
+      <h3>Top 10 Products by Units Sold</h3>
+      <div class="chart-wrap" style="height:260px"><canvas id="prodUnitsChart"></canvas></div>
+    </div>
+  </div>
+  <div class="table-card reveal">
+    <h3>Full Product Leaderboard — Top 20 by Revenue</h3>
+    <table>
+      <thead><tr><th>#</th><th>Product</th><th>Type</th><th>Revenue</th><th>Units</th><th>Avg Price</th><th>Share</th></tr></thead>
+      <tbody id="prod-table-body"></tbody>
+    </table>
+  </div>
+  <div class="takeaway-box reveal">
+    <h3>Key Takeaways</h3>
+    <ul class="takeaway-list">
+      <li>Face On Fire is April's #1 product — R27,360 from 144 units. A new chart-topper after March's Alien Mints dominance</li>
+      <li>Backwoods Rolling Leaf enters the top 3 at R21,600 — 288 units at R75 each shows accessories driving real volume</li>
+      <li>Wizard Fuel holds strong at #2 (R22,420, 118 units) — consistent performer month over month</li>
+      <li>Indoor Lucky Packet 5g at #5 (R19,550, 44 units, R444 avg) — premium mystery bundle with strong repeat appeal</li>
+      <li>Zootly Vape Cartridge Bundle at #18: only 6 units but R10,200 (R1,700/unit) — ultra-high-value accessory purchase</li>
+      <li>Superberry Crush slips from March #1 to #9 — still healthy at R15,390 but Face On Fire took the crown this month</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ══════════════ DAY OF WEEK ══════════════ -->
+<section class="section container" id="dow">
+  <div class="section-header">
+    <div class="icon">📅</div>
+    <div><h2>Day of Week Analysis</h2><p>Revenue and AOV patterns by weekday — April 2026</p></div>
+  </div>
+  <div class="dow-grid stagger" id="dow-grid"></div>
+  <div class="chart-row">
+    <div class="chart-card reveal">
+      <h3>Revenue by Day of Week</h3>
+      <div class="chart-wrap"><canvas id="dowRevChart"></canvas></div>
+    </div>
+    <div class="chart-card reveal">
+      <h3>Average Order Value by Day of Week</h3>
+      <div class="chart-wrap"><canvas id="dowAOVChart"></canvas></div>
+    </div>
+  </div>
+  <div class="takeaway-box reveal">
+    <h3>Key Takeaways</h3>
+    <ul class="takeaway-list">
+      <li>Thursday and Friday are April's strongest revenue days (R108K each) — a shift from March where Tuesday led</li>
+      <li>Monday has the highest AOV at R1,194 — fewer orders but high-intent, high-basket buyers start the week</li>
+      <li>Wednesday leads in order count (104) but AOV (R968) lags behind Thursday and Friday — volume without premium intent</li>
+      <li>Tuesday is April's weakest day: lowest revenue (R69K) and second-lowest AOV (R903) — avoid premium campaign launches</li>
+      <li>Weekends (Sat R992, Sun R990) are consistent but not standout — solid everyday shop behaviour</li>
+      <li>Thursday's high AOV (R1,120) suggests considered, higher-basket buying ahead of the weekend</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ══════════════ CUSTOMERS ══════════════ -->
+<section class="section container" id="customers">
+  <div class="section-header">
+    <div class="icon">👥</div>
+    <div><h2>Customer Breakdown</h2><p>New vs repeat — online store, April 2026</p></div>
+  </div>
+  <div class="seg-grid stagger">
+    <div class="seg-card">
+      <div class="seg-num" data-final="87">00</div>
+      <div class="seg-label">Repeat Customers</div>
+      <div class="seg-sub">52.4% of unique online buyers — purchased more than once in April</div>
+    </div>
+    <div class="seg-card">
+      <div class="seg-num" data-final="79">00</div>
+      <div class="seg-label">New Customers</div>
+      <div class="seg-sub">47.6% — first-time online buyers in April</div>
+    </div>
+  </div>
+  <div class="chart-row">
+    <div class="chart-card reveal">
+      <h3>New vs Repeat Customers</h3>
+      <div class="chart-wrap"><canvas id="custChart"></canvas></div>
+    </div>
+    <div class="chart-card reveal">
+      <h3>Discounted vs Full-Price Orders</h3>
+      <div class="chart-wrap"><canvas id="discountChart"></canvas></div>
+    </div>
+  </div>
+  <div class="metrics-grid stagger">
+    <div class="metric-card"><div class="label">Orders with Discount</div><div class="value" data-final="256">000</div><div class="change down">41.8% of orders</div></div>
+    <div class="metric-card"><div class="label">Full-Price Orders</div><div class="value" data-final="356">000</div><div class="change up">58.2% of orders</div></div>
+    <div class="metric-card"><div class="label">Avg Discount Value</div><div class="value" data-final="R263">R000</div><div class="change flat">Per discounted order</div></div>
+    <div class="metric-card"><div class="label">Voided Orders</div><div class="value" data-final="0">0</div><div class="change up">100% paid</div></div>
+  </div>
+  <div class="takeaway-box reveal">
+    <h3>Key Takeaways</h3>
+    <ul class="takeaway-list">
+      <li>52.4% repeat rate — another month above 50%, confirming a loyal and returning online base</li>
+      <li>79 new customers acquired — healthy top-of-funnel for a store with no paid online acquisition</li>
+      <li>41.8% of orders used a discount, up from March's 36.8% — more personalised discounting in April</li>
+      <li>Avg discount per discounted order rose to R263 (from R215 in March) — larger individual discounts being issued</li>
+      <li>100% payment success — flawless payment processing for the entire month, improvement on March's 97.2%</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ══════════════ CATEGORIES ══════════════ -->
+<section class="section container" id="categories">
+  <div class="section-header">
+    <div class="icon">🗂️</div>
+    <div><h2>Category Performance</h2><p>Revenue breakdown by product type — April 2026</p></div>
+  </div>
+  <div class="chart-row">
+    <div class="chart-card reveal">
+      <h3>Revenue by Category</h3>
+      <div class="chart-wrap"><canvas id="catRevChart"></canvas></div>
+    </div>
+    <div class="chart-card reveal">
+      <h3>Units Sold by Category</h3>
+      <div class="chart-wrap"><canvas id="catUnitsChart"></canvas></div>
+    </div>
+  </div>
+  <div class="table-card reveal">
+    <h3>Category Summary — April 2026</h3>
+    <table>
+      <thead><tr><th>Category</th><th>Revenue</th><th>Revenue Share</th><th>Key Products</th></tr></thead>
+      <tbody>
+        <tr class="gold-row"><td><span class="badge core">Flower &amp; Concentrates</span></td><td>R500,704</td><td>79.0%<div class="bar-bg"><div class="bar-fill" data-w="79" style="width:0"></div></div></td><td>Face On Fire, Wizard Fuel, Green Crack</td></tr>
+        <tr><td><span class="badge bundle">Lucky Packets / Bundles</span></td><td>R47,535</td><td>7.5%<div class="bar-bg"><div class="bar-fill" data-w="7.5" style="width:0"></div></div></td><td>Indoor 5g, Greendoor 5g, Indoor 10g</td></tr>
+        <tr><td><span class="badge acc">Accessories &amp; Vapes</span></td><td>R47,535</td><td>7.5%<div class="bar-bg"><div class="bar-fill" data-w="7.5" style="width:0"></div></div></td><td>Backwoods, Zootly Bundle, High Club</td></tr>
+        <tr><td><span class="badge ltd">Limited Collection</span></td><td>R25,352</td><td>4.0%<div class="bar-bg"><div class="bar-fill" data-w="4" style="width:0"></div></div></td><td>GSC Limited, select drops</td></tr>
+        <tr><td><span class="badge mem">Memberships &amp; Other</span></td><td>R12,678</td><td>2.0%<div class="bar-bg"><div class="bar-fill" data-w="2" style="width:0"></div></div></td><td>1-day, 30-day, 3-month plans</td></tr>
+        <tr class="total"><td>TOTAL</td><td>R633,804</td><td>100%</td><td></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="takeaway-box reveal">
+    <h3>Key Takeaways</h3>
+    <ul class="takeaway-list">
+      <li>Flower &amp; Concentrates holds at 79% of revenue — core business remains dominant and healthy</li>
+      <li>Accessories jumped in April driven by Backwoods Rolling Leaf (288 units, R21,600) — rolling products are a sleeper revenue stream</li>
+      <li>Lucky Packets at 7.5% — mystery bundle mechanic continues to attract spend; add more tiers to capitalise</li>
+      <li>Limited Collection down to 4% from March's 12.2% — fewer Ltd drops in April means this line is promotion-driven</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ══════════════ DISCOUNT CODES ══════════════ -->
+<section class="section container" id="discounts">
+  <div class="section-header">
+    <div class="icon">🏷️</div>
+    <div><h2>Discount Code Performance</h2><p>Online channel — April 2026</p></div>
+  </div>
+  <div class="metrics-grid stagger">
+    <div class="metric-card"><div class="label">Orders With Discount</div><div class="value" data-final="256">000</div><div class="change down">41.8% of orders</div></div>
+    <div class="metric-card"><div class="label">Total Discount Given</div><div class="value" data-final="R67,366">R000</div><div class="change down">Online channel</div></div>
+    <div class="metric-card"><div class="label">Discount Model</div><div class="value" data-final="PERSONAL">---</div><div class="change gold">1-to-1 codes</div></div>
+    <div class="metric-card"><div class="label">Avg per Use</div><div class="value" data-final="R263">R000</div><div class="change flat">Per discounted order</div></div>
+  </div>
+  <div class="table-card reveal">
+    <h3>April Discount Approach — Key Observations</h3>
+    <table>
+      <thead><tr><th>Metric</th><th>March 2026</th><th>April 2026</th><th>Change</th></tr></thead>
+      <tbody>
+        <tr><td>Discounted orders</td><td>224</td><td>256</td><td><span class="change up">+14.3%</span></td></tr>
+        <tr><td>% of orders discounted</td><td>36.8%</td><td>41.8%</td><td><span class="change down">+5.0pp</span></td></tr>
+        <tr><td>Total discount given</td><td>R48,112</td><td>R67,366</td><td><span class="change down">+40.0%</span></td></tr>
+        <tr><td>Avg discount per order</td><td>R215</td><td>R263</td><td><span class="change down">+R48</span></td></tr>
+        <tr><td>Discount model</td><td>Shared codes (HAPPYHOUR24 etc.)</td><td>Unique 1-to-1 codes</td><td><span class="change gold">New approach</span></td></tr>
+        <tr class="gold-row"><td>Only named code in April</td><td>—</td><td>WELCOMEBACK10 (2 uses)</td><td><span class="change flat">Re-engagement</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="takeaway-box reveal">
+    <h3>Key Takeaways</h3>
+    <ul class="takeaway-list">
+      <li>April moved entirely to personalised 1-to-1 discount codes — no shared promo codes like HAPPYHOUR24 were used online</li>
+      <li>This is a smarter operational model — unique codes prevent sharing, enable per-customer tracking, and protect margins</li>
+      <li>Total discount given rose 40% to R67,366 despite no broad campaign — more customers received targeted discounts</li>
+      <li>Avg discount value jumped to R263 from R215 in March — staff are giving more generous individual incentives</li>
+      <li>WELCOMEBACK10 was the only named code used (2 times, R498) — re-engagement automation still underutilised</li>
+      <li>Recommendation: ensure 1-to-1 code issuance is tracked per staff member so discount impact per team member is measurable</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ══════════════ TOP CUSTOMERS ══════════════ -->
+<section class="section container" id="topcustomers">
+  <div class="section-header">
+    <div class="icon">⭐</div>
+    <div><h2>Top Customer Performance</h2><p>Online channel — ranked by April 2026 spend</p></div>
+  </div>
+  <div class="metrics-grid stagger">
+    <div class="metric-card"><div class="label">#1 Customer Spend</div><div class="value" data-final="R47,844">R000</div><div class="change up">49 orders</div></div>
+    <div class="metric-card"><div class="label">Most Frequent Buyer</div><div class="value" data-final="49 orders">00</div><div class="change up">Nizole B.</div></div>
+    <div class="metric-card"><div class="label">Top 5 Combined</div><div class="value" data-final="R165,112">R000</div><div class="change up">103 orders</div></div>
+    <div class="metric-card"><div class="label">Highest AOV (Top 20)</div><div class="value" data-final="R10,361">R000</div><div class="change gold">1 order only</div></div>
+  </div>
+  <div class="chart-row reveal">
+    <div class="chart-card">
+      <h3>Top 10 Customers — Total Spend (R)</h3>
+      <div class="chart-wrap" style="height:280px"><canvas id="topCustSpendChart"></canvas></div>
+    </div>
+    <div class="chart-card">
+      <h3>Top 10 Customers — Order Count</h3>
+      <div class="chart-wrap" style="height:280px"><canvas id="topCustOrdersChart"></canvas></div>
+    </div>
+  </div>
+  <div class="table-card reveal">
+    <h3>Top 20 Customers — April 2026</h3>
+    <table>
+      <thead><tr><th>#</th><th>Customer</th><th>Orders</th><th>Total Spend</th><th>AOV</th><th>Segment</th></tr></thead>
+      <tbody>
+        <tr class="gold-row"><td><span class="rank-badge rank-1">1</span></td><td>Nizole B.</td><td>49</td><td>R47,844</td><td>R976</td><td><span class="badge core">High Freq</span></td></tr>
+        <tr><td><span class="rank-badge rank-2">2</span></td><td>Oke M.</td><td>28</td><td>R42,628</td><td>R1,522</td><td><span class="badge core">High Value</span></td></tr>
+        <tr><td><span class="rank-badge rank-3">3</span></td><td>Jason G.</td><td>11</td><td>R27,864</td><td>R2,533</td><td><span class="badge gold">Premium</span></td></tr>
+        <tr><td><span class="rank-badge rank-other">4</span></td><td>Rich T.</td><td>15</td><td>R24,075</td><td>R1,605</td><td><span class="badge core">High Value</span></td></tr>
+        <tr><td><span class="rank-badge rank-other">5</span></td><td>Maxwell I.</td><td>25</td><td>R22,701</td><td>R908</td><td><span class="badge core">High Freq</span></td></tr>
+        <tr><td><span class="rank-badge rank-other">6</span></td><td>Joshua B.</td><td>5</td><td>R21,344</td><td>R4,269</td><td><span class="badge gold">Whale</span></td></tr>
+        <tr><td><span class="rank-badge rank-other">7</span></td><td>Testimony U.</td><td>19</td><td>R17,111</td><td>R901</td><td><span class="badge core">High Freq</span></td></tr>
+        <tr><td><span class="rank-badge rank-other">8</span></td><td>Awoniyi L.</td><td>17</td><td>R15,511</td><td>R912</td><td><span class="badge core">High Freq</span></td></tr>
+        <tr><td><span class="rank-badge rank-other">9</span></td><td>Marvellous O.</td><td>11</td><td>R13,538</td><td>R1,231</td><td><span class="badge core">High Value</span></td></tr>
+        <tr><td><span class="rank-badge rank-other">10</span></td><td>Tebogo N.</td><td>2</td><td>R12,066</td><td>R6,033</td><td><span class="badge gold">Whale</span></td></tr>
+        <tr><td><span class="rank-badge rank-other">11</span></td><td>Nicola G.</td><td>1</td><td>R10,361</td><td>R10,361</td><td><span class="badge gold">Mega Whale</span></td></tr>
+        <tr><td><span class="rank-badge rank-other">12</span></td><td>Olatunsesi T.</td><td>15</td><td>R10,112</td><td>R674</td><td><span class="badge core">High Freq</span></td></tr>
+        <tr><td><span class="rank-badge rank-other">13</span></td><td>Samantha C.</td><td>5</td><td>R9,892</td><td>R1,978</td><td><span class="badge gold">Premium</span></td></tr>
+        <tr><td><span class="rank-badge rank-other">14</span></td><td>Otasowie E.</td><td>12</td><td>R9,530</td><td>R794</td><td><span class="badge core">High Freq</span></td></tr>
+        <tr><td><span class="rank-badge rank-other">15</span></td><td>Prince F.</td><td>6</td><td>R9,339</td><td>R1,556</td><td><span class="badge core">High Value</span></td></tr>
+        <tr><td><span class="rank-badge rank-other">16</span></td><td>Olusegun O.</td><td>13</td><td>R8,671</td><td>R667</td><td><span class="badge core">High Freq</span></td></tr>
+        <tr><td><span class="rank-badge rank-other">17</span></td><td>Daniel E.</td><td>12</td><td>R8,434</td><td>R703</td><td><span class="badge core">High Freq</span></td></tr>
+        <tr><td><span class="rank-badge rank-other">18</span></td><td>Rasheed O.</td><td>14</td><td>R8,113</td><td>R580</td><td><span class="badge core">High Freq</span></td></tr>
+        <tr><td><span class="rank-badge rank-other">19</span></td><td>Ola M.</td><td>14</td><td>R7,926</td><td>R566</td><td><span class="badge core">High Freq</span></td></tr>
+        <tr><td><span class="rank-badge rank-other">20</span></td><td>Humphrey J.</td><td>6</td><td>R7,806</td><td>R1,301</td><td><span class="badge core">High Value</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="takeaway-box reveal">
+    <h3>Key Takeaways</h3>
+    <ul class="takeaway-list">
+      <li>Nizole B. leads with R47,844 across 49 orders (AOV R976) — highest frequency AND highest spend in April</li>
+      <li>Oke M. at #2 with 28 orders and R42,628 — powerful R1,522 AOV makes every order count</li>
+      <li>Nicola G. placed a single order worth R10,361 — the biggest single transaction online in April; ensure VIP treatment</li>
+      <li>Three "whale" buyers (Joshua B., Tebogo N., Nicola G.) contributed R43,771 across just 8 orders — ultra-high AOV segment</li>
+      <li>Top 5 customers account for R165K (26% of total April online revenue) — extreme concentration worth protecting</li>
+      <li>André Fourie (#25) used code WEHQCZRX for a single R7,121 order — likely staff/owner ordering through online channel</li>
+    </ul>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="report-footer">
+  <div class="page-links">
+    <a href="cannibisters_store_overview.html">Full Store Overview</a>
+    <a href="cannibisters_march_2026_shopify.html">March 2026 Report</a>
+    <a href="#" class="current">April 2026 Report</a>
+  </div>
+  <strong>Cannibisters Herbal Apothecary</strong> — cannibisters.com<br>
+  April 2026 Online Store Report &nbsp;|&nbsp; Confidential — internal use only<br>
+  <span style="opacity:.5;font-size:.75rem;">Generated 4 May 2026</span>
+</footer>
+
+<script>
+// ── Data ─────────────────────────────────────────────────
+const dailyRev = [24871,17768,24653,14058,15882,12436,20851,22087,19464,20354,27286,17272,24371,23667,17273,21812,31698,15757,21505,21456,7934,22748,27691,31410,26203,26521,24146,17072,13695,21862];
+const dailyOrd = [24,19,21,16,17,13,24,22,20,23,25,25,20,22,20,19,27,18,23,19,12,22,17,28,25,17,17,19,16,22];
+const days = Array.from({length:30},(_,i)=>i+1);
+const GREEN_PAL = ['#2E8B57','#3aab6e','#52c47e','#6fd898','#90e6b5','#b2eed0','#c69c2a','#1e6438','#4db87a','#7ed4a2'];
+const maxRev = Math.max(...dailyRev);
+const totalRevOnline = 633803;
+
+const products = [
+  {name:'Face On Fire',rev:27360,units:144,type:'core'},
+  {name:'Wizard Fuel',rev:22420,units:118,type:'core'},
+  {name:'Backwoods Rolling Leaf',rev:21600,units:288,type:'acc'},
+  {name:'Green Crack',rev:20490,units:105,type:'core'},
+  {name:'Indoor Lucky Packet 5g',rev:19550,units:44,type:'bundle'},
+  {name:'Purple Lemonade',rev:19440,units:100,type:'core'},
+  {name:'Jessica Rabbit',rev:18030,units:93,type:'core'},
+  {name:'Brainstorm',rev:16600,units:83,type:'core'},
+  {name:'Superberry Crush',rev:15390,units:81,type:'core'},
+  {name:'Pipe Dream',rev:14040,units:73,type:'core'},
+  {name:'Forbidden Fruit',rev:13880,units:72,type:'core'},
+  {name:'Madam Cookies',rev:13590,units:70,type:'core'},
+  {name:'Colt 45',rev:13080,units:68,type:'core'},
+  {name:'Premium Durban Poison',rev:11280,units:47,type:'core'},
+  {name:'Watermelon Punch',rev:10640,units:56,type:'core'},
+  {name:'Lucky Packet Greendoor 5g',rev:10500,units:42,type:'bundle'},
+  {name:'Primal Desire',rev:10350,units:53,type:'core'},
+  {name:'Zootly Vape Bundle (×2)',rev:10200,units:6,type:'acc'},
+  {name:'Pineapple Express',rev:10070,units:53,type:'core'},
+  {name:"Lion's Bread",rev:9880,units:52,type:'core'},
+];
+
+const dowData = [
+  {day:'Mon',rev:82409,orders:69,aov:1194},
+  {day:'Tue',rev:69525,orders:77,aov:903},
+  {day:'Wed',rev:100674,orders:104,aov:968},
+  {day:'Thu',rev:108596,orders:97,aov:1120},
+  {day:'Fri',rev:108115,orders:99,aov:1092},
+  {day:'Sat',rev:83304,orders:84,aov:992},
+  {day:'Sun',rev:81179,orders:82,aov:990},
+];
+const maxDowRev = Math.max(...dowData.map(d=>d.rev));
+
+const topCustomers = [
+  {name:'Nizole B.',orders:49,spend:47844},
+  {name:'Oke M.',orders:28,spend:42628},
+  {name:'Jason G.',orders:11,spend:27864},
+  {name:'Rich T.',orders:15,spend:24075},
+  {name:'Maxwell I.',orders:25,spend:22701},
+  {name:'Joshua B.',orders:5,spend:21344},
+  {name:'Testimony U.',orders:19,spend:17111},
+  {name:'Awoniyi L.',orders:17,spend:15511},
+  {name:'Marvellous O.',orders:11,spend:13538},
+  {name:'Tebogo N.',orders:2,spend:12066},
+];
+
+// ── Build product table ───────────────────────────────────
+const tbody = document.getElementById('prod-table-body');
+products.forEach((p,i) => {
+  const rankClass = i===0?'rank-1':i===1?'rank-2':i===2?'rank-3':'rank-other';
+  const pct = (p.rev/totalRevOnline*100).toFixed(1);
+  const typeLabel = {core:'Flower',ltd:'Ltd Coll.',bundle:'Bundle',acc:'Accessory',mem:'Membership'};
+  tbody.innerHTML += `<tr>
+    <td><span class="rank-badge ${rankClass}">${i+1}</span></td>
+    <td>${p.name}</td>
+    <td><span class="badge ${p.type}">${typeLabel[p.type]||'Flower'}</span></td>
+    <td>R${p.rev.toLocaleString()}</td>
+    <td>${p.units}</td>
+    <td>R${Math.round(p.rev/p.units)}</td>
+    <td>${pct}%<div class="bar-bg"><div class="bar-fill" data-w="${pct}" style="width:0"></div></div></td>
+  </tr>`;
+});
+
+// ── Build DOW grid ────────────────────────────────────────
+const dowGrid = document.getElementById('dow-grid');
+dowData.forEach(d => {
+  const pct = (d.rev/maxDowRev*100).toFixed(0);
+  const isBest = d.rev === maxDowRev;
+  dowGrid.innerHTML += `<div class="dow-card${isBest?' best':''}">
+    <div class="dow-name">${d.day}</div>
+    <div class="dow-rev">R${(d.rev/1000).toFixed(0)}K</div>
+    <div class="dow-aov">AOV R${d.aov}</div>
+    <div class="dow-bar" data-w="${pct}" style="width:0"></div>
+  </div>`;
+});
+
+// ── CHARTS ────────────────────────────────────────────────
+new Chart(document.getElementById('revOrdersChart'),{
+  type:'line',
+  data:{labels:days,datasets:[
+    {label:'Revenue (R)',data:dailyRev,yAxisID:'y',fill:true,backgroundColor:'rgba(46,139,87,.1)',borderColor:'#2E8B57',borderWidth:2,pointRadius:2,tension:.35},
+    {label:'Orders',data:dailyOrd,yAxisID:'y2',fill:false,borderColor:'#c69c2a',borderWidth:2,pointRadius:2,tension:.35,borderDash:[4,3]}
+  ]},
+  options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{font:{size:10}}}},
+    scales:{y:{ticks:{callback:v=>'R'+(v/1000).toFixed(0)+'k'},grid:{color:'#f1f5f9'}},
+            y2:{position:'right',ticks:{callback:v=>v+''},grid:{display:false}}}}
+});
+
+new Chart(document.getElementById('catChart'),{
+  type:'doughnut',
+  data:{labels:['Flower & Conc.','Lucky Packets','Accessories','Ltd Collection','Other'],
+    datasets:[{data:[500704,47535,47535,25352,12677],backgroundColor:['#2E8B57','#3aab6e','#c69c2a','#7ed4a2','#d4f0e0'],hoverOffset:6}]},
+  options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{font:{size:10}}},
+    tooltip:{callbacks:{label:ctx=>` R${ctx.parsed.toLocaleString()} (${(ctx.parsed/totalRevOnline*100).toFixed(1)}%)`}}}}
+});
+
+new Chart(document.getElementById('dailyChart'),{
+  type:'bar',
+  data:{labels:days.map(d=>`${d}`),datasets:[{label:'Revenue (R)',data:dailyRev,
+    backgroundColor:dailyRev.map(v=>{
+      const i=v/maxRev;
+      return i>.9?'#1e6438':i>.7?'#2E8B57':i>.5?'#3aab6e':i>.3?'#52c47e':'#90e6b5';
+    }),borderRadius:5}]},
+  options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},
+    tooltip:{callbacks:{title:ctx=>`Apr ${ctx[0].label}`,label:ctx=>[` Revenue: R${ctx.parsed.y.toLocaleString()}`,` Orders: ${dailyOrd[ctx.dataIndex]}`,` AOV: R${Math.round(dailyRev[ctx.dataIndex]/dailyOrd[ctx.dataIndex])}`]}}},
+    scales:{y:{ticks:{callback:v=>'R'+(v/1000).toFixed(0)+'k'},grid:{color:'#f1f5f9'}},x:{grid:{display:false}}}}
+});
+
+new Chart(document.getElementById('prodRevChart'),{
+  type:'bar',
+  data:{labels:products.slice(0,10).map(p=>p.name.length>22?p.name.slice(0,22)+'…':p.name),
+    datasets:[{label:'Revenue (R)',data:products.slice(0,10).map(p=>p.rev),backgroundColor:GREEN_PAL,borderRadius:5}]},
+  options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},
+    scales:{x:{ticks:{callback:v=>'R'+(v/1000).toFixed(0)+'k'},grid:{color:'#f1f5f9'}},y:{ticks:{font:{size:9}},grid:{display:false}}}}
+});
+
+const byUnits=[...products].sort((a,b)=>b.units-a.units).slice(0,10);
+new Chart(document.getElementById('prodUnitsChart'),{
+  type:'bar',
+  data:{labels:byUnits.map(p=>p.name.length>22?p.name.slice(0,22)+'…':p.name),
+    datasets:[{label:'Units',data:byUnits.map(p=>p.units),backgroundColor:GREEN_PAL,borderRadius:5}]},
+  options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},
+    scales:{x:{grid:{color:'#f1f5f9'}},y:{ticks:{font:{size:9}},grid:{display:false}}}}
+});
+
+new Chart(document.getElementById('dowRevChart'),{
+  type:'bar',
+  data:{labels:dowData.map(d=>d.day),
+    datasets:[{label:'Revenue (R)',data:dowData.map(d=>d.rev),
+      backgroundColor:dowData.map(d=>d.rev>=maxDowRev-500?'#2E8B57':'#90e6b5'),borderRadius:6}]},
+  options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},
+    scales:{y:{ticks:{callback:v=>'R'+(v/1000).toFixed(0)+'k'},grid:{color:'#f1f5f9'}},x:{grid:{display:false}}}}
+});
+
+new Chart(document.getElementById('dowAOVChart'),{
+  type:'line',
+  data:{labels:dowData.map(d=>d.day),
+    datasets:[{label:'AOV (R)',data:dowData.map(d=>d.aov),fill:true,backgroundColor:'rgba(198,156,42,.12)',borderColor:'#c69c2a',borderWidth:2,pointRadius:4,pointBackgroundColor:'#c69c2a',tension:.4}]},
+  options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},
+    scales:{y:{min:800,ticks:{callback:v=>'R'+v},grid:{color:'#f1f5f9'}},x:{grid:{display:false}}}}
+});
+
+new Chart(document.getElementById('custChart'),{
+  type:'doughnut',
+  data:{labels:['Repeat Customers','New Customers'],
+    datasets:[{data:[87,79],backgroundColor:['#2E8B57','#90e6b5'],hoverOffset:6}]},
+  options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{font:{size:11}}}}}
+});
+
+new Chart(document.getElementById('discountChart'),{
+  type:'doughnut',
+  data:{labels:['Full-Price Orders','Discounted Orders'],
+    datasets:[{data:[356,256],backgroundColor:['#2E8B57','#c69c2a'],hoverOffset:6}]},
+  options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{font:{size:11}}}}}
+});
+
+new Chart(document.getElementById('catRevChart'),{
+  type:'bar',
+  data:{labels:['Flower & Conc.','Lucky Packets','Accessories','Ltd Collection','Other'],
+    datasets:[{label:'Revenue (R)',data:[500704,47535,47535,25352,12677],backgroundColor:['#2E8B57','#3aab6e','#c69c2a','#7ed4a2','#d4f0e0'],borderRadius:6}]},
+  options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},
+    scales:{y:{ticks:{callback:v=>'R'+(v/1000).toFixed(0)+'k'},grid:{color:'#f1f5f9'}},x:{grid:{display:false}}}}
+});
+
+new Chart(document.getElementById('catUnitsChart'),{
+  type:'bar',
+  data:{labels:['Flower & Conc.','Accessories','Lucky Packets','Ltd Collection','Other'],
+    datasets:[{label:'Units',data:[1950,310,130,55,35],backgroundColor:['#2E8B57','#c69c2a','#3aab6e','#7ed4a2','#d4f0e0'],borderRadius:6}]},
+  options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},
+    scales:{y:{grid:{color:'#f1f5f9'}},x:{grid:{display:false}}}}
+});
+
+new Chart(document.getElementById('topCustSpendChart'),{
+  type:'bar',
+  data:{labels:topCustomers.map(c=>c.name),
+    datasets:[{label:'Total Spend (R)',data:topCustomers.map(c=>c.spend),
+      backgroundColor:['#ffd700','#c0c0c0','#cd7f32',...Array(7).fill('#90e6b5')],borderRadius:5}]},
+  options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},
+    scales:{x:{ticks:{callback:v=>'R'+(v/1000).toFixed(0)+'k'},grid:{color:'#f1f5f9'}},y:{ticks:{font:{size:10}},grid:{display:false}}}}
+});
+
+new Chart(document.getElementById('topCustOrdersChart'),{
+  type:'bar',
+  data:{labels:topCustomers.map(c=>c.name),
+    datasets:[{label:'Orders',data:topCustomers.map(c=>c.orders),
+      backgroundColor:['#ffd700','#c0c0c0','#cd7f32',...Array(7).fill('#3aab6e')],borderRadius:5}]},
+  options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},
+    scales:{x:{grid:{color:'#f1f5f9'}},y:{ticks:{font:{size:10}},grid:{display:false}}}}
+});
+
+// ── SCROLL PROGRESS ──
+window.addEventListener('scroll',()=>{
+  document.getElementById('scroll-bar').style.width=(window.scrollY/(document.body.scrollHeight-window.innerHeight)*100)+'%';
+},{passive:true});
+
+// ── PARTICLES ──
+(function(){
+  const canvas=document.getElementById('particle-canvas'),ctx=canvas.getContext('2d');
+  let W,H,P=[];
+  function resize(){W=canvas.width=window.innerWidth;H=canvas.height=window.innerHeight;}
+  resize();window.addEventListener('resize',resize);
+  function r(a,b){return a+Math.random()*(b-a);}
+  for(let i=0;i<50;i++) P.push({x:r(0,1),y:r(0,1),vx:r(-.0003,.0003),vy:r(-.0003,.0003),rad:r(1,3),a:r(.2,.6),h:r(130,160)});
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    P.forEach(p=>{p.x+=p.vx;p.y+=p.vy;if(p.x<0)p.x=1;if(p.x>1)p.x=0;if(p.y<0)p.y=1;if(p.y>1)p.y=0;
+      ctx.beginPath();ctx.arc(p.x*W,p.y*H,p.rad,0,Math.PI*2);ctx.fillStyle=`hsla(${p.h},60%,55%,${p.a})`;ctx.fill();});
+    for(let i=0;i<P.length;i++)for(let j=i+1;j<P.length;j++){
+      const dx=(P[i].x-P[j].x)*W,dy=(P[i].y-P[j].y)*H,dist=Math.sqrt(dx*dx+dy*dy);
+      if(dist<120){ctx.beginPath();ctx.strokeStyle=`rgba(46,200,100,${.18*(1-dist/120)})`;ctx.lineWidth=.8;
+        ctx.moveTo(P[i].x*W,P[i].y*H);ctx.lineTo(P[j].x*W,P[j].y*H);ctx.stroke();}}
+    requestAnimationFrame(draw);}
+  draw();
+})();
+
+// ── REVEAL ──
+const revIO=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('visible');revIO.unobserve(x.target);}});},{threshold:.1});
+document.querySelectorAll('.reveal,.stagger,.section-header').forEach(el=>revIO.observe(el));
+
+// ── BAR FILLS ──
+const barIO=new IntersectionObserver(e=>{e.forEach(x=>{if(!x.isIntersecting)return;x.target.querySelectorAll('.bar-fill[data-w]').forEach(b=>{b.style.width=b.dataset.w+'%';});barIO.unobserve(x.target);});},{threshold:.2});
+document.querySelectorAll('.table-card,.section').forEach(el=>barIO.observe(el));
+document.querySelectorAll('.dow-bar[data-w]').forEach(b=>{
+  const io=new IntersectionObserver(([e])=>{if(e.isIntersecting){b.style.width=b.dataset.w+'%';io.disconnect();}},{threshold:.5});
+  io.observe(b);});
+
+// ── SCRAMBLE ──
+(function(){
+  const CHARS='0123456789';
+  function scramble(el,final,dur){
+    const start=performance.now();el.classList.add('scrambling');
+    const iv=setInterval(()=>{
+      const p=Math.min((performance.now()-start)/dur,1);
+      if(p>=1){el.textContent=final;el.classList.remove('scrambling');clearInterval(iv);return;}
+      const rev=Math.floor(p*final.length);let out='';
+      for(let i=0;i<final.length;i++) out+=i<rev?final[i]:/[0-9]/.test(final[i])?CHARS[Math.floor(Math.random()*CHARS.length)]:final[i];
+      el.textContent=out;},40);}
+  const scIO=new IntersectionObserver(e=>{e.forEach(x=>{if(!x.isIntersecting)return;const el=x.target;const f=el.dataset.final;if(!f)return;setTimeout(()=>scramble(el,f,900),200);scIO.unobserve(el);});},{threshold:.5});
+  document.querySelectorAll('[data-final]').forEach(el=>{el.textContent=el.textContent.replace(/[0-9]/g,'0');scIO.observe(el);});
+})();
+
+// ── 3D TILT ──
+document.querySelectorAll('.metric-card,.spotlight-card,.seg-card').forEach(card=>{
+  card.addEventListener('mousemove',e=>{
+    const r=card.getBoundingClientRect();
+    const x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
+    card.style.transform=`perspective(600px) rotateY(${x*12}deg) rotateX(${-y*12}deg) translateZ(6px)`;
+    card.style.boxShadow=`${-x*12}px ${y*12}px 32px rgba(46,139,87,.18)`;});
+  card.addEventListener('mouseleave',()=>{card.style.cssText='';});});
+
+// ── NAV ACTIVE ──
+const sections=document.querySelectorAll('section[id]');
+const navLinks=document.querySelectorAll('.nav a[href^="#"]');
+window.addEventListener('scroll',()=>{
+  let cur='';sections.forEach(s=>{if(window.scrollY>=s.offsetTop-120)cur=s.id;});
+  navLinks.forEach(a=>{a.classList.toggle('active',a.getAttribute('href')==='#'+cur);});},{passive:true});
+</script>
+</body>
+</html>
