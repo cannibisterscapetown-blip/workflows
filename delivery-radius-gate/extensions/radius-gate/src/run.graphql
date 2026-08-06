@@ -1,0 +1,23 @@
+query Input {
+  cart {
+    deliveryGroups {
+      deliveryAddress {
+        zip
+        city
+        provinceCode
+        countryCode
+        latitude
+        longitude
+      }
+      deliveryOptions {
+        handle
+        title
+      }
+    }
+  }
+  deliveryCustomization {
+    metafield(namespace: "$app:radius-gate", key: "config") {
+      jsonValue
+    }
+  }
+}

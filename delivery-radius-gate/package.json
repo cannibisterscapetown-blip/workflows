@@ -1,0 +1,13 @@
+{
+  "name": "delivery-radius-gate",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test 'extensions/**/*.test.js'",
+    "deploy": "shopify app deploy"
+  },
+  "devDependencies": {
+    "@shopify/cli": "^3.90.0"
+  }
+}

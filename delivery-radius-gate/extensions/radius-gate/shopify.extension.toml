@@ -1,0 +1,16 @@
+api_version = "2026-07"
+
+[[extensions]]
+name = "radius-gate"
+handle = "radius-gate"
+type = "function"
+description = "Gates the 25km Cape Town delivery rates on measured distance from the shop."
+
+  [[extensions.targeting]]
+  target = "cart.delivery-options.transform.run"
+  input_query = "src/run.graphql"
+  export = "run"
+
+  [extensions.build]
+  command = ""
+  path = "dist/function.wasm"

@@ -1,0 +1,10 @@
+client_id = "bf8985cecfbe27bbf9dbe30dd4b39ee2"
+name = "delivery-radius-gate"
+application_url = "https://cannibisters.com"
+embedded = false
+
+[access_scopes]
+scopes = ""
+
+[build]
+include_config_on_deploy = true
