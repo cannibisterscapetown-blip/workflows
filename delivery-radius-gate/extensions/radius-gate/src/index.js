@@ -39,8 +39,24 @@ const DEFAULT_CONFIG = {
   insideOnlyTitles: ["cape town same day", "cape town up to 25kms"],
   // Rates only offered to buyers OUTSIDE the radius.
   outsideOnlyTitles: ["western cape 25kms +"],
-  // Escape hatches for addresses that geocode badly. Postcodes here are treated
-  // as definitive; everything else falls through to the distance check.
+  // Anything outside these is out of range by definition, and this is the only
+  // check that catches a foreign address.
+  countryCode: "ZA",
+  provinceCode: "WC",
+  // Cape Town metro postcodes taken as within the radius when the address has
+  // no coordinates. MERCHANT-REVIEWABLE: this is a starting set, not a surveyed
+  // one. Anything missing can be added via `allowZips` in the config metafield
+  // without redeploying.
+  metroZips: [
+    // City Bowl, Waterfront, Atlantic Seaboard
+    "8000", "8001", "8005", "8010", "8040", "8051", "8060",
+    // Woodstock, Observatory, southern suburbs
+    "7700", "7701", "7708", "7725", "7735", "7745", "7764", "7780",
+    "7800", "7806", "7808", "7925", "7935", "7941", "7945", "7950",
+    // Northern suburbs within range
+    "7405", "7435", "7441", "7443", "7446", "7460", "7463", "7490", "7500",
+  ],
+  // Explicit overrides, checked before everything else.
   allowZips: [],
   denyZips: [],
 };
@@ -90,16 +106,28 @@ export function haversineKm(lat1, lon1, lat2, lon2) {
 export function classify(address, config) {
   if (!address) return "unknown";
 
+  const listHas = (list, value) =>
+    (list ?? []).some((entry) => normaliseZip(String(entry)) === value);
+
   const zip = normaliseZip(address.zip);
   if (zip) {
-    if (config.denyZips.some((entry) => normaliseZip(String(entry)) === zip)) {
-      return "outside";
-    }
-    if (config.allowZips.some((entry) => normaliseZip(String(entry)) === zip)) {
-      return "inside";
-    }
+    if (listHas(config.denyZips, zip)) return "outside";
+    if (listHas(config.allowZips, zip)) return "inside";
   }
 
+  // A different country or province is out of range regardless of anything
+  // else, and this is what stops a foreign address being offered local rates.
+  if (address.countryCode && address.countryCode !== config.countryCode) {
+    return "outside";
+  }
+  if (address.provinceCode && address.provinceCode !== config.provinceCode) {
+    return "outside";
+  }
+
+  // Preferred signal when it's available. In practice checkout often supplies
+  // no coordinates for shipping-rate calculation, which is why this can't be
+  // the only signal — relying on it alone made every address unclassifiable
+  // and the gate stopped hiding anything at all.
   const { latitude, longitude } = address;
   if (typeof latitude === "number" && typeof longitude === "number") {
     const distance = haversineKm(
@@ -109,6 +137,12 @@ export function classify(address, config) {
       longitude,
     );
     return distance <= config.radiusKm ? "inside" : "outside";
+  }
+
+  if (zip) {
+    // Province is already known to be in range, so a postcode that isn't metro
+    // is a non-metro town in the same province — outside, not unclassifiable.
+    return listHas(config.metroZips, zip) ? "inside" : "outside";
   }
 
   return "unknown";

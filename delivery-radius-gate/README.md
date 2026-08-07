@@ -54,10 +54,19 @@ without redeploying:
   "radiusKm": 25,
   "insideOnlyTitles": ["cape town same day", "cape town up to 25kms"],
   "outsideOnlyTitles": ["western cape 25kms +"],
+  "countryCode": "ZA",
+  "provinceCode": "WC",
+  "metroZips": ["8001", "8005", "..."],
   "allowZips": [],
   "denyZips": []
 }
 ```
+
+`metroZips` is the fallback used when checkout supplies no coordinates, which
+is the common case. **It is a starting set, not a surveyed one** — worth
+reviewing against where you actually deliver. Adding a missing postcode to
+`allowZips` takes effect immediately without a redeploy, so a gap costs a
+config edit rather than a release.
 
 Verify `originLatitude` / `originLongitude` against the 65 Regent Rd location in
 admin before relying on them. A few hundred metres of drift doesn't matter at a

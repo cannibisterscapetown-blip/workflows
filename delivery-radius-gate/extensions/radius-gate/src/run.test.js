@@ -56,6 +56,9 @@ describe("classify", () => {
     radiusKm: 25,
     insideOnlyTitles: [],
     outsideOnlyTitles: [],
+    countryCode: "ZA",
+    provinceCode: "WC",
+    metroZips: ["8001", "8005", "8060", "7441", "7806"],
     allowZips: [],
     denyZips: [],
   };
@@ -75,8 +78,34 @@ describe("classify", () => {
     );
   });
 
-  it("returns unknown when the address has no coordinates", () => {
-    assert.equal(classify({ zip: "8005" }, config), "unknown");
+  // Checkout frequently supplies no coordinates for shipping-rate calculation.
+  // The first production release treated that as unclassifiable and hid
+  // nothing, so every address — Hermanus, and a European one — was offered the
+  // local rates. These cover the fallback that replaced it.
+  it("falls back to the postcode list when there are no coordinates", () => {
+    assert.equal(classify({ zip: "8005", provinceCode: "WC" }, config), "inside");
+  });
+
+  it("treats a non-metro postcode as outside when there are no coordinates", () => {
+    assert.equal(classify({ zip: "7200", provinceCode: "WC" }, config), "outside");
+  });
+
+  it("treats a foreign address as outside", () => {
+    assert.equal(
+      classify({ zip: "95700", countryCode: "FR", provinceCode: "WC" }, config),
+      "outside",
+    );
+  });
+
+  it("treats another province as outside", () => {
+    assert.equal(
+      classify({ zip: "2191", countryCode: "ZA", provinceCode: "GP" }, config),
+      "outside",
+    );
+  });
+
+  it("returns unknown only when there is neither a postcode nor coordinates", () => {
+    assert.equal(classify({ city: "Cape Town" }, config), "unknown");
   });
 
   it("honours an allow-list entry before measuring distance", () => {
@@ -127,8 +156,25 @@ describe("run", () => {
     assert.deepEqual(hiddenHandles(result), ["free-25km", "same-day"]);
   });
 
-  it("hides nothing when the address cannot be located", () => {
-    const result = run(inputFor({ zip: "8005" }));
+  it("hides the within-25km rates for Hermanus with no coordinates", () => {
+    // The production regression: this returned no operations, so Hermanus was
+    // offered both Cape Town rates.
+    const result = run(inputFor({ zip: "7200", city: "Hermanus", provinceCode: "WC", countryCode: "ZA" }));
+    assert.deepEqual(hiddenHandles(result), ["free-25km", "same-day"]);
+  });
+
+  it("hides the within-25km rates for a foreign address", () => {
+    const result = run(inputFor({ zip: "95700", city: "Roissy-en-France", countryCode: "FR" }));
+    assert.deepEqual(hiddenHandles(result), ["free-25km", "same-day"]);
+  });
+
+  it("keeps the free rate for Sea Point with no coordinates", () => {
+    const result = run(inputFor({ zip: "8005", city: "Sea Point", provinceCode: "WC", countryCode: "ZA" }));
+    assert.deepEqual(hiddenHandles(result), ["beyond-25km"]);
+  });
+
+  it("hides nothing when the address has neither postcode nor coordinates", () => {
+    const result = run(inputFor({ city: "Cape Town" }));
     assert.deepEqual(result.operations, []);
   });
 
