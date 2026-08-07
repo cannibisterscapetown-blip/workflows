@@ -65,18 +65,56 @@ admin before relying on them. A few hundred metres of drift doesn't matter at a
 
 ## Deploying
 
-Requires Partner credentials, which aren't available from a Claude Code session.
-Either run it locally:
+Requires Partner credentials, which aren't available from a Claude Code session,
+so this has to run on an authenticated machine.
+
+The extension directory here is hand-written rather than produced by
+`shopify app generate extension`, so it lacks two things the CLI's JavaScript
+build path expects: a `codegen` block in the extension's `package.json`, and a
+`schema.graphql` fetched from Shopify. Both are needed before the wasm build
+will run.
+
+Fetch the schema (this is the step that needs auth):
 
 ```sh
-cd delivery-radius-gate
-npm install
-npm test
-npx shopify app deploy
+cd delivery-radius-gate/extensions/radius-gate
+shopify app function schema
+shopify app function typegen
 ```
 
-…or create an **app automation token** (dev dashboard → the app → Settings → App
-automation token) and set `SHOPIFY_CLI_PARTNERS_TOKEN` in CI.
+Then from `delivery-radius-gate`:
+
+```sh
+npm install
+npm test          # expect 16 pass / 0 fail
+shopify app deploy
+```
+
+If typegen still fails, the fastest fix is to let the CLI scaffold a known-good
+extension and move the logic into it — the scaffold brings the correct
+`package.json`, codegen config and schema:
+
+```sh
+shopify app generate extension   # pick "delivery option transform", JavaScript
+```
+
+Then copy `src/index.js`, `src/run.graphql` and `src/run.test.js` from this
+extension into the generated one, and keep its `package.json` and
+`shopify.extension.toml`. The logic in `index.js` has no dependency on how the
+extension was scaffolded.
+
+Two things that are easy to get wrong and cost a deploy cycle each:
+
+- **The entry point must be `src/index.js`.** The CLI looks only there to decide
+  a function is JavaScript. Any other filename (`src/run.js`, say) makes it fall
+  through to a path that demands an explicit build command and fails with
+  "doesn't have a build command or it's empty".
+- **`@shopify/shopify_function` must be a dependency** of the function
+  directory, at `~2.0.0`.
+
+For CI instead of a local machine, create an **app automation token** (dev
+dashboard → the app → Settings → App automation token) and set
+`SHOPIFY_CLI_PARTNERS_TOKEN`.
 
 The `client_id` in `shopify.app.toml` points at the existing
 `delivery-radius-gate` app, so deploying publishes a new version of the app

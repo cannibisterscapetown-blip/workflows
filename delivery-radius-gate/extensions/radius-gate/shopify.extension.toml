@@ -11,6 +11,10 @@ description = "Gates the 25km Cape Town delivery rates on measured distance from
   input_query = "src/run.graphql"
   export = "run"
 
+  # No build command: the CLI detects this as a JavaScript function from
+  # src/index.js and compiles it itself (esbuild bundle -> javy -> wasm).
+  # The entry point MUST be src/index.js — the CLI looks only there, and any
+  # other filename makes it fall through to the "needs a build command" path.
   [extensions.build]
   command = ""
-  path = "dist/function.wasm"
+  path = "dist/index.wasm"

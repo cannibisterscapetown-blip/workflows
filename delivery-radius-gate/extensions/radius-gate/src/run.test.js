@@ -1,7 +1,7 @@
 import { describe, it } from "node:test";
 import assert from "node:assert";
 
-import { run, classify, haversineKm } from "./run.js";
+import { run, classify, haversineKm } from "./index.js";
 
 const SAME_DAY = {
   handle: "same-day",

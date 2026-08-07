@@ -7,6 +7,9 @@
     "test": "node --test 'extensions/**/*.test.js'",
     "deploy": "shopify app deploy"
   },
+  "dependencies": {
+    "@shopify/shopify_function": "~2.0.0"
+  },
   "devDependencies": {
     "@shopify/cli": "^3.90.0"
   }
