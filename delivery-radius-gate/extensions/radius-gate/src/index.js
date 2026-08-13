@@ -47,17 +47,35 @@ const DEFAULT_CONFIG = {
   // no coordinates. MERCHANT-REVIEWABLE: this is a starting set, not a surveyed
   // one. Anything missing can be added via `allowZips` in the config metafield
   // without redeploying.
+  // Cape Town metro postcodes taken as within the radius. Deliberately broad:
+  // since an unrecognised postcode is now shown every rate rather than gated
+  // out, an over-inclusive list costs nothing, while a missing entry only
+  // affects whether the "25kms +" rate is also offered. Compiled from general
+  // knowledge of Cape Town postcodes rather than surveyed, so treat it as a
+  // good default, not an authority.
   metroZips: [
-    // City Bowl, Waterfront, Atlantic Seaboard
-    "8000", "8001", "8005", "8010", "8018", "8040", "8045", "8051", "8060",
-    // Woodstock, Observatory, southern suburbs
-    "7700", "7701", "7705", "7706", "7707", "7708", "7709", "7725", "7730",
-    "7735", "7740", "7745", "7750", "7760", "7764", "7780", "7785", "7790",
-    "7800", "7801", "7806", "7808", "7809", "7925", "7935", "7941", "7945",
-    "7950", "7975",
-    // Northern suburbs within range
-    "7405", "7435", "7441", "7443", "7446", "7460", "7463", "7490", "7500",
-    "7530", "7550",
+    // CBD, City Bowl, Waterfront, Atlantic Seaboard
+    "8000", "8001", "8002", "8005", "8010", "8012", "8018",
+    "8040", "8045", "8050", "8051", "8060",
+    // Woodstock, Salt River, Observatory, Mowbray, Rosebank
+    "7915", "7917", "7920", "7925", "7930", "7935", "7937",
+    "7700", "7701", "7702", "7703", "7704", "7705", "7706", "7707",
+    // Rondebosch, Claremont, Newlands, Kenilworth, Wynberg, Plumstead
+    "7708", "7709", "7710", "7725", "7735", "7740", "7745", "7750",
+    "7760", "7764", "7766", "7780", "7785", "7790", "7796", "7798", "7799",
+    "7800", "7801", "7802", "7806", "7808", "7809",
+    // Athlone, Lansdowne, Ottery, Grassy Park, Retreat, Tokai, Muizenberg
+    "7764", "7824", "7827", "7829", "7830", "7837", "7841",
+    "7940", "7941", "7945", "7947", "7950", "7960", "7965", "7966",
+    "7975", "7978", "7979", "7980", "7985",
+    // Mitchells Plain, Khayelitsha, Philippi
+    "7781", "7782", "7783", "7784", "7789",
+    // Ysterplaat, Brooklyn, Milnerton, Table View, Blouberg
+    "7405", "7410", "7411", "7420", "7425", "7430", "7435", "7439",
+    "7441", "7443", "7446", "7450",
+    // Goodwood, Parow, Bellville, Durbanville, Bothasig, Edgemead
+    "7460", "7463", "7475", "7480", "7490", "7493",
+    "7500", "7501", "7505", "7530", "7535", "7550",
   ],
   // Known to be out of range. Only these are gated out; anything unrecognised
   // is shown rather than hidden.
