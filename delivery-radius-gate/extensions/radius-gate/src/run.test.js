@@ -59,6 +59,7 @@ describe("classify", () => {
     countryCode: "ZA",
     provinceCode: "WC",
     metroZips: ["8001", "8005", "8060", "7441", "7806"],
+    nonMetroZips: ["7200"],
     allowZips: [],
     denyZips: [],
   };
@@ -86,8 +87,14 @@ describe("classify", () => {
     assert.equal(classify({ zip: "8005", provinceCode: "WC" }, config), "inside");
   });
 
-  it("treats a non-metro postcode as outside when there are no coordinates", () => {
+  it("treats a known out-of-range postcode as outside", () => {
     assert.equal(classify({ zip: "7200", provinceCode: "WC" }, config), "outside");
+  });
+
+  // Mowbray (7705) was missing from metroZips and those customers lost the free
+  // rate. An unrecognised postcode must never gate a local customer out.
+  it("returns unknown for an unrecognised postcode rather than outside", () => {
+    assert.equal(classify({ zip: "7705", provinceCode: "WC" }, config), "unknown");
   });
 
   it("treats a foreign address as outside", () => {
@@ -175,6 +182,16 @@ describe("run", () => {
 
   it("hides nothing when the address has neither postcode nor coordinates", () => {
     const result = run(inputFor({ city: "Cape Town" }));
+    assert.deepEqual(result.operations, []);
+  });
+
+  it("keeps the free rate for Mowbray (7705)", () => {
+    const result = run(inputFor({ zip: "7705", city: "Mowbray", provinceCode: "WC", countryCode: "ZA" }));
+    assert.deepEqual(hiddenHandles(result), ["beyond-25km"]);
+  });
+
+  it("shows every rate for an unrecognised Western Cape postcode", () => {
+    const result = run(inputFor({ zip: "7599", city: "Somewhere", provinceCode: "WC", countryCode: "ZA" }));
     assert.deepEqual(result.operations, []);
   });
 

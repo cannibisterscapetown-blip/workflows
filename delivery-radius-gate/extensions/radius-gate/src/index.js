@@ -49,12 +49,24 @@ const DEFAULT_CONFIG = {
   // without redeploying.
   metroZips: [
     // City Bowl, Waterfront, Atlantic Seaboard
-    "8000", "8001", "8005", "8010", "8040", "8051", "8060",
+    "8000", "8001", "8005", "8010", "8018", "8040", "8045", "8051", "8060",
     // Woodstock, Observatory, southern suburbs
-    "7700", "7701", "7708", "7725", "7735", "7745", "7764", "7780",
-    "7800", "7806", "7808", "7925", "7935", "7941", "7945", "7950",
+    "7700", "7701", "7705", "7706", "7707", "7708", "7709", "7725", "7730",
+    "7735", "7740", "7745", "7750", "7760", "7764", "7780", "7785", "7790",
+    "7800", "7801", "7806", "7808", "7809", "7925", "7935", "7941", "7945",
+    "7950", "7975",
     // Northern suburbs within range
     "7405", "7435", "7441", "7443", "7446", "7460", "7463", "7490", "7500",
+    "7530", "7550",
+  ],
+  // Known to be out of range. Only these are gated out; anything unrecognised
+  // is shown rather than hidden.
+  nonMetroZips: [
+    "7200", // Hermanus
+    "7130", // Somerset West / Strand side
+    "6529", "6530", // George
+    "7646", // Paarl
+    "6600", "6620", "6665", // Karoo / Eastern Cape codes seen on orders
   ],
   // Explicit overrides, checked before everything else.
   allowZips: [],
@@ -140,9 +152,16 @@ export function classify(address, config) {
   }
 
   if (zip) {
-    // Province is already known to be in range, so a postcode that isn't metro
-    // is a non-metro town in the same province — outside, not unclassifiable.
-    return listHas(config.metroZips, zip) ? "inside" : "outside";
+    if (listHas(config.metroZips, zip)) return "inside";
+    // Only postcodes known to be out of range are gated. An unrecognised one is
+    // NOT treated as outside: a hand-maintained list is never complete, and
+    // every gap silently costs a local customer their free delivery with no
+    // signal at checkout. Mowbray (7705) was missing from metroZips and those
+    // customers lost the free rate — the same failure as the original app.
+    // Showing a rate to someone out of range is recoverable; blocking a paying
+    // local customer is not.
+    if (listHas(config.nonMetroZips, zip)) return "outside";
+    return "unknown";
   }
 
   return "unknown";
