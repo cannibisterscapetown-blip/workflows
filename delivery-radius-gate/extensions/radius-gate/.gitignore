@@ -1,0 +1,7 @@
+# Fetched from Shopify by `shopify app function schema` — needs Partner auth,
+# so it's environment-specific rather than source.
+schema.graphql
+
+# Emitted by codegen and by the wasm build.
+generated/
+dist/
