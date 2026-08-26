@@ -29,11 +29,11 @@
   }
 
   /* emblem stage — the theme's emblem-only art stage, as the poster's crown */
-  .crown{position:relative; height:560px; margin:0 auto 70px; width:700px; flex:none}
+  .crown{position:relative; height:640px; margin:40px auto 110px; width:700px; flex:none}
   .crown .glow{position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); width:900px; height:900px; border-radius:50%;
     background:radial-gradient(circle,rgba(212,160,23,.20) 0%,rgba(212,160,23,.065) 42%,transparent 66%); filter:blur(8px)}
   .poster--saffron .crown .glow{background:radial-gradient(circle,rgba(229,178,40,.22) 0%,rgba(229,178,40,.07) 42%,transparent 66%)}
-  .crown img{position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); width:540px; height:auto;
+  .crown img{position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); width:600px; height:auto;
     filter:drop-shadow(0 0 90px rgba(212,160,23,.5)) saturate(1)}
 
   .eyebrow{font-size:34px; letter-spacing:.28em; text-transform:uppercase; color:var(--accent);
@@ -49,12 +49,12 @@
   .body{margin:110px 0 0; max-width:1720px; color:var(--body); font-size:47px; line-height:1.55}
 
   /* rules — the poster's main content, set in the hero's own registers */
-  .rules{margin-top:80px; flex:1 0 auto; display:flex; flex-direction:column; justify-content:space-evenly}
+  .rules{margin-top:120px; margin-bottom:60px; flex:1 0 auto; display:flex; flex-direction:column; justify-content:space-evenly}
   .rule{display:flex; align-items:baseline; gap:56px}
-  .rule .num{font-family:"Bebas Neue",Impact,sans-serif; font-size:66px; color:var(--accent); flex:none; width:92px;
+  .rule .num{font-family:"Bebas Neue",Impact,sans-serif; font-size:84px; color:var(--accent); flex:none; width:120px;
     text-align:right; letter-spacing:.04em; opacity:.9}
   .rule .txt{}
-  .rule .t{font-family:"Bebas Neue",Impact,sans-serif; font-size:138px; line-height:1; color:var(--bone); letter-spacing:.012em}
+  .rule .t{font-family:"Bebas Neue",Impact,sans-serif; font-size:190px; line-height:1; color:var(--bone); letter-spacing:.012em}
   .rule .a{display:block; margin-top:16px; font-family:"Caveat",cursive; font-weight:600; font-size:58px; color:var(--accent); opacity:.9}
 
   /* marked callout, lasso / arrow variants, straight from the hero */
@@ -85,8 +85,6 @@
 <div class="poster" id="pool">
   <div class="crown"><div class="glow"></div><img src="cb-leaf-emblem.webp"></div>
 
-  <p class="eyebrow">Cannibisters &middot; The Games Room</p>
-
   <h1 class="head">
     <span class="lead">House Rules of</span>
     <span class="accent" style="font-size:300px">The Pool Table
@@ -94,24 +92,13 @@
     </span>
   </h1>
 
-  <p class="body">Challengers welcome, frames are friendly, and the table looks after whoever looks after it. Four small courtesies keep the baize quick.</p>
 
   <div class="rules">
-    <div class="rule"><span class="num">01</span><span class="txt"><span class="t">Winner stays on</span><span class="a">take the frame, and the table is yours to keep</span></span></div>
-    <div class="rule"><span class="num">02</span><span class="txt"><span class="t">No ashtrays on the table</span><span class="a">ash and baize are old enemies</span></span></div>
-    <div class="rule"><span class="num">03</span><span class="txt"><span class="t">No drinks on the table</span><span class="a">the felt drinks nothing</span></span></div>
-    <div class="rule"><span class="num">04</span><span class="txt"><span class="t">Leave the chalk</span><span class="a">it lives here &mdash; kindly let it stay</span></span></div>
+    <div class="rule"><span class="num">01</span><span class="txt"><span class="t">Winner stays on</span></span></div>
+    <div class="rule"><span class="num">02</span><span class="txt"><span class="t">No ashtrays on the table</span></span></div>
+    <div class="rule"><span class="num">03</span><span class="txt"><span class="t">No drinks on the table</span></span></div>
+    <div class="rule"><span class="num">04</span><span class="txt"><span class="t">Leave the chalk</span></span></div>
   </div>
-
-  <div class="chiprow">
-    <div class="chip">
-      <svg class="mark" viewBox="0 0 260 92" preserveAspectRatio="none" aria-hidden="true"><path d="M134 5 C58 1, 7 19, 5 47 C3 75, 61 89, 134 88 C207 87, 256 71, 255 44 C254 21, 211 7, 150 5 C123 3, 99 5, 84 10" stroke-width="2.6"/></svg>
-      <span class="chipN">Play Kindly</span>
-      <span class="chipT">challengers always welcome</span>
-    </div>
-  </div>
-
-  <p class="meta"><span>4 house rules</span><span>Winner stays on</span><span>65 Regent Rd, Sea Point</span></p>
 
   <div class="sign">
     <img src="cb-wordmark-white.png" alt="Cannibisters Herbal Apothecary">
@@ -123,8 +110,6 @@
 <div class="poster poster--saffron" id="arcade">
   <div class="crown"><div class="glow"></div><img src="cb-leaf-emblem.webp"></div>
 
-  <p class="eyebrow">Cannibisters &middot; The Games Room</p>
-
   <h1 class="head">
     <span class="lead">House Rules of</span>
     <span class="accent" style="font-size:340px">The Arcade
@@ -132,27 +117,14 @@
     </span>
   </h1>
 
-  <p class="body">One cabinet, a near-endless shelf of games &mdash; Asteroids, Pac-Man and everything after. A few small courtesies keep it that way.</p>
 
   <div class="rules">
-    <div class="rule"><span class="num">01</span><span class="txt"><span class="t">No hogging the machine</span><span class="a">high scores are earned in turns</span></span></div>
-    <div class="rule"><span class="num">02</span><span class="txt"><span class="t">Stop when staff ask</span><span class="a">please, and with good grace</span></span></div>
-    <div class="rule"><span class="num">03</span><span class="txt"><span class="t">No ashtrays on the machine</span><span class="a">delicate circuitry lives beneath</span></span></div>
-    <div class="rule"><span class="num">04</span><span class="txt"><span class="t">No drinks on the machine</span><span class="a">a spill ends the game faster than GAME OVER</span></span></div>
-    <div class="rule"><span class="num">05</span><span class="txt"><span class="t">Treat it kindly</span><span class="a">it&rsquo;s only visiting &mdash; help us convince it to stay</span></span></div>
+    <div class="rule"><span class="num">01</span><span class="txt"><span class="t">No hogging the machine</span></span></div>
+    <div class="rule"><span class="num">02</span><span class="txt"><span class="t">Stop when staff ask</span></span></div>
+    <div class="rule"><span class="num">03</span><span class="txt"><span class="t">No ashtrays on the machine</span></span></div>
+    <div class="rule"><span class="num">04</span><span class="txt"><span class="t">No drinks on the machine</span></span></div>
+    <div class="rule"><span class="num">05</span><span class="txt"><span class="t">Treat it kindly</span></span></div>
   </div>
-
-  <div class="chiprow">
-    <div class="chip">
-      <svg class="mark" viewBox="0 0 260 92" preserveAspectRatio="none" aria-hidden="true"><path d="M6 84 C64 84, 178 84, 254 84" stroke-width="2.6"/></svg>
-      <span class="chipN">Game On</span>
-      <span class="chipT">the high score is up for grabs</span>
-      <svg class="arrow" viewBox="0 0 104 56" aria-hidden="true"><path d="M2 40 C24 40, 44 30, 62 14" stroke-width="2.4"/><path d="M50 12 L64 11 L60 25" stroke-width="2.4"/></svg>
-      <span class="note">beat it if you can</span>
-    </div>
-  </div>
-
-  <p class="meta"><span>5 house rules</span><span>Endless games</span><span>65 Regent Rd, Sea Point</span></p>
 
   <div class="sign">
     <img src="cb-wordmark-white.png" alt="Cannibisters Herbal Apothecary">
