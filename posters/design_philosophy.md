@@ -1,0 +1,13 @@
+# Gilded Apothecary
+
+## A Design Philosophy
+
+**Gilded Apothecary** is the aesthetic of the candlelit dispensary — the conviction that rules, when set in gold upon darkness, stop being prohibitions and become ritual. It borrows the visual grammar of the Victorian chemist's cabinet: deep charcoal grounds the color of shop-worn ebony, ornament applied sparingly but with absolute intent, and letterforms that whisper their authority rather than shout it. Every surface must feel as though it was labored over by a master engraver — hairline rules drawn twice, corner marks placed by hand, gold leafed on with painstaking attention until the darkness itself feels expensive.
+
+Space is the first material. The composition breathes from a still, symmetrical spine: an emblem enthroned at the crown, a cascade of measured intervals descending beneath it like the shelves of an apothecary wall. Nothing crowds. Each element is granted its own pool of dark silence, so that the eye moves down the page in a slow, ceremonial procession. Margins are generous to the point of luxury; the frame — a fine double rule — holds the world in like the brass edge of a display case.
+
+Color is a two-voice fugue: aged gold against warm charcoal, mediated by candle-cream. The gold is never brassy — it is the gold of old varnish and pump-room mirrors, allowed to glow brightest only at the emblem and the numerals. The cream carries the reading voice. A third, hushed tone — smoke, the gray of ash and felt — is reserved for asides and afterthoughts, the italic murmur beneath the spoken line. No other hues are admitted. Restraint is the luxury.
+
+Typography behaves like engraved brass plates. Display serifs with blade-thin contrast are letterspaced wide and set small in the hierarchy's quiet registers; the great words are carved large but never bold. Numerals are treated as jewelry — each rule crowned with its own ordinal, set in gold, ringed with air. Text is minimal and ceremonial: a rule is one line, its consequence a whispered italic beneath. Nothing explains; everything decrees.
+
+Rhythm comes from repetition perfected. Diamond sights spaced like the rail of a billiard table, tick-marks measured like the graduations of a chemist's flask, pixel-squares assembled like tesserae — whatever the motif, it recurs with metronomic precision, so the page rewards sustained viewing the way an engraving does: first the whole, then the countless deliberate marks. The finished object must look like it took weeks — like the product of deep expertise, a plate pulled from a press by someone at the absolute top of their field, destined to be framed in dark wood and hung where the lamplight catches the gold.
