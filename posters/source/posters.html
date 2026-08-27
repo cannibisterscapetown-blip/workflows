@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="fonts_local.css">
+<style>
+  /* Cannibisters house-rules posters — same visual system as the Redesign PREVIEW
+     collection heroes (snippets/cb-collection-hero.liquid). A4 @ 300dpi. */
+  :root{
+    --gold:#D4A017; --saffron:#E5B228; --bone:#F8F4EA; --body:#D9D2C4;
+    --muted:#8E8677; --chipT:#B9AE97; --line:rgba(212,160,23,.22);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:#333}
+  .poster{
+    position:relative; width:2480px; height:3508px; overflow:hidden; isolation:isolate;
+    background:radial-gradient(88% 128% at 74% 20%,#1b1408 0%,#120d07 34%,#0a0a0c 68%,#060608 100%);
+    font-family:"DM Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    --accent:var(--gold);
+    padding:200px 220px 150px;
+    display:flex; flex-direction:column;
+  }
+  .poster--saffron{--accent:var(--saffron)}
+  /* film grain — same feTurbulence texture as the theme */
+  .poster::after{
+    content:""; position:absolute; inset:0; pointer-events:none; z-index:6; opacity:.15; mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/></filter><rect width='160' height='160' filter='url(%23n)' opacity='.55'/></svg>");
+    background-size:480px 480px;
+  }
+
+  /* emblem stage — the theme's emblem-only art stage, as the poster's crown */
+  .crown{position:relative; height:480px; margin:30px auto 100px; width:700px; flex:none}
+  .crown .glow{position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); width:720px; height:720px; border-radius:50%;
+    background:radial-gradient(circle,rgba(212,160,23,.20) 0%,rgba(212,160,23,.065) 42%,transparent 66%); filter:blur(8px)}
+  .poster--saffron .crown .glow{background:radial-gradient(circle,rgba(229,178,40,.22) 0%,rgba(229,178,40,.07) 42%,transparent 66%)}
+  .crown img{position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); width:440px; height:auto;
+    filter:drop-shadow(0 0 90px rgba(212,160,23,.5)) saturate(1)}
+
+  .eyebrow{font-size:34px; letter-spacing:.28em; text-transform:uppercase; color:var(--accent);
+    display:flex; align-items:center; gap:28px; margin-bottom:34px; font-weight:500}
+  .eyebrow::before{content:""; width:110px; height:3px; background:currentColor; opacity:.75; flex:none}
+
+  .head{font-family:"Bebas Neue",Impact,sans-serif; font-weight:400; color:var(--bone); line-height:.86}
+  .lead{display:block; font-size:96px; letter-spacing:.14em; color:var(--accent); opacity:.92; margin-bottom:.18em}
+  .accent{position:relative; display:inline-block; letter-spacing:.012em}
+  .scribble{position:absolute; left:-3%; bottom:-.30em; width:106%; height:.34em; overflow:visible; pointer-events:none}
+  .scribble path{fill:none; stroke:var(--accent); stroke-linecap:round; stroke-linejoin:round}
+
+  .body{margin:110px 0 0; max-width:1720px; color:var(--body); font-size:47px; line-height:1.55}
+
+  /* rules — the poster's main content, set in the hero's own registers */
+  .rules{margin-top:120px; margin-bottom:60px; flex:1 0 auto; display:flex; flex-direction:column; justify-content:space-evenly}
+  .rule{display:flex; align-items:baseline; gap:56px}
+  .rule .num{font-family:"Bebas Neue",Impact,sans-serif; font-size:84px; color:var(--accent); flex:none; width:120px;
+    text-align:right; letter-spacing:.04em; opacity:.9}
+  .rule .txt{}
+  .rule .t{font-family:"Bebas Neue",Impact,sans-serif; font-size:190px; line-height:1; color:var(--bone); letter-spacing:.012em}
+  .rule .a{display:block; margin-top:16px; font-family:"Caveat",cursive; font-weight:600; font-size:58px; color:var(--accent); opacity:.9}
+
+  /* marked callout, lasso / arrow variants, straight from the hero */
+  .chiprow{margin-top:70px; display:flex; align-items:center; justify-content:center}
+  .chip{position:relative; display:inline-block; padding:66px 190px 70px; text-align:center}
+  .mark{position:absolute; inset:0; width:100%; height:100%; overflow:visible; pointer-events:none}
+  .mark path,.mark ellipse{fill:none; stroke:var(--accent); stroke-linecap:round}
+  .chipN{display:block; font-family:"Bebas Neue",Impact,sans-serif; font-size:96px; letter-spacing:.05em; color:var(--accent); line-height:1; white-space:nowrap}
+  .chipT{display:block; margin-top:18px; font-size:36px; letter-spacing:.1em; text-transform:uppercase; color:var(--chipT); white-space:nowrap}
+  .arrow{position:absolute; left:calc(100% + 24px); top:6px; width:230px; height:124px; overflow:visible}
+  .arrow path{fill:none; stroke:var(--accent); stroke-linecap:round; stroke-linejoin:round}
+  .note{position:absolute; left:calc(100% + 250px); top:52px; font-family:"Caveat",cursive; font-weight:700; font-size:56px; color:var(--accent); white-space:nowrap; transform:rotate(-5deg)}
+
+  .meta{margin-top:74px; font-size:34px; letter-spacing:.17em; text-transform:uppercase; color:var(--muted);
+    display:flex; justify-content:center; gap:44px; align-items:center; font-weight:500}
+  .meta span{display:inline-flex; align-items:center; gap:44px}
+  .meta span+span::before{content:""; width:9px; height:9px; border-radius:50%; background:var(--accent); opacity:.8; flex:none}
+
+  .sign{margin-top:64px; display:flex; align-items:center; justify-content:space-between; gap:40px;
+    padding-top:52px; border-top:2px solid var(--line); flex:none}
+  .sign img{height:102px; width:auto}
+  .signT{font-family:"Caveat",cursive; font-weight:700; font-size:56px; color:var(--accent); opacity:.9}
+</style>
+</head>
+<body>
+
+<!-- ============================ POOL TABLE ============================ -->
+<div class="poster" id="pool">
+  <div class="crown"><div class="glow"></div><img src="cb-leaf-emblem.webp"></div>
+
+  <h1 class="head">
+    <span class="lead">House Rules of</span>
+    <span class="accent" style="font-size:300px">The Pool Table
+      <svg class="scribble" viewBox="0 0 300 26" preserveAspectRatio="none" aria-hidden="true"><path d="M6 12 C52 4, 98 18, 144 9 C190 1, 236 15, 295 7" stroke-width="4.6"/><path d="M22 21 C68 16, 108 24, 156 19 C202 14, 244 22, 286 17" stroke-width="2.2" opacity=".55"/></svg>
+    </span>
+  </h1>
+
+
+  <div class="rules">
+    <div class="rule"><span class="num">01</span><span class="txt"><span class="t">Winner stays on</span></span></div>
+    <div class="rule"><span class="num">02</span><span class="txt"><span class="t">No ashtrays on the table</span></span></div>
+    <div class="rule"><span class="num">03</span><span class="txt"><span class="t">No drinks on the table</span></span></div>
+    <div class="rule"><span class="num">04</span><span class="txt"><span class="t">Leave the chalk</span></span></div>
+  </div>
+
+  <div class="sign">
+    <img src="cb-wordmark-white.png" alt="Cannibisters Herbal Apothecary">
+    <span class="signT">rack up, chalk off</span>
+  </div>
+</div>
+
+<!-- ============================ ARCADE ============================ -->
+<div class="poster poster--saffron" id="arcade">
+  <div class="crown"><div class="glow"></div><img src="cb-leaf-emblem.webp"></div>
+
+  <h1 class="head">
+    <span class="lead">House Rules of</span>
+    <span class="accent" style="font-size:340px">The Arcade
+      <svg class="scribble" viewBox="0 0 300 26" preserveAspectRatio="none" aria-hidden="true"><path d="M6 12 C52 4, 98 18, 144 9 C190 1, 236 15, 295 7" stroke-width="4.6"/><path d="M22 21 C68 16, 108 24, 156 19 C202 14, 244 22, 286 17" stroke-width="2.2" opacity=".55"/></svg>
+    </span>
+  </h1>
+
+
+  <div class="rules">
+    <div class="rule"><span class="num">01</span><span class="txt"><span class="t">No hogging the machine</span></span></div>
+    <div class="rule"><span class="num">02</span><span class="txt"><span class="t">Stop when staff ask</span></span></div>
+    <div class="rule"><span class="num">03</span><span class="txt"><span class="t">No ashtrays on the machine</span></span></div>
+    <div class="rule"><span class="num">04</span><span class="txt"><span class="t">No drinks on the machine</span></span></div>
+    <div class="rule"><span class="num">05</span><span class="txt"><span class="t">Treat it kindly</span></span></div>
+  </div>
+
+  <div class="sign">
+    <img src="cb-wordmark-white.png" alt="Cannibisters Herbal Apothecary">
+    <span class="signT">insert yourself, not coins</span>
+  </div>
+</div>
+
+</body>
+</html>
