@@ -1,0 +1,10 @@
+{
+  "name": "Cannibisters",
+  "short_name": "Cannibisters",
+  "description": "Members-only cannabis club and herbal apothecary, Sea Point.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#05060c",
+  "theme_color": "#05060c",
+  "icons": [{ "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml" }]
+}
