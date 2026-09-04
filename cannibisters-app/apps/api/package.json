@@ -1,0 +1,25 @@
+{
+  "name": "@cannibisters/api",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "start": "tsx src/server.ts",
+    "build": "tsc --noEmit",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@cannibisters/shared": "workspace:*",
+    "@hono/node-server": "^1.19.1",
+    "hono": "^4.9.6",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@types/node": "^22.17.2",
+    "tsx": "^4.20.5",
+    "typescript": "^5.7.3",
+    "vitest": "^3.2.4"
+  }
+}
